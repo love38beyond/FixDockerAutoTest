@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+# setup_fixgateway.sh — 搭建 FIX 网关容器（ctpfix）
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/common.sh"
+
+CONTAINER_NAME="ctpfix"
+IMAGE_NAME="ctpfix:v1"
+TAR_FILE="FIX.tar"
+
+# --- 步骤 1：导入 Docker 镜像 ---
+setup_image() {
+    if image_exists "$IMAGE_NAME"; then
+        log_info "镜像 $IMAGE_NAME 已存在，跳过导入"
+        return 0
+    fi
+    if [ ! -f "$SCRIPT_DIR/$TAR_FILE" ]; then
+        log_error "找不到 tar 文件：$SCRIPT_DIR/$TAR_FILE"
+        exit 1
+    fi
+    log_step "正在从 $TAR_FILE 导入 Docker 镜像..."
+    docker import "$SCRIPT_DIR/$TAR_FILE" "$IMAGE_NAME"
+    log_success "镜像 $IMAGE_NAME 创建完成"
+}
+
+# --- 步骤 2：创建并启动容器 ---
+setup_container() {
+    if container_exists "$CONTAINER_NAME"; then
+        log_info "容器 $CONTAINER_NAME 已存在"
+        if ! docker ps --format '{{.Names}}' | grep -qx "$CONTAINER_NAME"; then
+            log_step "正在启动已有容器 $CONTAINER_NAME..."
+            docker start "$CONTAINER_NAME"
+            sleep 3
+        fi
+        return 0
+    fi
+    log_step "正在创建并启动容器：$CONTAINER_NAME..."
+    docker run -itd \
+        --name="$CONTAINER_NAME" \
+        --hostname=ctpfix_v1 \
+        --network="$DOCKER_NETWORK" \
+        -p 50001:50001 \
+        -p 61111:61111 \
+        "$IMAGE_NAME" \
+        /usr/sbin/sshd -D
+    log_success "容器 $CONTAINER_NAME 已启动"
+    sleep 2
+}
+
+# --- 步骤 3：配置 setcap 以支持 ping ---
+setup_setcap() {
+    log_step "正在 $CONTAINER_NAME 容器内配置 ping 权限..."
+    docker exec "$CONTAINER_NAME" bash -c '
+        setcap cap_net_raw+ep /usr/bin/ping 2>/dev/null || \
+        sudo setcap cap_net_raw+ep /usr/bin/ping 2>/dev/null || \
+        echo "警告：setcap 可能执行失败，ping 命令可能无法正常使用"
+    '
+    log_success "setcap 配置完成"
+}
+
+# --- 步骤 4：修改 FIX 网关 INI 配置文件 ---
+setup_fix_config() {
+    log_step "正在修改 $CONTAINER_NAME 容器内的 FIX 网关 INI 配置文件..."
+
+    local ctptrade_ip
+    ctptrade_ip=$(get_container_ip "ctptradefix")
+    if [ -z "$ctptrade_ip" ]; then
+        log_error "无法获取 ctptradefix 容器 IP，请确保 CTP 交易柜台容器已运行"
+        exit 1
+    fi
+    log_info "CTP 交易柜台容器 IP：$ctptrade_ip"
+
+    docker exec "$CONTAINER_NAME" bash -c "
+        # 1. fixfront_mt.ini —— 替换 CTPfront1 中的 IP
+        f1=/home/fixf1/fixfront_mt1/bin/fixfront_mt.ini
+        if [ -f \"\$f1\" ]; then
+            sed -i 's|\\(CTPfront1=tcp://\\)[0-9.]*\\(:11157\\)|\\1${ctptrade_ip}\\2|' \"\$f1\"
+            echo \"已更新 fixfront_mt.ini，CTPfront1 指向 ${ctptrade_ip}:11157\"
+            GenMD5.sh -g \"\$f1\"
+        else
+            echo \"警告：\$f1 不存在\"
+        fi
+
+        # 2. fixfront_md.ini —— 替换 MDfront1 中的 IP（格式：tcp://:IP:port）
+        f2=/home/fixf1/fixfront_md1/bin/fixfront_md.ini
+        if [ -f \"\$f2\" ]; then
+            sed -i 's|\\(MDfront1=tcp://:\\)[0-9.]*\\(:11167\\)|\\1${ctptrade_ip}\\2|' \"\$f2\"
+            echo \"已更新 fixfront_md.ini，MDfront1 指向 ${ctptrade_ip}:11167\"
+            GenMD5.sh -g \"\$f2\"
+        else
+            echo \"警告：\$f2 不存在\"
+        fi
+    "
+    log_success "FIX 网关 INI 配置文件更新完成"
+}
+
+# --- 步骤 5：启动 FIX 网关服务 ---
+start_fix_services() {
+    log_step "正在启动 $CONTAINER_NAME 容器内的 FIX 网关服务..."
+    docker exec "$CONTAINER_NAME" bash -c '
+        echo "1" | su - fixf1 -c "startall.sh"
+    '
+    log_success "FIX 网关服务已启动"
+}
+
+# --- 主函数 ---
+main() {
+    log_info "========== 开始搭建 FIX 网关容器 =========="
+    detect_host_ip
+    setup_image
+    setup_container
+    setup_setcap
+    setup_fix_config
+    start_fix_services
+    log_success "========== FIX 网关容器搭建完成 =========="
+}
+
+main "$@"
