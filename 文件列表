@@ -1,0 +1,10 @@
+service.list
+~/cfg/config/DeployConfig.PD.all.all.xml
+/etc/hosts
+~/ineoffer2/bin/ineoffer.ini
+~/inemdserver2/bin/inemdserver.ini
+~/shfeoffer1/bin/shfeoffer.ini
+~/shfemdserver1/bin/shfemdserver.ini
+/home/trade1/cfg/config/DeployConfig.xml
+/home/fixf1/fixfront_mt1/bin/fixfront_mt.ini
+/home/fixf1/fixfront_md1/bin/fixfront_md.ini

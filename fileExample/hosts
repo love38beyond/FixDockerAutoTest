@@ -1,0 +1,6 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.3.129.3 rhel79-qcow2
+10.3.129.4 demo-79
+10.3.138.138 ctptyzhxt-redhat79-9
+127.0.0.1 compositor1 arb okernel1 tkernel1 qkernel1 dbmt tmdb tinit drmt front1 front2 front3 front4 offermanager1 shfeoffer1 shfemdserver1 front_se5 front_md_se6 dbmt_se zceoffer1 zcemdserver1 cffexoffer1 ffexmdserver1 ineoffer1 inemdserver1 ineoffer2 inemdserver2 cfmmcoffer1 cfmmcoffermanager1 cffexotcoffer front_se100

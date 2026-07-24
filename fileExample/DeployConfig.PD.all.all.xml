@@ -1,0 +1,43 @@
+<?xml version="" encoding=""?>
+<!DOCTYPE DeployConfig SYSTEM "DeployConfig.dtd">
+<DeployConfig>
+	<Topics>
+		<Topic name="cinput" address="udp://172.24.120.255:26941"/>
+		<Topic name="cinput" address="udp://172.24.120.255:26951"/>
+		<Topic name="tresult" address="udp://172.24.120.255:26943"/>
+		<Topic name="tresult" address="udp://172.24.120.255:26953"/>
+		<Topic name="front" item="101" address="udp://172.24.120.255:26945"/>
+		<Topic name="front" item="101" address="udp://172.24.120.255:26955"/>
+		<Topic name="dbmt" address="udp://172.24.120.255:26971"/>
+		<Topic name="dbmt" address="udp://172.24.120.255:26981"/>
+		<Topic name="dfmt" address="udp://172.24.120.255:26973"/>
+		<Topic name="dfmt" address="udp://172.24.120.255:26983"/>
+		<Topic name="tinit" address="udp://172.24.120.255:26975"/>
+		<Topic name="tinit" address="udp://172.24.120.255:26985"/>
+	</Topics>
+	<Services>
+		<!--ÍøÂç-->
+		<Service name="arb" address="tcp://172.24.120.132:26151"/>
+		<Service name="hotline" item="1" address="tcp://172.24.120.132:26153"/>
+		<Service name="hotline" item="2" address="tcp://172.24.120.132:26155"/>
+		<Service name="tquery" item="1" address="tcp://172.24.120.132:26157"/>
+		<Service name="frontftd" item="101" address="tcp://127.0.0.1:26181"/>
+		<Service name="frontftd" item="103" address="ssl://172.24.120.132:26261"/>
+		<Service name="mdftd" item="1" address="tcp://172.24.120.132:26171"/>
+		<Service name="mdftd" item="2" address="ssl://172.24.120.132:26271"/>
+		<Service name="dbftd" item="1" address="tcp://172.24.120.132:44003"/>
+		<Service name="dbftd" item="2" address="tcp://172.24.120.132:44003"/>
+	</Services>
+	<Management>
+		<tserver ManagePort="8000"/>
+		<front ManagePort="5888"/>
+		<datacenter11 FrontList="101[172.24.120.132;172.24.120.132]@5888"/>
+		<datacenter12 FrontList=""/>
+		<datacenter3 FrontList=""/>
+	</Management>
+	<Databases>
+		<Database name="dbmt" connectString="" username="Sync" password="oracle" PwdEncodeType="0"/>
+		<Database name="tinit" connectString="" username="Sync" password="oracle" PwdEncodeType="0"/>
+	</Databases>
+	<Monitor ip="" port=""/>
+</DeployConfig>

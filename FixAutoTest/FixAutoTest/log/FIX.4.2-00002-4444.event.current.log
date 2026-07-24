@@ -1,0 +1,76 @@
+20251205-00:45:08.000000000 : Created session
+20251205-00:45:08.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20251205-00:45:09.000000000 : Initiated logon request
+20251205-00:45:09.000000000 : Received logon response
+20251205-00:45:17.000000000 : Initiated logout request
+20251205-00:45:17.000000000 : Received logout response
+20251205-00:45:17.000000000 : Disconnecting
+20260304-06:17:45.000000000 : Created session
+20260304-06:17:45.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260304-06:17:46.000000000 : Initiated logon request
+20260304-06:17:46.000000000 : Received logon response
+20260304-06:17:48.000000000 : Message 2 Rejected: Invalid tag number:20013
+20260304-06:17:48.000000000 : Message 3 Rejected: Invalid tag number:20013
+20260304-06:17:48.000000000 : Message 4 Rejected: Invalid tag number:20013
+20260304-06:17:48.000000000 : Message 5 Rejected: Invalid tag number:20013
+20260304-06:17:49.000000000 : Message 10 Rejected: Invalid tag number:20013
+20260304-06:17:49.000000000 : Message 11 Rejected: Invalid tag number:20013
+20260304-06:17:49.000000000 : Message 12 Rejected: Invalid tag number:20013
+20260304-06:17:50.000000000 : Message 16 Rejected: Invalid tag number:20013
+20260304-06:17:50.000000000 : Message 17 Rejected: Invalid tag number:20013
+20260304-06:17:50.000000000 : Message 18 Rejected: Invalid tag number:20013
+20260304-06:17:50.000000000 : Message 19 Rejected: Invalid tag number:20013
+20260304-06:17:50.000000000 : Message 20 Rejected: Invalid tag number:20013
+20260304-06:17:50.000000000 : Message 21 Rejected: Invalid tag number:20013
+20260304-06:17:50.000000000 : Message 22 Rejected: Invalid tag number:20013
+20260304-06:17:51.000000000 : Message 30 Rejected: Invalid tag number:20013
+20260304-06:17:51.000000000 : Message 31 Rejected: Invalid tag number:20013
+20260304-06:17:51.000000000 : Message 32 Rejected: Invalid tag number:20013
+20260304-06:17:51.000000000 : Message 33 Rejected: Invalid tag number:20013
+20260304-06:17:51.000000000 : Message 34 Rejected: Invalid tag number:20013
+20260304-06:17:51.000000000 : Message 35 Rejected: Invalid tag number:20013
+20260304-06:17:52.000000000 : Message 42 Rejected: Invalid tag number:20013
+20260304-06:17:52.000000000 : Message 43 Rejected: Invalid tag number:20013
+20260304-06:17:53.000000000 : Message 47 Rejected: Invalid tag number:20013
+20260304-06:17:53.000000000 : Message 48 Rejected: Invalid tag number:20013
+20260304-06:17:54.000000000 : Initiated logout request
+20260304-06:17:54.000000000 : Received logout response
+20260304-06:17:54.000000000 : Disconnecting
+20260305-06:51:28.000000000 : Created session
+20260305-06:51:28.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-06:51:29.000000000 : Initiated logon request
+20260305-06:51:29.000000000 : Received logon response
+20260305-06:51:31.000000000 : Message 2 Rejected: Tag not defined for this message type:20013
+20260305-06:51:31.000000000 : Message 3 Rejected: Tag not defined for this message type:20013
+20260305-06:51:31.000000000 : Message 4 Rejected: Tag not defined for this message type:20013
+20260305-06:51:31.000000000 : Message 5 Rejected: Tag not defined for this message type:20013
+20260305-06:51:32.000000000 : Message 10 Rejected: Tag not defined for this message type:20013
+20260305-06:51:32.000000000 : Message 11 Rejected: Tag not defined for this message type:20013
+20260305-06:51:32.000000000 : Message 12 Rejected: Tag not defined for this message type:20013
+20260305-06:51:33.000000000 : Message 16 Rejected: Tag not defined for this message type:20013
+20260305-06:51:33.000000000 : Message 17 Rejected: Tag not defined for this message type:20013
+20260305-06:51:33.000000000 : Message 18 Rejected: Tag not defined for this message type:20013
+20260305-06:51:33.000000000 : Message 19 Rejected: Tag not defined for this message type:20013
+20260305-06:51:33.000000000 : Message 20 Rejected: Tag not defined for this message type:20013
+20260305-06:51:33.000000000 : Message 21 Rejected: Tag not defined for this message type:20013
+20260305-06:51:33.000000000 : Message 22 Rejected: Tag not defined for this message type:20013
+20260305-06:51:34.000000000 : Message 30 Rejected: Tag not defined for this message type:20013
+20260305-06:51:34.000000000 : Message 31 Rejected: Tag not defined for this message type:20013
+20260305-06:51:34.000000000 : Message 32 Rejected: Tag not defined for this message type:20013
+20260305-06:51:34.000000000 : Message 33 Rejected: Tag not defined for this message type:20013
+20260305-06:51:34.000000000 : Message 34 Rejected: Tag not defined for this message type:20013
+20260305-06:51:34.000000000 : Message 35 Rejected: Tag not defined for this message type:20013
+20260305-06:51:35.000000000 : Message 42 Rejected: Tag not defined for this message type:20013
+20260305-06:51:35.000000000 : Message 43 Rejected: Tag not defined for this message type:20013
+20260305-06:51:36.000000000 : Message 47 Rejected: Tag not defined for this message type:20013
+20260305-06:51:36.000000000 : Message 48 Rejected: Tag not defined for this message type:20013
+20260305-06:51:37.000000000 : Initiated logout request
+20260305-06:51:37.000000000 : Received logout response
+20260305-06:51:37.000000000 : Disconnecting
+20260305-07:13:35.000000000 : Created session
+20260305-07:13:35.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-07:13:36.000000000 : Initiated logon request
+20260305-07:13:36.000000000 : Received logon response
+20260305-07:13:45.000000000 : Initiated logout request
+20260305-07:13:45.000000000 : Received logout response
+20260305-07:13:45.000000000 : Disconnecting

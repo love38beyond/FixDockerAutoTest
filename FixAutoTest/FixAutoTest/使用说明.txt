@@ -1,0 +1,49 @@
+运行环境:python3.7
+
+模块安装包：softpackage文件夹下的quickfix-1.15.1-cp37-cp37m-win_amd64    （ps：可以用pip安装）
+
+测试用例：见testcase文件夹，文件名称中的00001表示投资者，名称的最后一位表示一组用例的运行顺序，没有序号表示和运行顺序无关
+
+initiator文件夹：程序运行后自动生成的session相关信息，其中的seqnums内容为当前session最新发出消息的序号和接收消息的序号
+
+caselist.txt:每一行表示一个用例文件和对应的配置文件，如果主程序直接运行的话会依次执行这个文件里的用例
+
+FixInitiator.py:主程序，有两种运行方式，1、如果if __name__=='__main__':的运行入口没有注释的话，运行后执行caselist文件里的用例；
+2、注释掉if __name__=='__main__':部分，直接在程序末尾依次调用main('FIX42-01.ini','F:\\Work\\2019\\FIX\\autotestcase\\orderinsert-00001-1.xlsx')函数，
+一个main函数表示一个用例，函数第一个参数表示配置文件，第二个参数为对应用例的路径
+
+syslog.txt:记录程序执行后的详细日志，主要包括发送报文和接收报文，以及判定结果
+
+
+
+【wfj 补充说明】：
+若没有 xlrd库，也需要安装下此模块
+每次跑脚本时，先将文件夹“initiator”下内容全部删除
+orderinsert三个测试用例，是有仓位依赖顺序的，caselist.txt中已按顺序放入了
+TAS用例还未写好调通，故还没加到 “caselist.txt”文件中。
+
+2021.04 运行的测试环境列表如下：
+（1）网关：172.24.125.200_fixf2 ，在 fixfront_mt1/bin 目录下检查连接的交易，有时候环境可能会变
+（2）交易：172.24.125.200_trade1 , 4444,shfe 0009会员号   (若报单交易所不对，检查下合约表记录中的交易所字段)
+（3）数据库db：172.24.125.211:1521/aspqq636 sync/sync1111
+（4）注意：重启交易环境时，一定要重启网关，因为有些数据是从交易拿的，可能不是最新的。
+（5）版本bywrz：
+    libthosttraderapi_se.so文件对应 v1.2.2 P*版本，此api为低版本，支持1.2.2的所有P版本。此api可以对应高版本的fix，因为fix高版本对下兼容。
+    libthosttraderapi_se.so650文件对应 v1.3 版本，此api为高版本，不支持fix的低版本。
+    目前，2021.05-最新版本是 1.2.2P7，v1.3版本很多公司未升级。
+
+测试用例描述说明（2021.05-仅跑了前2个用例并通过）：
+testcase\orderinsert-00001-1.xlsx  ：00001用cu1202报单-均未成交，有昨仓2手
+testcase\orderinsert-00002-2.xlsx  ：00002用cu1202报单，主测开平不填拆单及撤单，会与 orderinsert-00001-1.xlsx中报单成交，未成交部分全部撤单。拆单后用例执行Fail，极有可能是比较回报先后顺序的问题。
+testcase\orderinsert-00001-3.xlsx
+testcase\Position-00010-1.xlsx   ：造期权持仓-fu1205p4800的今买持2手，今卖持2手。
+testcase\PositionMaintenance-00010-3.xlsx ：主测执行宣告，即期权的行权，依赖 Position-00010-1.xlsx用例先跑。
+testcase\orderCancelReplace-00010-4.xlsx
+testcase\TJOrder-00003.xlsx
+testcase\MassQuote.xlsx
+
+
+框架设计方面的notes from scj：
+本用例自写主体部分，是实现各报单功能的方法、读请求报文、比对测试结果；
+初始化环境变量、发送报文及接收报文的机制是由 quickfix库实现的，scj讲主要是从网上查询过来的。（若看一个方法怎么用的，可以单独起一个文件看下）
+输出的 syslog.txt 是 使用logging库带的方法，根据网关日志中筛选部分输出的，若用例执行失败，还是要去网关日志中去查看原因的。

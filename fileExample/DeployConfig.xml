@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by zhh (ORiON) -->
+<!--测试环境一-->
+<!DOCTYPE DeployConfig SYSTEM "DeployConfig.dtd">
+<DeployConfig>
+	<Topics>
+		<Topic name="tseries" address="udp://10.3.138.191:11101"/>
+		<Topic name="tresult" address="udp://10.3.138.191:11105"/>
+		<Topic name="front" item="1" address="udp://10.3.138.191:11109"/>
+		<Topic name="front" item="3" address="udp://10.3.138.191:11127"/>
+		<Topic name="front" item="100" address="udp://10.3.138.191:11229"/>
+		<Topic name="tinit" address="udp://10.3.138.191:11111"/>
+		<Topic name="oresult" item="1" address="udp://10.3.138.191:11113"/>
+		<Topic name="oresult" item="2" address="udp://10.3.138.191:11115"/>
+                <Topic name="mdresult" item="1" address="udp://10.3.138.191:11117"/>
+                <Topic name="mdresult" item="2" address="udp://10.3.138.191:11119"/>
+		<Topic name="bresult" item="1" address="udp://10.3.138.191:11121"/>
+		<Topic name="bresult" item="2" address="udp://10.3.138.191:11123"/>
+		<Topic name="conditionalorder" item="1" address="udp://10.3.138.191:11125"/>
+                <Topic name="triskorder" address="udp://10.3.138.191:17685"/>
+	</Topics>
+	<Services>
+		<Service name="arb" address="tcp://127.0.0.1:11129"/>
+		<Service name="tquery" item="1" address="tcp://127.0.0.1:11131"/>
+                <Service name="tquery" item="2" address="tcp://127.0.0.1:11137"/>
+		<Service name="frontftd" item="1" address="tcp://0.0.0.0:11133"/>
+                <Service name="frontftd" item="3" address="tcp://0.0.0.0:11151"/>
+                <Service name="frontftd" item="100" address="tcp://0.0.0.0:11157"/>
+		<Service name="mdftd" item="2" address="tcp://0.0.0.0:11135"/>
+		<Service name="mdftd" item="4" address="tcp://0.0.0.0:11165"/>
+		<Service name="mdftd" item="6" address="tcp://0.0.0.0:11167"/>
+		<Service name="tinit" address="tcp://127.0.0.1:11155"/>
+		<Service name="hotline" item="1" address="tcp://127.0.0.1:11139"/>
+		<Service name="hotline" item="2" address="tcp://127.0.0.1:11141"/>
+		<Service name="ochannel" item="1" address="tcp://127.0.0.1:11153"/>
+		<Service name="ochannel" item="2" address="tcp://127.0.0.1:11145"/>
+		<Service name="bchannel" item="1" address="tcp://127.0.0.1:11147"/>
+		<Service name="bchannel" item="2" address="tcp://127.0.0.1:11149"/>
+	</Services>
+	<Databases>
+		<Database name="tinit" connectString="ctp2150" username="Sync" password="Sync"/>
+                <Database name="tmdb" connectString="ctp2150" username="Operation" password="Operation"/>
+                <Database name="ctp2150" connectString="ctp2150" username="Fbtransfer" password="Fbtransfer"/>
+	</Databases>
+</DeployConfig>

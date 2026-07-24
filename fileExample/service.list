@@ -1,0 +1,13 @@
+##Center Service ServiceNo IP OSType 
+PD arb			1 172.24.120.132
+PD tinit		1 172.24.120.132
+PD front		1 172.24.120.132
+PD tserver		1 172.24.120.132
+PD mdkernel		1 172.24.120.132
+PD qkernel		1 172.24.120.132
+#PD dbkernel		1 172.24.120.132
+#PD dbwriter     	1 172.24.120.132
+#PD mdproxy		1 172.24.120.132
+#PD v2fibproxy		1 172.24.120.132
+#PD v2fibplay		1 172.24.120.132
+PD fens			3 172.24.120.132

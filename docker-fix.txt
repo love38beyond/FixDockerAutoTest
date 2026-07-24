@@ -1,0 +1,109 @@
+1. fix-交易所容器化步骤：
+		
+	1. 导入tar包生成镜像
+		docker import exchangeFIX.tar exchangeFIX:v1
+	
+	2. 交易所tar镜像生成容器：
+		docker run -itd --name=exchangefix --hostname=exchangefix_v1  -p 26171:26171 -p 26181:26181 exchangefix:v1  /usr/sbin/sshd -D
+		
+	3. 进入容器：
+		docker -exec -it exchangefix /bin/bash
+	
+	4. 服务器免密认证：
+		ssh-keygen -t rsa
+		输入Enter
+		输入y
+		输入Enter
+		输入Enter
+		输入Enter
+		cd .ssh
+		cp id_rsa.pub authorized_keys
+		
+	5. 启动前参数修改：
+		1. root用户执行命令(防止报错ping: socket: Operation not permitted)：sudo setcap cap_net_raw+ep /usr/bin/ping
+		2. 切换用户：su - trade2；
+		3. 修改文件：~/shell/console/service.list，将ip地址172.24.120.132替换为本机ip；
+		4. 修改文件：~/cfg/config/DeployConfig.xml，将ip地址172.24.120.132替换为本机ip，将组播地址172.24.120.255替换为本机组播地址；
+		5. 运行命令发布修改的DeployConfig.xml文件：ecall.sh admin 1 copyBaseConfig；
+		6. 启动：ecall.sh admin 1 startService
+		7. 初始化：confirmMainBackup.sh admin 1，然后输入y点击Enter;
+		
+	
+2. fix-CTP交易容器化步骤：
+	
+		
+	1. 导入tar包生成镜像
+		docker import CtpTradeFIX.tar ctptradefix:v2
+		
+	2. CTP交易tar镜像生成容器
+		docker run -itd --name=ctptradefix --hostname=ctptradefix_v1  -p 11157:11157 -p 11167:11167 -p 11155:11155 ctptradefix:v2  /usr/sbin/sshd -D
+		
+	3. 进入容器：
+		docker -exec -it ctptradefix /bin/bash
+		
+	
+	4. 服务器免密认证：
+		ssh-keygen -t rsa
+		输入Enter
+		输入y
+		输入Enter
+		输入Enter
+		输入Enter
+		cd .ssh
+		cp id_rsa.pub authorized_keys
+		
+	5. root用户执行命令(防止报错ping: socket: Operation not permitted)：sudo setcap cap_net_raw+ep /usr/bin/ping
+	
+	6. 切换用户：su - trade1；
+	
+	7. 修改/etc/hosts增加数据：
+		127.0.0.1 compositor1 arb okernel1 tkernel1 qkernel1 dbmt tmdb tinit drmt front1 front2 front3 front4 offermanager1 shfeoffer1 shfemdserver1 front_se5 front_md_se6 dbmt_se zceoffer1 zcemdserver1 cffexoffer1 ffexmdserver1 ineoffer1 inemdserver1 ineoffer2 inemdserver2 cfmmcoffer1 cfmmcoffermanager1 cffexotcoffer front_se100
+	8. 修改交易所报盘地址：
+		1. 将~/ineoffer2/bin/ineoffer.ini文件中的参数ExchangeAddress=tcp://10.3.138.150:26181的ip修改为宿主机的ip；
+		2. 执行命令：GenMD5.sh -g ~/ineoffer2/bin/ineoffer.ini
+		3. 将~/inemdserver2/bin/inemdserver.ini文件中的参数FrontAddr=tcp://10.3.138.150:26171的ip修改为宿主机的ip；
+		4. 执行命令：GenMD5.sh -g ~/inemdserver2/bin/inemdserver.ini
+		5. 将~/shfeoffer1/bin/shfeoffer.ini文件中的参数ExchangeAddress=tcp://10.3.138.150:26181的ip修改为宿主机的ip；
+		6. 执行命令：GenMD5.sh -g ~/shfeoffer1/bin/shfeoffer.ini
+		7. 将~/shfemdserver1/bin/shfemdserver.ini文件中的参数FrontAddr=tcp://10.3.138.150:26171的ip修改为宿主机的ip；
+		8. 执行命令：GenMD5.sh -g ~/shfemdserver1/bin/shfemdserver.ini
+		
+	9. 修改文件：/home/trade1/cfg/config/DeployConfig.xml，将组播地址10.3.138.191替换为本机组播(broadcast)地址；
+		1. 运行命令发布修改的DeployConfig.xml文件：cpall.sh；
+		
+	10. 启动系统:
+		startall.sh
+		输入1
+		输入Enter
+	
+3. fix容器化步骤：
+		
+	1. 导入tar包生成镜像
+		docker import FIX.tar ctpfix:v1
+		
+	2. FIXtar生成容器
+		docker run -itd --name=ctpfix --hostname=ctpfix_v1  -p 50001:50001 -p 61111:61111 ctpfix:v1  /usr/sbin/sshd -D
+	
+	3. 进入容器：
+		docker -exec -it ctpfix /bin/bash
+		
+	4. root用户执行命令(防止报错ping: socket: Operation not permitted)：sudo setcap cap_net_raw+ep /usr/bin/ping
+		
+	5. 将/home/fixf1/fixfront_mt1/bin/fixfront_mt.ini文件中的参数CTPfront1=tcp://10.3.138.138:11157的ip修改为宿主机的ip；
+		执行命令：GenMD5.sh -g /home/fixf1/fixfront_mt1/bin/fixfront_mt.ini
+	   将/home/fixf1/fixfront_md1/bin/fixfront_md.ini文件中的参数MDfront1=tcp://:10.3.138.138:11167的ip修改为宿主机的ip；
+		执行命令：GenMD5.sh -g /home/fixf1/fixfront_md1/bin/fixfront_md.ini
+		
+	6. 启动系统：
+		startall.sh
+		输入1
+		输入Enter
+	
+		
+		
+		
+		
+		
+		
+		
+	

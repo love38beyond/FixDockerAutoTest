@@ -1,0 +1,1172 @@
+2025-11-27 14:50:55,504 - root - INFO - session create: FIX.4.2:00001->4444
+2025-11-27 14:50:55,527 - root - INFO - Logging on..
+2025-11-27 14:50:56,534 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=1  49=00001  50=1  52=20251127-06:50:55.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=081  
+2025-11-27 14:50:56,553 - root - INFO - fromadmin: 8=FIX.4.2  9=159  35=5  34=1  49=4444  52=20251127-07:09:08.438  56=00001  57=1  347=UTF-8  58=ErrorID=[9];ErrorMsg=[CTP:\udcce\u07b4\udccb\u0228\udccf\udcde]   354=40  355=ErrorID=[9];ErrorMsg=[CTP:\u65e0\u6b64\u6743\u9650]   10=043  
+2025-11-27 14:50:56,554 - root - INFO - send to admin: 8=FIX.4.2  9=57  35=5  34=2  49=00001  50=2  52=20251127-06:50:56.000  56=4444  10=108  
+2025-11-27 14:50:56,555 - root - INFO - Logging on..
+2025-11-27 14:50:57,563 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=3  49=00001  50=3  52=20251127-06:50:56.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=086  
+2025-11-27 14:50:58,530 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:50:58,530 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:50:58,530 - root - INFO - NewOrderSingle
+2025-11-27 14:50:58,769 - root - INFO - session create: FIX.4.2:00002->4444
+2025-11-27 14:50:58,791 - root - INFO - Logging on..
+2025-11-27 14:50:59,804 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=1  49=00002  50=1  52=20251127-06:50:58.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=085  
+2025-11-27 14:50:59,821 - root - INFO - fromadmin: 8=FIX.4.2  9=159  35=5  34=1  49=4444  52=20251127-07:09:11.704  56=00002  57=1  347=UTF-8  58=ErrorID=[9];ErrorMsg=[CTP:\udcce\u07b4\udccb\u0228\udccf\udcde]   354=40  355=ErrorID=[9];ErrorMsg=[CTP:\u65e0\u6b64\u6743\u9650]   10=034  
+2025-11-27 14:50:59,821 - root - INFO - send to admin: 8=FIX.4.2  9=57  35=5  34=2  49=00002  50=2  52=20251127-06:50:59.000  56=4444  10=112  
+2025-11-27 14:50:59,822 - root - INFO - Logging on..
+2025-11-27 14:51:00,825 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=3  49=00002  50=3  52=20251127-06:50:59.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=090  
+2025-11-27 14:51:01,784 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:01,784 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:51:01,785 - root - INFO - NewOrderSingle
+2025-11-27 14:51:02,001 - root - INFO - session create: FIX.4.2:00001->4444
+2025-11-27 14:51:02,016 - root - INFO - Logging on..
+2025-11-27 14:51:03,022 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=4  49=00001  50=4  52=20251127-06:51:02.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=080  
+2025-11-27 14:51:03,039 - root - INFO - fromadmin: 8=FIX.4.2  9=159  35=5  34=2  49=4444  52=20251127-07:09:14.924  56=00001  57=4  347=UTF-8  58=ErrorID=[9];ErrorMsg=[CTP:\udcce\u07b4\udccb\u0228\udccf\udcde]   354=40  355=ErrorID=[9];ErrorMsg=[CTP:\u65e0\u6b64\u6743\u9650]   10=044  
+2025-11-27 14:51:03,040 - root - INFO - send to admin: 8=FIX.4.2  9=57  35=5  34=5  49=00001  50=5  52=20251127-06:51:03.000  56=4444  10=107  
+2025-11-27 14:51:03,043 - root - INFO - Logging on..
+2025-11-27 14:51:04,058 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=6  49=00001  50=6  52=20251127-06:51:03.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=085  
+2025-11-27 14:51:05,020 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:05,021 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:51:05,021 - root - INFO - NewOrderSingle
+2025-11-27 14:51:05,225 - root - INFO - session create: FIX.4.2:4444_admin->4444
+2025-11-27 14:51:05,240 - root - INFO - Logging on..
+2025-11-27 14:51:06,243 - root - INFO - send to admin: 8=FIX.4.2  9=98  35=A  34=1  49=4444_admin  50=1  52=20251127-06:51:05.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=153  
+2025-11-27 14:51:06,254 - root - INFO - fromadmin: 8=FIX.4.2  9=117  35=A  34=1  49=4444  52=20251127-07:09:18.144  56=4444_admin  57=1  116=12289  98=0  108=60  141=N  20004=100  20005=-169345013  10=014  
+2025-11-27 14:51:06,255 - root - INFO - logon on sucess!
+2025-11-27 14:51:06,256 - root - WARNING - CaseNo:Position-00010-1.xlsx:0.1---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:06,256 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:06,257 - root - INFO - onlogon: FIX.4.2:4444_admin->4444
+2025-11-27 14:51:08,240 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:08,240 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:51:08,241 - root - INFO - NewOrderSingle
+2025-11-27 14:51:08,242 - root - INFO - send to app: 8=FIX.4.2  9=188  35=D  34=2  49=4444_admin  50=2  52=20251127-06:51:08.000  56=4444  1=00010  11=100  21=3  38=2  40=2  44=150  54=1  55=fu1205p4800  59=0  60=20251127-06:51:08.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=165  
+2025-11-27 14:51:08,275 - root - INFO - fromapp: 8=FIX.4.2  9=350  35=8  34=2  49=4444  52=20251127-07:09:20.136  56=4444_admin  57=2  347=UTF-8  1=00010  6=0  11=100  14=0  17=0  20=0  37=0  38=2  39=8  40=2  44=150  54=1  55=fu1205p4800  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=237  
+2025-11-27 14:51:08,276 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:09,256 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:09,257 - root - INFO - CaseNo: 2 start...
+2025-11-27 14:51:09,257 - root - INFO - NewOrderSingle
+2025-11-27 14:51:09,257 - root - INFO - send to app: 8=FIX.4.2  9=188  35=D  34=3  49=4444_admin  50=3  52=20251127-06:51:09.000  56=4444  1=00010  11=101  21=3  38=2  40=2  44=150  54=2  55=fu1205p4800  59=0  60=20251127-06:51:09.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=171  
+2025-11-27 14:51:09,281 - root - INFO - fromapp: 8=FIX.4.2  9=350  35=8  34=3  49=4444  52=20251127-07:09:21.149  56=4444_admin  57=3  347=UTF-8  1=00010  6=0  11=101  14=0  17=0  20=0  37=0  38=2  39=8  40=2  44=150  54=2  55=fu1205p4800  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=246  
+2025-11-27 14:51:09,282 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:10,265 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:10,265 - root - INFO - CaseNo: 3 start...
+2025-11-27 14:51:10,266 - root - INFO - NewOrderSingle
+2025-11-27 14:51:10,266 - root - INFO - send to app: 8=FIX.4.2  9=184  35=D  34=4  49=4444_admin  50=4  52=20251127-06:51:10.000  56=4444  1=00010  11=102  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=0  60=20251127-06:51:10.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=140  
+2025-11-27 14:51:10,296 - root - INFO - fromapp: 8=FIX.4.2  9=346  35=8  34=4  49=4444  52=20251127-07:09:22.165  56=4444_admin  57=4  347=UTF-8  1=00010  6=0  11=102  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=239  
+2025-11-27 14:51:10,297 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:11,279 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:11,280 - root - INFO - CaseNo: 4 start...
+2025-11-27 14:51:11,280 - root - INFO - NewOrderSingle
+2025-11-27 14:51:11,281 - root - INFO - send to app: 8=FIX.4.2  9=184  35=D  34=5  49=4444_admin  50=5  52=20251127-06:51:11.000  56=4444  1=00010  11=103  21=3  38=1  40=2  44=5000  54=1  55=fu1205  59=0  60=20251127-06:51:11.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=144  
+2025-11-27 14:51:11,302 - root - INFO - fromapp: 8=FIX.4.2  9=346  35=8  34=5  49=4444  52=20251127-07:09:23.173  56=4444_admin  57=5  347=UTF-8  1=00010  6=0  11=103  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=1  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=241  
+2025-11-27 14:51:11,303 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:12,286 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:12,286 - root - INFO - CaseNo: 5 start...
+2025-11-27 14:51:12,286 - root - INFO - NewOrderSingle
+2025-11-27 14:51:12,287 - root - INFO - send to app: 8=FIX.4.2  9=184  35=D  34=6  49=4444_admin  50=6  52=20251127-06:51:12.000  56=4444  1=00010  11=104  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=0  60=20251127-06:51:12.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=150  
+2025-11-27 14:51:12,316 - root - INFO - fromapp: 8=FIX.4.2  9=346  35=8  34=6  49=4444  52=20251127-07:09:24.180  56=4444_admin  57=6  347=UTF-8  1=00010  6=0  11=104  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=244  
+2025-11-27 14:51:12,317 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:13,300 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:13,300 - root - INFO - CaseNo: 6 start...
+2025-11-27 14:51:13,301 - root - INFO - NewOrderSingle
+2025-11-27 14:51:13,302 - root - INFO - send to app: 8=FIX.4.2  9=184  35=D  34=7  49=4444_admin  50=7  52=20251127-06:51:13.000  56=4444  1=00010  11=105  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=0  60=20251127-06:51:13.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=155  
+2025-11-27 14:51:13,331 - root - INFO - fromapp: 8=FIX.4.2  9=346  35=8  34=7  49=4444  52=20251127-07:09:25.194  56=4444_admin  57=7  347=UTF-8  1=00010  6=0  11=105  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=253  
+2025-11-27 14:51:13,332 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:14,310 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:14,311 - root - INFO - CaseNo: 7 start...
+2025-11-27 14:51:14,311 - root - INFO - OrderCancelRequest
+2025-11-27 14:51:14,312 - root - INFO - send to app: 8=FIX.4.2  9=144  35=F  34=8  49=4444_admin  50=8  52=20251127-06:51:14.000  56=4444  1=00010  11=200  37=            41=105  55=fu1205  207=SHFE  20004=100  20005=-169345013  10=234  
+2025-11-27 14:51:14,338 - root - INFO - fromapp: 8=FIX.4.2  9=256  35=9  34=8  49=4444  52=20251127-07:09:26.204  56=4444_admin  57=8  347=UTF-8  1=00010  11=200  37=0  39=8  41=105  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-169345013  10=242  
+2025-11-27 14:51:14,338 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:15,318 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:15,319 - root - INFO - CaseNo: 8 start...
+2025-11-27 14:51:15,319 - root - INFO - NewOrderSingle
+2025-11-27 14:51:15,320 - root - INFO - send to app: 8=FIX.4.2  9=184  35=D  34=9  49=4444_admin  50=9  52=20251127-06:51:15.000  56=4444  1=00010  11=106  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=0  60=20251127-06:51:15.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=164  
+2025-11-27 14:51:15,341 - root - INFO - fromapp: 8=FIX.4.2  9=346  35=8  34=9  49=4444  52=20251127-07:09:27.212  56=4444_admin  57=9  347=UTF-8  1=00010  6=0  11=106  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=251  
+2025-11-27 14:51:15,342 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:16,329 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:16,329 - root - INFO - CaseNo: 9 start...
+2025-11-27 14:51:16,329 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:51:16,330 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=10  49=4444_admin  50=10  52=20251127-06:51:16.000  56=4444  1=00010  11=300  37=            38=2  41=106  44=5100  54=2  55=fu1205  77=O  207=SHFE  20004=100  20005=-169345013  10=099  
+2025-11-27 14:51:16,353 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=10  49=4444  52=20251127-07:09:28.222  56=4444_admin  57=10  347=UTF-8  1=00010  11=300  37=0  39=8  41=106  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-169345013  10=074  
+2025-11-27 14:51:16,353 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:17,333 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:17,334 - root - INFO - CaseNo: 10 start...
+2025-11-27 14:51:17,334 - root - INFO - NewOrderSingle
+2025-11-27 14:51:17,335 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=11  49=4444_admin  50=11  52=20251127-06:51:17.000  56=4444  1=00010  11=108  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=3  60=20251127-06:51:17.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=001  
+2025-11-27 14:51:17,359 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=11  49=4444  52=20251127-07:09:29.227  56=4444_admin  57=11  347=UTF-8  1=00010  6=0  11=108  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=092  
+2025-11-27 14:51:17,359 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:18,351 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:18,352 - root - INFO - CaseNo: 11 start...
+2025-11-27 14:51:18,352 - root - INFO - NewOrderSingle
+2025-11-27 14:51:18,353 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=12  49=4444_admin  50=12  52=20251127-06:51:18.000  56=4444  1=00010  11=109  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=1  60=20251127-06:51:18.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=004  
+2025-11-27 14:51:18,376 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=12  49=4444  52=20251127-07:09:30.245  56=4444_admin  57=12  347=UTF-8  1=00010  6=0  11=109  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=1  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=085  
+2025-11-27 14:51:18,377 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:19,358 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:19,359 - root - INFO - CaseNo: 12 start...
+2025-11-27 14:51:19,359 - root - INFO - NewOrderSingle
+2025-11-27 14:51:19,360 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=13  49=4444_admin  50=13  52=20251127-06:51:19.000  56=4444  1=00010  11=110  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=0  60=20251127-06:51:19.0  77=O  99=5100  110=0  207=SHFE  20001=1  20002=N  20006=5  10=002  
+2025-11-27 14:51:19,383 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=13  49=4444  52=20251127-07:09:31.252  56=4444_admin  57=13  347=UTF-8  1=00010  6=0  11=110  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  99=5100  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=5  10=044  
+2025-11-27 14:51:19,384 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:20,368 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:20,369 - root - INFO - CaseNo: 13 start...
+2025-11-27 14:51:20,369 - root - INFO - NewOrderSingle
+2025-11-27 14:51:20,370 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=14  49=4444_admin  50=14  52=20251127-06:51:20.000  56=4444  1=00010  11=111  21=3  38=1  40=2  44=5000  54=2  55=fu1205  59=0  60=20251127-06:51:20.0  77=O  99=5100  110=0  207=SHFE  20001=1  20002=N  20006=5  10=245  
+2025-11-27 14:51:20,390 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=14  49=4444  52=20251127-07:09:32.263  56=4444_admin  57=14  347=UTF-8  1=00010  6=0  11=111  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=2  55=fu1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  99=5100  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=5  10=050  
+2025-11-27 14:51:20,391 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:21,377 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:21,377 - root - INFO - CaseNo: 14 start...
+2025-11-27 14:51:21,378 - root - INFO - OrderCancelRequest
+2025-11-27 14:51:21,378 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=15  49=4444_admin  50=15  52=20251127-06:51:21.000  56=4444  1=00010  11=201  37=            41=111  55=fu1205  207=SHFE  20004=100  20005=-169345013  10=068  
+2025-11-27 14:51:21,399 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=15  49=4444  52=20251127-07:09:33.271  56=4444_admin  57=15  347=UTF-8  1=00010  11=201  37=0  39=8  41=111  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-169345013  10=080  
+2025-11-27 14:51:21,399 - root - INFO - TestCase Result: Rsplist is null,no compare..
+2025-11-27 14:51:23,400 - root - INFO - send to admin: 8=FIX.4.2  9=64  35=5  34=16  49=4444_admin  50=16  52=20251127-06:51:23.000  56=4444  10=022  
+2025-11-27 14:51:23,404 - root - INFO - fromadmin: 8=FIX.4.2  9=118  35=5  34=16  49=4444  52=20251127-07:09:35.294  56=4444_admin  57=16  347=UTF-8  58=FIX: No Error   354=14  355=FIX: No Error   10=232  
+2025-11-27 14:51:25,581 - root - INFO - session create: FIX.4.2:4444_admin->4444
+2025-11-27 14:51:25,598 - root - INFO - Logging on..
+2025-11-27 14:51:26,614 - root - INFO - send to admin: 8=FIX.4.2  9=100  35=A  34=17  49=4444_admin  50=17  52=20251127-06:51:25.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=041  
+2025-11-27 14:51:26,624 - root - INFO - fromadmin: 8=FIX.4.2  9=119  35=A  34=17  49=4444  52=20251127-07:09:38.514  56=4444_admin  57=17  116=12289  98=0  108=60  141=N  20004=100  20005=-169148404  10=134  
+2025-11-27 14:51:26,625 - root - INFO - logon on sucess!
+2025-11-27 14:51:26,626 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:0.1---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:26,626 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:26,627 - root - INFO - onlogon: FIX.4.2:4444_admin->4444
+2025-11-27 14:51:28,610 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:28,611 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:51:28,611 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:28,612 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=18  49=4444_admin  50=18  52=20251127-06:51:28.000  56=4444  116=16422  1=00010  55=fu1205c4800  77=F  702=1  703=EX  704=1  709=1  710=100  712=1  715=n  20001=1  20011=0  10=092  
+2025-11-27 14:51:28,615 - root - INFO - fromapp: 8=FIX.4.2  9=285  35=AM  34=18  49=4444  52=20251127-07:09:40.504  56=4444_admin  57=18  116=16423  347=UTF-8  55=fu1205c4800  58=ErrorID=[13];ErrorMsg=[CTP:\udcd5\u04b2\udcbb\udcb5\udcbd\u0376\udcd7\udcca\udcd5\udcdf]   354=47  355=ErrorID=[13];ErrorMsg=[CTP:\u627e\u4e0d\u5230\u6295\u8d44\u8005]   702=1  703=EX  704=1  709=1  710=100  712=1  715=n  721=0  722=2  20001=1  20004=0  20005=0  10=155  
+2025-11-27 14:51:28,616 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.1---different:tag-722,exp:5,rel:2
+2025-11-27 14:51:28,616 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.1---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:28,616 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.1---different:tag-116,exp:61457,rel:16423
+2025-11-27 14:51:28,617 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:29,622 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:29,623 - root - INFO - CaseNo: 2 start...
+2025-11-27 14:51:29,623 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:29,624 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=19  49=4444_admin  50=19  52=20251127-06:51:29.000  56=4444  116=16422  1=00010  55=fu1205c4800  77=F  702=1  703=EX  704=2  709=2  710=101  712=1  715=n  20001=1  20011=1  10=099  
+2025-11-27 14:51:29,627 - root - INFO - fromapp: 8=FIX.4.2  9=285  35=AM  34=19  49=4444  52=20251127-07:09:41.516  56=4444_admin  57=19  116=16423  347=UTF-8  55=fu1205c4800  58=ErrorID=[13];ErrorMsg=[CTP:\udcd5\u04b2\udcbb\udcb5\udcbd\u0376\udcd7\udcca\udcd5\udcdf]   354=47  355=ErrorID=[13];ErrorMsg=[CTP:\u627e\u4e0d\u5230\u6295\u8d44\u8005]   702=1  703=EX  704=2  709=2  710=101  712=1  715=n  721=0  722=2  20001=1  20004=0  20005=0  10=164  
+2025-11-27 14:51:29,628 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.2---different:tag-709,exp:1,rel:2
+2025-11-27 14:51:29,628 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.2---different:tag-710,exp:100,rel:101
+2025-11-27 14:51:29,628 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.2---different:tag-722,exp:0,rel:2
+2025-11-27 14:51:29,628 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.2---different:tag-704,exp:1,rel:2
+2025-11-27 14:51:29,628 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.2---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:29,628 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:1.2---different:tag-116,exp:61457,rel:16423
+2025-11-27 14:51:29,628 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:30,638 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:30,639 - root - INFO - CaseNo: 3 start...
+2025-11-27 14:51:30,639 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:30,640 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=20  49=4444_admin  50=20  52=20251127-06:51:30.000  56=4444  116=16422  1=00010  55=fu1205p4800  77=C  702=1  703=EX  704=2  709=1  710=102  712=1  715=n  20001=1  20011=0  10=084  
+2025-11-27 14:51:30,643 - root - INFO - fromapp: 8=FIX.4.2  9=285  35=AM  34=20  49=4444  52=20251127-07:09:42.532  56=4444_admin  57=20  116=16423  347=UTF-8  55=fu1205p4800  58=ErrorID=[13];ErrorMsg=[CTP:\udcd5\u04b2\udcbb\udcb5\udcbd\u0376\udcd7\udcca\udcd5\udcdf]   354=47  355=ErrorID=[13];ErrorMsg=[CTP:\u627e\u4e0d\u5230\u6295\u8d44\u8005]   702=1  703=EX  704=2  709=1  710=102  712=1  715=n  721=0  722=2  20001=1  20004=0  20005=0  10=160  
+2025-11-27 14:51:30,644 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.3---different:tag-709,exp:2,rel:1
+2025-11-27 14:51:30,644 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.3---different:tag-710,exp:101,rel:102
+2025-11-27 14:51:30,644 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.3---different:tag-722,exp:5,rel:2
+2025-11-27 14:51:30,644 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.3---different:tag-55,exp:fu1205c4800,rel:fu1205p4800
+2025-11-27 14:51:30,644 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.3---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:30,644 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.3---different:tag-116,exp:61457,rel:16423
+2025-11-27 14:51:30,644 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:31,644 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:31,644 - root - INFO - CaseNo: 4 start...
+2025-11-27 14:51:31,645 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:31,645 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=21  49=4444_admin  50=21  52=20251127-06:51:31.000  56=4444  116=16422  1=00010  55=fu1205c4800  77=F  702=1  703=EX  704=2  709=2  710=103  712=1  715=n  20001=2  20011=1  10=081  
+2025-11-27 14:51:31,654 - root - INFO - fromapp: 8=FIX.4.2  9=320  35=AM  34=21  49=4444  52=20251127-07:09:43.538  56=4444_admin  57=21  116=16423  347=UTF-8  55=fu1205c4800  58=ErrorID=[61];ErrorMsg=[CTP:\udcb8齖udcbb\udcd2\udcd7\udccb\udcf9\udcb2\udcbb\u05a7\udcb3\udcd6\udccc\udcd7\udcc0\udcfb\udcc0\udce0\udcd0\u0371\udca8\udcb5\udca5]   354=68  355=ErrorID=[61];ErrorMsg=[CTP:\u8be5\u4ea4\u6613\u6240\u4e0d\u652f\u6301\u5957\u5229\u7c7b\u578b\u62a5\u5355]   702=1  703=EX  704=2  709=2  710=103  712=1  715=n  721=0  722=2  20001=2  20004=0  20005=0  10=082  
+2025-11-27 14:51:31,655 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.4---different:tag-710,exp:101,rel:103
+2025-11-27 14:51:31,655 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.4---different:tag-722,exp:0,rel:2
+2025-11-27 14:51:31,655 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.4---different:tag-20001,exp:1,rel:2
+2025-11-27 14:51:31,655 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.4---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:31,656 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:2.4---different:tag-116,exp:61457,rel:16423
+2025-11-27 14:51:31,656 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:32,655 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:32,656 - root - INFO - CaseNo: 5 start...
+2025-11-27 14:51:32,656 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:32,657 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=22  49=4444_admin  50=22  52=20251127-06:51:32.000  56=4444  116=16422  1=00010  55=fu1205c4800  77=F  702=1  703=EX  704=2  709=2  710=104  712=1  715=n  20001=3  20011=1  10=086  
+2025-11-27 14:51:32,659 - root - INFO - fromapp: 8=FIX.4.2  9=285  35=AM  34=22  49=4444  52=20251127-07:09:44.549  56=4444_admin  57=22  116=16423  347=UTF-8  55=fu1205c4800  58=ErrorID=[13];ErrorMsg=[CTP:\udcd5\u04b2\udcbb\udcb5\udcbd\u0376\udcd7\udcca\udcd5\udcdf]   354=47  355=ErrorID=[13];ErrorMsg=[CTP:\u627e\u4e0d\u5230\u6295\u8d44\u8005]   702=1  703=EX  704=2  709=2  710=104  712=1  715=n  721=0  722=2  20001=3  20004=0  20005=0  10=166  
+2025-11-27 14:51:32,660 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.5---different:tag-709,exp:1,rel:2
+2025-11-27 14:51:32,661 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.5---different:tag-710,exp:102,rel:104
+2025-11-27 14:51:32,661 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.5---different:tag-722,exp:5,rel:2
+2025-11-27 14:51:32,661 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.5---different:tag-20001,exp:1,rel:3
+2025-11-27 14:51:32,661 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.5---different:tag-55,exp:fu1205p4800,rel:fu1205c4800
+2025-11-27 14:51:32,661 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.5---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:32,661 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.5---different:tag-116,exp:61457,rel:16423
+2025-11-27 14:51:32,662 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:33,668 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:33,668 - root - INFO - CaseNo: 6 start...
+2025-11-27 14:51:33,668 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:33,669 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=23  49=4444_admin  50=23  52=20251127-06:51:33.000  56=4444  116=16422  1=00010  55=fu1205c4800  77=F  702=1  703=EX  704=2  709=2  710=105  712=1  715=n  20001=5  20011=1  10=092  
+2025-11-27 14:51:33,681 - root - INFO - fromapp: 8=FIX.4.2  9=320  35=AM  34=23  49=4444  52=20251127-07:09:45.562  56=4444_admin  57=23  116=16423  347=UTF-8  55=fu1205c4800  58=ErrorID=[61];ErrorMsg=[CTP:\udcb8齖udcbb\udcd2\udcd7\udccb\udcf9\udcb2\udcbb\u05a7\udcb3\udcd6\udccc\udcd7\udcc0\udcfb\udcc0\udce0\udcd0\u0371\udca8\udcb5\udca5]   354=68  355=ErrorID=[61];ErrorMsg=[CTP:\u8be5\u4ea4\u6613\u6240\u4e0d\u652f\u6301\u5957\u5229\u7c7b\u578b\u62a5\u5355]   702=1  703=EX  704=2  709=2  710=105  712=1  715=n  721=0  722=2  20001=5  20004=0  20005=0  10=090  
+2025-11-27 14:51:33,682 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.6---different:tag-709,exp:1,rel:2
+2025-11-27 14:51:33,682 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.6---different:tag-710,exp:102,rel:105
+2025-11-27 14:51:33,682 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.6---different:tag-722,exp:0,rel:2
+2025-11-27 14:51:33,683 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.6---different:tag-20001,exp:1,rel:5
+2025-11-27 14:51:33,683 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.6---different:tag-55,exp:fu1205p4800,rel:fu1205c4800
+2025-11-27 14:51:33,683 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.6---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:33,683 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:3.6---different:tag-116,exp:61457,rel:16423
+2025-11-27 14:51:33,683 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:34,680 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:34,680 - root - INFO - CaseNo: 7 start...
+2025-11-27 14:51:34,680 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:34,681 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=24  49=4444_admin  50=24  52=20251127-06:51:34.000  56=4444  116=16422  1=00010  55=fu1205c4800  77=C  702=1  703=EX  704=2  709=2  710=106  712=1  715=n  20001=1  20011=1  10=089  
+2025-11-27 14:51:34,683 - root - INFO - fromapp: 8=FIX.4.2  9=285  35=AM  34=24  49=4444  52=20251127-07:09:46.573  56=4444_admin  57=24  116=16423  347=UTF-8  55=fu1205c4800  58=ErrorID=[13];ErrorMsg=[CTP:\udcd5\u04b2\udcbb\udcb5\udcbd\u0376\udcd7\udcca\udcd5\udcdf]   354=47  355=ErrorID=[13];ErrorMsg=[CTP:\u627e\u4e0d\u5230\u6295\u8d44\u8005]   702=1  703=EX  704=2  709=2  710=106  712=1  715=n  721=0  722=2  20001=1  20004=0  20005=0  10=169  
+2025-11-27 14:51:34,684 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:4.7---different:tag-710,exp:103,rel:106
+2025-11-27 14:51:34,684 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:4.7---different:tag-20001,exp:2,rel:1
+2025-11-27 14:51:34,684 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:4.7---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:34,684 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:35,691 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:35,691 - root - INFO - CaseNo: 8 start...
+2025-11-27 14:51:35,692 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:35,692 - root - INFO - send to app: 8=FIX.4.2  9=159  35=AL  34=25  49=4444_admin  50=25  52=20251127-06:51:35.000  56=4444  116=16424  1=00010  55=fu1205c4800  709=1  710=201  712=3  713=100  715=n  20004=100  20005=-169148404  10=137  
+2025-11-27 14:51:35,696 - root - INFO - send to admin: 8=FIX.4.2  9=128  35=3  34=26  49=4444_admin  52=20251127-06:51:35.000  56=4444  129=16425  45=25  58=Tag specified without a value  371=721  372=AM  373=4  10=152  
+2025-11-27 14:51:35,698 - root - INFO - fromapp: 8=FIX.4.2  9=211  35=j  34=26  49=4444  52=20251127-07:09:47.588  56=4444_admin  57=0  347=UTF-8  45=26  58=FIX:Message 26 Rejected: Unsupported Message Type:3   354=52  355=FIX:Message 26 Rejected: Unsupported Message Type:3   372=3  380=3  10=090  
+2025-11-27 14:51:35,699 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:5.8---different:tag-35,exp:AM,rel:j
+2025-11-27 14:51:35,699 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:5.8---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:35,699 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:36,704 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:36,704 - root - INFO - CaseNo: 9 start...
+2025-11-27 14:51:36,705 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:36,705 - root - INFO - send to app: 8=FIX.4.2  9=165  35=AL  34=27  49=4444_admin  50=27  52=20251127-06:51:36.000  56=4444  116=16424  1=00010  55=fu1205c4800  709=1  710=202  712=3  713=100  714=1  715=n  20004=100  20005=-169148404  10=151  
+2025-11-27 14:51:36,708 - root - INFO - fromapp: 8=FIX.4.2  9=341  35=AM  34=27  49=4444  52=20251127-07:09:48.598  56=4444_admin  57=27  116=16425  347=UTF-8  55=fu1205c4800  58=ErrorID=[73];ErrorMsg=[CTP:\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\u6cf7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\udce6]   354=74  355=ErrorID=[73];ErrorMsg=[CTP:\u6267\u884c\u5ba3\u544a\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u6267\u884c\u5ba3\u544a]   702=1  703=EX  704=0  709=2  710=202  712=3  713=100  715=n  721=1  722=2  20004=100  20005=-169148404  10=113  
+2025-11-27 14:51:36,710 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:6.9---different:tag-710,exp:105,rel:202
+2025-11-27 14:51:36,710 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:6.9---different:tag-712,exp:1,rel:3
+2025-11-27 14:51:36,710 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:6.9---different:tag-704,exp:2,rel:0
+2025-11-27 14:51:36,710 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:6.9---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:36,710 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:6.9---different:tag-116,exp:16423,rel:16425
+2025-11-27 14:51:36,711 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:37,713 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:37,713 - root - INFO - CaseNo: 10 start...
+2025-11-27 14:51:37,713 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:37,714 - root - INFO - send to app: 8=FIX.4.2  9=166  35=AL  34=28  49=4444_admin  50=28  52=20251127-06:51:37.000  56=4444  116=16424  1=00010  55=fu1205c4800  709=2  710=203  712=3  713=1000  714=2  715=n  20004=100  20005=-169148404  10=206  
+2025-11-27 14:51:37,716 - root - INFO - fromapp: 8=FIX.4.2  9=342  35=AM  34=28  49=4444  52=20251127-07:09:49.607  56=4444_admin  57=28  116=16425  347=UTF-8  55=fu1205c4800  58=ErrorID=[73];ErrorMsg=[CTP:\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\u6cf7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\udce6]   354=74  355=ErrorID=[73];ErrorMsg=[CTP:\u6267\u884c\u5ba3\u544a\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u6267\u884c\u5ba3\u544a]   702=1  703=EX  704=0  709=2  710=203  712=3  713=1000  715=n  721=2  722=2  20004=100  20005=-169148404  10=158  
+2025-11-27 14:51:37,718 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:7.10---different:tag-710,exp:106,rel:203
+2025-11-27 14:51:37,718 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:7.10---different:tag-712,exp:1,rel:3
+2025-11-27 14:51:37,718 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:7.10---different:tag-704,exp:2,rel:0
+2025-11-27 14:51:37,718 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:7.10---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:37,718 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:7.10---different:tag-116,exp:16423,rel:16425
+2025-11-27 14:51:37,718 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:38,717 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:38,717 - root - INFO - CaseNo: 11 start...
+2025-11-27 14:51:38,717 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:38,718 - root - INFO - send to app: 8=FIX.4.2  9=159  35=AL  34=29  49=4444_admin  50=29  52=20251127-06:51:38.000  56=4444  116=16424  1=00010  55=fu1205c4800  709=2  710=204  712=3  713=101  715=n  20004=100  20005=-169148404  10=153  
+2025-11-27 14:51:38,721 - root - INFO - send to admin: 8=FIX.4.2  9=128  35=3  34=30  49=4444_admin  52=20251127-06:51:38.000  56=4444  129=16425  45=29  58=Tag specified without a value  371=721  372=AM  373=4  10=154  
+2025-11-27 14:51:38,722 - root - INFO - fromapp: 8=FIX.4.2  9=211  35=j  34=30  49=4444  52=20251127-07:09:50.612  56=4444_admin  57=0  347=UTF-8  45=30  58=FIX:Message 30 Rejected: Unsupported Message Type:3   354=52  355=FIX:Message 30 Rejected: Unsupported Message Type:3   372=3  380=3  10=052  
+2025-11-27 14:51:38,723 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.11---different:tag-35,exp:AM,rel:j
+2025-11-27 14:51:38,724 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.11---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:38,724 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:39,719 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:39,720 - root - INFO - CaseNo: 12 start...
+2025-11-27 14:51:39,720 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:39,721 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=31  49=4444_admin  50=31  52=20251127-06:51:39.000  56=4444  116=16422  1=00010  55=fu1205p4800  77=C  702=1  703=EX  704=2  709=1  710=107  712=1  715=n  20001=1  20011=0  10=102  
+2025-11-27 14:51:39,724 - root - INFO - fromapp: 8=FIX.4.2  9=285  35=AM  34=31  49=4444  52=20251127-07:09:51.613  56=4444_admin  57=31  116=16423  347=UTF-8  55=fu1205p4800  58=ErrorID=[13];ErrorMsg=[CTP:\udcd5\u04b2\udcbb\udcb5\udcbd\u0376\udcd7\udcca\udcd5\udcdf]   354=47  355=ErrorID=[13];ErrorMsg=[CTP:\u627e\u4e0d\u5230\u6295\u8d44\u8005]   702=1  703=EX  704=2  709=1  710=107  712=1  715=n  721=0  722=2  20001=1  20004=0  20005=0  10=169  
+2025-11-27 14:51:39,725 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.12---different:tag-710,exp:100,rel:107
+2025-11-27 14:51:39,725 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.12---different:tag-712,exp:3,rel:1
+2025-11-27 14:51:39,726 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.12---different:tag-722,exp:0,rel:2
+2025-11-27 14:51:39,726 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.12---different:tag-704,exp:1,rel:2
+2025-11-27 14:51:39,726 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.12---different:tag-55,exp:fu1205c4800,rel:fu1205p4800
+2025-11-27 14:51:39,726 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.12---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:39,726 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:8.12---different:tag-116,exp:61457,rel:16423
+2025-11-27 14:51:39,727 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:40,728 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:40,729 - root - INFO - CaseNo: 13 start...
+2025-11-27 14:51:40,730 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:40,730 - root - INFO - send to app: 8=FIX.4.2  9=159  35=AL  34=32  49=4444_admin  50=32  52=20251127-06:51:40.000  56=4444  116=16424  1=00010  55=fu1205p4800  709=1  710=205  712=3  713=102  715=n  20004=100  20005=-169148404  10=148  
+2025-11-27 14:51:40,733 - root - INFO - send to admin: 8=FIX.4.2  9=128  35=3  34=33  49=4444_admin  52=20251127-06:51:40.000  56=4444  129=16425  45=32  58=Tag specified without a value  371=721  372=AM  373=4  10=144  
+2025-11-27 14:51:40,734 - root - INFO - fromapp: 8=FIX.4.2  9=211  35=j  34=33  49=4444  52=20251127-07:09:52.625  56=4444_admin  57=0  347=UTF-8  45=33  58=FIX:Message 33 Rejected: Unsupported Message Type:3   354=52  355=FIX:Message 33 Rejected: Unsupported Message Type:3   372=3  380=3  10=070  
+2025-11-27 14:51:40,735 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:9.13---different:tag-35,exp:AM,rel:j
+2025-11-27 14:51:40,735 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:9.13---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:40,736 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:41,736 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:41,738 - root - INFO - CaseNo: 14 start...
+2025-11-27 14:51:41,738 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:41,739 - root - INFO - send to app: 8=FIX.4.2  9=164  35=AL  34=34  49=4444_admin  50=34  52=20251127-06:51:41.000  56=4444  116=16422  1=00010  55=fu1205p4800  77=C  702=1  703=EX  704=2  709=2  710=108  712=1  715=n  20001=1  20011=1  10=104  
+2025-11-27 14:51:41,741 - root - INFO - fromapp: 8=FIX.4.2  9=285  35=AM  34=34  49=4444  52=20251127-07:09:53.631  56=4444_admin  57=34  116=16423  347=UTF-8  55=fu1205p4800  58=ErrorID=[13];ErrorMsg=[CTP:\udcd5\u04b2\udcbb\udcb5\udcbd\u0376\udcd7\udcca\udcd5\udcdf]   354=47  355=ErrorID=[13];ErrorMsg=[CTP:\u627e\u4e0d\u5230\u6295\u8d44\u8005]   702=1  703=EX  704=2  709=2  710=108  712=1  715=n  721=0  722=2  20001=1  20004=0  20005=0  10=179  
+2025-11-27 14:51:41,742 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:10.14---different:tag-710,exp:203,rel:108
+2025-11-27 14:51:41,742 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:10.14---different:tag-712,exp:3,rel:1
+2025-11-27 14:51:41,742 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:10.14---different:tag-721,exp:2,rel:0
+2025-11-27 14:51:41,742 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:10.14---different:tag-704,exp:0,rel:2
+2025-11-27 14:51:41,742 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:10.14---different:tag-55,exp:fu1205c4800,rel:fu1205p4800
+2025-11-27 14:51:41,742 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:10.14---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:41,742 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:10.14---different:tag-116,exp:16425,rel:16423
+2025-11-27 14:51:41,743 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:42,748 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:42,748 - root - INFO - CaseNo: 15 start...
+2025-11-27 14:51:42,748 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:42,749 - root - INFO - send to app: 8=FIX.4.2  9=172  35=AL  34=35  49=4444_admin  50=35  52=20251127-06:51:42.000  56=4444  116=16424  1=00010  55=fu1205p4800  207=SHFE  709=2  710=206  712=3  713=0  714=0  715=n  20004=100  20005=-169148404  10=061  
+2025-11-27 14:51:42,751 - root - INFO - fromapp: 8=FIX.4.2  9=339  35=AM  34=35  49=4444  52=20251127-07:09:54.642  56=4444_admin  57=35  116=16425  347=UTF-8  55=fu1205p4800  58=ErrorID=[73];ErrorMsg=[CTP:\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\u6cf7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\udce6]   354=74  355=ErrorID=[73];ErrorMsg=[CTP:\u6267\u884c\u5ba3\u544a\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u6267\u884c\u5ba3\u544a]   702=1  703=EX  704=0  709=2  710=206  712=3  713=0  715=n  721=0  722=2  20004=100  20005=-169148404  10=024  
+2025-11-27 14:51:42,752 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.15---different:tag-710,exp:101,rel:206
+2025-11-27 14:51:42,752 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.15---different:tag-722,exp:0,rel:2
+2025-11-27 14:51:42,752 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.15---different:tag-704,exp:2,rel:0
+2025-11-27 14:51:42,753 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.15---different:tag-55,exp:fu1205c4800,rel:fu1205p4800
+2025-11-27 14:51:42,753 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.15---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:42,753 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.15---different:tag-116,exp:61457,rel:16425
+2025-11-27 14:51:42,753 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:43,761 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:43,762 - root - INFO - CaseNo: 16 start...
+2025-11-27 14:51:43,762 - root - INFO - PositionMaintenanceRequest
+2025-11-27 14:51:43,763 - root - INFO - send to app: 8=FIX.4.2  9=172  35=AL  34=36  49=4444_admin  50=36  52=20251127-06:51:43.000  56=4444  116=16424  1=00010  55=fu1205p4800  207=SHFE  709=2  710=207  712=3  713=0  714=0  715=n  20004=100  20005=-169148404  10=065  
+2025-11-27 14:51:43,765 - root - INFO - fromapp: 8=FIX.4.2  9=339  35=AM  34=36  49=4444  52=20251127-07:09:55.655  56=4444_admin  57=36  116=16425  347=UTF-8  55=fu1205p4800  58=ErrorID=[73];ErrorMsg=[CTP:\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\u6cf7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\u05b4\udcd0\udcd0\udcd0\udcfb\udcb8\udce6]   354=74  355=ErrorID=[73];ErrorMsg=[CTP:\u6267\u884c\u5ba3\u544a\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u6267\u884c\u5ba3\u544a]   702=1  703=EX  704=0  709=2  710=207  712=3  713=0  715=n  721=0  722=2  20004=100  20005=-169148404  10=032  
+2025-11-27 14:51:43,766 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.16---different:tag-710,exp:101,rel:207
+2025-11-27 14:51:43,766 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.16---different:tag-722,exp:0,rel:2
+2025-11-27 14:51:43,766 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.16---different:tag-704,exp:2,rel:0
+2025-11-27 14:51:43,766 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.16---different:tag-55,exp:fu1205c4800,rel:fu1205p4800
+2025-11-27 14:51:43,766 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.16---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:43,767 - root - WARNING - CaseNo:PositionMaintenance-00010-3.xlsx:11.16---different:tag-116,exp:61457,rel:16425
+2025-11-27 14:51:43,767 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:45,787 - root - INFO - send to admin: 8=FIX.4.2  9=64  35=5  34=37  49=4444_admin  50=37  52=20251127-06:51:45.000  56=4444  10=032  
+2025-11-27 14:51:45,790 - root - INFO - fromadmin: 8=FIX.4.2  9=118  35=5  34=37  49=4444  52=20251127-07:09:57.680  56=4444_admin  57=37  347=UTF-8  58=FIX: No Error   354=14  355=FIX: No Error   10=241  
+2025-11-27 14:51:48,078 - root - INFO - session create: FIX.4.2:4444_admin->4444
+2025-11-27 14:51:48,091 - root - INFO - Logging on..
+2025-11-27 14:51:49,101 - root - INFO - send to admin: 8=FIX.4.2  9=100  35=A  34=38  49=4444_admin  50=38  52=20251127-06:51:48.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=052  
+2025-11-27 14:51:49,110 - root - INFO - fromadmin: 8=FIX.4.2  9=119  35=A  34=38  49=4444  52=20251127-07:10:01.000  56=4444_admin  57=38  116=12289  98=0  108=60  141=N  20004=100  20005=-167837683  10=124  
+2025-11-27 14:51:49,111 - root - INFO - logon on sucess!
+2025-11-27 14:51:49,111 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:0.1---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:49,111 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:49,112 - root - INFO - onlogon: FIX.4.2:4444_admin->4444
+2025-11-27 14:51:51,094 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:51,095 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:51:51,095 - root - INFO - NewOrderSingle
+2025-11-27 14:51:51,095 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=39  49=4444_admin  50=39  52=20251127-06:51:51.000  56=4444  1=00010  11=100  21=3  38=1  40=2  44=5000  54=1  55=rb1205  59=0  60=20251127-06:51:51.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=254  
+2025-11-27 14:51:51,117 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=39  49=4444  52=20251127-07:10:02.989  56=4444_admin  57=39  347=UTF-8  1=00010  6=0  11=100  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5000  54=1  55=rb1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=091  
+2025-11-27 14:51:51,119 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:1.1---different:tag-39,exp:A,rel:8
+2025-11-27 14:51:51,119 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:1.1---different:tag-150,exp:A,rel:8
+2025-11-27 14:51:51,119 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:1.1---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:51,120 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:52,111 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:52,111 - root - INFO - CaseNo: 2 start...
+2025-11-27 14:51:52,111 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:51:52,112 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=40  49=4444_admin  50=40  52=20251127-06:51:52.000  56=4444  1=00010  11=500  37=            38=2  41=100  44=5000  54=1  55=rb1205  77=O  207=SHFE  20004=100  20005=-167837683  10=109  
+2025-11-27 14:51:52,131 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=40  49=4444  52=20251127-07:10:04.005  56=4444_admin  57=40  347=UTF-8  1=00010  11=500  37=0  39=8  41=100  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=078  
+2025-11-27 14:51:52,132 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:1.2---different:tag-35,exp:8,rel:9
+2025-11-27 14:51:52,132 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:1.2---different:tag-39,exp:0,rel:8
+2025-11-27 14:51:52,133 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:1.2---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:52,133 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:53,124 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:53,124 - root - INFO - CaseNo: 3 start...
+2025-11-27 14:51:53,125 - root - INFO - NewOrderSingle
+2025-11-27 14:51:53,126 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=41  49=4444_admin  50=41  52=20251127-06:51:53.000  56=4444  1=00010  11=102  21=3  38=1  40=2  44=5002  54=1  55=rb1205  59=0  60=20251127-06:51:53.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=248  
+2025-11-27 14:51:53,151 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=41  49=4444  52=20251127-07:10:05.020  56=4444_admin  57=41  347=UTF-8  1=00010  6=0  11=102  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5002  54=1  55=rb1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=060  
+2025-11-27 14:51:53,152 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.3---different:tag-44,exp:5000,rel:5002
+2025-11-27 14:51:53,152 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.3---different:tag-39,exp:6,rel:8
+2025-11-27 14:51:53,152 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.3---different:tag-150,exp:6,rel:8
+2025-11-27 14:51:53,152 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.3---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:53,152 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:54,128 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:54,129 - root - INFO - CaseNo: 4 start...
+2025-11-27 14:51:54,129 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:51:54,129 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=42  49=4444_admin  50=42  52=20251127-06:51:54.000  56=4444  1=00010  11=501  37=            38=1  41=102  44=5003  54=1  55=rb1205  77=O  207=SHFE  20004=100  20005=-167837683  10=120  
+2025-11-27 14:51:54,153 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=42  49=4444  52=20251127-07:10:06.022  56=4444_admin  57=42  347=UTF-8  1=00010  11=501  37=0  39=8  41=102  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=086  
+2025-11-27 14:51:54,153 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.4---different:tag-35,exp:8,rel:9
+2025-11-27 14:51:54,154 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.4---different:tag-39,exp:4,rel:8
+2025-11-27 14:51:54,154 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.4---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:54,154 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:55,138 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:55,139 - root - INFO - CaseNo: 5 start...
+2025-11-27 14:51:55,139 - root - INFO - NewOrderSingle
+2025-11-27 14:51:55,140 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=43  49=4444_admin  50=43  52=20251127-06:51:55.000  56=4444  1=00010  11=104  21=3  38=1  40=2  44=5004  54=2  55=rb1206  59=0  60=20251127-06:51:55.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=006  
+2025-11-27 14:51:55,185 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=43  49=4444  52=20251127-07:10:07.034  56=4444_admin  57=43  347=UTF-8  1=00010  6=0  11=104  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5004  54=2  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=077  
+2025-11-27 14:51:55,186 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.5---different:tag-54,exp:1,rel:2
+2025-11-27 14:51:55,186 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.5---different:tag-44,exp:5000,rel:5004
+2025-11-27 14:51:55,186 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.5---different:tag-39,exp:4,rel:8
+2025-11-27 14:51:55,186 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.5---different:tag-150,exp:4,rel:8
+2025-11-27 14:51:55,187 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.5---different:tag-55,exp:rb1205,rel:rb1206
+2025-11-27 14:51:55,187 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.5---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:55,187 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.5---different:tag-11,exp:500,rel:104
+2025-11-27 14:51:55,187 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:56,143 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:56,143 - root - INFO - CaseNo: 6 start...
+2025-11-27 14:51:56,144 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:51:56,144 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=44  49=4444_admin  50=44  52=20251127-06:51:56.000  56=4444  1=00010  11=502  37=            38=1  41=104  44=5004  54=2  55=rb1206  77=F  207=SHFE  20004=100  20005=-167837683  10=123  
+2025-11-27 14:51:56,170 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=44  49=4444  52=20251127-07:10:08.038  56=4444_admin  57=44  347=UTF-8  1=00010  11=502  37=0  39=8  41=104  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=102  
+2025-11-27 14:51:56,170 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.6---different:tag-35,exp:8,rel:9
+2025-11-27 14:51:56,170 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.6---different:tag-39,exp:A,rel:8
+2025-11-27 14:51:56,171 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.6---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:56,171 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:57,156 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:57,157 - root - INFO - CaseNo: 7 start...
+2025-11-27 14:51:57,157 - root - INFO - OrderCancelRequest
+2025-11-27 14:51:57,158 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=45  49=4444_admin  50=45  52=20251127-06:51:57.000  56=4444  1=00010  11=800  37=            41=105  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=102  
+2025-11-27 14:51:57,163 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=45  49=4444  52=20251127-07:10:09.053  56=4444_admin  57=45  347=UTF-8  45=45  58=FIX:Message 45 Rejected: Other:The original order 105 cannot be found.   354=71  355=FIX:Message 45 Rejected: Other:The original order 105 cannot be found.   372=F  380=0  10=138  
+2025-11-27 14:51:57,164 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.7---different:tag-35,exp:8,rel:j
+2025-11-27 14:51:57,164 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:2.7---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:57,164 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:58,169 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:58,169 - root - INFO - CaseNo: 8 start...
+2025-11-27 14:51:58,169 - root - INFO - NewOrderSingle
+2025-11-27 14:51:58,170 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=46  49=4444_admin  50=46  52=20251127-06:51:58.000  56=4444  1=00010  11=106  21=3  38=1  40=2  44=5006  54=1  55=rb1205  59=0  60=20251127-06:51:58.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=020  
+2025-11-27 14:51:58,195 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=46  49=4444  52=20251127-07:10:10.064  56=4444_admin  57=46  347=UTF-8  1=00010  6=0  11=106  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5006  54=1  55=rb1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=082  
+2025-11-27 14:51:58,196 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:3.8---different:tag-44,exp:5002,rel:5006
+2025-11-27 14:51:58,196 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:3.8---different:tag-39,exp:A,rel:8
+2025-11-27 14:51:58,196 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:3.8---different:tag-150,exp:A,rel:8
+2025-11-27 14:51:58,196 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:3.8---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:58,196 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:51:59,182 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:51:59,182 - root - INFO - CaseNo: 9 start...
+2025-11-27 14:51:59,183 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:51:59,184 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=47  49=4444_admin  50=47  52=20251127-06:51:59.000  56=4444  1=00010  11=503  37=            38=1  41=106  44=5006  54=2  55=rb1205  77=O  207=SHFE  20004=100  20005=-167837683  10=145  
+2025-11-27 14:51:59,203 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=47  49=4444  52=20251127-07:10:11.077  56=4444_admin  57=47  347=UTF-8  1=00010  11=503  37=0  39=8  41=106  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=108  
+2025-11-27 14:51:59,204 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:3.9---different:tag-35,exp:8,rel:9
+2025-11-27 14:51:59,204 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:3.9---different:tag-39,exp:0,rel:8
+2025-11-27 14:51:59,204 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:3.9---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:51:59,204 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:00,195 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:00,196 - root - INFO - CaseNo: 10 start...
+2025-11-27 14:52:00,196 - root - INFO - NewOrderSingle
+2025-11-27 14:52:00,197 - root - INFO - send to app: 8=FIX.4.2  9=192  35=D  34=48  49=4444_admin  50=48  52=20251127-06:52:00.000  56=4444  1=00010  11=108  21=3  38=1  40=2  44=3008  54=1  55=cu1205c63000  59=0  60=20251127-06:52:00.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=095  
+2025-11-27 14:52:00,222 - root - INFO - fromapp: 8=FIX.4.2  9=354  35=8  34=48  49=4444  52=20251127-07:10:12.090  56=4444_admin  57=48  347=UTF-8  1=00010  6=0  11=108  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=3008  54=1  55=cu1205c63000  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=182  
+2025-11-27 14:52:00,223 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.10---different:tag-44,exp:5002,rel:3008
+2025-11-27 14:52:00,223 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.10---different:tag-39,exp:6,rel:8
+2025-11-27 14:52:00,223 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.10---different:tag-150,exp:6,rel:8
+2025-11-27 14:52:00,223 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.10---different:tag-55,exp:rb1205,rel:cu1205c63000
+2025-11-27 14:52:00,224 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.10---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:00,224 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:01,207 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:01,208 - root - INFO - CaseNo: 11 start...
+2025-11-27 14:52:01,208 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:01,209 - root - INFO - send to app: 8=FIX.4.2  9=175  35=G  34=49  49=4444_admin  50=49  52=20251127-06:52:01.000  56=4444  1=00010  11=504  37=            38=3  41=108  44=3009  54=1  55=cu1205c63000  77=O  207=SHFE  20004=100  20005=-167837683  10=235  
+2025-11-27 14:52:01,229 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=49  49=4444  52=20251127-07:10:13.102  56=4444_admin  57=49  347=UTF-8  1=00010  11=504  37=0  39=8  41=108  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=106  
+2025-11-27 14:52:01,230 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.11---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:01,230 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.11---different:tag-39,exp:4,rel:8
+2025-11-27 14:52:01,230 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.11---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:01,230 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:02,212 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:02,213 - root - INFO - CaseNo: 12 start...
+2025-11-27 14:52:02,213 - root - INFO - NewOrderSingle
+2025-11-27 14:52:02,213 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=50  49=4444_admin  50=50  52=20251127-06:52:02.000  56=4444  1=00010  11=110  21=3  38=1  40=2  44=5010  54=1  55=rb1205  59=0  60=20251127-06:52:02.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=236  
+2025-11-27 14:52:02,235 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=50  49=4444  52=20251127-07:10:14.106  56=4444_admin  57=50  347=UTF-8  1=00010  6=0  11=110  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5010  54=1  55=rb1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=063  
+2025-11-27 14:52:02,236 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.12---different:tag-44,exp:5002,rel:5010
+2025-11-27 14:52:02,237 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.12---different:tag-39,exp:4,rel:8
+2025-11-27 14:52:02,237 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.12---different:tag-150,exp:4,rel:8
+2025-11-27 14:52:02,237 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.12---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:02,237 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.12---different:tag-11,exp:501,rel:110
+2025-11-27 14:52:02,237 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:03,219 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:03,220 - root - INFO - CaseNo: 13 start...
+2025-11-27 14:52:03,220 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:03,221 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=51  49=4444_admin  50=51  52=20251127-06:52:03.000  56=4444  1=00010  11=505  37=            38=1  41=110  44=5010  54=1  55=rb1205  77=C  207=SHFE  20004=100  20005=-167837683  10=104  
+2025-11-27 14:52:03,248 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=51  49=4444  52=20251127-07:10:15.114  56=4444_admin  57=51  347=UTF-8  1=00010  11=505  37=0  39=8  41=110  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=091  
+2025-11-27 14:52:03,250 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.13---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:03,251 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.13---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:03,252 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.13---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:03,252 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:04,229 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:04,230 - root - INFO - CaseNo: 14 start...
+2025-11-27 14:52:04,230 - root - INFO - NewOrderSingle
+2025-11-27 14:52:04,231 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=52  49=4444_admin  50=52  52=20251127-06:52:04.000  56=4444  1=00010  11=112  21=3  38=1  40=2  44=5012  54=1  55=rb1205  59=0  60=20251127-06:52:04.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=248  
+2025-11-27 14:52:04,258 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=52  49=4444  52=20251127-07:10:16.126  56=4444_admin  57=52  347=UTF-8  1=00010  6=0  11=112  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5012  54=1  55=rb1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=075  
+2025-11-27 14:52:04,259 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.14---different:tag-44,exp:5003,rel:5012
+2025-11-27 14:52:04,259 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.14---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:04,260 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.14---different:tag-150,exp:0,rel:8
+2025-11-27 14:52:04,260 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:4.14---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:04,260 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:05,239 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:05,240 - root - INFO - CaseNo: 15 start...
+2025-11-27 14:52:05,240 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:05,241 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=53  49=4444_admin  50=53  52=20251127-06:52:05.000  56=4444  1=00010  11=506  37=            38=2  41=112  44=5013  54=1  55=rb1205  77=O  207=SHFE  20004=100  20005=-167837683  10=129  
+2025-11-27 14:52:05,266 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=53  49=4444  52=20251127-07:10:17.134  56=4444_admin  57=53  347=UTF-8  1=00010  11=506  37=0  39=8  41=112  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=102  
+2025-11-27 14:52:05,267 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:5.15---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:05,267 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:5.15---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:05,267 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:5.15---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:05,267 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:06,249 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:06,249 - root - INFO - CaseNo: 16 start...
+2025-11-27 14:52:06,249 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:06,250 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=54  49=4444_admin  50=54  52=20251127-06:52:06.000  56=4444  1=00010  11=507  37=            38=3  41=113  44=5014  54=1  55=rb1205  77=O  207=SHFE  20004=100  20005=-167837683  10=136  
+2025-11-27 14:52:06,252 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=54  49=4444  52=20251127-07:10:18.142  56=4444_admin  57=54  347=UTF-8  45=54  58=FIX:Message 54 Rejected: Other:The original order 113 cannot be found.   354=71  355=FIX:Message 54 Rejected: Other:The original order 113 cannot be found.   372=G  380=0  10=136  
+2025-11-27 14:52:06,252 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:5.16---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:06,252 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:5.16---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:06,253 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:07,265 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:07,266 - root - INFO - CaseNo: 17 start...
+2025-11-27 14:52:07,266 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:07,267 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=55  49=4444_admin  50=55  52=20251127-06:52:07.000  56=4444  1=00010  11=508  37=            38=4  41=112  44=5015  54=1  55=rb1205  77=O  207=SHFE  20004=100  20005=-167837683  10=141  
+2025-11-27 14:52:07,290 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=55  49=4444  52=20251127-07:10:19.161  56=4444_admin  57=55  347=UTF-8  1=00010  11=508  37=0  39=8  41=112  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=110  
+2025-11-27 14:52:07,290 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.17---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:07,291 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.17---different:tag-39,exp:6,rel:8
+2025-11-27 14:52:07,291 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.17---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:07,291 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:08,279 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:08,279 - root - INFO - CaseNo: 18 start...
+2025-11-27 14:52:08,279 - root - INFO - NewOrderSingle
+2025-11-27 14:52:08,280 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=56  49=4444_admin  50=56  52=20251127-06:52:08.000  56=4444  1=00010  11=116  21=3  38=1  40=2  44=5016  54=1  55=rb1205  59=0  60=20251127-06:52:08.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=016  
+2025-11-27 14:52:08,299 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=56  49=4444  52=20251127-07:10:20.174  56=4444_admin  57=56  347=UTF-8  1=00010  6=0  11=116  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5016  54=1  55=rb1205  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=089  
+2025-11-27 14:52:08,300 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.18---different:tag-54,exp:2,rel:1
+2025-11-27 14:52:08,300 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.18---different:tag-44,exp:5004,rel:5016
+2025-11-27 14:52:08,301 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.18---different:tag-39,exp:4,rel:8
+2025-11-27 14:52:08,301 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.18---different:tag-150,exp:4,rel:8
+2025-11-27 14:52:08,301 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.18---different:tag-55,exp:rb1206,rel:rb1205
+2025-11-27 14:52:08,301 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.18---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:08,301 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:09,286 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:09,286 - root - INFO - CaseNo: 19 start...
+2025-11-27 14:52:09,287 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:09,288 - root - INFO - send to app: 8=FIX.4.2  9=174  35=G  34=57  49=4444_admin  50=57  52=20251127-06:52:09.000  56=4444  1=00010  11=509  37=            38=2  41=00000001  44=5018  54=1  55=rb1205  77=O  207=SHFE  20004=100  20005=-167837683  10=126  
+2025-11-27 14:52:09,289 - root - INFO - fromapp: 8=FIX.4.2  9=260  35=j  34=57  49=4444  52=20251127-07:10:21.180  56=4444_admin  57=57  347=UTF-8  45=57  58=FIX:Message 57 Rejected: Other:The original order 00000001 cannot be found.   354=76  355=FIX:Message 57 Rejected: Other:The original order 00000001 cannot be found.   372=G  380=0  10=113  
+2025-11-27 14:52:09,290 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.19---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:09,290 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.19---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:09,290 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:10,297 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:10,297 - root - INFO - CaseNo: 20 start...
+2025-11-27 14:52:10,298 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:10,299 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=58  49=4444_admin  50=58  52=20251127-06:52:10.000  56=4444  1=00010  11=510  37=            38=3  41=116  44=5019  54=1  55=rb1207  77=O  207=SHFE  20004=100  20005=-167837683  10=143  
+2025-11-27 14:52:10,301 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=58  49=4444  52=20251127-07:10:22.191  56=4444_admin  57=58  347=UTF-8  45=58  58=FIX:Message 58 Rejected: Other:The original order 116 cannot be found.   354=71  355=FIX:Message 58 Rejected: Other:The original order 116 cannot be found.   372=G  380=0  10=161  
+2025-11-27 14:52:10,301 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.20---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:10,302 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.20---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:10,302 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:11,314 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:11,315 - root - INFO - CaseNo: 21 start...
+2025-11-27 14:52:11,315 - root - INFO - NewOrderSingle
+2025-11-27 14:52:11,316 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=59  49=4444_admin  50=59  52=20251127-06:52:11.000  56=4444  1=00010  11=117  21=3  38=1  40=2  44=5017  54=2  55=rb1206  59=0  60=20251127-06:52:11.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=014  
+2025-11-27 14:52:11,343 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=59  49=4444  52=20251127-07:10:23.212  56=4444_admin  57=59  347=UTF-8  1=00010  6=0  11=117  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5017  54=2  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=095  
+2025-11-27 14:52:11,343 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.21---different:tag-77,exp:F,rel:O
+2025-11-27 14:52:11,344 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.21---different:tag-44,exp:5004,rel:5017
+2025-11-27 14:52:11,344 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.21---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:11,344 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.21---different:tag-150,exp:0,rel:8
+2025-11-27 14:52:11,344 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:6.21---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:11,345 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:12,321 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:12,322 - root - INFO - CaseNo: 22 start...
+2025-11-27 14:52:12,323 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:12,323 - root - INFO - send to app: 8=FIX.4.2  9=168  35=G  34=60  49=4444_admin  50=60  52=20251127-06:52:12.000  56=4444  1=00010  11=511  37=            38=5  41=117  44=5020  54=2  55=rb1206  77=  207=SHFE  20004=100  20005=-167837683  10=047  
+2025-11-27 14:52:12,345 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=60  49=4444  52=20251127-07:10:24.216  56=4444_admin  57=60  347=UTF-8  1=00010  11=511  37=0  39=8  41=117  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=098  
+2025-11-27 14:52:12,347 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:7.22---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:12,348 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:7.22---different:tag-39,exp:6,rel:8
+2025-11-27 14:52:12,349 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:7.22---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:12,349 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:13,327 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:13,328 - root - INFO - CaseNo: 23 start...
+2025-11-27 14:52:13,328 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:13,329 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=61  49=4444_admin  50=61  52=20251127-06:52:13.000  56=4444  1=00010  11=512  37=            38=4  41=118  44=5021  54=2  55=rb1206  77=O  207=SHFE  20004=100  20005=-167837683  10=132  
+2025-11-27 14:52:13,330 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=61  49=4444  52=20251127-07:10:25.220  56=4444_admin  57=61  347=UTF-8  45=61  58=FIX:Message 61 Rejected: Other:The original order 118 cannot be found.   354=71  355=FIX:Message 61 Rejected: Other:The original order 118 cannot be found.   372=G  380=0  10=131  
+2025-11-27 14:52:13,331 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:7.23---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:13,331 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:7.23---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:13,331 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:14,338 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:14,338 - root - INFO - CaseNo: 24 start...
+2025-11-27 14:52:14,339 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:14,339 - root - INFO - send to app: 8=FIX.4.2  9=168  35=G  34=62  49=4444_admin  50=62  52=20251127-06:52:14.000  56=4444  1=00010  11=513  37=            38=9  41=119  44=5022  54=2  55=rb1206  77=  207=SHFE  20004=100  20005=-167837683  10=063  
+2025-11-27 14:52:14,341 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=62  49=4444  52=20251127-07:10:26.231  56=4444_admin  57=62  347=UTF-8  45=62  58=FIX:Message 62 Rejected: Other:The original order 119 cannot be found.   354=71  355=FIX:Message 62 Rejected: Other:The original order 119 cannot be found.   372=G  380=0  10=141  
+2025-11-27 14:52:14,342 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:7.24---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:14,342 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:7.24---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:14,342 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:15,349 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:15,350 - root - INFO - CaseNo: 25 start...
+2025-11-27 14:52:15,350 - root - INFO - OrderCancelRequest
+2025-11-27 14:52:15,351 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=63  49=4444_admin  50=63  52=20251127-06:52:15.000  56=4444  1=00010  11=801  37=            41=121  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=096  
+2025-11-27 14:52:15,353 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=63  49=4444  52=20251127-07:10:27.243  56=4444_admin  57=63  347=UTF-8  45=63  58=FIX:Message 63 Rejected: Other:The original order 121 cannot be found.   354=71  355=FIX:Message 63 Rejected: Other:The original order 121 cannot be found.   372=F  380=0  10=135  
+2025-11-27 14:52:15,353 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:8.25---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:15,354 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:8.25---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:15,354 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:16,364 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:16,365 - root - INFO - CaseNo: 26 start...
+2025-11-27 14:52:16,365 - root - INFO - OrderCancelRequest
+2025-11-27 14:52:16,365 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=64  49=4444_admin  50=64  52=20251127-06:52:16.000  56=4444  1=00010  11=802  37=            41=122  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=101  
+2025-11-27 14:52:16,367 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=64  49=4444  52=20251127-07:10:28.257  56=4444_admin  57=64  347=UTF-8  45=64  58=FIX:Message 64 Rejected: Other:The original order 122 cannot be found.   354=71  355=FIX:Message 64 Rejected: Other:The original order 122 cannot be found.   372=F  380=0  10=148  
+2025-11-27 14:52:16,368 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:8.26---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:16,368 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:8.26---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:16,368 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:17,370 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:17,371 - root - INFO - CaseNo: 27 start...
+2025-11-27 14:52:17,371 - root - INFO - NewOrderSingle
+2025-11-27 14:52:17,371 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=65  49=4444_admin  50=65  52=20251127-06:52:17.000  56=4444  1=00010  11=123  21=3  38=4  40=2  44=5021  54=1  55=rb1206  59=0  60=20251127-06:52:17.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=014  
+2025-11-27 14:52:17,393 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=65  49=4444  52=20251127-07:10:29.264  56=4444_admin  57=65  347=UTF-8  1=00010  6=0  11=123  14=0  17=0  20=0  37=0  38=4  39=8  40=2  44=5021  54=1  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=096  
+2025-11-27 14:52:17,394 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.27---different:tag-44,exp:5006,rel:5021
+2025-11-27 14:52:17,394 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.27---different:tag-38,exp:1,rel:4
+2025-11-27 14:52:17,394 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.27---different:tag-39,exp:6,rel:8
+2025-11-27 14:52:17,394 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.27---different:tag-150,exp:6,rel:8
+2025-11-27 14:52:17,394 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.27---different:tag-55,exp:rb1205,rel:rb1206
+2025-11-27 14:52:17,395 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.27---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:17,395 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:18,383 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:18,384 - root - INFO - CaseNo: 28 start...
+2025-11-27 14:52:18,384 - root - INFO - NewOrderSingle
+2025-11-27 14:52:18,384 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=66  49=4444_admin  50=66  52=20251127-06:52:18.000  56=4444  1=00010  11=124  21=3  38=1  40=2  44=5024  54=1  55=rb1206  59=0  60=20251127-06:52:18.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=019  
+2025-11-27 14:52:18,409 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=66  49=4444  52=20251127-07:10:30.278  56=4444_admin  57=66  347=UTF-8  1=00010  6=0  11=124  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5024  54=1  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=096  
+2025-11-27 14:52:18,410 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.28---different:tag-44,exp:5006,rel:5024
+2025-11-27 14:52:18,410 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.28---different:tag-39,exp:4,rel:8
+2025-11-27 14:52:18,410 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.28---different:tag-150,exp:4,rel:8
+2025-11-27 14:52:18,410 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.28---different:tag-55,exp:rb1205,rel:rb1206
+2025-11-27 14:52:18,410 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.28---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:18,410 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:19,385 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:19,386 - root - INFO - CaseNo: 29 start...
+2025-11-27 14:52:19,386 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:19,386 - root - INFO - send to app: 8=FIX.4.2  9=168  35=G  34=67  49=4444_admin  50=67  52=20251127-06:52:19.000  56=4444  1=00010  11=514  37=            38=5  41=124  44=5025  54=1  55=rb1206  77=  207=SHFE  20004=100  20005=-167837683  10=073  
+2025-11-27 14:52:19,989 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=67  49=4444  52=20251127-07:10:31.280  56=4444_admin  57=67  347=UTF-8  1=00010  11=514  37=0  39=8  41=124  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=112  
+2025-11-27 14:52:19,990 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.29---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:19,990 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.29---different:tag-39,exp:4,rel:8
+2025-11-27 14:52:19,990 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.29---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:19,991 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.29---different:tag-11,exp:503,rel:514
+2025-11-27 14:52:19,991 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:20,402 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:20,403 - root - INFO - CaseNo: 30 start...
+2025-11-27 14:52:20,403 - root - INFO - OrderCancelRequest
+2025-11-27 14:52:20,404 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=68  49=4444_admin  50=68  52=20251127-06:52:20.000  56=4444  1=00010  11=803  37=            41=125  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=108  
+2025-11-27 14:52:20,406 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=68  49=4444  52=20251127-07:10:32.296  56=4444_admin  57=68  347=UTF-8  45=68  58=FIX:Message 68 Rejected: Other:The original order 125 cannot be found.   354=71  355=FIX:Message 68 Rejected: Other:The original order 125 cannot be found.   372=F  380=0  10=172  
+2025-11-27 14:52:20,407 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.30---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:20,407 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.30---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:20,407 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:21,412 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:21,412 - root - INFO - CaseNo: 31 start...
+2025-11-27 14:52:21,412 - root - INFO - OrderCancelRequest
+2025-11-27 14:52:21,413 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=69  49=4444_admin  50=69  52=20251127-06:52:21.000  56=4444  1=00010  11=804  37=            41=126  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=113  
+2025-11-27 14:52:21,414 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=69  49=4444  52=20251127-07:10:33.305  56=4444_admin  57=69  347=UTF-8  45=69  58=FIX:Message 69 Rejected: Other:The original order 126 cannot be found.   354=71  355=FIX:Message 69 Rejected: Other:The original order 126 cannot be found.   372=F  380=0  10=171  
+2025-11-27 14:52:21,414 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.31---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:21,415 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:9.31---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:21,415 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:22,418 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:22,418 - root - INFO - CaseNo: 32 start...
+2025-11-27 14:52:22,419 - root - INFO - NewOrderSingle
+2025-11-27 14:52:22,419 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=70  49=4444_admin  50=70  52=20251127-06:52:22.000  56=4444  1=00010  11=127  21=3  38=1  40=2  44=5026  54=2  55=rb1206  59=0  60=20251127-06:52:22.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=005  
+2025-11-27 14:52:22,440 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=70  49=4444  52=20251127-07:10:34.313  56=4444_admin  57=70  347=UTF-8  1=00010  6=0  11=127  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5026  54=2  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=086  
+2025-11-27 14:52:22,440 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.32---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:22,441 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.32---different:tag-44,exp:3008,rel:5026
+2025-11-27 14:52:22,441 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.32---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:22,441 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.32---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:22,441 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.32---different:tag-55,exp:cu1205c63000,rel:rb1206
+2025-11-27 14:52:22,441 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.32---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:22,441 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:23,433 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:23,434 - root - INFO - CaseNo: 33 start...
+2025-11-27 14:52:23,434 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:23,434 - root - INFO - send to app: 8=FIX.4.2  9=168  35=G  34=71  49=4444_admin  50=71  52=20251127-06:52:23.000  56=4444  1=00010  11=515  37=            38=9  41=127  44=5027  54=2  55=rb1206  77=  207=SHFE  20004=100  20005=-167837683  10=069  
+2025-11-27 14:52:23,456 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=71  49=4444  52=20251127-07:10:35.327  56=4444_admin  57=71  347=UTF-8  1=00010  11=515  37=0  39=8  41=127  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=112  
+2025-11-27 14:52:23,457 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.33---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:23,458 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.33---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:23,458 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:10.33---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:23,458 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:24,443 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:24,444 - root - INFO - CaseNo: 34 start...
+2025-11-27 14:52:24,444 - root - INFO - OrderCancelRequest
+2025-11-27 14:52:24,444 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=72  49=4444_admin  50=72  52=20251127-06:52:24.000  56=4444  1=00010  11=805  37=            41=128  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=107  
+2025-11-27 14:52:24,446 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=72  49=4444  52=20251127-07:10:36.337  56=4444_admin  57=72  347=UTF-8  45=72  58=FIX:Message 72 Rejected: Other:The original order 128 cannot be found.   354=71  355=FIX:Message 72 Rejected: Other:The original order 128 cannot be found.   372=F  380=0  10=153  
+2025-11-27 14:52:24,446 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.34---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:24,447 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.34---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:24,447 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:25,455 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:25,456 - root - INFO - CaseNo: 35 start...
+2025-11-27 14:52:25,456 - root - INFO - OrderCancelRequest
+2025-11-27 14:52:25,456 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=73  49=4444_admin  50=73  52=20251127-06:52:25.000  56=4444  1=00010  11=806  37=            41=129  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=112  
+2025-11-27 14:52:25,458 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=73  49=4444  52=20251127-07:10:37.349  56=4444_admin  57=73  347=UTF-8  45=73  58=FIX:Message 73 Rejected: Other:The original order 129 cannot be found.   354=71  355=FIX:Message 73 Rejected: Other:The original order 129 cannot be found.   372=F  380=0  10=164  
+2025-11-27 14:52:25,459 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.35---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:25,460 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.35---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:25,460 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:26,459 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:26,460 - root - INFO - CaseNo: 36 start...
+2025-11-27 14:52:26,460 - root - INFO - NewOrderSingle
+2025-11-27 14:52:26,461 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=74  49=4444_admin  50=74  52=20251127-06:52:26.000  56=4444  1=00010  11=131  21=3  38=1  40=2  44=5027  54=1  55=rb1206  59=0  60=20251127-06:52:26.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=016  
+2025-11-27 14:52:26,503 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=74  49=4444  52=20251127-07:10:38.354  56=4444_admin  57=74  347=UTF-8  1=00010  6=0  11=131  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=5027  54=1  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=098  
+2025-11-27 14:52:26,503 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.36---different:tag-44,exp:3008,rel:5027
+2025-11-27 14:52:26,504 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.36---different:tag-39,exp:4,rel:8
+2025-11-27 14:52:26,504 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.36---different:tag-150,exp:4,rel:8
+2025-11-27 14:52:26,504 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.36---different:tag-55,exp:cu1205c63000,rel:rb1206
+2025-11-27 14:52:26,504 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.36---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:26,504 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.36---different:tag-11,exp:504,rel:131
+2025-11-27 14:52:26,504 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:27,467 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:27,468 - root - INFO - CaseNo: 37 start...
+2025-11-27 14:52:27,468 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:27,469 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=75  49=4444_admin  50=75  52=20251127-06:52:27.000  56=4444  1=00010  11=516  37=            38=5  41=130  44=5028  54=2  55=rb1206  77=O  207=SHFE  20004=100  20005=-167837683  10=153  
+2025-11-27 14:52:27,474 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=75  49=4444  52=20251127-07:10:39.362  56=4444_admin  57=75  347=UTF-8  45=75  58=FIX:Message 75 Rejected: Other:The original order 130 cannot be found.   354=71  355=FIX:Message 75 Rejected: Other:The original order 130 cannot be found.   372=G  380=0  10=156  
+2025-11-27 14:52:27,475 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.37---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:27,475 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.37---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:27,475 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:28,478 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:28,479 - root - INFO - CaseNo: 38 start...
+2025-11-27 14:52:28,479 - root - INFO - NewOrderSingle
+2025-11-27 14:52:28,480 - root - INFO - send to app: 8=FIX.4.2  9=186  35=D  34=76  49=4444_admin  50=76  52=20251127-06:52:28.000  56=4444  1=00010  11=133  21=3  38=6  40=2  44=5028  54=1  55=rb1206  59=0  60=20251127-06:52:28.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=032  
+2025-11-27 14:52:28,499 - root - INFO - fromapp: 8=FIX.4.2  9=348  35=8  34=76  49=4444  52=20251127-07:10:40.373  56=4444_admin  57=76  347=UTF-8  1=00010  6=0  11=133  14=0  17=0  20=0  37=0  38=6  39=8  40=2  44=5028  54=1  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=104  
+2025-11-27 14:52:28,500 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.38---different:tag-44,exp:3009,rel:5028
+2025-11-27 14:52:28,500 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.38---different:tag-38,exp:3,rel:6
+2025-11-27 14:52:28,500 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.38---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:28,501 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.38---different:tag-150,exp:0,rel:8
+2025-11-27 14:52:28,501 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.38---different:tag-151,exp:3,rel:0
+2025-11-27 14:52:28,501 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.38---different:tag-55,exp:cu1205c63000,rel:rb1206
+2025-11-27 14:52:28,501 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:11.38---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:28,501 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:29,492 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:29,493 - root - INFO - CaseNo: 39 start...
+2025-11-27 14:52:29,493 - root - INFO - OrderCancelReplaceRequest
+2025-11-27 14:52:29,494 - root - INFO - send to app: 8=FIX.4.2  9=169  35=G  34=77  49=4444_admin  50=77  52=20251127-06:52:29.000  56=4444  1=00010  11=517  37=            38=1  41=133  44=5029  54=1  55=rb1206  77=O  207=SHFE  20004=100  20005=-167837683  10=159  
+2025-11-27 14:52:29,518 - root - INFO - fromapp: 8=FIX.4.2  9=258  35=9  34=77  49=4444  52=20251127-07:10:41.387  56=4444_admin  57=77  347=UTF-8  1=00010  11=517  37=0  39=8  41=133  58=ErrorID=[25];ErrorMsg=[CTP:\udcb3\udcb7\udcb5\udca5\udcd5\u04b2\udcbb\udcb5\udcbd\udccf\udce0\u04e6\udcb1\udca8\udcb5\udca5]   354=56  355=ErrorID=[25];ErrorMsg=[CTP:\u64a4\u5355\u627e\u4e0d\u5230\u76f8\u5e94\u62a5\u5355]   434=1  20004=100  20005=-167837683  10=126  
+2025-11-27 14:52:29,519 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:12.39---different:tag-35,exp:8,rel:9
+2025-11-27 14:52:29,519 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:12.39---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:29,519 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:12.39---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:29,519 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:30,500 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:30,501 - root - INFO - CaseNo: 40 start...
+2025-11-27 14:52:30,501 - root - INFO - OrderCancelRequest
+2025-11-27 14:52:30,503 - root - INFO - send to app: 8=FIX.4.2  9=146  35=F  34=78  49=4444_admin  50=78  52=20251127-06:52:30.000  56=4444  1=00010  11=807  37=            41=134  55=rb1206  207=SHFE  20004=100  20005=-167837683  10=115  
+2025-11-27 14:52:30,504 - root - INFO - fromapp: 8=FIX.4.2  9=250  35=j  34=78  49=4444  52=20251127-07:10:42.395  56=4444_admin  57=78  347=UTF-8  45=78  58=FIX:Message 78 Rejected: Other:The original order 134 cannot be found.   354=71  355=FIX:Message 78 Rejected: Other:The original order 134 cannot be found.   372=F  380=0  10=178  
+2025-11-27 14:52:30,505 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:12.40---different:tag-35,exp:8,rel:j
+2025-11-27 14:52:30,505 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:12.40---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:30,505 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:31,516 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:31,516 - root - INFO - CaseNo: 41 start...
+2025-11-27 14:52:31,517 - root - INFO - NewOrderSingle
+2025-11-27 14:52:31,517 - root - INFO - send to app: 8=FIX.4.2  9=187  35=D  34=79  49=4444_admin  50=79  52=20251127-06:52:31.000  56=4444  1=00010  11=135  21=3  38=10  40=2  44=5029  54=1  55=rb1206  59=0  60=20251127-06:52:31.0  77=C  99=0  110=0  207=SHFE  20001=1  20002=N  10=061  
+2025-11-27 14:52:31,539 - root - INFO - fromapp: 8=FIX.4.2  9=349  35=8  34=79  49=4444  52=20251127-07:10:43.411  56=4444_admin  57=79  347=UTF-8  1=00010  6=0  11=135  14=0  17=0  20=0  37=0  38=10  39=8  40=2  44=5029  54=1  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=C  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=141  
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-77,exp:O,rel:C
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-44,exp:5010,rel:5029
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-38,exp:1,rel:10
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-39,exp:6,rel:8
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-150,exp:6,rel:8
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-55,exp:rb1205,rel:rb1206
+2025-11-27 14:52:31,540 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.41---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:31,540 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:32,519 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:32,520 - root - INFO - CaseNo: 42 start...
+2025-11-27 14:52:32,520 - root - INFO - NewOrderSingle
+2025-11-27 14:52:32,521 - root - INFO - send to app: 8=FIX.4.2  9=187  35=D  34=80  49=4444_admin  50=80  52=20251127-06:52:32.000  56=4444  1=00010  11=136  21=3  38=10  40=2  44=5029  54=2  55=rb1206  59=0  60=20251127-06:52:32.0  77=C  99=0  110=0  207=SHFE  20001=1  20002=N  10=049  
+2025-11-27 14:52:32,543 - root - INFO - fromapp: 8=FIX.4.2  9=349  35=8  34=80  49=4444  52=20251127-07:10:44.415  56=4444_admin  57=80  347=UTF-8  1=00010  6=0  11=136  14=0  17=0  20=0  37=0  38=10  39=8  40=2  44=5029  54=2  55=rb1206  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=C  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=132  
+2025-11-27 14:52:32,544 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:32,544 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-77,exp:O,rel:C
+2025-11-27 14:52:32,545 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-44,exp:5010,rel:5029
+2025-11-27 14:52:32,545 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-38,exp:1,rel:10
+2025-11-27 14:52:32,545 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-39,exp:4,rel:8
+2025-11-27 14:52:32,545 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-150,exp:4,rel:8
+2025-11-27 14:52:32,545 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-55,exp:rb1205,rel:rb1206
+2025-11-27 14:52:32,545 - root - WARNING - CaseNo:orderCancelReplace-00010-4.xlsx:13.42---different:tag-56,exp:00010,rel:4444_admin
+2025-11-27 14:52:32,545 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:34,461 - root - INFO - send to admin: 8=FIX.4.2  9=64  35=5  34=81  49=4444_admin  50=81  52=20251127-06:52:34.000  56=4444  10=029  
+2025-11-27 14:52:34,464 - root - INFO - fromadmin: 8=FIX.4.2  9=118  35=5  34=81  49=4444  52=20251127-07:10:46.355  56=4444_admin  57=81  347=UTF-8  58=FIX: No Error   354=14  355=FIX: No Error   10=228  
+2025-11-27 14:52:35,646 - root - INFO - session create: FIX.4.2:4444_admin->4444
+2025-11-27 14:52:35,661 - root - INFO - Logging on..
+2025-11-27 14:52:36,675 - root - INFO - send to admin: 8=FIX.4.2  9=100  35=A  34=82  49=4444_admin  50=82  52=20251127-06:52:35.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=047  
+2025-11-27 14:52:36,689 - root - INFO - fromadmin: 8=FIX.4.2  9=119  35=A  34=82  49=4444  52=20251127-07:10:48.577  56=4444_admin  57=82  116=12289  98=0  108=60  141=N  20004=100  20005=-166330354  10=134  
+2025-11-27 14:52:36,690 - root - INFO - logon on sucess!
+2025-11-27 14:52:36,690 - root - WARNING - CaseNo:TJOrder-00003.xlsx:0.1---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:36,690 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:36,690 - root - INFO - onlogon: FIX.4.2:4444_admin->4444
+2025-11-27 14:52:38,667 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:38,668 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:52:38,668 - root - INFO - NewOrderSingle
+2025-11-27 14:52:38,669 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=83  49=4444_admin  50=83  52=20251127-06:52:38.000  56=4444  1=00003  11=100  21=3  38=1  40=2  44=305  54=1  55=au1203  59=0  60=20251127-06:52:38.0  77=O  99=315  110=0  207=SHFE  20001=1  20002=N  20006=5  10=177  
+2025-11-27 14:52:38,695 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=83  49=4444  52=20251127-07:10:50.562  56=4444_admin  57=83  347=UTF-8  1=00003  6=0  11=100  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  99=315  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=5  10=212  
+2025-11-27 14:52:38,696 - root - WARNING - CaseNo:TJOrder-00003.xlsx:1.1---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:38,696 - root - WARNING - CaseNo:TJOrder-00003.xlsx:1.1---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:38,696 - root - WARNING - CaseNo:TJOrder-00003.xlsx:1.1---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:38,696 - root - WARNING - CaseNo:TJOrder-00003.xlsx:1.1---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:38,697 - root - WARNING - CaseNo:TJOrder-00003.xlsx:1.1---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:38,697 - root - WARNING - CaseNo:TJOrder-00003.xlsx:1.1---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:38,697 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:39,672 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:39,675 - root - INFO - CaseNo: 2 start...
+2025-11-27 14:52:39,676 - root - INFO - NewOrderSingle
+2025-11-27 14:52:39,679 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=84  49=4444_admin  50=84  52=20251127-06:52:39.000  56=4444  1=00003  11=101  21=3  38=1  40=2  44=305  54=1  55=au1203  59=0  60=20251127-06:52:39.0  77=O  99=300  110=0  207=SHFE  20001=1  20002=N  20006=5  10=176  
+2025-11-27 14:52:39,701 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=84  49=4444  52=20251127-07:10:51.573  56=4444_admin  57=84  347=UTF-8  1=00003  6=0  11=101  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  99=300  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=5  10=212  
+2025-11-27 14:52:39,701 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.2---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:39,701 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.2---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:39,702 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.2---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:39,702 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.2---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:39,702 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.2---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:39,702 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.2---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:39,702 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:40,682 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:40,683 - root - INFO - CaseNo: 3 start...
+2025-11-27 14:52:40,683 - root - INFO - NewOrderSingle
+2025-11-27 14:52:40,684 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=85  49=4444_admin  50=85  52=20251127-06:52:40.000  56=4444  1=00003  11=102  21=3  38=1  40=2  44=305  54=1  55=au1203  59=0  60=20251127-06:52:40.0  77=O  99=300  110=0  207=SHFE  20001=1  20002=N  20006=7  10=165  
+2025-11-27 14:52:40,708 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=85  49=4444  52=20251127-07:10:52.577  56=4444_admin  57=85  347=UTF-8  1=00003  6=0  11=102  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  99=300  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=7  10=222  
+2025-11-27 14:52:40,709 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.3---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:40,709 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.3---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:40,709 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.3---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:40,709 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.3---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:40,709 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.3---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:40,709 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.3---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:40,709 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.3---different:tag-20006,exp:5,rel:7
+2025-11-27 14:52:40,709 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:41,699 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:41,699 - root - INFO - CaseNo: 4 start...
+2025-11-27 14:52:41,700 - root - INFO - NewOrderSingle
+2025-11-27 14:52:41,701 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=86  49=4444_admin  50=86  52=20251127-06:52:41.000  56=4444  1=00003  11=103  21=3  38=1  40=2  44=305  54=1  55=au1203  59=0  60=20251127-06:52:41.0  77=O  99=315  110=0  207=SHFE  20001=1  20002=N  20006=7  10=176  
+2025-11-27 14:52:41,722 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=86  49=4444  52=20251127-07:10:53.594  56=4444_admin  57=86  347=UTF-8  1=00003  6=0  11=103  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  99=315  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=7  10=231  
+2025-11-27 14:52:41,723 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.4---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:41,723 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.4---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:41,723 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.4---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:41,723 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.4---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:41,724 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.4---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:41,724 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.4---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:41,724 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.4---different:tag-20006,exp:5,rel:7
+2025-11-27 14:52:41,724 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:42,709 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:42,709 - root - INFO - CaseNo: 5 start...
+2025-11-27 14:52:42,709 - root - INFO - NewOrderSingle
+2025-11-27 14:52:42,710 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=87  49=4444_admin  50=87  52=20251127-06:52:42.000  56=4444  1=00003  11=104  21=3  38=1  40=2  44=305  54=1  55=au1203  59=1  60=20251127-06:52:42.0  77=O  99=315  110=0  207=SHFE  20001=1  20002=N  20006=6  10=181  
+2025-11-27 14:52:42,736 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=87  49=4444  52=20251127-07:10:54.603  56=4444_admin  57=87  347=UTF-8  1=00003  6=0  11=104  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=1  77=O  99=315  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=6  10=226  
+2025-11-27 14:52:42,737 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:42,737 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-150,exp:0,rel:8
+2025-11-27 14:52:42,737 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-59,exp:0,rel:1
+2025-11-27 14:52:42,737 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:42,737 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:42,737 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:42,738 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-150,exp:0,rel:8
+2025-11-27 14:52:42,738 - root - WARNING - CaseNo:TJOrder-00003.xlsx:2.5---different:tag-20006,exp:5,rel:6
+2025-11-27 14:52:42,738 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:43,720 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:43,835 - root - INFO - CaseNo: 6 start...
+2025-11-27 14:52:43,835 - root - INFO - NewOrderSingle
+2025-11-27 14:52:43,836 - root - INFO - send to app: 8=FIX.4.2  9=198  35=D  34=88  49=4444_admin  50=88  52=20251127-06:52:43.000  56=4444  1=00003  11=105  21=3  38=1  40=2  44=305  54=1  55=au1203  59=1  60=20251127-06:52:43.0  77=O  99=305.71  110=0  207=SHFE  20001=1  20002=N  20006=6  10=082  
+2025-11-27 14:52:43,861 - root - INFO - fromapp: 8=FIX.4.2  9=365  35=8  34=88  49=4444  52=20251127-07:10:55.730  56=4444_admin  57=88  347=UTF-8  1=00003  6=0  11=105  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=1  77=O  99=305.71  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=6  10=127  
+2025-11-27 14:52:43,861 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:43,861 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:43,862 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-59,exp:0,rel:1
+2025-11-27 14:52:43,862 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:43,862 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:43,862 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:43,862 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:43,862 - root - WARNING - CaseNo:TJOrder-00003.xlsx:3.6---different:tag-20006,exp:7,rel:6
+2025-11-27 14:52:43,862 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:44,846 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:44,846 - root - INFO - CaseNo: 7 start...
+2025-11-27 14:52:44,846 - root - INFO - NewOrderSingle
+2025-11-27 14:52:44,847 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=89  49=4444_admin  50=89  52=20251127-06:52:44.000  56=4444  1=00003  11=106  21=3  38=1  40=2  44=305  54=1  55=au1203  59=2  60=20251127-06:52:44.0  77=O  99=300  110=0  207=SHFE  20001=1  20002=N  20006=8  10=188  
+2025-11-27 14:52:44,871 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=89  49=4444  52=20251127-07:10:56.740  56=4444_admin  57=89  347=UTF-8  1=00003  6=0  11=106  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=2  77=O  99=300  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=8  10=233  
+2025-11-27 14:52:44,872 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:44,872 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:44,872 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-59,exp:0,rel:2
+2025-11-27 14:52:44,873 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:44,873 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:44,873 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:44,873 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:44,873 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.7---different:tag-20006,exp:7,rel:8
+2025-11-27 14:52:44,873 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:45,859 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:45,859 - root - INFO - CaseNo: 8 start...
+2025-11-27 14:52:45,860 - root - INFO - NewOrderSingle
+2025-11-27 14:52:45,860 - root - INFO - send to app: 8=FIX.4.2  9=198  35=D  34=90  49=4444_admin  50=90  52=20251127-06:52:45.000  56=4444  1=00003  11=107  21=3  38=1  40=2  44=305  54=1  55=au1203  59=2  60=20251127-06:52:45.0  77=O  99=305.71  110=0  207=SHFE  20001=1  20002=N  20006=8  10=077  
+2025-11-27 14:52:45,890 - root - INFO - fromapp: 8=FIX.4.2  9=365  35=8  34=90  49=4444  52=20251127-07:10:57.754  56=4444_admin  57=90  347=UTF-8  1=00003  6=0  11=107  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=305  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=2  77=O  99=305.71  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=8  10=126  
+2025-11-27 14:52:45,891 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:45,892 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:45,892 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-59,exp:0,rel:2
+2025-11-27 14:52:45,892 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:45,893 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:45,893 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:45,893 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:45,893 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.8---different:tag-20006,exp:7,rel:8
+2025-11-27 14:52:45,893 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:46,873 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:46,874 - root - INFO - CaseNo: 9 start...
+2025-11-27 14:52:46,874 - root - INFO - NewOrderSingle
+2025-11-27 14:52:46,874 - root - INFO - send to app: 8=FIX.4.2  9=185  35=D  34=91  49=4444_admin  50=91  52=20251127-06:52:46.000  56=4444  1=00003  11=108  21=3  38=1  40=2  44=315  54=2  55=au1203  59=0  60=20251127-06:52:46.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=226  
+2025-11-27 14:52:46,897 - root - INFO - fromapp: 8=FIX.4.2  9=347  35=8  34=91  49=4444  52=20251127-07:10:58.768  56=4444_admin  57=91  347=UTF-8  1=00003  6=0  11=108  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=059  
+2025-11-27 14:52:46,898 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:46,899 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:46,899 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:46,899 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:46,899 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:46,899 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:46,900 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:46,900 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.9---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:46,900 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:47,885 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:47,886 - root - INFO - CaseNo: 10 start...
+2025-11-27 14:52:47,886 - root - INFO - NewOrderSingle
+2025-11-27 14:52:47,887 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=92  49=4444_admin  50=92  52=20251127-06:52:47.000  56=4444  1=00003  11=109  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:47.0  77=O  99=318  110=0  207=SHFE  20001=1  20002=N  20006=9  10=198  
+2025-11-27 14:52:47,918 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=92  49=4444  52=20251127-07:10:59.782  56=4444_admin  57=92  347=UTF-8  1=00003  6=0  11=109  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=318  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=9  10=246  
+2025-11-27 14:52:47,919 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:47,919 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:47,920 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:47,920 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-150,exp:0,rel:8
+2025-11-27 14:52:47,920 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-59,exp:0,rel:3
+2025-11-27 14:52:47,920 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:47,920 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:47,921 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-39,exp:0,rel:8
+2025-11-27 14:52:47,921 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-150,exp:0,rel:8
+2025-11-27 14:52:47,921 - root - WARNING - CaseNo:TJOrder-00003.xlsx:4.10---different:tag-20006,exp:7,rel:9
+2025-11-27 14:52:47,921 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:48,893 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:48,893 - root - INFO - CaseNo: 11 start...
+2025-11-27 14:52:48,893 - root - INFO - NewOrderSingle
+2025-11-27 14:52:48,894 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=93  49=4444_admin  50=93  52=20251127-06:52:48.000  56=4444  1=00003  11=110  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:48.0  77=O  99=310  110=0  207=SHFE  20001=1  20002=N  20006=9  10=186  
+2025-11-27 14:52:48,915 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=93  49=4444  52=20251127-07:11:00.788  56=4444_admin  57=93  347=UTF-8  1=00003  6=0  11=110  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=310  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=9  10=225  
+2025-11-27 14:52:48,916 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:48,916 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:48,916 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:48,917 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:48,917 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-59,exp:1,rel:3
+2025-11-27 14:52:48,917 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:48,917 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:48,917 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:48,918 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:48,918 - root - WARNING - CaseNo:TJOrder-00003.xlsx:5.11---different:tag-20006,exp:6,rel:9
+2025-11-27 14:52:48,918 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:49,908 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:49,908 - root - INFO - CaseNo: 12 start...
+2025-11-27 14:52:49,909 - root - INFO - NewOrderSingle
+2025-11-27 14:52:49,910 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=94  49=4444_admin  50=94  52=20251127-06:52:49.000  56=4444  1=00003  11=111  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:49.0  77=O  99=318  110=0  207=SHFE  20001=1  20002=N  20006=A  10=207  
+2025-11-27 14:52:49,950 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=94  49=4444  52=20251127-07:11:01.804  56=4444_admin  57=94  347=UTF-8  1=00003  6=0  11=111  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=318  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=A  10=234  
+2025-11-27 14:52:49,951 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:49,951 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:49,951 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:49,951 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:49,951 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-59,exp:1,rel:3
+2025-11-27 14:52:49,951 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:49,952 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:49,952 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:49,952 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:49,952 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.12---different:tag-20006,exp:6,rel:A
+2025-11-27 14:52:49,952 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:50,912 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:50,912 - root - INFO - CaseNo: 13 start...
+2025-11-27 14:52:50,912 - root - INFO - NewOrderSingle
+2025-11-27 14:52:50,913 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=95  49=4444_admin  50=95  52=20251127-06:52:50.000  56=4444  1=00003  11=112  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:50.0  77=O  99=315  110=0  207=SHFE  20001=1  20002=N  20006=A  10=191  
+2025-11-27 14:52:50,936 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=95  49=4444  52=20251127-07:11:02.807  56=4444_admin  57=95  347=UTF-8  1=00003  6=0  11=112  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=315  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=A  10=238  
+2025-11-27 14:52:50,937 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:50,937 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:50,938 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:50,938 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:50,938 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-59,exp:1,rel:3
+2025-11-27 14:52:50,938 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:50,939 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:50,939 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:50,939 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:50,939 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.13---different:tag-20006,exp:6,rel:A
+2025-11-27 14:52:50,940 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:51,926 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:51,926 - root - INFO - CaseNo: 14 start...
+2025-11-27 14:52:51,926 - root - INFO - NewOrderSingle
+2025-11-27 14:52:51,927 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=96  49=4444_admin  50=96  52=20251127-06:52:51.000  56=4444  1=00003  11=113  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:51.0  77=O  99=310  110=0  207=SHFE  20001=1  20002=N  20006=B  10=192  
+2025-11-27 14:52:51,954 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=96  49=4444  52=20251127-07:11:03.821  56=4444_admin  57=96  347=UTF-8  1=00003  6=0  11=113  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=310  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=B  10=234  
+2025-11-27 14:52:51,955 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:51,955 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:51,955 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:51,955 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:51,955 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-59,exp:1,rel:3
+2025-11-27 14:52:51,956 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:51,956 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:51,956 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:51,956 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:51,956 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.14---different:tag-20006,exp:6,rel:B
+2025-11-27 14:52:51,956 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:52,930 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:52,931 - root - INFO - CaseNo: 15 start...
+2025-11-27 14:52:52,931 - root - INFO - NewOrderSingle
+2025-11-27 14:52:52,932 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=97  49=4444_admin  50=97  52=20251127-06:52:52.000  56=4444  1=00003  11=114  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:52.0  77=O  99=318  110=0  207=SHFE  20001=1  20002=N  20006=B  10=205  
+2025-11-27 14:52:52,957 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=97  49=4444  52=20251127-07:11:04.826  56=4444_admin  57=97  347=UTF-8  1=00003  6=0  11=114  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=318  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=B  10=251  
+2025-11-27 14:52:52,957 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.15---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:52,958 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.15---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:52,958 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.15---different:tag-59,exp:1,rel:3
+2025-11-27 14:52:52,958 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.15---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:52,958 - root - WARNING - CaseNo:TJOrder-00003.xlsx:6.15---different:tag-20006,exp:6,rel:B
+2025-11-27 14:52:52,958 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:53,936 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:53,936 - root - INFO - CaseNo: 16 start...
+2025-11-27 14:52:53,937 - root - INFO - NewOrderSingle
+2025-11-27 14:52:53,938 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=98  49=4444_admin  50=98  52=20251127-06:52:53.000  56=4444  1=00003  11=115  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:53.0  77=O  99=310  110=0  207=SHFE  20001=1  20002=N  20006=C  10=203  
+2025-11-27 14:52:53,960 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=98  49=4444  52=20251127-07:11:05.832  56=4444_admin  57=98  347=UTF-8  1=00003  6=0  11=115  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=310  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=C  10=245  
+2025-11-27 14:52:53,960 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-59,exp:2,rel:3
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:53,961 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:53,962 - root - WARNING - CaseNo:TJOrder-00003.xlsx:7.16---different:tag-20006,exp:8,rel:C
+2025-11-27 14:52:53,962 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:54,938 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:54,939 - root - INFO - CaseNo: 17 start...
+2025-11-27 14:52:54,939 - root - INFO - NewOrderSingle
+2025-11-27 14:52:54,940 - root - INFO - send to app: 8=FIX.4.2  9=195  35=D  34=99  49=4444_admin  50=99  52=20251127-06:52:54.000  56=4444  1=00003  11=116  21=3  38=1  40=2  44=315  54=2  55=au1203  59=3  60=20251127-06:52:54.0  77=O  99=315  110=0  207=SHFE  20001=1  20002=N  20006=C  10=213  
+2025-11-27 14:52:54,967 - root - INFO - fromapp: 8=FIX.4.2  9=362  35=8  34=99  49=4444  52=20251127-07:11:06.834  56=4444_admin  57=99  347=UTF-8  1=00003  6=0  11=116  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=315  54=2  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=3  77=O  99=315  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=C  10=000  
+2025-11-27 14:52:54,968 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-54,exp:1,rel:2
+2025-11-27 14:52:54,968 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-44,exp:305,rel:315
+2025-11-27 14:52:54,968 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:54,968 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:54,968 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-59,exp:2,rel:3
+2025-11-27 14:52:54,968 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:54,969 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:54,969 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-39,exp:F,rel:8
+2025-11-27 14:52:54,969 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-150,exp:M,rel:8
+2025-11-27 14:52:54,969 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.17---different:tag-20006,exp:8,rel:C
+2025-11-27 14:52:54,969 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:55,953 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:55,953 - root - INFO - CaseNo: 18 start...
+2025-11-27 14:52:55,953 - root - INFO - NewOrderSingle
+2025-11-27 14:52:55,954 - root - INFO - send to app: 8=FIX.4.2  9=187  35=D  34=100  49=4444_admin  50=100  52=20251127-06:52:55.000  56=4444  1=00003  11=117  21=3  38=1  40=2  44=310  54=1  55=au1203  59=0  60=20251127-06:52:55.0  77=O  99=0  110=0  207=SHFE  20001=1  20002=N  10=044  
+2025-11-27 14:52:55,975 - root - INFO - fromapp: 8=FIX.4.2  9=349  35=8  34=100  49=4444  52=20251127-07:11:07.849  56=4444_admin  57=100  347=UTF-8  1=00003  6=0  11=117  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=0  77=O  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  10=128  
+2025-11-27 14:52:55,976 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-44,exp:305,rel:310
+2025-11-27 14:52:55,977 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:55,977 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:55,977 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-59,exp:2,rel:0
+2025-11-27 14:52:55,978 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:55,978 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:55,978 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-39,exp:G,rel:8
+2025-11-27 14:52:55,978 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.18---different:tag-150,exp:L,rel:8
+2025-11-27 14:52:55,978 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:56,966 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:56,966 - root - INFO - CaseNo: 19 start...
+2025-11-27 14:52:56,966 - root - INFO - NewOrderSingle
+2025-11-27 14:52:56,967 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=101  49=4444_admin  50=101  52=20251127-06:52:56.000  56=4444  1=00003  11=118  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:52:56.0  77=O  99=318  110=0  207=SHFE  20001=1  20002=N  20006=D  10=028  
+2025-11-27 14:52:56,989 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=101  49=4444  52=20251127-07:11:08.861  56=4444_admin  57=101  347=UTF-8  1=00003  6=0  11=118  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=318  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=D  10=069  
+2025-11-27 14:52:56,989 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-44,exp:305,rel:310
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-59,exp:2,rel:4
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:56,990 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.19---different:tag-20006,exp:8,rel:D
+2025-11-27 14:52:56,991 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:57,980 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:57,980 - root - INFO - CaseNo: 20 start...
+2025-11-27 14:52:57,980 - root - INFO - NewOrderSingle
+2025-11-27 14:52:57,980 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=102  49=4444_admin  50=102  52=20251127-06:52:57.000  56=4444  1=00003  11=119  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:52:57.0  77=O  99=300  110=0  207=SHFE  20001=1  20002=N  20006=D  10=024  
+2025-11-27 14:52:58,016 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=102  49=4444  52=20251127-07:11:09.875  56=4444_admin  57=102  347=UTF-8  1=00003  6=0  11=119  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=300  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=D  10=069  
+2025-11-27 14:52:58,017 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.20---different:tag-44,exp:305,rel:310
+2025-11-27 14:52:58,017 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.20---different:tag-59,exp:2,rel:4
+2025-11-27 14:52:58,017 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.20---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:58,017 - root - WARNING - CaseNo:TJOrder-00003.xlsx:8.20---different:tag-20006,exp:8,rel:D
+2025-11-27 14:52:58,017 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:52:58,995 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:52:58,996 - root - INFO - CaseNo: 21 start...
+2025-11-27 14:52:58,996 - root - INFO - NewOrderSingle
+2025-11-27 14:52:58,997 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=103  49=4444_admin  50=103  52=20251127-06:52:58.000  56=4444  1=00003  11=120  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:52:58.0  77=O  99=300  110=0  207=SHFE  20001=1  20002=N  20006=H  10=024  
+2025-11-27 14:52:59,023 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=103  49=4444  52=20251127-07:11:10.892  56=4444_admin  57=103  347=UTF-8  1=00003  6=0  11=120  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=300  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=H  10=058  
+2025-11-27 14:52:59,024 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-54,exp:2,rel:1
+2025-11-27 14:52:59,024 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-44,exp:315,rel:310
+2025-11-27 14:52:59,024 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:59,025 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:59,025 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-59,exp:0,rel:4
+2025-11-27 14:52:59,025 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:52:59,025 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-151,exp:1,rel:0
+2025-11-27 14:52:59,025 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-39,exp:A,rel:8
+2025-11-27 14:52:59,025 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.21---different:tag-150,exp:A,rel:8
+2025-11-27 14:52:59,026 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:00,013 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:00,014 - root - INFO - CaseNo: 22 start...
+2025-11-27 14:53:00,014 - root - INFO - NewOrderSingle
+2025-11-27 14:53:00,015 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=104  49=4444_admin  50=104  52=20251127-06:53:00.000  56=4444  1=00003  11=121  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:53:00.0  77=O  99=310  110=0  207=SHFE  20001=1  20002=N  20006=H  10=004  
+2025-11-27 14:53:00,041 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=104  49=4444  52=20251127-07:11:11.909  56=4444_admin  57=104  347=UTF-8  1=00003  6=0  11=121  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=310  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=H  10=062  
+2025-11-27 14:53:00,042 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-54,exp:2,rel:1
+2025-11-27 14:53:00,042 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-44,exp:315,rel:310
+2025-11-27 14:53:00,042 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-39,exp:0,rel:8
+2025-11-27 14:53:00,042 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-150,exp:0,rel:8
+2025-11-27 14:53:00,042 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-59,exp:0,rel:4
+2025-11-27 14:53:00,043 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:00,043 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-151,exp:1,rel:0
+2025-11-27 14:53:00,043 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-39,exp:0,rel:8
+2025-11-27 14:53:00,043 - root - WARNING - CaseNo:TJOrder-00003.xlsx:9.22---different:tag-150,exp:0,rel:8
+2025-11-27 14:53:00,043 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:01,027 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:01,028 - root - INFO - CaseNo: 23 start...
+2025-11-27 14:53:01,028 - root - INFO - NewOrderSingle
+2025-11-27 14:53:01,029 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=105  49=4444_admin  50=105  52=20251127-06:53:01.000  56=4444  1=00003  11=122  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:53:01.0  77=O  99=318  110=0  207=SHFE  20001=1  20002=N  20006=E  10=014  
+2025-11-27 14:53:01,059 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=105  49=4444  52=20251127-07:11:12.924  56=4444_admin  57=105  347=UTF-8  1=00003  6=0  11=122  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=318  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=E  10=068  
+2025-11-27 14:53:01,060 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-54,exp:2,rel:1
+2025-11-27 14:53:01,060 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-44,exp:315,rel:310
+2025-11-27 14:53:01,060 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-39,exp:F,rel:8
+2025-11-27 14:53:01,060 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-150,exp:M,rel:8
+2025-11-27 14:53:01,061 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-59,exp:3,rel:4
+2025-11-27 14:53:01,061 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:01,061 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-151,exp:1,rel:0
+2025-11-27 14:53:01,061 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-39,exp:F,rel:8
+2025-11-27 14:53:01,062 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-150,exp:M,rel:8
+2025-11-27 14:53:01,062 - root - WARNING - CaseNo:TJOrder-00003.xlsx:10.23---different:tag-20006,exp:9,rel:E
+2025-11-27 14:53:01,062 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:02,032 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:02,033 - root - INFO - CaseNo: 24 start...
+2025-11-27 14:53:02,033 - root - INFO - NewOrderSingle
+2025-11-27 14:53:02,033 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=106  49=4444_admin  50=106  52=20251127-06:53:02.000  56=4444  1=00003  11=123  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:53:02.0  77=O  99=310  110=0  207=SHFE  20001=1  20002=N  20006=E  10=011  
+2025-11-27 14:53:02,065 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=106  49=4444  52=20251127-07:11:13.928  56=4444_admin  57=106  347=UTF-8  1=00003  6=0  11=123  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=310  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=E  10=068  
+2025-11-27 14:53:02,067 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-54,exp:2,rel:1
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-44,exp:315,rel:310
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-39,exp:F,rel:8
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-150,exp:M,rel:8
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-59,exp:3,rel:4
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-151,exp:1,rel:0
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-39,exp:F,rel:8
+2025-11-27 14:53:02,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-150,exp:M,rel:8
+2025-11-27 14:53:02,069 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.24---different:tag-20006,exp:9,rel:E
+2025-11-27 14:53:02,069 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:03,046 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:03,047 - root - INFO - CaseNo: 25 start...
+2025-11-27 14:53:03,047 - root - INFO - NewOrderSingle
+2025-11-27 14:53:03,048 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=107  49=4444_admin  50=107  52=20251127-06:53:03.000  56=4444  1=00003  11=124  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:53:03.0  77=O  99=300  110=0  207=SHFE  20001=1  20002=N  20006=F  10=016  
+2025-11-27 14:53:03,067 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=107  49=4444  52=20251127-07:11:14.942  56=4444_admin  57=107  347=UTF-8  1=00003  6=0  11=124  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=300  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=F  10=068  
+2025-11-27 14:53:03,067 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-54,exp:2,rel:1
+2025-11-27 14:53:03,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-44,exp:315,rel:310
+2025-11-27 14:53:03,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-39,exp:G,rel:8
+2025-11-27 14:53:03,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-150,exp:L,rel:8
+2025-11-27 14:53:03,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-59,exp:3,rel:4
+2025-11-27 14:53:03,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:03,068 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-151,exp:1,rel:0
+2025-11-27 14:53:03,069 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-39,exp:G,rel:8
+2025-11-27 14:53:03,069 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-150,exp:L,rel:8
+2025-11-27 14:53:03,069 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.25---different:tag-20006,exp:9,rel:F
+2025-11-27 14:53:03,069 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:04,061 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:04,062 - root - INFO - CaseNo: 26 start...
+2025-11-27 14:53:04,062 - root - INFO - NewOrderSingle
+2025-11-27 14:53:04,063 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=108  49=4444_admin  50=108  52=20251127-06:53:04.000  56=4444  1=00003  11=125  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:53:04.0  77=O  99=318  110=0  207=SHFE  20001=1  20002=N  20006=F  10=030  
+2025-11-27 14:53:04,093 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=108  49=4444  52=20251127-07:11:15.957  56=4444_admin  57=108  347=UTF-8  1=00003  6=0  11=125  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=4  77=O  99=318  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=F  10=087  
+2025-11-27 14:53:04,094 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-54,exp:2,rel:1
+2025-11-27 14:53:04,094 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-44,exp:315,rel:310
+2025-11-27 14:53:04,094 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-39,exp:A,rel:8
+2025-11-27 14:53:04,094 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-150,exp:A,rel:8
+2025-11-27 14:53:04,094 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-59,exp:3,rel:4
+2025-11-27 14:53:04,094 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:04,094 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-151,exp:1,rel:0
+2025-11-27 14:53:04,095 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-39,exp:A,rel:8
+2025-11-27 14:53:04,095 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-150,exp:A,rel:8
+2025-11-27 14:53:04,095 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.26---different:tag-20006,exp:9,rel:F
+2025-11-27 14:53:04,095 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:05,072 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:05,072 - root - INFO - CaseNo: 27 start...
+2025-11-27 14:53:05,073 - root - INFO - NewOrderSingle
+2025-11-27 14:53:05,074 - root - INFO - send to app: 8=FIX.4.2  9=212  35=D  34=109  49=4444_admin  50=109  52=20251127-06:53:05.000  56=4444  1=00003  11=126  21=3  38=1  40=2  44=310  54=1  55=au1203  59=6  60=20251127-06:53:05.0  77=O  99=300  110=0  207=SHFE  432=2019/12/30  20001=1  20002=N  20006=F  10=215  
+2025-11-27 14:53:05,094 - root - INFO - fromapp: 8=FIX.4.2  9=377  35=8  34=109  49=4444  52=20251127-07:11:16.968  56=4444_admin  57=109  347=UTF-8  1=00003  6=0  11=126  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=6  77=O  99=300  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   432=2019/12/  442=1  20001=1  20004=0  20005=0  20006=F  10=190  
+2025-11-27 14:53:05,095 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-54,exp:2,rel:1
+2025-11-27 14:53:05,095 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-44,exp:315,rel:310
+2025-11-27 14:53:05,096 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-39,exp:4,rel:8
+2025-11-27 14:53:05,096 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-150,exp:4,rel:8
+2025-11-27 14:53:05,096 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-59,exp:3,rel:6
+2025-11-27 14:53:05,096 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:05,096 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-39,exp:4,rel:8
+2025-11-27 14:53:05,096 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-150,exp:4,rel:8
+2025-11-27 14:53:05,097 - root - WARNING - CaseNo:TJOrder-00003.xlsx:11.27---different:tag-20006,exp:9,rel:F
+2025-11-27 14:53:05,097 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:06,082 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:06,083 - root - INFO - CaseNo: 28 start...
+2025-11-27 14:53:06,083 - root - INFO - NewOrderSingle
+2025-11-27 14:53:06,084 - root - INFO - send to app: 8=FIX.4.2  9=212  35=D  34=110  49=4444_admin  50=110  52=20251127-06:53:06.000  56=4444  1=00003  11=127  21=3  38=1  40=2  44=310  54=1  55=au1203  59=7  60=20251127-06:53:06.0  77=O  99=318  110=0  207=SHFE  432=2019/12/30  20001=1  20002=N  20006=F  10=212  
+2025-11-27 14:53:06,107 - root - INFO - fromapp: 8=FIX.4.2  9=364  35=8  34=110  49=4444  52=20251127-07:11:17.978  56=4444_admin  57=110  347=UTF-8  1=00003  6=0  11=127  14=0  17=0  20=0  37=0  38=1  39=8  40=2  44=310  54=1  55=au1203  58=ErrorID=[101];ErrorMsg=[CTP:\udcd3鸤udca7\udcd4\u06b1\udcbe\u03f5\u0373鸤udcd3\u0431\udca8\udcb5\udca5\u0228\udccf\udcde]   59=7  77=O  99=318  150=8  151=0  207=SHFE  354=66  355=ErrorID=[101];ErrorMsg=[CTP:\u7528\u6237\u5728\u672c\u7cfb\u7edf\u6ca1\u6709\u62a5\u5355\u6743\u9650]   442=1  20001=1  20004=0  20005=0  20006=F  10=083  
+2025-11-27 14:53:06,108 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-54,exp:2,rel:1
+2025-11-27 14:53:06,109 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-44,exp:315,rel:310
+2025-11-27 14:53:06,109 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-39,exp:F,rel:8
+2025-11-27 14:53:06,109 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-150,exp:M,rel:8
+2025-11-27 14:53:06,109 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-59,exp:3,rel:7
+2025-11-27 14:53:06,109 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:06,110 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-151,exp:1,rel:0
+2025-11-27 14:53:06,110 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-39,exp:F,rel:8
+2025-11-27 14:53:06,110 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-150,exp:M,rel:8
+2025-11-27 14:53:06,110 - root - WARNING - CaseNo:TJOrder-00003.xlsx:12.28---different:tag-20006,exp:A,rel:F
+2025-11-27 14:53:06,111 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:07,095 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:07,096 - root - INFO - CaseNo: 29 start...
+2025-11-27 14:53:07,097 - root - INFO - NewOrderSingle
+2025-11-27 14:53:07,097 - root - INFO - send to app: 8=FIX.4.2  9=192  35=D  34=111  49=4444_admin  50=111  52=20251127-06:53:07.000  56=4444  1=00003  11=128  21=3  38=1  40=2  44=310  54=1  55=au1203  59=4  60=20251127-06:53:07.0  99=318  110=0  207=SHFE  20001=1  20002=N  20006=E  10=026  
+2025-11-27 14:53:07,100 - root - INFO - fromadmin: 8=FIX.4.2  9=229  35=3  34=111  49=4444  52=20251127-07:11:18.991  56=4444_admin  57=111  347=UTF-8  45=111  58=FIX:Message 111 Rejected: Tag specified without a value:77   354=59  355=FIX:Message 111 Rejected: Tag specified without a value:77   372=D  373=4  10=213  
+2025-11-27 14:53:07,100 - root - WARNING - CaseNo:TJOrder-00003.xlsx:13.29---different:tag-35,exp:8,rel:3
+2025-11-27 14:53:07,101 - root - WARNING - CaseNo:TJOrder-00003.xlsx:13.29---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:07,101 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:08,109 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:08,110 - root - INFO - CaseNo: 30 start...
+2025-11-27 14:53:08,110 - root - INFO - NewOrderSingle
+2025-11-27 14:53:08,111 - root - INFO - send to app: 8=FIX.4.2  9=197  35=D  34=112  49=4444_admin  50=112  52=20251127-06:53:08.000  56=4444  1=00003  11=129  21=3  38=1  40=2  44=310  54=1  55=au1203  59=6  60=20251127-06:53:08.0  77=O  99=310  110=0  207=SHFE  20001=1  20002=N  20006=E  10=025  
+2025-11-27 14:53:08,113 - root - INFO - fromapp: 8=FIX.4.2  9=245  35=j  34=112  49=4444  52=20251127-07:11:20.005  56=4444_admin  57=112  347=UTF-8  45=112  58=FIX:Message 112 Rejected: Conditionally Required Field Missing:432   354=67  355=FIX:Message 112 Rejected: Conditionally Required Field Missing:432   372=D  380=5  10=010  
+2025-11-27 14:53:08,113 - root - WARNING - CaseNo:TJOrder-00003.xlsx:13.30---different:tag-35,exp:8,rel:j
+2025-11-27 14:53:08,114 - root - WARNING - CaseNo:TJOrder-00003.xlsx:13.30---different:tag-56,exp:00003,rel:4444_admin
+2025-11-27 14:53:08,114 - root - INFO - TestCase Result: FAIL
+2025-11-27 14:53:09,950 - root - INFO - send to admin: 8=FIX.4.2  9=66  35=5  34=113  49=4444_admin  50=113  52=20251127-06:53:09.000  56=4444  10=122  
+2025-11-27 14:53:09,965 - root - INFO - fromadmin: 8=FIX.4.2  9=120  35=5  34=113  49=4444  52=20251127-07:11:21.846  56=4444_admin  57=113  347=UTF-8  58=FIX: No Error   354=14  355=FIX: No Error   10=052  
+2025-11-27 14:53:11,091 - root - INFO - session create: FIX.4.2:00001->4444
+2025-11-27 14:53:11,104 - root - INFO - Logging on..
+2025-11-27 14:53:12,113 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=7  49=00001  50=7  52=20251127-06:53:11.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=088  
+2025-11-27 14:53:12,125 - root - INFO - fromadmin: 8=FIX.4.2  9=159  35=5  34=3  49=4444  52=20251127-07:11:24.016  56=00001  57=7  347=UTF-8  58=ErrorID=[9];ErrorMsg=[CTP:\udcce\u07b4\udccb\u0228\udccf\udcde]   354=40  355=ErrorID=[9];ErrorMsg=[CTP:\u65e0\u6b64\u6743\u9650]   10=034  
+2025-11-27 14:53:12,125 - root - INFO - send to admin: 8=FIX.4.2  9=57  35=5  34=8  49=00001  50=8  52=20251127-06:53:12.000  56=4444  10=115  
+2025-11-27 14:53:12,126 - root - INFO - Logging on..
+2025-11-27 14:53:13,128 - root - INFO - send to admin: 8=FIX.4.2  9=93  35=A  34=9  49=00001  50=9  52=20251127-06:53:12.000  56=4444  116=12288  96=4444_admin  98=0  108=60  10=093  
+2025-11-27 14:53:14,110 - root - INFO - --------------------------------------------------------------------------------
+2025-11-27 14:53:14,111 - root - INFO - CaseNo: 1 start...
+2025-11-27 14:53:14,111 - root - INFO - MassQuote
+2025-11-27 14:53:14,173 - root - INFO - PASS Case:0,FAIL Case:92,SKIP Case:0

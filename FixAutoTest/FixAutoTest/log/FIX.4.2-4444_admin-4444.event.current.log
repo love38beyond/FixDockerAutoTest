@@ -1,0 +1,124 @@
+20251205-00:45:50.000000000 : Created session
+20251205-00:45:50.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20251205-00:45:51.000000000 : Initiated logon request
+20251205-00:45:51.000000000 : Received logon response
+20251205-00:46:08.000000000 : Initiated logout request
+20251205-00:46:08.000000000 : Received logout response
+20251205-00:46:08.000000000 : Disconnecting
+20251205-00:46:10.000000000 : Created session
+20251205-00:46:10.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20251205-00:46:11.000000000 : Initiated logon request
+20251205-00:46:11.000000000 : Received logon response
+20251205-00:46:20.000000000 : Message 25 Rejected: Tag specified without a value:721
+20251205-00:46:23.000000000 : Message 29 Rejected: Tag specified without a value:721
+20251205-00:46:25.000000000 : Message 32 Rejected: Tag specified without a value:721
+20251205-00:46:30.000000000 : Initiated logout request
+20251205-00:46:30.000000000 : Received logout response
+20251205-00:46:30.000000000 : Disconnecting
+20251205-00:46:31.000000000 : Created session
+20251205-00:46:31.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20251205-00:46:32.000000000 : Initiated logon request
+20251205-00:46:32.000000000 : Received logon response
+20251205-00:47:18.000000000 : Initiated logout request
+20251205-00:47:18.000000000 : Received logout response
+20251205-00:47:18.000000000 : Disconnecting
+20251205-00:47:19.000000000 : Created session
+20251205-00:47:19.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20251205-00:47:20.000000000 : Initiated logon request
+20251205-00:47:20.000000000 : Received logon response
+20251205-00:47:53.000000000 : Initiated logout request
+20251205-00:47:53.000000000 : Received logout response
+20251205-00:47:53.000000000 : Disconnecting
+20260304-06:18:27.000000000 : Created session
+20260304-06:18:27.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260304-06:18:28.000000000 : Initiated logon request
+20260304-06:18:28.000000000 : Received logon response
+20260304-06:18:45.000000000 : Initiated logout request
+20260304-06:18:45.000000000 : Received logout response
+20260304-06:18:45.000000000 : Disconnecting
+20260304-06:18:47.000000000 : Created session
+20260304-06:18:47.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260304-06:18:48.000000000 : Initiated logon request
+20260304-06:18:48.000000000 : Received logon response
+20260304-06:18:57.000000000 : Message 25 Rejected: Tag specified without a value:721
+20260304-06:19:02.000000000 : Message 29 Rejected: Tag specified without a value:721
+20260304-06:19:02.000000000 : Message 31 Rejected: Tag specified without a value:721
+20260304-06:19:07.000000000 : Initiated logout request
+20260304-06:19:07.000000000 : Received logout response
+20260304-06:19:07.000000000 : Disconnecting
+20260304-06:19:09.000000000 : Created session
+20260304-06:19:09.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260304-06:19:10.000000000 : Initiated logon request
+20260304-06:19:10.000000000 : Received logon response
+20260304-06:19:55.000000000 : Initiated logout request
+20260304-06:19:55.000000000 : Received logout response
+20260304-06:19:55.000000000 : Disconnecting
+20260304-06:19:57.000000000 : Created session
+20260304-06:19:57.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260304-06:19:58.000000000 : Initiated logon request
+20260304-06:19:58.000000000 : Received logon response
+20260304-06:20:31.000000000 : Initiated logout request
+20260304-06:20:31.000000000 : Received logout response
+20260304-06:20:31.000000000 : Disconnecting
+20260305-06:52:10.000000000 : Created session
+20260305-06:52:10.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-06:52:11.000000000 : Initiated logon request
+20260305-06:52:11.000000000 : Received logon response
+20260305-06:52:28.000000000 : Initiated logout request
+20260305-06:52:28.000000000 : Received logout response
+20260305-06:52:28.000000000 : Disconnecting
+20260305-06:52:29.000000000 : Created session
+20260305-06:52:29.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-06:52:30.000000000 : Initiated logon request
+20260305-06:52:31.000000000 : Received logon response
+20260305-06:52:39.000000000 : Message 25 Rejected: Tag specified without a value:721
+20260305-06:52:42.000000000 : Message 29 Rejected: Tag specified without a value:721
+20260305-06:52:44.000000000 : Message 32 Rejected: Tag specified without a value:721
+20260305-06:52:49.000000000 : Initiated logout request
+20260305-06:52:49.000000000 : Received logout response
+20260305-06:52:49.000000000 : Disconnecting
+20260305-06:52:52.000000000 : Created session
+20260305-06:52:52.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-06:52:53.000000000 : Initiated logon request
+20260305-06:52:53.000000000 : Received logon response
+20260305-06:53:38.000000000 : Initiated logout request
+20260305-06:53:38.000000000 : Received logout response
+20260305-06:53:38.000000000 : Disconnecting
+20260305-06:53:39.000000000 : Created session
+20260305-06:53:39.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-06:53:40.000000000 : Initiated logon request
+20260305-06:53:40.000000000 : Received logon response
+20260305-06:54:14.000000000 : Initiated logout request
+20260305-06:54:14.000000000 : Received logout response
+20260305-06:54:14.000000000 : Disconnecting
+20260305-07:14:19.000000000 : Created session
+20260305-07:14:19.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-07:14:20.000000000 : Initiated logon request
+20260305-07:14:20.000000000 : Received logon response
+20260305-07:14:37.000000000 : Initiated logout request
+20260305-07:14:37.000000000 : Received logout response
+20260305-07:14:37.000000000 : Disconnecting
+20260305-07:14:38.000000000 : Created session
+20260305-07:14:38.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-07:14:39.000000000 : Initiated logon request
+20260305-07:14:39.000000000 : Received logon response
+20260305-07:14:48.000000000 : Message 25 Rejected: Tag specified without a value:721
+20260305-07:14:51.000000000 : Message 29 Rejected: Tag specified without a value:721
+20260305-07:14:53.000000000 : Message 32 Rejected: Tag specified without a value:721
+20260305-07:14:58.000000000 : Initiated logout request
+20260305-07:14:58.000000000 : Received logout response
+20260305-07:14:58.000000000 : Disconnecting
+20260305-07:15:00.000000000 : Created session
+20260305-07:15:00.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-07:15:01.000000000 : Initiated logon request
+20260305-07:15:01.000000000 : Received logon response
+20260305-07:15:46.000000000 : Initiated logout request
+20260305-07:15:46.000000000 : Received logout response
+20260305-07:15:46.000000000 : Disconnecting
+20260305-07:15:47.000000000 : Created session
+20260305-07:15:47.000000000 : Connecting to 10.3.138.139 on port 61111 (Source :0)
+20260305-07:15:48.000000000 : Initiated logon request
+20260305-07:15:48.000000000 : Received logon response
+20260305-07:16:22.000000000 : Initiated logout request
+20260305-07:16:22.000000000 : Received logout response
+20260305-07:16:22.000000000 : Disconnecting
