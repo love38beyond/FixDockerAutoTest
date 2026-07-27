@@ -20,11 +20,24 @@ FIXGATEWAY_IP=""     # FIX 网关容器 IP
 EXCHANGE_BROADCAST=""  # 交易所容器子网广播地址
 CTPTRADE_BROADCAST=""  # CTP 容器子网广播地址
 
-# --- 日志函数 ---
-log_info()    { echo -e "${BLUE}[信息]${NC}  $(date '+%H:%M:%S') $*"; }
-log_error()   { echo -e "${RED}[错误]${NC} $(date '+%H:%M:%S') $*"; }
-log_success() { echo -e "${GREEN}[完成]${NC}  $(date '+%H:%M:%S') $*"; }
-log_step()    { echo -e "${YELLOW}[步骤]${NC}  $(date '+%H:%M:%S') $*"; }
+# --- 日志文件 ---
+_COMMON_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG_DIR="${_COMMON_DIR}/logs"
+LOG_FILE=""
+
+_init_log() {
+    local timestamp
+    timestamp=$(date +%Y%m%d_%H%M%S)
+    LOG_FILE="${LOG_DIR}/env_setup_${timestamp}.log"
+    mkdir -p "$LOG_DIR"
+    echo "========== 开始时间: $(date '+%Y-%m-%d %H:%M:%S') ==========" > "$LOG_FILE"
+    echo "日志文件: $LOG_FILE"
+}
+
+log_info()    { echo -e "${BLUE}[信息]${NC}  $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[信息]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
+log_error()   { echo -e "${RED}[错误]${NC} $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[错误] $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
+log_success() { echo -e "${GREEN}[完成]${NC}  $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[完成]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
+log_step()    { echo -e "${YELLOW}[步骤]${NC}  $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[步骤]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
 
 # --- 检测宿主机 IP ---
 detect_host_ip() {
