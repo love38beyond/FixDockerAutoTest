@@ -93,12 +93,6 @@ setup_fix_config() {
     '
 
     docker exec -i "$CONTAINER_NAME" su - fixf1 <<INNER
-                export LD_LIBRARY_PATH="\$libdir:\${LD_LIBRARY_PATH:-}"
-                break
-            fi
-        done
-        ldconfig 2>/dev/null || true
-
         run_genmd5() {
             if [ -f "\$1" ]; then
                 GenMD5.sh -g "\$1" || echo "警告: GenMD5.sh \$1 执行失败"
