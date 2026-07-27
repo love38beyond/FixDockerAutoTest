@@ -71,9 +71,9 @@ setup_fix_config() {
     fi
     log_info "CTP 交易柜台容器 IP：$ctptrade_ip"
 
-    docker exec "$CONTAINER_NAME" bash -c "
+    docker exec "$CONTAINER_NAME" su - fixf1 -c "
         # 1. fixfront_mt.ini —— 替换 CTPfront1 中的 IP
-        f1=/home/fixf1/fixfront_mt1/bin/fixfront_mt.ini
+        f1=~/fixfront_mt1/bin/fixfront_mt.ini
         if [ -f \"\$f1\" ]; then
             sed -i 's|\\(CTPfront1=tcp://\\)[0-9.]*\\(:11157\\)|\\1${ctptrade_ip}\\2|' \"\$f1\"
             echo \"已更新 fixfront_mt.ini，CTPfront1 指向 ${ctptrade_ip}:11157\"
@@ -83,7 +83,7 @@ setup_fix_config() {
         fi
 
         # 2. fixfront_md.ini —— 替换 MDfront1 中的 IP（格式：tcp://:IP:port）
-        f2=/home/fixf1/fixfront_md1/bin/fixfront_md.ini
+        f2=~/fixfront_md1/bin/fixfront_md.ini
         if [ -f \"\$f2\" ]; then
             sed -i 's|\\(MDfront1=tcp://:\\)[0-9.]*\\(:11167\\)|\\1${ctptrade_ip}\\2|' \"\$f2\"
             echo \"已更新 fixfront_md.ini，MDfront1 指向 ${ctptrade_ip}:11167\"

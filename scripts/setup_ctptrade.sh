@@ -103,9 +103,9 @@ setup_ini_files() {
     fi
     log_info "交易所容器 IP：$exchange_ip"
 
-    docker exec "$CONTAINER_NAME" bash -c "
+    docker exec "$CONTAINER_NAME" su - trade1 -c "
         # 1. ineoffer.ini —— 替换 ExchangeAddress 中的 IP
-        f1=\$HOME/ineoffer2/bin/ineoffer.ini
+        f1=~/ineoffer2/bin/ineoffer.ini
         if [ -f \"\$f1\" ]; then
             sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' \"\$f1\"
             echo \"已更新 ineoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181\"
@@ -115,7 +115,7 @@ setup_ini_files() {
         fi
 
         # 2. inemdserver.ini —— 替换 FrontAddr 中的 IP
-        f2=\$HOME/inemdserver2/bin/inemdserver.ini
+        f2=~/inemdserver2/bin/inemdserver.ini
         if [ -f \"\$f2\" ]; then
             sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' \"\$f2\"
             echo \"已更新 inemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171\"
@@ -125,7 +125,7 @@ setup_ini_files() {
         fi
 
         # 3. shfeoffer.ini —— 替换 ExchangeAddress 中的 IP
-        f3=\$HOME/shfeoffer1/bin/shfeoffer.ini
+        f3=~/shfeoffer1/bin/shfeoffer.ini
         if [ -f \"\$f3\" ]; then
             sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' \"\$f3\"
             echo \"已更新 shfeoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181\"
@@ -135,7 +135,7 @@ setup_ini_files() {
         fi
 
         # 4. shfemdserver.ini —— 替换 FrontAddr 中的 IP
-        f4=\$HOME/shfemdserver1/bin/shfemdserver.ini
+        f4=~/shfemdserver1/bin/shfemdserver.ini
         if [ -f \"\$f4\" ]; then
             sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' \"\$f4\"
             echo \"已更新 shfemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171\"
