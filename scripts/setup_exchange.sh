@@ -59,6 +59,7 @@ setup_ssh() {
 Host *
     StrictHostKeyChecking no
     UserKnownHostsFile /dev/null
+    LogLevel ERROR
 EOF
         chmod 600 /root/.ssh/config
 
