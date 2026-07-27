@@ -103,65 +103,64 @@ setup_ini_files() {
     fi
     log_info "交易所容器 IP：$exchange_ip"
 
-    docker exec "$CONTAINER_NAME" su - trade1 -c "
+    docker exec "$CONTAINER_NAME" su - trade1 -c <<INNER
         # 设置库路径（GenMD5.sh 依赖 libstdc++.so.6）
         for libdir in ~/lib ~/lib64 /usr/lib64 /usr/local/lib64; do
-            if [ -d \"\$libdir\" ] && ls \"\$libdir\"/libstdc++* &>/dev/null; then
-                export LD_LIBRARY_PATH=\"\$libdir:\${LD_LIBRARY_PATH:-}\"
+            if [ -d "\$libdir" ] && ls "\$libdir"/libstdc++* &>/dev/null; then
+                export LD_LIBRARY_PATH="\$libdir:\${LD_LIBRARY_PATH:-}"
                 break
             fi
         done
-        # 如果仍未找到，尝试 ldconfig 缓存
-        if [ -z \"\${LD_LIBRARY_PATH:-}\" ]; then
+        if [ -z "\${LD_LIBRARY_PATH:-}" ]; then
             ldconfig 2>/dev/null || true
         fi
 
         run_genmd5() {
-            if [ -f \"\$1\" ]; then
-                GenMD5.sh -g \"\$1\" || echo \"警告: GenMD5.sh \$1 执行失败\"
+            if [ -f "\$1" ]; then
+                GenMD5.sh -g "\$1" || echo "警告: GenMD5.sh \$1 执行失败"
             fi
         }
 
         # 1. ineoffer.ini —— 替换 ExchangeAddress 中的 IP
         f1=~/ineoffer2/bin/ineoffer.ini
-        if [ -f \"\$f1\" ]; then
-            sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' \"\$f1\"
-            echo \"已更新 ineoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181\"
-            run_genmd5 \"\$f1\"
+        if [ -f "\$f1" ]; then
+            sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' "\$f1"
+            echo "已更新 ineoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181"
+            run_genmd5 "\$f1"
         else
-            echo \"警告：\$f1 不存在\"
+            echo "警告：\$f1 不存在"
         fi
 
         # 2. inemdserver.ini —— 替换 FrontAddr 中的 IP
         f2=~/inemdserver2/bin/inemdserver.ini
-        if [ -f \"\$f2\" ]; then
-            sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' \"\$f2\"
-            echo \"已更新 inemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171\"
-            run_genmd5 \"\$f2\"
+        if [ -f "\$f2" ]; then
+            sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' "\$f2"
+            echo "已更新 inemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171"
+            run_genmd5 "\$f2"
         else
-            echo \"警告：\$f2 不存在\"
+            echo "警告：\$f2 不存在"
         fi
 
         # 3. shfeoffer.ini —— 替换 ExchangeAddress 中的 IP
         f3=~/shfeoffer1/bin/shfeoffer.ini
-        if [ -f \"\$f3\" ]; then
-            sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' \"\$f3\"
-            echo \"已更新 shfeoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181\"
-            run_genmd5 \"\$f3\"
+        if [ -f "\$f3" ]; then
+            sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' "\$f3"
+            echo "已更新 shfeoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181"
+            run_genmd5 "\$f3"
         else
-            echo \"警告：\$f3 不存在\"
+            echo "警告：\$f3 不存在"
         fi
 
         # 4. shfemdserver.ini —— 替换 FrontAddr 中的 IP
         f4=~/shfemdserver1/bin/shfemdserver.ini
-        if [ -f \"\$f4\" ]; then
-            sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' \"\$f4\"
-            echo \"已更新 shfemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171\"
-            run_genmd5 \"\$f4\"
+        if [ -f "\$f4" ]; then
+            sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' "\$f4"
+            echo "已更新 shfemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171"
+            run_genmd5 "\$f4"
         else
-            echo \"警告：\$f4 不存在\"
+            echo "警告：\$f4 不存在"
         fi
-    "
+INNER
     log_success "INI 配置文件更新完成"
 }
 
@@ -174,14 +173,14 @@ setup_deploy_config() {
     local broadcast_ip
     broadcast_ip=$(get_broadcast_ip "$ctp_ip")
 
-    docker exec "$CONTAINER_NAME" bash -c "
+    docker exec "$CONTAINER_NAME" bash -c <<INNER
         if [ -f $target ]; then
             sed -i 's/10\\.3\\.138\\.191/${broadcast_ip}/g' $target
-            echo \"DeployConfig.xml 更新完成，组播地址替换为 ${broadcast_ip}\"
+            echo "DeployConfig.xml 更新完成，组播地址替换为 ${broadcast_ip}"
         else
-            echo \"警告：$target 不存在\"
+            echo "警告：$target 不存在"
         fi
-    "
+INNER
     log_success "DeployConfig.xml 更新完成"
 
     # 切换到 trade1 用户执行 cpall.sh 发布配置

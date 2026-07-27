@@ -67,42 +67,42 @@ setup_fix_config() {
     fi
     log_info "CTP 交易柜台容器 IP：$ctptrade_ip"
 
-    docker exec "$CONTAINER_NAME" su - fixf1 -c "
+    docker exec "$CONTAINER_NAME" su - fixf1 -c <<INNER
         # 设置库路径（GenMD5.sh 依赖 libstdc++.so.6）
         for libdir in ~/lib ~/lib64 /usr/lib64 /usr/local/lib64; do
-            if [ -d \"\$libdir\" ] && ls \"\$libdir\"/libstdc++* &>/dev/null; then
-                export LD_LIBRARY_PATH=\"\$libdir:\${LD_LIBRARY_PATH:-}\"
+            if [ -d "\$libdir" ] && ls "\$libdir"/libstdc++* &>/dev/null; then
+                export LD_LIBRARY_PATH="\$libdir:\${LD_LIBRARY_PATH:-}"
                 break
             fi
         done
         ldconfig 2>/dev/null || true
 
         run_genmd5() {
-            if [ -f \"\$1\" ]; then
-                GenMD5.sh -g \"\$1\" || echo \"警告: GenMD5.sh \$1 执行失败\"
+            if [ -f "\$1" ]; then
+                GenMD5.sh -g "\$1" || echo "警告: GenMD5.sh \$1 执行失败"
             fi
         }
 
         # 1. fixfront_mt.ini —— 替换 CTPfront1 中的 IP
         f1=~/fixfront_mt1/bin/fixfront_mt.ini
-        if [ -f \"\$f1\" ]; then
-            sed -i 's|\\(CTPfront1=tcp://\\)[0-9.]*\\(:11157\\)|\\1${ctptrade_ip}\\2|' \"\$f1\"
-            echo \"已更新 fixfront_mt.ini，CTPfront1 指向 ${ctptrade_ip}:11157\"
-            run_genmd5 \"\$f1\"
+        if [ -f "\$f1" ]; then
+            sed -i 's|\\(CTPfront1=tcp://\\)[0-9.]*\\(:11157\\)|\\1${ctptrade_ip}\\2|' "\$f1"
+            echo "已更新 fixfront_mt.ini，CTPfront1 指向 ${ctptrade_ip}:11157"
+            run_genmd5 "\$f1"
         else
-            echo \"警告：\$f1 不存在\"
+            echo "警告：\$f1 不存在"
         fi
 
         # 2. fixfront_md.ini —— 替换 MDfront1 中的 IP（格式：tcp://:IP:port）
         f2=~/fixfront_md1/bin/fixfront_md.ini
-        if [ -f \"\$f2\" ]; then
-            sed -i 's|\\(MDfront1=tcp://:\\)[0-9.]*\\(:11167\\)|\\1${ctptrade_ip}\\2|' \"\$f2\"
-            echo \"已更新 fixfront_md.ini，MDfront1 指向 ${ctptrade_ip}:11167\"
-            run_genmd5 \"\$f2\"
+        if [ -f "\$f2" ]; then
+            sed -i 's|\\(MDfront1=tcp://:\\)[0-9.]*\\(:11167\\)|\\1${ctptrade_ip}\\2|' "\$f2"
+            echo "已更新 fixfront_md.ini，MDfront1 指向 ${ctptrade_ip}:11167"
+            run_genmd5 "\$f2"
         else
-            echo \"警告：\$f2 不存在\"
+            echo "警告：\$f2 不存在"
         fi
-    "
+INNER
     log_success "FIX 网关 INI 配置文件更新完成"
 }
 
