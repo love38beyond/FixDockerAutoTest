@@ -27,13 +27,9 @@ setup_image() {
 # --- 步骤 2：创建并启动容器 ---
 setup_container() {
     if container_exists "$CONTAINER_NAME"; then
-        log_info "容器 $CONTAINER_NAME 已存在"
-        if ! docker ps --format '{{.Names}}' | grep -qx "$CONTAINER_NAME"; then
-            log_step "正在启动已有容器 $CONTAINER_NAME..."
-            docker start "$CONTAINER_NAME"
-            sleep 3
-        fi
-        return 0
+        log_info "容器 $CONTAINER_NAME 已存在，删除后重建..."
+        docker stop "$CONTAINER_NAME" 2>/dev/null || true
+        docker rm "$CONTAINER_NAME" 2>/dev/null || true
     fi
     log_step "正在创建并启动容器：$CONTAINER_NAME..."
     docker run -itd \
