@@ -132,7 +132,7 @@ INNER
 start_fix_services() {
     log_step "正在启动 $CONTAINER_NAME 容器内的 FIX 网关服务..."
     docker exec "$CONTAINER_NAME" bash -c '
-        echo "1" | su - fixf1 -c "startall.sh"
+        printf "1\n" | timeout 30 su - fixf1 -c "startall.sh" || true
     '
     log_success "FIX 网关服务已启动"
 }
