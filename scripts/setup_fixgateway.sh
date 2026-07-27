@@ -67,7 +67,7 @@ setup_fix_config() {
     fi
     log_info "CTP 交易柜台容器 IP：$ctptrade_ip"
 
-    docker exec "$CONTAINER_NAME" su - fixf1 -c <<INNER
+    docker exec -i "$CONTAINER_NAME" su - fixf1 <<INNER
         # 设置库路径（GenMD5.sh 依赖 libstdc++.so.6）
         for libdir in ~/lib ~/lib64 /usr/lib64 /usr/local/lib64; do
             if [ -d "\$libdir" ] && ls "\$libdir"/libstdc++* &>/dev/null; then

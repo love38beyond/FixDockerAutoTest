@@ -96,7 +96,7 @@ setup_service_list() {
     local target="/home/trade2/shell/console/service.list"
     # 获取本容器 IP（交易所服务自身地址）
     EXCHANGE_IP=$(get_container_ip "$CONTAINER_NAME")
-    docker exec "$CONTAINER_NAME" bash -c <<INNER
+    docker exec -i "$CONTAINER_NAME" bash <<INNER
         if [ -f $target ]; then
             sed -i 's/172\\.24\\.120\\.132/${EXCHANGE_IP}/g' $target
             echo '已将 service.list 中的 IP 更新为 ${EXCHANGE_IP}（容器自身 IP）'
@@ -114,7 +114,7 @@ setup_deploy_config() {
     # 确保已获取容器 IP
     EXCHANGE_IP="${EXCHANGE_IP:-$(get_container_ip "$CONTAINER_NAME")}"
     EXCHANGE_BROADCAST=$(get_broadcast_ip "$EXCHANGE_IP")
-    docker exec "$CONTAINER_NAME" bash -c <<INNER
+    docker exec -i "$CONTAINER_NAME" bash <<INNER
         if [ -f $target ]; then
             # 将 172.24.120.132 替换为容器自身 IP（交易所服务绑定地址）
             sed -i 's/172\\.24\\.120\\.132/${EXCHANGE_IP}/g' $target

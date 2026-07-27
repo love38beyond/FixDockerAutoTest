@@ -104,7 +104,7 @@ setup_ini_files() {
     fi
     log_info "交易所容器 IP：$exchange_ip"
 
-    docker exec "$CONTAINER_NAME" su - trade1 -c <<INNER
+    docker exec -i "$CONTAINER_NAME" su - trade1 <<INNER
         # 设置库路径（GenMD5.sh 依赖 libstdc++.so.6）
         for libdir in ~/lib ~/lib64 /usr/lib64 /usr/local/lib64; do
             if [ -d "\$libdir" ] && ls "\$libdir"/libstdc++* &>/dev/null; then
@@ -174,7 +174,7 @@ setup_deploy_config() {
     local broadcast_ip
     broadcast_ip=$(get_broadcast_ip "$ctp_ip")
 
-    docker exec "$CONTAINER_NAME" bash -c <<INNER
+    docker exec -i "$CONTAINER_NAME" bash <<INNER
         if [ -f $target ]; then
             sed -i 's/10\\.3\\.138\\.191/${broadcast_ip}/g' $target
             echo "DeployConfig.xml 更新完成，组播地址替换为 ${broadcast_ip}"
