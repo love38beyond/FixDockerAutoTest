@@ -23,7 +23,7 @@ CTPTRADE_BROADCAST=""  # CTP 容器子网广播地址
 # --- 日志文件 ---
 _COMMON_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_DIR="${_COMMON_DIR}/logs"
-LOG_FILE=""
+LOG_FILE="${LOG_FILE:-}"
 
 _init_log() {
     local timestamp

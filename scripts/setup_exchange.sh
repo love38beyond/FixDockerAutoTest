@@ -44,25 +44,38 @@ setup_container() {
     sleep 2
 }
 
-# --- 步骤 3：在容器内配置 SSH 密钥 ---
+# --- 步骤 3：在容器内配置 SSH 密钥（root + trade2）---
 setup_ssh() {
     log_step "正在 $CONTAINER_NAME 容器内配置 SSH 密钥..."
     docker exec "$CONTAINER_NAME" bash -c '
+        # --- root 用户 ---
         rm -rf /root/.ssh
         mkdir -p /root/.ssh
         ssh-keygen -t rsa -N "" -f /root/.ssh/id_rsa -q
         cp /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
         chmod 700 /root/.ssh
         chmod 600 /root/.ssh/authorized_keys
-        # 禁用首次连接主机密钥提示
-        cat >> /root/.ssh/config << EOF
+        cat > /root/.ssh/config << EOF
 Host *
     StrictHostKeyChecking no
     UserKnownHostsFile /dev/null
 EOF
         chmod 600 /root/.ssh/config
+
+        # --- trade2 用户（ecall.sh/confirmMainBackup.sh 需要）---
+        rm -rf /home/trade2/.ssh
+        mkdir -p /home/trade2/.ssh
+        cp /root/.ssh/id_rsa /home/trade2/.ssh/
+        cp /root/.ssh/id_rsa.pub /home/trade2/.ssh/
+        cp /root/.ssh/authorized_keys /home/trade2/.ssh/
+        cp /root/.ssh/config /home/trade2/.ssh/
+        chmod 700 /home/trade2/.ssh
+        chmod 600 /home/trade2/.ssh/id_rsa
+        chmod 600 /home/trade2/.ssh/authorized_keys
+        chmod 600 /home/trade2/.ssh/config
+        chown -R trade2:trade2 /home/trade2/.ssh
     '
-    log_success "SSH 密钥配置完成"
+    log_success "SSH 密钥配置完成（root + trade2）"
 }
 
 # --- 步骤 4：配置 setcap 以支持 ping ---
