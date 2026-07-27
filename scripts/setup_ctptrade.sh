@@ -55,6 +55,13 @@ setup_ssh() {
         cp /home/trade1/.ssh/id_rsa.pub /home/trade1/.ssh/authorized_keys
         chmod 700 /home/trade1/.ssh
         chmod 600 /home/trade1/.ssh/authorized_keys
+        # 禁用首次连接主机密钥提示
+        cat >> /home/trade1/.ssh/config << EOF
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+EOF
+        chmod 600 /home/trade1/.ssh/config
         chown -R trade1:trade1 /home/trade1/.ssh
     '
     log_success "SSH 密钥配置完成"

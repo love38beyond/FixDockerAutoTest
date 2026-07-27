@@ -54,6 +54,13 @@ setup_ssh() {
         cp /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
         chmod 700 /root/.ssh
         chmod 600 /root/.ssh/authorized_keys
+        # 禁用首次连接主机密钥提示
+        cat >> /root/.ssh/config << EOF
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+EOF
+        chmod 600 /root/.ssh/config
     '
     log_success "SSH 密钥配置完成"
 }
