@@ -67,10 +67,16 @@ setup_fix_config() {
     fi
     log_info "CTP 交易柜台容器 IP：$ctptrade_ip"
 
+    # 修复 libstdc++.so.6 软链接（GenMD5.sh 依赖）
+    docker exec "$CONTAINER_NAME" bash -c '
+        if [ -f /usr/lib64/libstdc++.so.6.0.19 ]; then
+            rm -rf /usr/lib64/libstdc++.so.6
+            ln -s /usr/lib64/libstdc++.so.6.0.19 /usr/lib64/libstdc++.so.6
+            echo "已创建 libstdc++.so.6 软链接"
+        fi
+    '
+
     docker exec -i "$CONTAINER_NAME" su - fixf1 <<INNER
-        # 设置库路径（GenMD5.sh 依赖 libstdc++.so.6）
-        for libdir in ~/lib ~/lib64 /usr/lib64 /usr/local/lib64; do
-            if [ -d "\$libdir" ] && ls "\$libdir"/libstdc++* &>/dev/null; then
                 export LD_LIBRARY_PATH="\$libdir:\${LD_LIBRARY_PATH:-}"
                 break
             fi

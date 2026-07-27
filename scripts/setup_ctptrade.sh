@@ -104,17 +104,16 @@ setup_ini_files() {
     fi
     log_info "交易所容器 IP：$exchange_ip"
 
-    docker exec -i "$CONTAINER_NAME" su - trade1 <<INNER
-        # 设置库路径（GenMD5.sh 依赖 libstdc++.so.6）
-        for libdir in ~/lib ~/lib64 /usr/lib64 /usr/local/lib64; do
-            if [ -d "\$libdir" ] && ls "\$libdir"/libstdc++* &>/dev/null; then
-                export LD_LIBRARY_PATH="\$libdir:\${LD_LIBRARY_PATH:-}"
-                break
-            fi
-        done
-        if [ -z "\${LD_LIBRARY_PATH:-}" ]; then
-            ldconfig 2>/dev/null || true
+    # 修复 libstdc++.so.6 软链接（GenMD5.sh 依赖）
+    docker exec "$CONTAINER_NAME" bash -c '
+        if [ -f /usr/lib64/libstdc++.so.6.0.19 ]; then
+            rm -rf /usr/lib64/libstdc++.so.6
+            ln -s /usr/lib64/libstdc++.so.6.0.19 /usr/lib64/libstdc++.so.6
+            echo "已创建 libstdc++.so.6 软链接"
         fi
+    '
+
+    docker exec -i "$CONTAINER_NAME" su - trade1 <<INNER
 
         run_genmd5() {
             if [ -f "\$1" ]; then
