@@ -85,10 +85,36 @@ get_container_ip() {
     docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$container_name"
 }
 
-# --- 基于容器 IP 计算 /24 子网广播地址 ---
+# --- 基于容器 IP 和 Docker 网络子网计算广播地址 ---
 get_broadcast_ip() {
     local container_ip="$1"
-    echo "$container_ip" | sed 's/[0-9]*$/255/'
+    # 从 Docker 网络配置获取子网掩码
+    local subnet
+    subnet=$(docker network inspect "$DOCKER_NETWORK" --format '{{range .IPAM.Config}}{{.Subnet}}{{end}}' 2>/dev/null)
+    if [ -n "$subnet" ]; then
+        # 使用 Python 计算广播地址（精确处理任意子网掩码）
+        python3 -c "
+import ipaddress
+net = ipaddress.ip_network('${subnet}', strict=False)
+print(net.broadcast_address)
+" 2>/dev/null || python -c "
+import ipaddress
+net = ipaddress.ip_network('${subnet}', strict=False)
+print(net.broadcast_address)
+" 2>/dev/null || {
+        # Python 不可用时回退到 bash 计算
+        local prefix="${subnet#*/}"
+        local ip_int mask_int broadcast_int IFS
+        IFS=. read -r a b c d <<< "${subnet%%/*}"
+        ip_int=$(( (a<<24) + (b<<16) + (c<<8) + d ))
+        mask_int=$(( 0xFFFFFFFF ^ ((1 << (32 - prefix)) - 1) ))
+        broadcast_int=$(( (ip_int & mask_int) | (0xFFFFFFFF ^ mask_int) ))
+        echo "$(( (broadcast_int>>24)&255 )).$(( (broadcast_int>>16)&255 )).$(( (broadcast_int>>8)&255 )).$(( broadcast_int&255 ))"
+    }
+    else
+        log_error "无法获取 Docker 网络 $DOCKER_NETWORK 的子网信息"
+        echo "255.255.255.255"
+    fi
 }
 
 # --- 在容器内执行命令 ---
