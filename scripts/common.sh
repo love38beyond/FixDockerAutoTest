@@ -29,6 +29,7 @@ _init_log() {
     local timestamp
     timestamp=$(date +%Y%m%d_%H%M%S)
     LOG_FILE="${LOG_DIR}/env_setup_${timestamp}.log"
+    export LOG_FILE
     mkdir -p "$LOG_DIR"
     echo "========== 开始时间: $(date '+%Y-%m-%d %H:%M:%S') ==========" > "$LOG_FILE"
     echo "日志文件: $LOG_FILE"
@@ -41,15 +42,26 @@ log_step()    { echo -e "${YELLOW}[步骤]${NC}  $(date '+%H:%M:%S') $*"; [ -n "
 
 # --- 检测宿主机 IP ---
 detect_host_ip() {
-    # 优先获取 global scope 的主 IPv4 地址
-    HOST_IP=$(ip -4 addr show scope global 2>/dev/null | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head -1)
-    # 备用方案：通过默认路由接口获取
-    if [ -z "$HOST_IP" ]; then
-        HOST_IP=$(ip route get 1 2>/dev/null | awk '{print $7; exit}')
+    # 环境变量优先
+    if [ -n "${HOST_IP:-}" ]; then
+        log_info "使用环境变量 HOST_IP：$HOST_IP"
+        return 0
+    fi
+    # 方式 1: ip addr 获取 global scope IPv4 地址
+    if command -v ip &>/dev/null; then
+        HOST_IP=$(ip -4 addr show scope global 2>/dev/null | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head -1 || true)
+        # 方式 2: 通过默认路由接口获取
+        if [ -z "$HOST_IP" ]; then
+            HOST_IP=$(ip route get 1 2>/dev/null | awk '{print $7; exit}' || true)
+        fi
+    fi
+    # 方式 3: hostname -I
+    if [ -z "$HOST_IP" ] && command -v hostname &>/dev/null; then
+        HOST_IP=$(hostname -I 2>/dev/null | awk '{print $1}')
     fi
     if [ -z "$HOST_IP" ]; then
-        log_error "无法检测宿主机 IP 地址"
-        exit 1
+        log_error "无法自动检测宿主机 IP，请设置环境变量: export HOST_IP=<宿主机IP>"
+        return 0
     fi
     log_info "检测到宿主机 IP：$HOST_IP"
 }
