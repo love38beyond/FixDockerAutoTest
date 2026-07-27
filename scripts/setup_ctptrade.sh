@@ -86,7 +86,9 @@ setup_hosts() {
         if grep -q "compositor1" /etc/hosts; then
             echo "hosts 别名已存在，跳过"
         else
-            sed -i "/^127\.0\.0\.1[[:space:]]/ s/$/ compositor1 arb okernel1 tkernel1 qkernel1 dbmt tmdb tinit drmt front1 front2 front3 front4 offermanager1 shfeoffer1 shfemdserver1 front_se5 front_md_se6 dbmt_se zceoffer1 zcemdserver1 cffexoffer1 ffexmdserver1 ineoffer1 inemdserver1 ineoffer2 inemdserver2 cfmmcoffer1 cfmmcoffermanager1 cffexotcoffer front_se100/" /etc/hosts
+            cat >> /etc/hosts << EOF
+127.0.0.1 compositor1 arb okernel1 tkernel1 qkernel1 dbmt tmdb tinit drmt front1 front2 front3 front4 offermanager1 shfeoffer1 shfemdserver1 front_se5 front_md_se6 dbmt_se zceoffer1 zcemdserver1 cffexoffer1 ffexmdserver1 ineoffer1 inemdserver1 ineoffer2 inemdserver2 cfmmcoffer1 cfmmcoffermanager1 cffexotcoffer front_se100
+EOF
             echo "已追加 hosts 别名"
         fi
     '
