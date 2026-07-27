@@ -48,11 +48,8 @@ setup_container() {
 # --- 步骤 3：配置 SSH 密钥（trade1 用户） ---
 setup_ssh() {
     log_step "正在 $CONTAINER_NAME 容器内配置 SSH 密钥..."
-    if docker exec "$CONTAINER_NAME" test -f /home/trade1/.ssh/authorized_keys 2>/dev/null; then
-        log_info "SSH 密钥已配置，跳过"
-        return 0
-    fi
     docker exec "$CONTAINER_NAME" bash -c '
+        rm -rf /home/trade1/.ssh
         mkdir -p /home/trade1/.ssh
         ssh-keygen -t rsa -N "" -f /home/trade1/.ssh/id_rsa -q
         cp /home/trade1/.ssh/id_rsa.pub /home/trade1/.ssh/authorized_keys
