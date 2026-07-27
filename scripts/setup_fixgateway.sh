@@ -55,7 +55,23 @@ setup_setcap() {
     log_success "setcap 配置完成"
 }
 
-# --- 步骤 4：修改 FIX 网关 INI 配置文件 ---
+# --- 步骤 4：修改 /etc/hosts 增加别名 ---
+setup_hosts() {
+    log_step "正在 $CONTAINER_NAME 容器内修改 /etc/hosts..."
+    docker exec "$CONTAINER_NAME" bash -c '
+        if grep -q "fixfront_mt1" /etc/hosts; then
+            echo "hosts 别名已存在，跳过"
+        else
+            cat >> /etc/hosts << EOF
+127.0.0.1 fixfront_mt1 fixfront_mt2 fixfront_md1 fixfront_md2 fixfront_md_se1 fixfront_mt_se1
+EOF
+            echo "已追加 hosts 别名"
+        fi
+    '
+    log_success "hosts 别名已添加"
+}
+
+# --- 步骤 5：修改 FIX 网关 INI 配置文件 ---
 setup_fix_config() {
     log_step "正在修改 $CONTAINER_NAME 容器内的 FIX 网关 INI 配置文件..."
 
@@ -112,7 +128,7 @@ INNER
     log_success "FIX 网关 INI 配置文件更新完成"
 }
 
-# --- 步骤 5：启动 FIX 网关服务 ---
+# --- 步骤 6：启动 FIX 网关服务 ---
 start_fix_services() {
     log_step "正在启动 $CONTAINER_NAME 容器内的 FIX 网关服务..."
     docker exec "$CONTAINER_NAME" bash -c '
@@ -128,6 +144,7 @@ main() {
     setup_image
     setup_container
     setup_setcap
+    setup_hosts
     setup_fix_config
     start_fix_services
     log_success "========== FIX 网关容器搭建完成 =========="
