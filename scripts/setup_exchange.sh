@@ -96,10 +96,10 @@ setup_service_list() {
     log_success "service.list 更新完成"
 }
 
-# --- 步骤 6：修改 DeployConfig.xml ---
+# --- 步骤 6：修改 DeployConfig.PD.all.all.xml ---
 setup_deploy_config() {
-    log_step "正在修改 $CONTAINER_NAME 容器内的 DeployConfig.xml..."
-    local target="/home/trade2/cfg/config/DeployConfig.xml"
+    log_step "正在修改 $CONTAINER_NAME 容器内的 DeployConfig.PD.all.all.xml..."
+    local target="/home/trade2/cfg/config/DeployConfig.PD.all.all.xml"
     # 确保已获取容器 IP
     EXCHANGE_IP="${EXCHANGE_IP:-$(get_container_ip "$CONTAINER_NAME")}"
     EXCHANGE_BROADCAST=$(get_broadcast_ip "$EXCHANGE_IP")
@@ -109,12 +109,12 @@ setup_deploy_config() {
             sed -i 's/172\\.24\\.120\\.132/${EXCHANGE_IP}/g' $target
             # 将组播地址 172.24.120.255 替换为容器子网广播地址
             sed -i 's/172\\.24\\.120\\.255/${EXCHANGE_BROADCAST}/g' $target
-            echo 'DeployConfig.xml 更新完成（IP=${EXCHANGE_IP}, 广播=${EXCHANGE_BROADCAST}）'
+            echo 'DeployConfig.PD.all.all.xml 更新完成（IP=${EXCHANGE_IP}, 广播=${EXCHANGE_BROADCAST}）'
         else
-            echo '警告：在 $target 路径未找到 DeployConfig.xml'
+            echo '警告：在 $target 路径未找到 DeployConfig.PD.all.all.xml'
         fi
     "
-    log_success "DeployConfig.xml 更新完成"
+    log_success "DeployConfig.PD.all.all.xml 更新完成"
 }
 
 # --- 步骤 7：发布配置并启动交易所服务 ---

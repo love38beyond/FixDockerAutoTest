@@ -38,7 +38,7 @@ scripts/
 |------|---------|
 | `common.sh` | 被所有脚本引用。定义：`detect_host_ip()`、`log_info()`、`log_error()`、`container_exists()`、`image_exists()`、`HOST_IP` 全局变量、`DOCKER_NETWORK` 网络名称（`fix-test-net`）、彩色输出辅助函数 |
 | `env_setup.sh` | 入口脚本。解析命令行参数，检查前置条件（docker、expect、tar 文件），创建 Docker 桥接网络，按顺序调用 3 个容器搭建脚本，打印摘要信息 |
-| `setup_exchange.sh` | 导入 `exchangeFIX.tar` → 镜像 `exchangefix:v1`，创建并运行 exchangefix 容器，配置 SSH 密钥，配置 `setcap` 以支持 ping，修改 `service.list` 和 `DeployConfig.xml` 中的 IP 地址，启动交易所服务 |
+| `setup_exchange.sh` | 导入 `exchangeFIX.tar` → 镜像 `exchangefix:v1`，创建并运行 exchangefix 容器，配置 SSH 密钥，配置 `setcap` 以支持 ping，修改 `service.list` 和 `DeployConfig.PD.all.all.xml` 中的 IP 地址，启动交易所服务 |
 | `setup_ctptrade.sh` | 导入 `CtpTradeFIX.tar` → 镜像 `ctptradefix:v2`，创建并运行 ctptradefix 容器，配置 SSH，修改 `/etc/hosts`，更新 4 个报盘/行情服务器 INI 文件中的宿主机 IP，修改 DeployConfig.xml 组播地址，启动 CTP 服务 |
 | `setup_fixgateway.sh` | 导入 `FIX.tar` → 镜像 `ctpfix:v1`，创建并运行 ctpfix 容器，配置 `setcap`，更新 `fixfront_mt.ini` 和 `fixfront_md.ini` 中的宿主机 IP，启动 FIX 网关服务 |
 | `cleanup.sh` | 停止并移除所有 3 个容器，移除 Docker 网络，可选移除镜像。随时可安全执行。 |
@@ -86,7 +86,7 @@ if [ -z "$HOST_IP" ]; then
 fi
 ```
 
-**（B）容器自身 IP** — 用于该容器内"我绑定在哪个 IP"的配置（service.list、DeployConfig.xml 服务地址）：
+**（B）容器自身 IP** — 用于该容器内"我绑定在哪个 IP"的配置（service.list、DeployConfig.PD.all.all.xml 服务地址）：
 ```bash
 # 在容器创建后，通过 docker inspect 获取其在 Docker 网络上的 IP
 get_container_ip() {
@@ -147,7 +147,7 @@ docker exec <容器名> sed -i "s/172\.24\.120\.132/${HOST_IP}/g" <文件路径>
 
 | 模板文件 | 目标容器 | 容器内目标路径 |
 |---------|---------|--------------|
-| `DeployConfig.PD.all.all.xml` | exchangefix | `~/cfg/config/DeployConfig.xml` |
+| `DeployConfig.PD.all.all.xml` | exchangefix | `~/cfg/config/DeployConfig.PD.all.all.xml` |
 | `DeployConfig.xml` | ctptradefix | `/home/trade1/cfg/config/DeployConfig.xml` |
 | `service.list` | exchangefix | `~/shell/console/service.list` |
 | `hosts` | ctptradefix | `/etc/hosts`（追加内容） |
@@ -377,10 +377,10 @@ setup_service_list() {
     log_success "service.list 更新完成"
 }
 
-# --- 步骤 6：修改 DeployConfig.xml ---
+# --- 步骤 6：修改 DeployConfig.PD.all.all.xml ---
 setup_deploy_config() {
-    log_step "正在修改 $CONTAINER_NAME 容器内的 DeployConfig.xml..."
-    local target="/home/trade2/cfg/config/DeployConfig.xml"
+    log_step "正在修改 $CONTAINER_NAME 容器内的 DeployConfig.PD.all.all.xml..."
+    local target="/home/trade2/cfg/config/DeployConfig.PD.all.all.xml"
     # 确保已获取容器 IP
     EXCHANGE_IP="${EXCHANGE_IP:-$(get_container_ip "$CONTAINER_NAME")}"
     EXCHANGE_BROADCAST=$(get_broadcast_ip "$EXCHANGE_IP")
@@ -390,12 +390,12 @@ setup_deploy_config() {
             sed -i 's/172\\.24\\.120\\.132/${EXCHANGE_IP}/g' $target
             # 将组播地址 172.24.120.255 替换为容器子网广播地址
             sed -i 's/172\\.24\\.120\\.255/${EXCHANGE_BROADCAST}/g' $target
-            echo 'DeployConfig.xml 更新完成（IP=${EXCHANGE_IP}, 广播=${EXCHANGE_BROADCAST}）'
+            echo 'DeployConfig.PD.all.all.xml 更新完成（IP=${EXCHANGE_IP}, 广播=${EXCHANGE_BROADCAST}）'
         else
-            echo '警告：在 $target 路径未找到 DeployConfig.xml'
+            echo '警告：在 $target 路径未找到 DeployConfig.PD.all.all.xml'
         fi
     "
-    log_success "DeployConfig.xml 更新完成"
+    log_success "DeployConfig.PD.all.all.xml 更新完成"
 }
 
 # --- 步骤 7：发布配置并启动交易所服务 ---
@@ -761,8 +761,8 @@ bash env_setup.sh
 | 脚本 | 文件（容器内路径） | 旧值 | 新值 | 语义说明 |
 |------|------------------|------|------|---------|
 | setup_exchange | `~/shell/console/service.list` | `172.24.120.132` | `$EXCHANGE_IP` | **自身 IP**：交易所服务在本容器内运行 |
-| setup_exchange | `~/cfg/config/DeployConfig.xml` | `172.24.120.132` | `$EXCHANGE_IP` | **自身 IP**：交易所服务绑定地址 |
-| setup_exchange | `~/cfg/config/DeployConfig.xml` | `172.24.120.255` | `$EXCHANGE_BROADCAST` | **子网广播**：基于交易所容器 IP 计算 |
+| setup_exchange | `~/cfg/config/DeployConfig.PD.all.all.xml` | `172.24.120.132` | `$EXCHANGE_IP` | **自身 IP**：交易所服务绑定地址 |
+| setup_exchange | `~/cfg/config/DeployConfig.PD.all.all.xml` | `172.24.120.255` | `$EXCHANGE_BROADCAST` | **子网广播**：基于交易所容器 IP 计算 |
 | setup_ctptrade | `~/ineoffer2/bin/ineoffer.ini` | `10.3.138.150:26181` | `$EXCHANGE_IP:26181` | **目标 IP**：CTP 连接交易所的报盘地址 |
 | setup_ctptrade | `~/inemdserver2/bin/inemdserver.ini` | `10.3.138.150:26171` | `$EXCHANGE_IP:26171` | **目标 IP**：CTP 连接交易所的行情地址 |
 | setup_ctptrade | `~/shfeoffer1/bin/shfeoffer.ini` | `10.3.138.150:26181` | `$EXCHANGE_IP:26181` | **目标 IP**：CTP 连接交易所的报盘地址 |
