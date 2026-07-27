@@ -133,10 +133,10 @@ start_exchange_services() {
     log_step "正在启动 $CONTAINER_NAME 容器内的交易所服务..."
     docker exec "$CONTAINER_NAME" bash -c '
         # 切换到 trade2 用户执行命令
-        timeout 30 su - trade2 -c "ecall.sh admin 1 copyBaseConfig" || true
-        timeout 30 su - trade2 -c "ecall.sh admin 1 startService" || true
+        script -q -c "su - trade2 -c \"ecall.sh admin 1 copyBaseConfig\"" /dev/null || true
+        script -q -c "su - trade2 -c \"ecall.sh admin 1 startService\"" /dev/null || true
         # confirmMainBackup — 自动确认输入 y
-        printf "y\n" | timeout 30 su - trade2 -c "confirmMainBackup.sh admin 1" || true
+        printf "y\n" | script -q -c "su - trade2 -c \"confirmMainBackup.sh admin 1\"" /dev/null || true
     '
     log_success "交易所服务已启动"
 }

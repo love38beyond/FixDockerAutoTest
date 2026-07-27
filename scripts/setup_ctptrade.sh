@@ -188,7 +188,7 @@ INNER
     # 切换到 trade1 用户执行 cpall.sh 发布配置
     log_step "正在发布 DeployConfig.xml 配置..."
     docker exec "$CONTAINER_NAME" bash -c '
-        timeout 30 su - trade1 -c "cpall.sh" || true
+        script -q -c "su - trade1 -c cpall.sh" /dev/null || true
     '
     log_success "DeployConfig.xml 配置已发布"
 }
@@ -197,7 +197,7 @@ INNER
 start_ctptrade_services() {
     log_step "正在启动 $CONTAINER_NAME 容器内的 CTP 交易系统..."
     docker exec "$CONTAINER_NAME" bash -c '
-        printf "1\n" | timeout 30 su - trade1 -c "startall.sh" || true
+        printf "1\n" | script -q -c "su - trade1 -c startall.sh" /dev/null || true
     '
     log_success "CTP 交易系统已启动"
 }
