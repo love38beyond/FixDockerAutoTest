@@ -104,12 +104,30 @@ setup_ini_files() {
     log_info "交易所容器 IP：$exchange_ip"
 
     docker exec "$CONTAINER_NAME" su - trade1 -c "
+        # 设置库路径（GenMD5.sh 依赖 libstdc++.so.6）
+        for libdir in ~/lib ~/lib64 /usr/lib64 /usr/local/lib64; do
+            if [ -d \"\$libdir\" ] && ls \"\$libdir\"/libstdc++* &>/dev/null; then
+                export LD_LIBRARY_PATH=\"\$libdir:\${LD_LIBRARY_PATH:-}\"
+                break
+            fi
+        done
+        # 如果仍未找到，尝试 ldconfig 缓存
+        if [ -z \"\${LD_LIBRARY_PATH:-}\" ]; then
+            ldconfig 2>/dev/null || true
+        fi
+
+        run_genmd5() {
+            if [ -f \"\$1\" ]; then
+                GenMD5.sh -g \"\$1\" || echo \"警告: GenMD5.sh \$1 执行失败\"
+            fi
+        }
+
         # 1. ineoffer.ini —— 替换 ExchangeAddress 中的 IP
         f1=~/ineoffer2/bin/ineoffer.ini
         if [ -f \"\$f1\" ]; then
             sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' \"\$f1\"
             echo \"已更新 ineoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181\"
-            GenMD5.sh -g \"\$f1\"
+            run_genmd5 \"\$f1\"
         else
             echo \"警告：\$f1 不存在\"
         fi
@@ -119,7 +137,7 @@ setup_ini_files() {
         if [ -f \"\$f2\" ]; then
             sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' \"\$f2\"
             echo \"已更新 inemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171\"
-            GenMD5.sh -g \"\$f2\"
+            run_genmd5 \"\$f2\"
         else
             echo \"警告：\$f2 不存在\"
         fi
@@ -129,7 +147,7 @@ setup_ini_files() {
         if [ -f \"\$f3\" ]; then
             sed -i 's|\\(ExchangeAddress=tcp://\\)[0-9.]*\\(:26181\\)|\\1${exchange_ip}\\2|' \"\$f3\"
             echo \"已更新 shfeoffer.ini，ExchangeAddress 指向 ${exchange_ip}:26181\"
-            GenMD5.sh -g \"\$f3\"
+            run_genmd5 \"\$f3\"
         else
             echo \"警告：\$f3 不存在\"
         fi
@@ -139,7 +157,7 @@ setup_ini_files() {
         if [ -f \"\$f4\" ]; then
             sed -i 's|\\(FrontAddr=tcp://\\)[0-9.]*\\(:26171\\)|\\1${exchange_ip}\\2|' \"\$f4\"
             echo \"已更新 shfemdserver.ini，FrontAddr 指向 ${exchange_ip}:26171\"
-            GenMD5.sh -g \"\$f4\"
+            run_genmd5 \"\$f4\"
         else
             echo \"警告：\$f4 不存在\"
         fi
