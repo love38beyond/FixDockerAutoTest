@@ -35,10 +35,10 @@ _init_log() {
     echo "日志文件: $LOG_FILE"
 }
 
-log_info()    { echo -e "${BLUE}[信息]${NC}  $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[信息]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
-log_error()   { echo -e "${RED}[错误]${NC} $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[错误] $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
-log_success() { echo -e "${GREEN}[完成]${NC}  $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[完成]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
-log_step()    { echo -e "${YELLOW}[步骤]${NC}  $(date '+%H:%M:%S') $*"; [ -n "$LOG_FILE" ] && echo "[步骤]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; }
+log_info()    { echo -e "${BLUE}[信息]${NC}  $(date '+%H:%M:%S') $*"; { [ -n "$LOG_FILE" ] && echo "[信息]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; } || true; }
+log_error()   { echo -e "${RED}[错误]${NC} $(date '+%H:%M:%S') $*"; { [ -n "$LOG_FILE" ] && echo "[错误] $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; } || true; }
+log_success() { echo -e "${GREEN}[完成]${NC}  $(date '+%H:%M:%S') $*"; { [ -n "$LOG_FILE" ] && echo "[完成]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; } || true; }
+log_step()    { echo -e "${YELLOW}[步骤]${NC}  $(date '+%H:%M:%S') $*"; { [ -n "$LOG_FILE" ] && echo "[步骤]  $(date '+%H:%M:%S') $*" >> "$LOG_FILE"; } || true; }
 
 # --- 检测宿主机 IP ---
 detect_host_ip() {
