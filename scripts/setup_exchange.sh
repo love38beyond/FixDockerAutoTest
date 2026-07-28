@@ -136,7 +136,9 @@ start_exchange_services() {
     docker exec "$CONTAINER_NAME" bash -c '
         # 切换到 trade2 用户执行命令
         script -q -c "su - trade2 -c \"ecall.sh admin 1 copyBaseConfig\"" /dev/null || true
+        sleep 15
         script -q -c "su - trade2 -c \"ecall.sh admin 1 startService\"" /dev/null || true
+        sleep 15
         # confirmMainBackup — 自动确认输入 y
         printf "y\n" | script -q -c "su - trade2 -c \"confirmMainBackup.sh admin 1\"" /dev/null || true
     '
