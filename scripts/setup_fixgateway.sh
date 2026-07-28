@@ -55,7 +55,19 @@ setup_setcap() {
     log_success "setcap 配置完成"
 }
 
-# --- 步骤 4：修改 /etc/hosts 增加别名 ---
+# --- 步骤 4：修复 libstdc++.so.6 ---
+setup_libstdcxx() {
+    if [ -f "$SCRIPT_DIR/libstdc++.so.6" ]; then
+        log_step "正在更新 $CONTAINER_NAME 容器内的 libstdc++.so.6..."
+        docker exec "$CONTAINER_NAME" bash -c 'rm -rf /usr/lib64/libstdc++.so.6'
+        docker cp "$SCRIPT_DIR/libstdc++.so.6" "$CONTAINER_NAME:/usr/lib64/libstdc++.so.6"
+        log_success "libstdc++.so.6 已更新"
+    else
+        log_info "未找到 $SCRIPT_DIR/libstdc++.so.6，跳过"
+    fi
+}
+
+# --- 步骤 5：修改 /etc/hosts 增加别名 ---
 setup_hosts() {
     log_step "正在 $CONTAINER_NAME 容器内修改 /etc/hosts..."
     docker exec "$CONTAINER_NAME" bash -c '
@@ -71,7 +83,7 @@ EOF
     log_success "hosts 别名已添加"
 }
 
-# --- 步骤 5：修改 FIX 网关 INI 配置文件 ---
+# --- 步骤 6：修改 FIX 网关 INI 配置文件 ---
 setup_fix_config() {
     log_step "正在修改 $CONTAINER_NAME 容器内的 FIX 网关 INI 配置文件..."
 
@@ -82,15 +94,6 @@ setup_fix_config() {
         exit 1
     fi
     log_info "CTP 交易柜台容器 IP：$ctptrade_ip"
-
-    # 修复 libstdc++.so.6 软链接（GenMD5.sh 依赖）
-    docker exec "$CONTAINER_NAME" bash -c '
-        if [ -f /usr/lib64/libstdc++.so.6.0.19 ]; then
-            rm -rf /usr/lib64/libstdc++.so.6
-            ln -s /usr/lib64/libstdc++.so.6.0.19 /usr/lib64/libstdc++.so.6
-            echo "已创建 libstdc++.so.6 软链接"
-        fi
-    '
 
     docker exec -i "$CONTAINER_NAME" su - fixf1 <<INNER
         run_genmd5() {
@@ -122,7 +125,7 @@ INNER
     log_success "FIX 网关 INI 配置文件更新完成"
 }
 
-# --- 步骤 6：启动 FIX 网关服务 ---
+# --- 步骤 7：启动 FIX 网关服务 ---
 start_fix_services() {
     log_step "正在启动 $CONTAINER_NAME 容器内的 FIX 网关服务..."
     docker exec "$CONTAINER_NAME" bash -c '
@@ -138,6 +141,7 @@ main() {
     setup_image
     setup_container
     setup_setcap
+    setup_libstdcxx
     setup_hosts
     setup_fix_config
     start_fix_services
