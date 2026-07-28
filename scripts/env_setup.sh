@@ -109,6 +109,13 @@ main() {
     echo ""
     echo "  运行测试：cd FixAutoTest/FixAutoTest && python FixInitiator.py"
     echo ""
+    echo "  初始化 CTP 柜台（请使用 ticlient 登录）："
+    echo "    IP：  ${HOST_IP}"
+    echo "    端口：11155"
+    echo "    用户名：0000_admin"
+    echo "    部门：1"
+    echo "    密码：1"
+    echo ""
 }
 
 main "$@"
