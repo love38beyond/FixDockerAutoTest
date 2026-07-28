@@ -120,6 +120,8 @@ setup_deploy_config() {
             sed -i 's/172\\.24\\.120\\.132/${EXCHANGE_IP}/g' $target
             # 将组播地址 172.24.120.255 替换为容器子网广播地址
             sed -i 's/172\\.24\\.120\\.255/${EXCHANGE_BROADCAST}/g' $target
+            # 将 127.0.0.1 替换为容器自身 IP（本地回环改为实际 IP）
+            sed -i 's/127\\.0\\.0\\.1/${EXCHANGE_IP}/g' $target
             echo 'DeployConfig.PD.all.all.xml 更新完成（IP=${EXCHANGE_IP}, 广播=${EXCHANGE_BROADCAST}）'
         else
             echo '警告：在 $target 路径未找到 DeployConfig.PD.all.all.xml'
