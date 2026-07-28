@@ -9,10 +9,8 @@
 	3. 进入容器：
 		docker -exec -it exchangefix /bin/bash
 	
-	4. 服务器免密认证：
+	4. 服务器免密认证-先删除.ssh：
 		ssh-keygen -t rsa
-		输入Enter
-		输入y
 		输入Enter
 		输入Enter
 		输入Enter
@@ -23,7 +21,7 @@
 		1. root用户执行命令(防止报错ping: socket: Operation not permitted)：sudo setcap cap_net_raw+ep /usr/bin/ping
 		2. 切换用户：su - trade2；
 		3. 修改文件：~/shell/console/service.list，将ip地址172.24.120.132替换为本机ip；
-		4. 修改文件：~/cfg/config/DeployConfig.xml，将ip地址172.24.120.132替换为本机ip，将组播地址172.24.120.255替换为本机组播地址；
+		4. 修改文件：~/cfg/config/DeployConfig.PD.all.all.xml，将ip地址172.24.120.132替换为本机ip，将组播地址172.24.120.255替换为本机组播地址；
 		5. 运行命令发布修改的DeployConfig.xml文件：ecall.sh admin 1 copyBaseConfig；
 		6. 启动：ecall.sh admin 1 startService
 		7. 初始化：confirmMainBackup.sh admin 1，然后输入y点击Enter;
@@ -44,8 +42,6 @@
 	
 	4. 服务器免密认证：
 		ssh-keygen -t rsa
-		输入Enter
-		输入y
 		输入Enter
 		输入Enter
 		输入Enter
