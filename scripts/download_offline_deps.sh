@@ -37,30 +37,35 @@ $PYTHON -m pip --version &>/dev/null || $PYTHON -m ensurepip
 echo ""
 echo "下载依赖包到临时目录..."
 
-# 下载 quickfix（指定 manylinux 平台）
-$PYTHON -m pip download \
-    --platform manylinux1_x86_64 \
-    --python-version "$PY_VER" \
-    --implementation cp \
-    --abi "cp${PY_VER/./}m" \
-    --only-binary=:all: \
-    --dest "$TEMP_DIR" \
-    quickfix==1.15.1 2>&1 || {
-    echo "警告: manylinux1 下载失败，尝试 manylinux2014..."
-    $PYTHON -m pip download \
-        --platform manylinux2014_x86_64 \
-        --python-version "$PY_VER" \
-        --implementation cp \
-        --only-binary=:all: \
-        --dest "$TEMP_DIR" \
-        quickfix==1.15.1 2>&1 || {
-        echo "警告: 预编译 wheel 下载失败，尝试下载源码包（需在目标机器编译）..."
-        $PYTHON -m pip download \
-            --no-binary=:all: \
+# 下载 quickfix（依次尝试不同 manylinux 平台）
+download_quickfix_wheel() {
+    for platform in manylinux1_x86_64 manylinux2010_x86_64 manylinux2014_x86_64; do
+        echo "尝试 $platform ..."
+        if $PYTHON -m pip download \
+            --platform "$platform" \
+            --python-version "$PY_VER" \
+            --implementation cp \
+            --abi "cp${PY_VER/./}m" \
+            --only-binary=:all: \
             --dest "$TEMP_DIR" \
-            quickfix==1.15.1
-    }
+            quickfix==1.15.1 2>/dev/null; then
+            return 0
+        fi
+    done
+    return 1
 }
+
+if ! download_quickfix_wheel; then
+    echo ""
+    echo "警告: 未找到 quickfix 预编译 wheel，下载源码包（需在目标机器编译）"
+    echo "      目标机器必须安装 python-devel 和 gcc-c++ 才能编译"
+    echo "      CentOS: yum install -y python${PY_VER/./}-devel gcc-c++"
+    echo ""
+    $PYTHON -m pip download \
+        --no-binary=:all: \
+        --dest "$TEMP_DIR" \
+        quickfix==1.15.1
+fi
 
 # 下载 xlrd（纯 Python，通用）
 $PYTHON -m pip download \

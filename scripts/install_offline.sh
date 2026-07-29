@@ -67,7 +67,23 @@ if [ -n "$QUICKFIX_LINUX" ]; then
 elif ls "$PKG_DIR"/quickfix-*.tar.gz &>/dev/null; then
     # 源码包 — 需要编译
     echo "安装 quickfix (源码编译)..."
-    echo "警告: 需要 gcc-c++ 和 python-devel"
+    # 检查 Python 开发头文件
+    PY_VER=$($PYTHON -c 'import sys; print("{}.{}".format(sys.version_info.major, sys.version_info.minor))')
+    if ! $PYTHON -c 'import sysconfig; print(sysconfig.get_config_var("INCLUDEPY"))' &>/dev/null; then
+        PY_INCLUDE=$($PYTHON -c 'import sysconfig; print(sysconfig.get_config_var("INCLUDEPY") or "")')
+        if [ ! -f "${PY_INCLUDE}/Python.h" ]; then
+            echo ""
+            echo "错误: 缺少 Python 开发头文件 (Python.h)"
+            echo "离线环境请在有网络的机器上重新下载预编译包:"
+            echo "  bash scripts/download_offline_deps.sh ${PY_VER}"
+            echo ""
+            echo "联网环境请先安装 python-devel:"
+            echo "  CentOS/RHEL: yum install -y python${PY_VER/./}-devel"
+            echo "  Ubuntu/Debian: apt-get install -y python${PY_VER/./}-dev"
+            exit 1
+        fi
+    fi
+    echo "编译环境检查通过，正在编译..."
     QUICKFIX_SRC=$(ls "$PKG_DIR"/quickfix-*.tar.gz | head -1)
     $PYTHON -m pip install "$QUICKFIX_SRC"
     INSTALLED=true
