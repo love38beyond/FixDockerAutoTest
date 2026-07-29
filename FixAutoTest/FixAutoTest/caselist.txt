@@ -1,8 +1,8 @@
-FIX42-01.ini,testcase/orderinsert-00001-1.xlsx
-FIX42-02.ini,testcase/orderinsert-00002-2.xlsx
-FIX42-01.ini,testcase/orderinsert-00001-3.xlsx
-FIX42-10.ini,testcase/Position-00010-1.xlsx
-FIX42-10.ini,testcase/PositionMaintenance-00010-3.xlsx
-FIX42-10.ini,testcase/orderCancelReplace-00010-4.xlsx
-FIX42-03.ini,testcase/TJOrder-00003.xlsx
-FIX42-01.ini,testcase/MassQuote.xlsx
+fix42-01.ini,testcase/orderinsert-00001-1.xlsx
+fix42-02.ini,testcase/orderinsert-00002-2.xlsx
+fix42-01.ini,testcase/orderinsert-00001-3.xlsx
+fix42-10.ini,testcase/Position-00010-1.xlsx
+fix42-10.ini,testcase/PositionMaintenance-00010-3.xlsx
+fix42-10.ini,testcase/orderCancelReplace-00010-4.xlsx
+fix42-03.ini,testcase/TJOrder-00003.xlsx
+fix42-01.ini,testcase/MassQuote.xlsx

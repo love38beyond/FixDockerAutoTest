@@ -850,6 +850,16 @@ def main(config_file, case_file):
         logger.error("Failed to load test case '%s': %s", case_file, e)
         return
 
+    # 如果配置文件不存在，尝试大小写不敏感匹配（兼容 Linux）
+    if not os.path.isfile(_config_file):
+        config_dir = os.path.dirname(_config_file) or '.'
+        config_basename = os.path.basename(_config_file).lower()
+        for f in os.listdir(config_dir):
+            if f.lower() == config_basename:
+                _config_file = os.path.join(config_dir, f)
+                logger.info("Matched config file (case-insensitive): %s", _config_file)
+                break
+
     setting = fix.SessionSettings(_config_file)
 
     # Fix 7: parameterize SocketConnectHost from environment variable
