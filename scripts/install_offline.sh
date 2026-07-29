@@ -105,12 +105,13 @@ if [ "$INSTALLED" = true ]; then
     PASS=0
     FAIL=0
 
-    # 1. quickfix 导入 + 版本
+    # 1. quickfix 导入
     echo -n "quickfix 导入 ... "
-    if $PYTHON -c "import quickfix; print(quickfix.__version__)" 2>/dev/null; then
+    if $PYTHON -c "import quickfix" 2>/dev/null; then
+        echo "OK"
         PASS=$((PASS + 1))
     else
-        echo "quickfix: 失败"
+        echo "失败"
         FAIL=$((FAIL + 1))
     fi
 
