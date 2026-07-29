@@ -832,8 +832,17 @@ def main(config_file, case_file):
     logger.info('----%s--Starting----', case_file)
     reset_global_state()
 
+    # 切换到脚本所在目录，确保 QuickFIX 能正确解析 INI 中的相对路径
+    #   （DataDictionary、FileStorePath、FileLogPath 等）
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+
+    # 解析相对路径为绝对路径（兼容任意目录运行）
+    _config_file = config_file if os.path.isabs(config_file) else os.path.join(script_dir, config_file)
+    _case_file = case_file if os.path.isabs(case_file) else os.path.join(script_dir, case_file)
+
     try:
-        reqlist_local, rsplist_local = get_confirm_result(case_file)
+        reqlist_local, rsplist_local = get_confirm_result(_case_file)
         reqlist.extend(reqlist_local)
         with rsplist_lock:
             rsplist.extend(rsplist_local)
@@ -841,7 +850,7 @@ def main(config_file, case_file):
         logger.error("Failed to load test case '%s': %s", case_file, e)
         return
 
-    setting = fix.SessionSettings(config_file)
+    setting = fix.SessionSettings(_config_file)
 
     # Fix 7: parameterize SocketConnectHost from environment variable
     fix_host = os.environ.get('FIX_HOST')
