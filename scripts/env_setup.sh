@@ -104,7 +104,7 @@ main() {
     log_info "FixAutoTest 连接地址："
     log_info "  交易通道：  tcp://${HOST_IP}:61111"
     log_info "  行情通道：  tcp://${HOST_IP}:50001"
-    log_info "运行测试：cd FixAutoTest/FixAutoTest && python FixInitiator.py"
+    log_info "运行测试：cd FixAutoTest/FixAutoTest && python3 FixInitiator.py"
     log_info "初始化 CTP 柜台（请使用 ticlient 登录）："
     log_info "  IP：       ${HOST_IP}"
     log_info "  端口：     11155"
