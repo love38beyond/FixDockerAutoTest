@@ -99,9 +99,61 @@ fi
 
 if [ "$INSTALLED" = true ]; then
     echo ""
-    echo "验证安装:"
-    $PYTHON -c "import quickfix; print('quickfix', quickfix.__version__)" 2>/dev/null || echo "quickfix: 未成功"
-    $PYTHON -c "import xlrd; print('xlrd', xlrd.__VERSION__)" 2>/dev/null || echo "xlrd: 未成功"
+    echo "========================================="
+    echo "  验证安装"
+    echo "========================================="
+    PASS=0
+    FAIL=0
+
+    # 1. quickfix 导入 + 版本
+    echo -n "quickfix 导入 ... "
+    if $PYTHON -c "import quickfix; print(quickfix.__version__)" 2>/dev/null; then
+        PASS=$((PASS + 1))
+    else
+        echo "quickfix: 失败"
+        FAIL=$((FAIL + 1))
+    fi
+
+    # 2. quickfix C++ 扩展
+    echo -n "quickfix C++ 扩展 ... "
+    if $PYTHON -c "import _quickfix" 2>/dev/null; then
+        PASS=$((PASS + 1))
+    else
+        echo "失败（缺少 _quickfix.so，编译可能不完整）"
+        FAIL=$((FAIL + 1))
+    fi
+
+    # 3. quickfix 核心功能
+    echo -n "quickfix 核心功能 ... "
+    if $PYTHON -c "
+import quickfix as fix
+msg = fix.Message()
+msg.getHeader().setField(fix.BeginString('FIX.4.2'))
+msg.getHeader().setField(fix.MsgType('D'))
+assert msg.toString() != ''
+" 2>/dev/null; then
+        PASS=$((PASS + 1))
+    else
+        echo "失败"
+        FAIL=$((FAIL + 1))
+    fi
+
+    # 4. xlrd 导入 + 版本
+    echo -n "xlrd 导入 ... "
+    if $PYTHON -c "import xlrd; print(xlrd.__VERSION__)" 2>/dev/null; then
+        PASS=$((PASS + 1))
+    else
+        echo "xlrd: 失败"
+        FAIL=$((FAIL + 1))
+    fi
+
+    echo ""
+    echo "结果: $PASS 通过, $FAIL 失败"
+    if [ "$FAIL" -gt 0 ]; then
+        echo "请检查安装日志排查失败项"
+    else
+        echo "所有检查通过，环境就绪！"
+    fi
 fi
 
 echo ""
