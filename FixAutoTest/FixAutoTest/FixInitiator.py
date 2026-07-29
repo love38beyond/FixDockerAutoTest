@@ -866,8 +866,8 @@ def main(config_file, case_file):
     if fix_host:
         logger.info("Overriding SocketConnectHost with FIX_HOST env var: %s", fix_host)
         import tempfile, shutil
-        tmp_ini = tempfile.NamedTemporaryFile(mode='w', suffix='.ini', delete=False)
-        with open(_config_file, 'r') as src:
+        tmp_ini = tempfile.NamedTemporaryFile(mode='w', suffix='.ini', delete=False, encoding='utf-8')
+        with open(_config_file, 'r', encoding='utf-8') as src:
             for line in src:
                 if line.startswith('SocketConnectHost='):
                     tmp_ini.write('SocketConnectHost=%s\n' % fix_host)
