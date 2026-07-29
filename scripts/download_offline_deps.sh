@@ -57,6 +57,7 @@ if [ "$BUILD_MODE" = true ]; then
     echo "在当前机器编译 quickfix wheel..."
     echo "要求: python${PY_VER/./}-devel + gcc-c++ 已安装"
     echo ""
+    $PYTHON -m pip install -q wheel
     $PYTHON -m pip wheel --wheel-dir "$TEMP_DIR" quickfix==1.15.1
     echo "编译完成"
 else
