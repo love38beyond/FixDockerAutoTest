@@ -954,7 +954,9 @@ if __name__ == '__main__':
                         continue
                     parts = line.split(',')
                     if len(parts) >= 2:
-                        main(parts[0].strip(), parts[1].strip())
+                        config_file = parts[0].strip()
+                        case_file = parts[1].strip().replace('\\', '/')
+                        main(config_file, case_file)
         except FileNotFoundError:
             logger.error("Caselist file '%s' not found.", caselist_file)
 
