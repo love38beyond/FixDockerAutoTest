@@ -690,8 +690,6 @@ class MyApplication(fix.Application):
         if msgType.getValue() == fix.MsgType_Logon:
             logger.info('Logging on..')
             time.sleep(1)
-            # 登录时 SenderCompID(49) 固定用 4444_admin 做认证
-            message.getHeader().setField(fix.SenderCompID('4444_admin'))
             message.getHeader().setField(fix.StringField(int(TAG_ON_BEHALF_OF_SUB_ID), ON_BEHALF_LOGON_REQUEST))
             message.getHeader().setField(fix.StringField(int(TAG_SENDER_SUB_ID), message.getHeader().getField(int(TAG_MSG_SEQ_NUM))))
             message.setField(fix.RawData('4444_admin'))
