@@ -860,15 +860,24 @@ def main(config_file, case_file):
                 logger.info("Matched config file (case-insensitive): %s", _config_file)
                 break
 
-    setting = fix.SessionSettings(_config_file)
-
     # Fix 7: parameterize SocketConnectHost from environment variable
+    # 直接修改 INI 文件中的 SocketConnectHost（兼容所有 QuickFIX 版本）
     fix_host = os.environ.get('FIX_HOST')
     if fix_host:
         logger.info("Overriding SocketConnectHost with FIX_HOST env var: %s", fix_host)
-        settings_dict = setting.get()
-        for session_id in settings_dict:
-            setting.set(session_id, fix.SocketConnectHost(fix_host))
+        import tempfile, shutil
+        tmp_ini = tempfile.NamedTemporaryFile(mode='w', suffix='.ini', delete=False)
+        with open(_config_file, 'r') as src:
+            for line in src:
+                if line.startswith('SocketConnectHost='):
+                    tmp_ini.write('SocketConnectHost=%s\n' % fix_host)
+                else:
+                    tmp_ini.write(line)
+        tmp_ini.close()
+        shutil.move(tmp_ini.name, _config_file)
+        logger.info("Updated SocketConnectHost in %s", _config_file)
+
+    setting = fix.SessionSettings(_config_file)
 
     application = MyApplication()
     storeFactory = fix.FileStoreFactory(setting)
