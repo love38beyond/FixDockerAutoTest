@@ -196,7 +196,19 @@ INNER
     log_success "DeployConfig.xml 配置已发布"
 }
 
-# --- 步骤 9：启动 CTP 交易系统 ---
+# --- 步骤 9：覆盖用户权限文件 ---
+setup_user_right() {
+    if [ -f "$SCRIPT_DIR/t_UserRight.csv" ]; then
+        log_step "正在覆盖 $CONTAINER_NAME 容器内的 t_UserRight.csv..."
+        docker cp "$SCRIPT_DIR/t_UserRight.csv" "$CONTAINER_NAME:/home/trade1/tinit/perf/t_UserRight.csv"
+        docker exec "$CONTAINER_NAME" chown trade1:trade1 /home/trade1/tinit/perf/t_UserRight.csv 2>/dev/null || true
+        log_success "t_UserRight.csv 已更新"
+    else
+        log_info "未找到 $SCRIPT_DIR/t_UserRight.csv，跳过"
+    fi
+}
+
+# --- 步骤 10：启动 CTP 交易系统 ---
 start_ctptrade_services() {
     log_step "正在启动 $CONTAINER_NAME 容器内的 CTP 交易系统..."
     docker exec "$CONTAINER_NAME" bash -c '
@@ -217,6 +229,7 @@ main() {
     setup_hosts
     setup_ini_files
     setup_deploy_config
+    setup_user_right
     start_ctptrade_services
     log_success "========== CTP 交易柜台容器搭建完成 =========="
 }
