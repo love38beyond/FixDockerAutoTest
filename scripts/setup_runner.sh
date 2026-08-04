@@ -30,13 +30,21 @@ fi
 
 # ---- 构建镜像 ----
 if [ "$BUILD" = true ]; then
-    log_step "正在构建 fix-runner Docker 镜像..."
-    if [ ! -d "$FIXAUTO_DIR" ]; then
-        log_error "找不到 FixAutoTest 目录: $FIXAUTO_DIR"
+    log_step "正在准备 fix-runner Docker 镜像..."
+    # 优先尝试从预构建 tar 加载（离线场景）
+    RUNNER_TAR="$FIXAUTO_DIR/softpackage/fix-runner.tar"
+    if [ -f "$RUNNER_TAR" ]; then
+        log_info "从预构建包加载: $RUNNER_TAR"
+        docker load -i "$RUNNER_TAR"
+        log_success "镜像 $IMAGE_NAME 加载完成"
+    elif [ -f "$FIXAUTO_DIR/Dockerfile" ]; then
+        log_info "从 Dockerfile 构建镜像..."
+        docker build -t "$IMAGE_NAME" -f "$FIXAUTO_DIR/Dockerfile" "$FIXAUTO_DIR"
+        log_success "镜像 $IMAGE_NAME 构建完成"
+    else
+        log_error "找不到 Dockerfile 或预构建 tar 文件"
         exit 1
     fi
-    docker build -t "$IMAGE_NAME" -f "$FIXAUTO_DIR/Dockerfile" "$FIXAUTO_DIR"
-    log_success "镜像 $IMAGE_NAME 构建完成"
 fi
 
 # ---- 运行测试 ----
