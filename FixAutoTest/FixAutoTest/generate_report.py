@@ -19,11 +19,11 @@ def generate_report(json_path='test_report.json', output_path='test_report.html'
         data = json.load(f)
 
     summary = data.get('summary', {})
-    total = summary.get('total_cases', 0)
-    pass_count = summary.get('pass', 0)
-    fail_count = summary.get('fail', 0)
-    skip_count = summary.get('skip', 0)
-    nocompare_count = summary.get('nocompare', 0)
+    pass_count = summary.get('PASS', 0)
+    fail_count = summary.get('FAIL', 0)
+    skip_count = summary.get('SKIP', 0)
+    nocompare_count = summary.get('NOCompare', 0)
+    total = pass_count + fail_count + skip_count + nocompare_count
     timestamp = data.get('timestamp', datetime.now().isoformat())
 
     # ---- 饼图 SVG ----
@@ -130,7 +130,7 @@ def generate_report(json_path='test_report.json', output_path='test_report.html'
         </table>'''
 
     failures = data.get('failures', [])
-    cases = data.get('cases', [])
+    cases = data.get('test_cases', [])
 
     # ---- HTML 模板 ----
     html = f'''<!DOCTYPE html>
