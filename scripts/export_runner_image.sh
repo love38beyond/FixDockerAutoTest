@@ -69,10 +69,15 @@ if [ "$CAN_PULL" = false ]; then
 
     echo "以 $BASE_CONTAINER 为 base 创建 runner 容器..."
 
-    # 在 base 容器中安装测试依赖（离线使用已编译好的 wheel）
+    # 在 base 容器中安装测试依赖
     docker exec "$BASE_CONTAINER" bash -c '
-        if ! command -v python3 &>/dev/null; then
+        if ! command -v python3.6 &>/dev/null && ! command -v python3 &>/dev/null; then
             yum install -y epel-release && yum install -y python36 python36-pip || true
+        fi
+        # 创建 python3 别名（CentOS 7 默认只有 python3.6）
+        if [ -f /usr/bin/python3.6 ] && [ ! -f /usr/bin/python3 ]; then
+            ln -sf /usr/bin/python3.6 /usr/bin/python3
+            ln -sf /usr/bin/pip3.6 /usr/bin/pip3 2>/dev/null || true
         fi
         pip3 install --no-index --find-links=/opt/fix-test/softpackage/ quickfix xlrd 2>/dev/null || \
         pip3 install quickfix==1.15.1 xlrd==1.2.0 2>/dev/null || true
