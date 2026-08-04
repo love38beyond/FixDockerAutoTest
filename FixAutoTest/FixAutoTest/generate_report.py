@@ -175,10 +175,20 @@ td {{ padding: 10px 12px; border-bottom: 1px solid #eee; }}
 .pass {{ color: #27ae60; font-weight: 600; }}
 .fail {{ color: #e74c3c; font-weight: 600; }}
 .skip {{ color: #95a5a6; }}
+.collapse-header {{ cursor: pointer; user-select: none; }}
+.collapse-header .arrow {{ font-size: 12px; transition: transform .2s; display: inline-block; }}
+.collapse-header.collapsed .arrow {{ transform: rotate(-90deg); }}
+.collapse-body {{ overflow: hidden; }}
 .footer {{ text-align: center; color: #95a5a6; font-size: 12px; margin-top: 30px; }}
 @media (max-width: 768px) {{ .cards {{ flex-direction: column; }} .card {{ min-width: auto; }} }}
 </style>
 <script>
+function toggleSection(hdr) {{
+    hdr.classList.toggle("collapsed");
+    var body = hdr.nextElementSibling;
+    if (body) body.style.display = body.style.display === "none" ? "block" : "none";
+}}
+
 function toggleDetail(row) {{
     var next = row.nextElementSibling;
     if (next && next.classList.contains('detail-row')) {{
@@ -226,8 +236,10 @@ function toggleDetail(row) {{
 </div>
 
 <div class="section">
-    <h2>失败详情</h2>
+    <h2 class="collapse-header" onclick="toggleSection(this)">失败详情 <span class="arrow">▼</span></h2>
+    <div class="collapse-body">
     {failure_rows(failures)}
+    </div>
 </div>
 
 <div class="section">
