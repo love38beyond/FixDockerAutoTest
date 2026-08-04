@@ -31,15 +31,28 @@ if [ ! -d "$FIXAUTO_DIR" ] && [ ! -d "/opt/fix-test" ]; then
     exit 1
 fi
 
-# 方法 A：已有 Dockerfile 构建
-if [ -f "$FIXAUTO_DIR/Dockerfile" ] && command -v docker &>/dev/null; then
-    echo "使用 Dockerfile 构建镜像..."
-    docker build -t "$IMAGE_NAME" -f "$FIXAUTO_DIR/Dockerfile" "$FIXAUTO_DIR"
-else
-    # 方法 B：从现有容器 commit
-    echo "从现有环境创建镜像..."
+# 检查是否能联网（尝试拉取 centos:7）
+CAN_PULL=false
+if docker pull centos:7 --disable-content-trust 2>/dev/null; then
+    CAN_PULL=true
+fi
 
-    # 查找已存在的 centos:7 容器
+# 方法 A：在线 Dockerfile 构建
+if [ "$CAN_PULL" = true ] && [ -f "$FIXAUTO_DIR/Dockerfile" ]; then
+    echo "使用 Dockerfile 构建镜像..."
+    if docker build -t "$IMAGE_NAME" -f "$FIXAUTO_DIR/Dockerfile" "$FIXAUTO_DIR" 2>&1; then
+        echo "Dockerfile 构建成功"
+    else
+        echo "Dockerfile 构建失败，回退到容器 commit 方式..."
+        CAN_PULL=false
+    fi
+fi
+
+# 方法 B：从现有容器 commit（离线兼容）
+if [ "$CAN_PULL" = false ]; then
+    echo "从现有环境创建镜像（离线模式）..."
+
+    # 查找已存在的容器作为 base
     BASE_CONTAINER=""
     for name in exchangefix ctptradefix ctpfix; do
         if docker inspect "$name" &>/dev/null; then
@@ -56,21 +69,24 @@ else
 
     echo "以 $BASE_CONTAINER 为 base 创建 runner 容器..."
 
-    # 在 base 容器中安装测试依赖
+    # 在 base 容器中安装测试依赖（离线使用已编译好的 wheel）
     docker exec "$BASE_CONTAINER" bash -c '
         if ! command -v python3 &>/dev/null; then
-            yum install -y epel-release && yum install -y python36 python36-pip
+            yum install -y epel-release && yum install -y python36 python36-pip || true
         fi
+        pip3 install --no-index --find-links=/opt/fix-test/softpackage/ quickfix xlrd 2>/dev/null || \
         pip3 install quickfix==1.15.1 xlrd==1.2.0 2>/dev/null || true
     '
 
     # 复制测试脚本
     TEMP_CONTAINER="fix-runner-temp"
     docker rm -f "$TEMP_CONTAINER" 2>/dev/null || true
-    docker run -d --name "$TEMP_CONTAINER" "$(docker inspect -f '{{.Config.Image}}' "$BASE_CONTAINER")" sleep infinity
+    BASE_IMAGE=$(docker inspect -f '{{.Config.Image}}' "$BASE_CONTAINER")
+    docker run -d --name "$TEMP_CONTAINER" "$BASE_IMAGE" sleep infinity
     docker cp "$FIXAUTO_DIR" "$TEMP_CONTAINER:/opt/"
     docker commit "$TEMP_CONTAINER" "$IMAGE_NAME"
     docker rm -f "$TEMP_CONTAINER"
+    echo "镜像创建成功（基于 $BASE_CONTAINER）"
 fi
 
 # 导出镜像
