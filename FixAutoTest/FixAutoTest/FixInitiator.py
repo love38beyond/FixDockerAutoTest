@@ -803,6 +803,12 @@ def write_test_report():
         with open('test_report.json', 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
         logger.info("Test report written to test_report.json")
+        # 自动生成 HTML 报告
+        try:
+            from generate_report import generate_report
+            generate_report('test_report.json', 'test_report.html')
+        except Exception as e:
+            logger.warning("Failed to generate HTML report: %s", e)
     except Exception as e:
         logger.error("Failed to write test report: %s", e)
 
