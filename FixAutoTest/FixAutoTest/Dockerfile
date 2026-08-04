@@ -7,17 +7,21 @@ RUN yum install -y epel-release && \
     yum install -y python36 python36-pip python36-devel gcc-c++ && \
     yum clean all && rm -rf /var/cache/yum
 
+# Python 3.6 在 CentOS 7 上叫 python36/pip3.6，创建别名
+RUN ln -sf /usr/bin/python3.6 /usr/bin/python3 && \
+    ln -sf /usr/bin/pip3.6 /usr/bin/pip3
+
 # 升级 pip + 安装 wheel
-RUN pip3 install --upgrade pip && pip3 install wheel
+RUN pip3.6 install --upgrade pip && pip3.6 install wheel
 
 # 创建工作目录
 WORKDIR /opt/fix-test
 
 # 安装 xlrd（纯 Python，直接安装）
-RUN pip3 install xlrd==1.2.0
+RUN pip3.6 install xlrd==1.2.0
 
 # 编译 quickfix（在镜像构建时完成编译）
-RUN pip3 install quickfix==1.15.1
+RUN pip3.6 install quickfix==1.15.1
 
 # 验证安装
 RUN python3 -c "import quickfix; import _quickfix; print('quickfix OK')" && \
@@ -30,4 +34,4 @@ COPY testcase/ testcase/
 COPY initiator/ initiator/
 
 # 默认命令：运行全部用例
-CMD ["bash", "launcher.sh"]
+CMD ["python3", "FixInitiator.py"]
