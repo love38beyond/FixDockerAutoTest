@@ -85,9 +85,21 @@ main() {
     log_info "CTP 容器 IP：$CTPTRADE_IP，广播地址：$CTPTRADE_BROADCAST"
 
     # 阶段 3：FIX 网关（依赖 CTP 已运行，需要 CTPTRADE_IP 连接 CTP）
-    log_info "=== 阶段 3/3：FIX 网关容器 ==="
+    log_info "=== 阶段 3/4：FIX 网关容器 ==="
     bash "$SCRIPT_DIR/setup_fixgateway.sh"
     export FIXGATEWAY_IP=$(get_container_ip "ctpfix")
+
+    # 阶段 4：构建 fix-runner 镜像 + 运行自动化测试（可选）
+    if [ "${SKIP_RUNNER:-false}" != true ]; then
+        log_info "=== 阶段 4/4：构建测试运行镜像 ==="
+        if [ -d "$SCRIPT_DIR/../FixAutoTest/FixAutoTest" ]; then
+            bash "$SCRIPT_DIR/setup_runner.sh" --build --host "$HOST_IP" || log_info "测试运行镜像构建/执行跳过（可稍后手动运行）"
+        else
+            log_info "未找到 FixAutoTest 目录，跳过阶段 4"
+        fi
+    else
+        log_info "=== 阶段 4/4：已跳过（SKIP_RUNNER=true）==="
+    fi
 
     # 汇总信息（同时输出到终端和日志）
     echo ""
