@@ -37,6 +37,10 @@ rsplist_lock = threading.Lock()
 count = {'SKIP': 0, 'PASS': 0, 'FAIL': 0, 'NOCompare': 0}
 response_event = threading.Event()
 test_results = []  # accumulates per-case results for JSON report
+_step_results = []  # step-level results for current test case
+_step_failures = []  # step-level failure details for current test case
+_step_counter = [0]  # mutable counter for step numbering
+_all_failures = []  # accumulated failure details across all cases
 
 
 # ---------------------------------------------------------------------------
@@ -502,6 +506,12 @@ def compare_two_dict(dict1, dict2, key_list):
                         "CaseNo:%s---different:tag-%s,exp:%s,rel:%s",
                         dict1.get('CaseNo', '?'), key, dict1[key], dict2[key]
                     )
+                    _step_failures.append({
+                        'case': dict1.get('CaseNo', '?'),
+                        'tag': key,
+                        'expected': str(dict1[key]),
+                        'actual': str(dict2[key])
+                    })
             else:
                 # Fix 13: log warning when key is missing from either dict
                 if key not in keys1:
@@ -589,6 +599,8 @@ def assertResult(message):
     with rsplist_lock:
         if len(rsplist) == 0:
             count['NOCompare'] += 1
+            _step_counter[0] += 1
+            _step_results.append({'step': _step_counter[0], 'result': 'NOCompare'})
             result = 'Rsplist is null, no compare.'
             logger.info('TestCase Result (NOCompare): ' + result)
             return
@@ -627,6 +639,10 @@ def assertResult(message):
         logger.error("Failed to parse keylist '%s': %s", keylist_str, e)
         result = 'FAIL'
         count['FAIL'] += 1
+
+    # 记录 step 级结果
+    _step_counter[0] += 1
+    _step_results.append({'step': _step_counter[0], 'result': result})
 
     logger.info('TestCase Result: ' + result)
     response_event.set()
@@ -798,6 +814,7 @@ def write_test_report():
         'timestamp': datetime.now().isoformat(),
         'summary': dict(count),
         'test_cases': list(test_results),
+        'failures': list(_all_failures),
     }
     try:
         with open('test_report.json', 'w', encoding='utf-8') as f:
@@ -837,6 +854,12 @@ def main(config_file, case_file):
     """
     logger.info('----%s--Starting----', case_file)
     reset_global_state()
+
+    # 初始化本用例的 step 级结果追踪
+    global _step_results, _step_failures, _step_counter
+    _step_results = []
+    _step_failures = []
+    _step_counter = [0]  # mutable counter for step numbering
 
     # 切换到脚本所在目录，确保 QuickFIX 能正确解析 INI 中的相对路径
     #   （DataDictionary、FileStorePath、FileLogPath 等）
@@ -939,6 +962,31 @@ def main(config_file, case_file):
                 continue
 
     initiator.stop()
+
+    # 收集本用例的汇总结果
+    case_p = sum(1 for s in _step_results if s['result'] == 'PASS')
+    case_f = sum(1 for s in _step_results if s['result'] == 'FAIL')
+    case_s = sum(1 for s in _step_results if s['result'] == 'SKIP')
+    case_n = sum(1 for s in _step_results if s['result'] not in ('PASS', 'FAIL', 'SKIP'))
+    case_name = os.path.basename(case_file)
+    test_results.append({
+        'file': case_name,
+        'total': len(_step_results),
+        'pass': case_p,
+        'fail': case_f,
+        'skip': case_s,
+        'nocompare': case_n,
+        'details': list(_step_results),
+    })
+    # 给每条 failure 补上 case 名 + step 号
+    for f in _step_failures:
+        f['case'] = case_name
+        for s in _step_results:
+            if s['result'] == 'FAIL':
+                f.setdefault('step', s['step'])
+                break
+    _all_failures.extend(_step_failures)
+
     logger.info('----%s--Finished----', case_file)
 
 
