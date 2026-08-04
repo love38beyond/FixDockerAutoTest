@@ -6,7 +6,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/common.sh"
 
-IMAGE_NAME="fix-runner:latest"
+IMAGE_NAME="fix-runner:v1"
 CONTAINER_NAME="fix-runner"
 FIXAUTO_DIR="$SCRIPT_DIR/../FixAutoTest/FixAutoTest"
 
