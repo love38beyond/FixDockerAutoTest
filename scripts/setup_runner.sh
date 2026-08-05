@@ -19,6 +19,7 @@ while [[ $# -gt 0 ]]; do
         --build-only) BUILD=true; RUN=false; shift ;;
         --run-only) BUILD=false; RUN=true; shift ;;
         --host) RUNNER_HOST="$2"; shift 2 ;;
+        -y|--yes) AUTO_YES=true; shift ;;
         *) shift ;;
     esac
 done
@@ -46,6 +47,18 @@ fi
 
 # ---- 运行测试 ----
 if [ "$RUN" = true ]; then
+    # 交互式提示：先初始化 ticlient
+    if [ "${AUTO_YES:-false}" != true ]; then
+        echo ""
+        echo "========================================="
+        echo "  请先用 ticlient 初始化 CTP 交易系统"
+        echo "  IP: $RUNNER_HOST  端口: 11155"
+        echo "  用户名: 0000_admin  部门: 1  密码: 1"
+        echo "========================================="
+        read -p "  完成后按 Enter 键继续..."
+        echo ""
+    fi
+
     log_step "正在启动 fix-runner 容器执行测试..."
 
     if container_exists "$CONTAINER_NAME"; then
