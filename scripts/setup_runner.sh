@@ -31,32 +31,13 @@ fi
 # ---- 构建镜像 ----
 if [ "$BUILD" = true ]; then
     log_step "正在准备 fix-runner Docker 镜像..."
-    # 优先尝试从预构建 tar 加载（离线场景），多路径搜索
-    RUNNER_TAR=""
-    for candidate in \
-        "$SCRIPT_DIR/fix-runner.tar" \
-        "$FIXAUTO_DIR/softpackage/fix-runner.tar" \
-        "$FIXAUTO_DIR/fix-runner.tar" \
-        "$(pwd)/fix-runner.tar"; do
-        if [ -f "$candidate" ]; then
-            RUNNER_TAR="$candidate"
-            break
-        fi
-    done
-
-    if [ -n "$RUNNER_TAR" ]; then
-        log_info "从预构建包加载: $RUNNER_TAR"
-        docker load -i "$RUNNER_TAR" || docker import "$RUNNER_TAR" "$IMAGE_NAME" || true
-        log_success "镜像 $IMAGE_NAME 加载完成"
-    elif docker image inspect "$IMAGE_NAME" &>/dev/null; then
-        log_info "镜像 $IMAGE_NAME 已存在，跳过构建"
-    elif [ -f "$FIXAUTO_DIR/Dockerfile" ]; then
-        log_info "从 Dockerfile 构建镜像..."
-        docker build -t "$IMAGE_NAME" -f "$FIXAUTO_DIR/Dockerfile" "$FIXAUTO_DIR"
-        log_success "镜像 $IMAGE_NAME 构建完成"
+    RUNNER_TAR="$SCRIPT_DIR/fix-runner.tar"
+    if [ -f "$RUNNER_TAR" ]; then
+        docker import "$RUNNER_TAR" "$IMAGE_NAME"
+        log_success "镜像 $IMAGE_NAME 导入完成"
     else
-        log_error "找不到 fix-runner.tar 或 Dockerfile"
-        log_error "搜索路径: $SCRIPT_DIR/fix-runner.tar, $FIXAUTO_DIR/softpackage/fix-runner.tar"
+        log_error "找不到 $RUNNER_TAR"
+        log_error "请先将 fix-runner.tar 放到 scripts/ 目录下"
         exit 1
     fi
 fi
