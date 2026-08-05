@@ -69,28 +69,32 @@ if [ "$RUN" = true ]; then
     REPORT_DIR="${SCRIPT_DIR}/logs/reports"
     mkdir -p "$REPORT_DIR"
 
-    docker run \
+    # 先启动容器保持后台运行
+    docker run -d \
         --name="$CONTAINER_NAME" \
         --network="$DOCKER_NETWORK" \
         -e FIX_HOST="$RUNNER_HOST" \
         -e FIX_PORT="${FIX_PORT:-61111}" \
         -v "$REPORT_DIR:/tmp/reports" \
         "$IMAGE_NAME" \
-        bash -c '
-            # 自动查找 FixInitiator.py 所在目录
-            WORKDIR=$(find /opt -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
-            if [ -z "$WORKDIR" ]; then
-                WORKDIR=$(find / -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
-            fi
-            if [ -z "$WORKDIR" ]; then
-                echo "错误: 找不到 FixInitiator.py"
-                exit 1
-            fi
-            cd "$WORKDIR"
-            rm -rf initiator/* 2>/dev/null || true
-            python3 FixInitiator.py --host $FIX_HOST --reset-seqnums
-            cp test_report.json test_report.html syslog.txt report.log /tmp/reports/ 2>/dev/null || true
-        ' || true
+        sleep infinity
+
+    # 在容器中执行测试
+    docker exec "$CONTAINER_NAME" bash -c '
+        # 自动查找 FixInitiator.py 所在目录
+        WORKDIR=$(find /opt -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
+        if [ -z "$WORKDIR" ]; then
+            WORKDIR=$(find / -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
+        fi
+        if [ -z "$WORKDIR" ]; then
+            echo "错误: 找不到 FixInitiator.py"
+            exit 1
+        fi
+        cd "$WORKDIR"
+        rm -rf initiator/* 2>/dev/null || true
+        python3 FixInitiator.py --host $FIX_HOST --reset-seqnums
+        cp test_report.json test_report.html syslog.txt report.log /tmp/reports/ 2>/dev/null || true
+    ' || true
 
     log_success "测试执行完成"
     log_info "报告保存在: $REPORT_DIR"
