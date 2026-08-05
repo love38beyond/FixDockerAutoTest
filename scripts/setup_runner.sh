@@ -32,7 +32,9 @@ fi
 if [ "$BUILD" = true ]; then
     log_step "正在准备 fix-runner Docker 镜像..."
     RUNNER_TAR="$SCRIPT_DIR/fix-runner.tar"
-    if [ -f "$RUNNER_TAR" ]; then
+    if image_exists "$IMAGE_NAME"; then
+        log_info "镜像 $IMAGE_NAME 已存在，跳过导入"
+    elif [ -f "$RUNNER_TAR" ]; then
         docker import "$RUNNER_TAR" "$IMAGE_NAME"
         log_success "镜像 $IMAGE_NAME 导入完成"
     else
