@@ -88,7 +88,8 @@ if [ "$CAN_PULL" = false ]; then
     docker rm -f "$TEMP_CONTAINER" 2>/dev/null || true
     BASE_IMAGE=$(docker inspect -f '{{.Config.Image}}' "$BASE_CONTAINER")
     docker run -d --name "$TEMP_CONTAINER" "$BASE_IMAGE" sleep infinity
-    docker cp "$FIXAUTO_DIR" "$TEMP_CONTAINER:/opt/"
+    docker exec "$TEMP_CONTAINER" mkdir -p /opt/fix-test
+    docker cp "$FIXAUTO_DIR/." "$TEMP_CONTAINER:/opt/fix-test/"
     docker commit "$TEMP_CONTAINER" "$IMAGE_NAME"
     docker rm -f "$TEMP_CONTAINER"
     echo "镜像创建成功（基于 $BASE_CONTAINER）"
