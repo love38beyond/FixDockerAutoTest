@@ -207,7 +207,7 @@ function toggleDetail(row) {{
 <div class="cards">
     <div class="card total">
         <div class="num">{total}</div>
-        <div class="label">Total Cases</div>
+        <div class="label">Total Steps</div>
     </div>
     <div class="card pass">
         <div class="num">{pass_count}</div>
