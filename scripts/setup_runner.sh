@@ -62,13 +62,14 @@ if [ "$RUN" = true ]; then
     log_step "正在启动 fix-runner 容器执行测试..."
 
     if container_exists "$CONTAINER_NAME"; then
+        log_info "容器 $CONTAINER_NAME 已存在，先删除..."
         docker rm -f "$CONTAINER_NAME" 2>/dev/null || true
     fi
 
     REPORT_DIR="${SCRIPT_DIR}/logs/reports"
     mkdir -p "$REPORT_DIR"
 
-    docker run --rm \
+    docker run \
         --name="$CONTAINER_NAME" \
         --network="$DOCKER_NETWORK" \
         -e FIX_HOST="$RUNNER_HOST" \
@@ -96,4 +97,5 @@ if [ "$RUN" = true ]; then
     if [ -f "$REPORT_DIR/test_report.html" ]; then
         log_info "HTML 报告: $REPORT_DIR/test_report.html"
     fi
+    log_info "容器 $CONTAINER_NAME 已保留，可进入排查: docker exec -it $CONTAINER_NAME bash"
 fi
