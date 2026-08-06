@@ -114,13 +114,16 @@ if [ "$RUN" = true ]; then
         python3 FixInitiator.py --host $FIX_HOST --reset-seqnums
         RET=$?
         echo "[runner] 测试完成, exit code=$RET"
-        echo "[runner] 当前目录文件: $(ls *.json *.html *.log *.txt 2>/dev/null || echo 无报告文件)"
+        echo "[runner] CWD: $(pwd)"
+        echo "[runner] syslog.txt: $(ls -la syslog.txt 2>/dev/null || echo 不存在)"
+        echo "[runner] test_report.json: $(ls -la test_report.json 2>/dev/null || echo 不存在)"
         echo "[runner] 复制报告到 /tmp/reports/"
         for f in test_report.json test_report.html syslog.txt report.log; do
+            TARGET="/tmp/reports/$f"
             if [ -f "$f" ]; then
-                cp -v "$f" /tmp/reports/ 2>&1
+                cp -v "$f" "$TARGET" 2>&1
             else
-                echo "[runner] 跳过: $f (不存在)"
+                echo "[runner] 跳过: $f (当前目录不存在)"
             fi
         done
         echo "[runner] /tmp/reports/ 内容: $(ls /tmp/reports/ 2>/dev/null || echo 空)"
