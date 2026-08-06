@@ -116,11 +116,26 @@ if [ "$RUN" = true ]; then
         echo "[runner] 测试完成, exit code=$RET"
         echo "[runner] 当前目录文件: $(ls *.json *.html *.log *.txt 2>/dev/null || echo 无报告文件)"
         echo "[runner] 复制报告到 /tmp/reports/"
-        cp -v test_report.json test_report.html syslog.txt report.log /tmp/reports/ 2>&1 || echo "[runner] cp 失败"
+        for f in test_report.json test_report.html syslog.txt report.log; do
+            if [ -f "$f" ]; then
+                cp -v "$f" /tmp/reports/ 2>&1
+            else
+                echo "[runner] 跳过: $f (不存在)"
+            fi
+        done
         echo "[runner] /tmp/reports/ 内容: $(ls /tmp/reports/ 2>/dev/null || echo 空)"
     ' > "$RUNNER_LOG" 2>&1 || true
     # 只把关键行追加到主日志
     grep '\[runner\]' "$RUNNER_LOG" 2>/dev/null | while IFS= read -r line; do log_info "$line"; done || true
+
+    # 兜底：如果容器没生成 HTML 但 JSON 存在，宿主机生成
+    if [ -f "$REPORT_DIR/test_report.json" ] && [ ! -f "$REPORT_DIR/test_report.html" ]; then
+        log_info "容器内未生成 HTML 报告，尝试宿主机生成..."
+        RUNNER_PY="$SCRIPT_DIR/../FixAutoTest/FixAutoTest/generate_report.py"
+        if [ -f "$RUNNER_PY" ]; then
+            python3 "$RUNNER_PY" "$REPORT_DIR/test_report.json" "$REPORT_DIR/test_report.html" 2>/dev/null || true
+        fi
+    fi
 
     log_success "测试执行完成"
     log_info "报告目录: $REPORT_DIR"
