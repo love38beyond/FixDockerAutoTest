@@ -1,11 +1,11 @@
-# 用例: Position-00010-1
-# 自动转换自: Position-00010-1.xlsx
+# Position-00010-1
+# from: Position-00010-1.xlsx
 
 name: "Position-00010-1"
 
 steps:
-  # Step 1
-  - request:
+  - step: 1
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -24,10 +24,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 2
-  - request:
+  - step: 2
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -46,10 +46,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 3
-  - request:
+  - step: 3
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -68,10 +68,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 4
-  - request:
+  - step: 4
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -90,10 +90,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 5
-  - request:
+  - step: 5
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -112,10 +112,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 6
-  - request:
+  - step: 6
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -134,10 +134,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 7
-  - request:
+  - step: 7
+    request:
       MsgType: F
       Account: "00010"
       ClOrdID: "200"
@@ -145,10 +145,10 @@ steps:
       Side: Sell
       Symbol: fu1205
       SecurityExchange: SHFE
-    # 无预期响应
+    # no expected response
 
-  # Step 8
-  - request:
+  - step: 8
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -167,10 +167,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 9
-  - request:
+  - step: 9
+    request:
       MsgType: G
       Account: "00010"
       ClOrdID: "300"
@@ -182,10 +182,10 @@ steps:
       Symbol: fu1205
       OpenClose: Open
       SecurityExchange: SHFE
-    # 无预期响应
+    # no expected response
 
-  # Step 10
-  - request:
+  - step: 10
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -204,10 +204,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 11
-  - request:
+  - step: 11
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -226,10 +226,10 @@ steps:
       SecurityExchange: SHFE
       HedgeFlag: 1
       CombDirection: N
-    # 无预期响应
+    # no expected response
 
-  # Step 12
-  - request:
+  - step: 12
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -249,10 +249,10 @@ steps:
       HedgeFlag: 1
       CombDirection: N
       IsSwapOrder: 5
-    # 无预期响应
+    # no expected response
 
-  # Step 13
-  - request:
+  - step: 13
+    request:
       MsgType: D
       Account: "00010"
       AvgPx: 0
@@ -272,10 +272,10 @@ steps:
       HedgeFlag: 1
       CombDirection: N
       IsSwapOrder: 5
-    # 无预期响应
+    # no expected response
 
-  # Step 14
-  - request:
+  - step: 14
+    request:
       MsgType: F
       Account: "00010"
       ClOrdID: "201"
@@ -283,4 +283,4 @@ steps:
       Side: Sell
       Symbol: fu1205
       SecurityExchange: SHFE
-    # 无预期响应
+    # no expected response

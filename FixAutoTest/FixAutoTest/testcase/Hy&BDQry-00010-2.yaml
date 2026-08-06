@@ -1,290 +1,290 @@
-# 用例: Hy&BDQry-00010-2
-# 自动转换自: Hy&BDQry-00010-2.xlsx
+# Hy&BDQry-00010-2
+# from: Hy&BDQry-00010-2.xlsx
 
 name: "Hy&BDQry-00010-2"
 
 steps:
-  # Step 1
-  - request:
+  - step: 1
+    request:
       MsgType: H
       Account: "00010"
       Symbol: fu1205p4800
     expects:
-      # 回报 1
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "101"
-      - CumQty: 2
-      - OrderQty: 2
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 150
-      - Side: Sell
-      - Symbol: fu1205p4800
-      - Text: CTP:全部成交
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "101"
+        CumQty: 2
+        OrderQty: 2
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 150
+        Side: Sell
+        Symbol: fu1205p4800
+        Text: CTP:全部成交
 
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 2
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "100"
-      - CumQty: 2
-      - OrderQty: 2
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 150
-      - Side: Buy
-      - Symbol: fu1205p4800
-      - Text: CTP:全部成交
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "100"
+        CumQty: 2
+        OrderQty: 2
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 150
+        Side: Buy
+        Symbol: fu1205p4800
+        Text: CTP:全部成交
 
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
 
-  # Step 2
-  - request:
+  - step: 2
+    request:
       MsgType: H
       Account: "00010"
       Symbol: fu1205
     expects:
-      # 回报 1
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "111"
-      - OrderQty: 1
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - TimeInForce: Day
-      - OpenClose: Open
-      - StopPx: 5100
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "111"
+        OrderQty: 1
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        TimeInForce: Day
+        OpenClose: Open
+        StopPx: 5100
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 2
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "110"
-      - OrderQty: 1
-      - OrdStatus: n
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - TimeInForce: Day
-      - OpenClose: Open
-      - StopPx: 5100
-      - ExecType: I
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "110"
+        OrderQty: 1
+        OrdStatus: n
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        TimeInForce: Day
+        OpenClose: Open
+        StopPx: 5100
+        ExecType: I
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 3
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "109"
-      - OrderQty: 1
-      - OrdStatus: Rejected
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - Text: CTP:已撤单报单被拒绝SHFE:不被支持的报单类型
-      - TimeInForce: GTC
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "109"
+        OrderQty: 1
+        OrdStatus: Rejected
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        Text: CTP:已撤单报单被拒绝SHFE:不被支持的报单类型
+        TimeInForce: GTC
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 4
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "108"
-      - OrderQty: 1
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - Text: CTP:已撤单报单已提交 
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "108"
+        OrderQty: 1
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        Text: CTP:已撤单报单已提交 
+        TimeInForce: IOC
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 5
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "107"
-      - OrderQty: 2
-      - OrdStatus: New
-      - OrdType: Limit
-      - Price: 5100
-      - Side: Sell
-      - Symbol: fu1205
-      - Text: CTP:未成交
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - LeavesQty: 2
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "107"
+        OrderQty: 2
+        OrdStatus: New
+        OrdType: Limit
+        Price: 5100
+        Side: Sell
+        Symbol: fu1205
+        Text: CTP:未成交
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        LeavesQty: 2
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 6
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "106"
-      - OrderQty: 1
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - Text: CTP:已撤单
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "106"
+        OrderQty: 1
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        Text: CTP:已撤单
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 7
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "105"
-      - OrderQty: 1
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - Text: CTP:已撤单
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "105"
+        OrderQty: 1
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        Text: CTP:已撤单
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 8
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "104"
-      - OrderQty: 1
-      - OrdStatus: New
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - Text: CTP:未成交
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "104"
+        OrderQty: 1
+        OrdStatus: New
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        Text: CTP:未成交
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 9
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "103"
-      - CumQty: 1
-      - OrderQty: 1
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Buy
-      - Symbol: fu1205
-      - Text: CTP:全部成交报单已提交
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "103"
+        CumQty: 1
+        OrderQty: 1
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 5000
+        Side: Buy
+        Symbol: fu1205
+        Text: CTP:全部成交报单已提交
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 10
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "102"
-      - CumQty: 1
-      - OrderQty: 1
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 5000
-      - Side: Sell
-      - Symbol: fu1205
-      - Text: CTP:全部成交报单已提交
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "102"
+        CumQty: 1
+        OrderQty: 1
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 5000
+        Side: Sell
+        Symbol: fu1205
+        Text: CTP:全部成交报单已提交
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 11
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "101"
-      - CumQty: 2
-      - OrderQty: 2
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 150
-      - Side: Sell
-      - Symbol: fu1205p4800
-      - Text: CTP:全部成交
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "101"
+        CumQty: 2
+        OrderQty: 2
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 150
+        Side: Sell
+        Symbol: fu1205p4800
+        Text: CTP:全部成交
 
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 12
-      - MsgType: 8
-      - Account: "00010"
-      - ClOrdID: "100"
-      - CumQty: 2
-      - OrderQty: 2
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 150
-      - Side: Buy
-      - Symbol: fu1205p4800
-      - Text: CTP:全部成交
+      -
+        MsgType: 8
+        Account: "00010"
+        ClOrdID: "100"
+        CumQty: 2
+        OrderQty: 2
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 150
+        Side: Buy
+        Symbol: fu1205p4800
+        Text: CTP:全部成交
 
-      - TimeInForce: Day
-      - OpenClose: Open
-      - ExecType: I
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+        TimeInForce: Day
+        OpenClose: Open
+        ExecType: I
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
 
-  # Step 3
-  - request:
+  - step: 3
+    request:
       MsgType: c
       Account: "00010"
       OnBehalfOfSubID: 32814
@@ -319,8 +319,8 @@ steps:
       Tag_5621: 1
       match: [MsgType, Symbol, Tag_107, SecurityGroup, Tag_167, Tag_200, Tag_231, Tag_969]
 
-  # Step 4
-  - request:
+  - step: 4
+    request:
       MsgType: c
       Account: "00010"
       OnBehalfOfSubID: 32814

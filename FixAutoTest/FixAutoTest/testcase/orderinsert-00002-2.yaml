@@ -1,11 +1,11 @@
-# 用例: orderinsert-00002-2
-# 自动转换自: orderinsert-00002-2.xlsx
+# orderinsert-00002-2
+# from: orderinsert-00002-2.xlsx
 
 name: "orderinsert-00002-2"
 
 steps:
-  # Step 1
-  - request:
+  - step: 1
+    request:
       MsgType: D
       Account: "00002"
       AvgPx: 0
@@ -24,89 +24,89 @@ steps:
       HedgeFlag: 1
       CombDirection: N
     expects:
-      # 回报 1
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "1"
-      - OrderQty: 1
-      - OrdStatus: PendingNew
-      - OrdType: Limit
-      - Price: 64000
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: FOK
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: A
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "1"
+        OrderQty: 1
+        OrdStatus: PendingNew
+        OrdType: Limit
+        Price: 64000
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: FOK
+        OpenClose: Open
+        MinQty: 0
+        ExecType: A
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 2
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "1"
-      - OrderQty: 1
-      - OrdStatus: New
-      - OrdType: Limit
-      - Price: 64000
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: FOK
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 0
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "1"
+        OrderQty: 1
+        OrdStatus: New
+        OrdType: Limit
+        Price: 64000
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: FOK
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 0
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 3
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "1"
-      - CumQty: 1
-      - OrderQty: 1
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 64000
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: FOK
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: F
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "1"
+        CumQty: 1
+        OrderQty: 1
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 64000
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: FOK
+        OpenClose: Open
+        MinQty: 0
+        ExecType: F
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 4
-      - MsgType: 8
-      - OnBehalfOfSubID: 61442
-      - Account: "00002"
-      - ClOrdID: "1"
-      - CumQty: 1
-      - OrderQty: 1
-      - OrdStatus: Filled
-      - OrdType: Limit
-      - Price: 64000
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: FOK
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: F
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61442
+        Account: "00002"
+        ClOrdID: "1"
+        CumQty: 1
+        OrderQty: 1
+        OrdStatus: Filled
+        OrdType: Limit
+        Price: 64000
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: FOK
+        OpenClose: Open
+        MinQty: 0
+        ExecType: F
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
 
-  # Step 2
-  - request:
+  - step: 2
+    request:
       MsgType: D
       Account: "00002"
       AvgPx: 0
@@ -126,68 +126,68 @@ steps:
       HedgeFlag: 1
       CombDirection: N
     expects:
-      # 回报 1
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "2"
-      - OrderQty: 5
-      - OrdStatus: PendingNew
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 4
-      - ExecType: A
-      - LeavesQty: 5
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "2"
+        OrderQty: 5
+        OrdStatus: PendingNew
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 4
+        ExecType: A
+        LeavesQty: 5
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 2
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "2"
-      - OrderQty: 5
-      - OrdStatus: New
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 4
-      - ExecType: 0
-      - LeavesQty: 5
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "2"
+        OrderQty: 5
+        OrdStatus: New
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 4
+        ExecType: 0
+        LeavesQty: 5
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 3
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "2"
-      - OrderQty: 5
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 4
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "2"
+        OrderQty: 5
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 4
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
-  # Step 3
-  - request:
+  - step: 3
+    request:
       MsgType: D
       Account: "00002"
       AvgPx: 0
@@ -207,151 +207,151 @@ steps:
       HedgeFlag: 1
       CombDirection: N
     expects:
-      # 回报 1
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "3"
-      - OrderQty: 4
-      - OrdStatus: PendingNew
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: A
-      - LeavesQty: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "3"
+        OrderQty: 4
+        OrdStatus: PendingNew
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 0
+        ExecType: A
+        LeavesQty: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 2
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "3"
-      - OrderQty: 4
-      - OrdStatus: New
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 0
-      - LeavesQty: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "3"
+        OrderQty: 4
+        OrdStatus: New
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 0
+        LeavesQty: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 3
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "3"
-      - CumQty: 3
-      - OrderQty: 4
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "3"
+        CumQty: 3
+        OrderQty: 4
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 4
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "3"
-      - CumQty: 3
-      - OrderQty: 4
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "3"
+        CumQty: 3
+        OrderQty: 4
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 5
-      - MsgType: 8
-      - OnBehalfOfSubID: 61442
-      - Account: "00002"
-      - ClOrdID: "3"
-      - CumQty: 1
-      - OrderQty: 4
-      - OrdStatus: PartialFill
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: F
-      - LeavesQty: 3
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61442
+        Account: "00002"
+        ClOrdID: "3"
+        CumQty: 1
+        OrderQty: 4
+        OrdStatus: PartialFill
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 0
+        ExecType: F
+        LeavesQty: 3
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 6
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "3"
-      - CumQty: 3
-      - OrderQty: 4
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "3"
+        CumQty: 3
+        OrderQty: 4
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 7
-      - MsgType: 8
-      - OnBehalfOfSubID: 61442
-      - Account: "00002"
-      - ClOrdID: "3"
-      - CumQty: 3
-      - OrderQty: 4
-      - OrdStatus: PartialFill
-      - OrdType: Limit
-      - Price: 63900
-      - Side: Sell
-      - Symbol: cu1202
-      - TimeInForce: IOC
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: F
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61442
+        Account: "00002"
+        ClOrdID: "3"
+        CumQty: 3
+        OrderQty: 4
+        OrdStatus: PartialFill
+        OrdType: Limit
+        Price: 63900
+        Side: Sell
+        Symbol: cu1202
+        TimeInForce: IOC
+        OpenClose: Open
+        MinQty: 0
+        ExecType: F
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
 
-  # Step 4
-  - request:
+  - step: 4
+    request:
       MsgType: D
       Account: "00002"
       AvgPx: 0
@@ -370,133 +370,133 @@ steps:
       HedgeFlag: 1
       CombDirection: N
     expects:
-      # 回报 1
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "4"
-      - OrderQty: 4
-      - OrdStatus: PendingNew
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Close
-      - MinQty: 0
-      - ExecType: A
-      - LeavesQty: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "4"
+        OrderQty: 4
+        OrdStatus: PendingNew
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Close
+        MinQty: 0
+        ExecType: A
+        LeavesQty: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 2
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "4"
-      - OrderQty: 4
-      - OrdStatus: New
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Close
-      - MinQty: 0
-      - ExecType: 0
-      - LeavesQty: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "4"
+        OrderQty: 4
+        OrdStatus: New
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Close
+        MinQty: 0
+        ExecType: 0
+        LeavesQty: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 3
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "4"
-      - CumQty: 1
-      - OrderQty: 4
-      - OrdStatus: PartialFill
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Close
-      - MinQty: 0
-      - ExecType: F
-      - LeavesQty: 3
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "4"
+        CumQty: 1
+        OrderQty: 4
+        OrdStatus: PartialFill
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Close
+        MinQty: 0
+        ExecType: F
+        LeavesQty: 3
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 4
-      - MsgType: 8
-      - OnBehalfOfSubID: 61442
-      - Account: "00002"
-      - ClOrdID: "4"
-      - CumQty: 1
-      - OrderQty: 4
-      - OrdStatus: PartialFill
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Close
-      - MinQty: 0
-      - ExecType: F
-      - LeavesQty: 3
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61442
+        Account: "00002"
+        ClOrdID: "4"
+        CumQty: 1
+        OrderQty: 4
+        OrdStatus: PartialFill
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Close
+        MinQty: 0
+        ExecType: F
+        LeavesQty: 3
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 5
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "5"
-      - OrderQty: 1
-      - OrdStatus: PendingNew
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: A
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
-      - Tag_20012: 4
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "5"
+        OrderQty: 1
+        OrdStatus: PendingNew
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Open
+        MinQty: 0
+        ExecType: A
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
+        Tag_20012: 4
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 6
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "5"
-      - OrderQty: 1
-      - OrdStatus: New
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 0
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
-      - Tag_20012: 4
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "5"
+        OrderQty: 1
+        OrdStatus: New
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 0
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
+        Tag_20012: 4
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
-  # Step 5
-  - request:
+  - step: 5
+    request:
       MsgType: F
       Account: "00002"
       ClOrdID: "6"
@@ -507,70 +507,70 @@ steps:
       Symbol: cu1202
       SecurityExchange: SHFE
     expects:
-      # 回报 1
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "4"
-      - CumQty: 1
-      - OrderQty: 4
-      - OrdStatus: PendingCancel
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Close
-      - MinQty: 0
-      - ExecType: 6
-      - LeavesQty: 3
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "4"
+        CumQty: 1
+        OrderQty: 4
+        OrdStatus: PendingCancel
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Close
+        MinQty: 0
+        ExecType: 6
+        LeavesQty: 3
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 2
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "4"
-      - CumQty: 1
-      - OrderQty: 4
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Close
-      - MinQty: 0
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "4"
+        CumQty: 1
+        OrderQty: 4
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Close
+        MinQty: 0
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
-      # 回报 3
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "6"
-      - CumQty: 1
-      - OrderQty: 4
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Close
-      - MinQty: 0
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "6"
+        CumQty: 1
+        OrderQty: 4
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Close
+        MinQty: 0
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
         match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
 
-  # Step 6
-  - request:
+  - step: 6
+    request:
       MsgType: F
       Account: "00002"
       ClOrdID: "7"
@@ -581,64 +581,64 @@ steps:
       Symbol: cu1202
       SecurityExchange: SHFE
     expects:
-      # 回报 1
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "5"
-      - OrderQty: 1
-      - OrdStatus: PendingCancel
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 6
-      - LeavesQty: 1
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
-      - Tag_20012: 4
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "5"
+        OrderQty: 1
+        OrdStatus: PendingCancel
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 6
+        LeavesQty: 1
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
+        Tag_20012: 4
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 2
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "5"
-      - OrderQty: 1
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
-      - Tag_20012: 4
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "5"
+        OrderQty: 1
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
+        Tag_20012: 4
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
-      # 回报 3
-      - MsgType: 8
-      - OnBehalfOfSubID: 61441
-      - Account: "00002"
-      - ClOrdID: "7"
-      - OrderQty: 1
-      - OrdStatus: Canceled
-      - OrdType: Limit
-      - Price: 65000
-      - Side: Buy
-      - Symbol: cu1202
-      - TimeInForce: Day
-      - OpenClose: Open
-      - MinQty: 0
-      - ExecType: 4
-      - SecurityExchange: SHFE
-      - Tag_442: 1
-      - HedgeFlag: 1
-      - Tag_20012: 4
+      -
+        MsgType: 8
+        OnBehalfOfSubID: 61441
+        Account: "00002"
+        ClOrdID: "7"
+        OrderQty: 1
+        OrdStatus: Canceled
+        OrdType: Limit
+        Price: 65000
+        Side: Buy
+        Symbol: cu1202
+        TimeInForce: Day
+        OpenClose: Open
+        MinQty: 0
+        ExecType: 4
+        SecurityExchange: SHFE
+        Tag_442: 1
+        HedgeFlag: 1
+        Tag_20012: 4
         match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
