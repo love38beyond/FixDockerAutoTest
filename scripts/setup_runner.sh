@@ -94,13 +94,25 @@ if [ "$RUN" = true ]; then
     log_info "开始在容器中执行测试..."
     docker exec "$CONTAINER_NAME" bash -c '
         echo "[runner] 查找 FixInitiator.py..."
-        WORKDIR=$(find /opt -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
+        # 优先 /opt/fix-test/FixAutoTest/FixAutoTest 再 /opt/fix-test/FixAutoTest
+        WORKDIR=""
+        for candidate in \
+            /opt/fix-test/FixAutoTest/FixAutoTest \
+            /opt/fix-test/FixAutoTest \
+            /opt/fix-test; do
+            if [ -f "$candidate/FixInitiator.py" ]; then
+                WORKDIR="$candidate"
+                break
+            fi
+        done
+        if [ -z "$WORKDIR" ]; then
+            WORKDIR=$(find /opt -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
+        fi
         if [ -z "$WORKDIR" ]; then
             WORKDIR=$(find / -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
         fi
         if [ -z "$WORKDIR" ]; then
             echo "[runner] 错误: 找不到 FixInitiator.py"
-            find / -name "FixInitiator.py" 2>/dev/null || echo "[runner] 全局搜索也无结果"
             exit 1
         fi
         echo "[runner] 工作目录: $WORKDIR"
