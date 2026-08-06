@@ -820,31 +820,15 @@ def write_test_report():
         with open('test_report.json', 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
         logger.info("Test report written to test_report.json")
-        # 自动生成 HTML 报告（用 subprocess 避免 import 路径问题）
+        # 自动生成 HTML 报告
         try:
-            import subprocess
-            import shutil
-            # 查找当前 Python 解释器（麒麟可能是 python36/python3.6）
-            py_bin = sys.executable
-            if not py_bin:
-                for candidate in ['python3', 'python3.6', 'python36', 'python']:
-                    py_bin = shutil.which(candidate)
-                    if py_bin:
-                        break
-            if not py_bin:
-                py_bin = 'python3'
-            gen_script = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'generate_report.py')
-            if os.path.isfile(gen_script):
-                result = subprocess.run(
-                    [py_bin, gen_script, 'test_report.json', 'test_report.html'],
-                    stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=30
-                )
-                if result.returncode != 0:
-                    logger.warning("HTML report generation failed: %s", result.stderr.decode('utf-8', errors='replace').strip())
-            else:
-                logger.info("generate_report.py not found, skipping HTML report")
+            import importlib
+            gen_module = importlib.import_module('generate_report')
+            gen_module.generate_report('test_report.json', 'test_report.html')
         except Exception as e:
             logger.warning("Failed to generate HTML report: %s", e)
+            import traceback
+            logger.warning(traceback.format_exc())
     except Exception as e:
         logger.error("Failed to write test report: %s", e)
 
