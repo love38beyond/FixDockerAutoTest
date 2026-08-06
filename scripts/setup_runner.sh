@@ -79,27 +79,52 @@ if [ "$RUN" = true ]; then
         "$IMAGE_NAME" \
         tail -f /dev/null
 
+    # 验证容器运行
+    if ! docker ps --format '{{.Names}}' | grep -qx "$CONTAINER_NAME"; then
+        log_error "容器 $CONTAINER_NAME 启动失败!"
+        log_info "查看日志: docker logs $CONTAINER_NAME"
+        exit 1
+    fi
+    log_info "容器 $CONTAINER_NAME 已启动"
+
     # 在容器中执行测试
+    log_info "开始在容器中执行测试..."
+
     docker exec "$CONTAINER_NAME" bash -c '
-        # 自动查找 FixInitiator.py 所在目录
+        echo "[runner] 查找 FixInitiator.py..."
         WORKDIR=$(find /opt -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
         if [ -z "$WORKDIR" ]; then
             WORKDIR=$(find / -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
         fi
         if [ -z "$WORKDIR" ]; then
-            echo "错误: 找不到 FixInitiator.py"
+            echo "[runner] 错误: 找不到 FixInitiator.py"
+            find / -name "FixInitiator.py" 2>/dev/null || echo "[runner] 全局搜索也无结果"
             exit 1
         fi
+        echo "[runner] 工作目录: $WORKDIR"
         cd "$WORKDIR"
+        echo "[runner] 当前目录: $(pwd)"
+        echo "[runner] 文件列表: $(ls FixInitiator.py tags.py generate_report.py 2>/dev/null)"
+        echo "[runner] Python: $(python3 --version 2>&1 || echo NOT_FOUND)"
+        echo "[runner] 环境 FIX_HOST=$FIX_HOST"
         rm -rf initiator/* 2>/dev/null || true
+        echo "[runner] 开始执行测试..."
         python3 FixInitiator.py --host $FIX_HOST --reset-seqnums
-        cp test_report.json test_report.html syslog.txt report.log /tmp/reports/ 2>/dev/null || true
-    ' || true
+        RET=$?
+        echo "[runner] 测试完成, exit code=$RET"
+        echo "[runner] 当前目录文件: $(ls *.json *.html *.log *.txt 2>/dev/null || echo 无报告文件)"
+        echo "[runner] 复制报告到 /tmp/reports/"
+        cp -v test_report.json test_report.html syslog.txt report.log /tmp/reports/ 2>&1 || echo "[runner] cp 失败"
+        echo "[runner] /tmp/reports/ 内容: $(ls /tmp/reports/ 2>/dev/null || echo 空)"
+    ' 2>&1 | while IFS= read -r line; do log_info "$line"; done || true
 
     log_success "测试执行完成"
-    log_info "报告保存在: $REPORT_DIR"
+    log_info "报告目录: $REPORT_DIR"
+    log_info "报告目录内容: $(ls -la "$REPORT_DIR" 2>/dev/null || echo 空)"
     if [ -f "$REPORT_DIR/test_report.html" ]; then
         log_info "HTML 报告: $REPORT_DIR/test_report.html"
+    else
+        log_info "警告: test_report.html 未生成"
     fi
     log_info "容器 $CONTAINER_NAME 已保留，可进入排查: docker exec -it $CONTAINER_NAME bash"
 fi
