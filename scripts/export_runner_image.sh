@@ -87,7 +87,7 @@ if [ "$CAN_PULL" = false ]; then
     TEMP_CONTAINER="fix-runner-temp"
     docker rm -f "$TEMP_CONTAINER" 2>/dev/null || true
     BASE_IMAGE=$(docker inspect -f '{{.Config.Image}}' "$BASE_CONTAINER")
-    docker run -d --name "$TEMP_CONTAINER" "$BASE_IMAGE" sleep infinity
+    docker run -d --name "$TEMP_CONTAINER" "$BASE_IMAGE" tail -f /dev/null
     docker exec "$TEMP_CONTAINER" mkdir -p /opt/fix-test
     docker cp "$FIXAUTO_DIR/." "$TEMP_CONTAINER:/opt/fix-test/"
     docker commit "$TEMP_CONTAINER" "$IMAGE_NAME"

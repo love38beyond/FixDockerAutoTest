@@ -77,7 +77,7 @@ if [ "$RUN" = true ]; then
         -e FIX_PORT="${FIX_PORT:-61111}" \
         -v "$REPORT_DIR:/tmp/reports" \
         "$IMAGE_NAME" \
-        sleep infinity
+        tail -f /dev/null
 
     # 在容器中执行测试
     docker exec "$CONTAINER_NAME" bash -c '
