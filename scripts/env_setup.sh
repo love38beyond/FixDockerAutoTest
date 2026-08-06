@@ -145,10 +145,16 @@ main() {
     summary "${GREEN}${HR}${NC}"
     summary "${GREEN}  连接地址${NC}"
     summary "${GREEN}${HR}${NC}"
-    summary "  FIX 交易:     tcp://${HOST_IP}:61111"
-    summary "  FIX 行情:     tcp://${HOST_IP}:50001"
-    summary "  ticlient:     ${HOST_IP}:11155"
-    summary "                (0000_admin / 1 / 1)"
+    summary "  ── 交易所 ──"
+    summary "  交易(报盘):   tcp://${HOST_IP}:26181"
+    summary "  行情:         tcp://${HOST_IP}:26171"
+    summary "  ── CTP 柜台 ──"
+    summary "  交易:         tcp://${HOST_IP}:11157"
+    summary "  行情:         tcp://${HOST_IP}:11167"
+    summary "  ticlient:     ${HOST_IP}:11155 (0000_admin / 1 / 1)"
+    summary "  ── FIX 网关 ──"
+    summary "  交易:         tcp://${HOST_IP}:61111"
+    summary "  行情:         tcp://${HOST_IP}:50001"
 
     # ── 测试报告 ──
     if [ "${SKIP_RUNNER:-false}" != true ]; then
