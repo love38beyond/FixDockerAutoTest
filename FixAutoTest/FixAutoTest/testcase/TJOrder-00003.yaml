@@ -23,6 +23,7 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 5
     expect:
       MsgType: 8
@@ -65,28 +66,93 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 5
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "101"
-      OrderQty: 1
-      OrdStatus: Conditional
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: M
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 5
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "101"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "101"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "101"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "101"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 3
   - request:
@@ -107,14 +173,15 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 7
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "101"
+      ClOrdID: "102"
       OrderQty: 1
-      OrdStatus: G
+      OrdStatus: Conditional
       OrdType: Limit
       Price: 305
       Side: Buy
@@ -122,12 +189,12 @@ steps:
       TimeInForce: Day
       OpenClose: Open
       MinQty: 0
-      ExecType: L
+      ExecType: M
       LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 5
+      IsSwapOrder: 7
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 4
@@ -149,28 +216,93 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 7
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "101"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 5
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "103"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 7
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "103"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 7
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "103"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 7
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "103"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 7
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 5
   - request:
@@ -191,27 +323,28 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 6
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "101"
+      ClOrdID: "104"
       OrderQty: 1
-      OrdStatus: New
+      OrdStatus: Conditional
       OrdType: Limit
       Price: 305
       Side: Buy
       Symbol: au1203
-      TimeInForce: Day
+      TimeInForce: GTC
       OpenClose: Open
       MinQty: 0
-      ExecType: 0
+      ExecType: M
       LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 5
+      IsSwapOrder: 6
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 6
@@ -233,28 +366,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 6
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "102"
-      OrderQty: 1
-      OrdStatus: Conditional
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: M
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 7
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: GTC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 6
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: GTC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 6
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: GTC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 6
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: Rejected
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: GTC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 8
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 6
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 7
   - request:
@@ -275,19 +472,20 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 8
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "103"
+      ClOrdID: "106"
       OrderQty: 1
       OrdStatus: Conditional
       OrdType: Limit
       Price: 305
       Side: Buy
       Symbol: au1203
-      TimeInForce: Day
+      TimeInForce: OPG
       OpenClose: Open
       MinQty: 0
       ExecType: M
@@ -295,7 +493,7 @@ steps:
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 7
+      IsSwapOrder: 8
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 8
@@ -317,28 +515,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 8
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "103"
-      OrderQty: 1
-      OrdStatus: G
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: L
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 7
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "107"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: OPG
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 8
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "107"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: OPG
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 8
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "107"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: OPG
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 8
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "107"
+      - OrderQty: 1
+      - OrdStatus: Rejected
+      - OrdType: Limit
+      - Price: 305
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: OPG
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 8
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 8
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 9
   - request:
@@ -359,27 +621,48 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "103"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 7
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "108"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "108"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 10
   - request:
@@ -400,27 +683,28 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 9
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "103"
+      ClOrdID: "109"
       OrderQty: 1
-      OrdStatus: New
+      OrdStatus: Conditional
       OrdType: Limit
-      Price: 305
-      Side: Buy
+      Price: 315
+      Side: Sell
       Symbol: au1203
-      TimeInForce: Day
+      TimeInForce: IOC
       OpenClose: Open
       MinQty: 0
-      ExecType: 0
+      ExecType: M
       LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 7
+      IsSwapOrder: 9
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 11
@@ -442,28 +726,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 9
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "104"
-      OrderQty: 1
-      OrdStatus: Conditional
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: GTC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: M
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 6
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 9
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 9
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 9
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: 9
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 12
   - request:
@@ -484,19 +832,20 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: A
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "105"
+      ClOrdID: "111"
       OrderQty: 1
       OrdStatus: Conditional
       OrdType: Limit
-      Price: 305
-      Side: Buy
+      Price: 315
+      Side: Sell
       Symbol: au1203
-      TimeInForce: GTC
+      TimeInForce: IOC
       OpenClose: Open
       MinQty: 0
       ExecType: M
@@ -504,7 +853,7 @@ steps:
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 6
+      IsSwapOrder: A
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 13
@@ -526,28 +875,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: A
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "105"
-      OrderQty: 1
-      OrdStatus: G
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: GTC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: L
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 6
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: A
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: A
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: A
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: A
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 14
   - request:
@@ -568,27 +981,28 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: B
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "105"
+      ClOrdID: "113"
       OrderQty: 1
-      OrdStatus: PendingNew
+      OrdStatus: Conditional
       OrdType: Limit
-      Price: 305
-      Side: Buy
+      Price: 315
+      Side: Sell
       Symbol: au1203
-      TimeInForce: GTC
+      TimeInForce: IOC
       OpenClose: Open
       MinQty: 0
-      ExecType: A
+      ExecType: M
       LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 6
+      IsSwapOrder: B
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 15
@@ -610,27 +1024,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: B
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "105"
-      OrderQty: 1
-      OrdStatus: Rejected
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: GTC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: 8
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 6
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "114"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: B
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "114"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: B
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "114"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: B
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "114"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: B
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 16
   - request:
@@ -651,19 +1130,20 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: C
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "106"
+      ClOrdID: "115"
       OrderQty: 1
       OrdStatus: Conditional
       OrdType: Limit
-      Price: 305
-      Side: Buy
+      Price: 315
+      Side: Sell
       Symbol: au1203
-      TimeInForce: OPG
+      TimeInForce: IOC
       OpenClose: Open
       MinQty: 0
       ExecType: M
@@ -671,7 +1151,7 @@ steps:
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 8
+      IsSwapOrder: C
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 17
@@ -693,28 +1173,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: C
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "107"
-      OrderQty: 1
-      OrdStatus: Conditional
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: OPG
-      OpenClose: Open
-      MinQty: 0
-      ExecType: M
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 8
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "116"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: C
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "116"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: C
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "116"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: C
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "116"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 315
+      - Side: Sell
+      - Symbol: au1203
+      - TimeInForce: IOC
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: C
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 18
   - request:
@@ -735,27 +1279,48 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "107"
-      OrderQty: 1
-      OrdStatus: G
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: OPG
-      OpenClose: Open
-      MinQty: 0
-      ExecType: L
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 8
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "117"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "117"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 19
   - request:
@@ -776,27 +1341,28 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: D
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "107"
+      ClOrdID: "118"
       OrderQty: 1
-      OrdStatus: PendingNew
+      OrdStatus: Conditional
       OrdType: Limit
-      Price: 305
+      Price: 310
       Side: Buy
       Symbol: au1203
-      TimeInForce: OPG
+      TimeInForce: FOK
       OpenClose: Open
       MinQty: 0
-      ExecType: A
+      ExecType: M
       LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 8
+      IsSwapOrder: D
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 20
@@ -818,27 +1384,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: D
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "107"
-      OrderQty: 1
-      OrdStatus: Rejected
-      OrdType: Limit
-      Price: 305
-      Side: Buy
-      Symbol: au1203
-      TimeInForce: OPG
-      OpenClose: Open
-      MinQty: 0
-      ExecType: 8
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 8
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "119"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: D
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "119"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: D
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "119"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: D
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "119"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: D
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 21
   - request:
@@ -859,26 +1490,28 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: H
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "108"
+      ClOrdID: "120"
       OrderQty: 1
-      OrdStatus: PendingNew
+      OrdStatus: Conditional
       OrdType: Limit
-      Price: 315
-      Side: Sell
+      Price: 310
+      Side: Buy
       Symbol: au1203
-      TimeInForce: Day
+      TimeInForce: FOK
       OpenClose: Open
       MinQty: 0
-      ExecType: A
+      ExecType: M
       LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
+      IsSwapOrder: H
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 22
@@ -900,27 +1533,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: H
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "108"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 315
-      Side: Sell
-      Symbol: au1203
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "121"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: H
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "121"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: H
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "121"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: H
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "121"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: H
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 23
   - request:
@@ -941,19 +1639,20 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: E
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "109"
+      ClOrdID: "122"
       OrderQty: 1
       OrdStatus: Conditional
       OrdType: Limit
-      Price: 315
-      Side: Sell
+      Price: 310
+      Side: Buy
       Symbol: au1203
-      TimeInForce: IOC
+      TimeInForce: FOK
       OpenClose: Open
       MinQty: 0
       ExecType: M
@@ -961,7 +1660,7 @@ steps:
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 9
+      IsSwapOrder: E
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 24
@@ -983,28 +1682,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: E
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "110"
-      OrderQty: 1
-      OrdStatus: Conditional
-      OrdType: Limit
-      Price: 315
-      Side: Sell
-      Symbol: au1203
-      TimeInForce: IOC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: M
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 9
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "123"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: E
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "123"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: E
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "123"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: E
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "123"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: E
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 25
   - request:
@@ -1025,27 +1788,28 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: F
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "110"
+      ClOrdID: "124"
       OrderQty: 1
-      OrdStatus: G
+      OrdStatus: Conditional
       OrdType: Limit
-      Price: 315
-      Side: Sell
+      Price: 310
+      Side: Buy
       Symbol: au1203
-      TimeInForce: IOC
+      TimeInForce: FOK
       OpenClose: Open
       MinQty: 0
-      ExecType: L
+      ExecType: M
       LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 9
+      IsSwapOrder: F
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 26
@@ -1067,28 +1831,92 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: F
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "110"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 315
-      Side: Sell
-      Symbol: au1203
-      TimeInForce: IOC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: 9
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "125"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "125"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "125"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "125"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: FOK
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 27
   - request:
@@ -1110,26 +1938,28 @@ steps:
       SecurityExchange: SHFE
       ExpireDate: 2019/12/30
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: F
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "110"
+      ClOrdID: "126"
       OrderQty: 1
-      OrdStatus: Canceled
+      OrdStatus: Conditional
       OrdType: Limit
-      Price: 315
-      Side: Sell
+      Price: 310
+      Side: Buy
       Symbol: au1203
-      TimeInForce: IOC
+      TimeInForce: 6
       OpenClose: Open
       MinQty: 0
-      ExecType: 4
+      ExecType: M
+      LeavesQty: 1
       SecurityExchange: SHFE
       Tag_442: 1
       HedgeFlag: 1
-      IsSwapOrder: 9
+      IsSwapOrder: F
       match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 28
@@ -1152,28 +1982,92 @@ steps:
       SecurityExchange: SHFE
       ExpireDate: 2019/12/30
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: F
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00003"
-      ClOrdID: "111"
-      OrderQty: 1
-      OrdStatus: Conditional
-      OrdType: Limit
-      Price: 315
-      Side: Sell
-      Symbol: au1203
-      TimeInForce: IOC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: M
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: A
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "127"
+      - OrderQty: 1
+      - OrdStatus: Conditional
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: 7
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: M
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "127"
+      - OrderQty: 1
+      - OrdStatus: G
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: 7
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: L
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "127"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: 7
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00003"
+      - ClOrdID: "127"
+      - OrderQty: 1
+      - OrdStatus: Rejected
+      - OrdType: Limit
+      - Price: 310
+      - Side: Buy
+      - Symbol: au1203
+      - TimeInForce: 7
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 8
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - IsSwapOrder: F
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 29
   - request:
@@ -1193,28 +2087,15 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: E
     expect:
-      MsgType: 8
+      MsgType: 3
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "112"
-      OrderQty: 1
-      OrdStatus: Conditional
-      OrdType: Limit
-      Price: 315
-      Side: Sell
-      Symbol: au1203
-      TimeInForce: IOC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: M
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: A
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      ClOrdID: "128"
+      Tag_372: D
+      match: [MsgType, Account, ClOrdID, Tag_372]
 
   # Step 30
   - request:
@@ -1235,25 +2116,12 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: E
     expect:
-      MsgType: 8
+      MsgType: j
       OnBehalfOfSubID: 61441
       Account: "00003"
-      ClOrdID: "112"
-      OrderQty: 1
-      OrdStatus: G
-      OrdType: Limit
-      Price: 315
-      Side: Sell
-      Symbol: au1203
-      TimeInForce: IOC
-      OpenClose: Open
-      MinQty: 0
-      ExecType: L
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      IsSwapOrder: A
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      ClOrdID: "129"
+      Tag_372: D
+      match: [MsgType, Account, ClOrdID, Tag_372]

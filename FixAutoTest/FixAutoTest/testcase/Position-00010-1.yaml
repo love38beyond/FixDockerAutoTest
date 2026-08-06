@@ -23,6 +23,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 2
   - request:
@@ -43,6 +45,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 3
   - request:
@@ -63,6 +67,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 4
   - request:
@@ -83,6 +89,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 5
   - request:
@@ -103,6 +111,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 6
   - request:
@@ -123,6 +133,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 7
   - request:
@@ -133,6 +145,7 @@ steps:
       Side: Sell
       Symbol: fu1205
       SecurityExchange: SHFE
+    # 无预期响应
 
   # Step 8
   - request:
@@ -153,6 +166,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 9
   - request:
@@ -167,6 +182,7 @@ steps:
       Symbol: fu1205
       OpenClose: Open
       SecurityExchange: SHFE
+    # 无预期响应
 
   # Step 10
   - request:
@@ -187,6 +203,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 11
   - request:
@@ -207,6 +225,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
+    # 无预期响应
 
   # Step 12
   - request:
@@ -227,7 +247,9 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 5
+    # 无预期响应
 
   # Step 13
   - request:
@@ -248,7 +270,9 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
+      CombDirection: N
       IsSwapOrder: 5
+    # 无预期响应
 
   # Step 14
   - request:
@@ -259,3 +283,4 @@ steps:
       Side: Sell
       Symbol: fu1205
       SecurityExchange: SHFE
+    # 无预期响应

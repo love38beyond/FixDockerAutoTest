@@ -23,25 +23,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "100"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5000
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "100"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5000
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "100"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5000
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 2
   - request:
@@ -56,25 +77,102 @@ steps:
       Symbol: rb1205
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "100"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5000
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "100"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5000
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "100"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5000
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "500"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5000
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "101"
+      - OrderQty: 2
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5000
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "101"
+      - OrderQty: 2
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5000
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 3
   - request:
@@ -95,25 +193,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "100"
-      OrderQty: 1
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 5000
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 6
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "102"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5002
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "102"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5002
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 4
   - request:
@@ -128,25 +247,100 @@ steps:
       Symbol: rb1205
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "100"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5000
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "102"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5002
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "102"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5002
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "501"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5002
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "103"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5003
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "103"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5003
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 5
   - request:
@@ -167,25 +361,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "500"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5000
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "104"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "104"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 6
   - request:
@@ -200,25 +415,100 @@ steps:
       Symbol: rb1206
       OpenClose: Today
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "101"
-      OrderQty: 2
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5000
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 2
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "104"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "104"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "502"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 7
   - request:
@@ -229,25 +519,62 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "101"
-      OrderQty: 2
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5000
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 2
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "105"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "800"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5004
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 8
   - request:
@@ -268,25 +595,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "102"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5002
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "106"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5006
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "106"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5006
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 9
   - request:
@@ -301,25 +649,100 @@ steps:
       Symbol: rb1205
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "102"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5002
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "106"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5006
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "106"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5006
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "503"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5006
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "107"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5006
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "107"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5006
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 10
   - request:
@@ -340,25 +763,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "102"
-      OrderQty: 1
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 5002
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 6
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "108"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 3008
+      - Side: Buy
+      - Symbol: cu1205c63000
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "108"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 3008
+      - Side: Buy
+      - Symbol: cu1205c63000
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 11
   - request:
@@ -373,24 +817,100 @@ steps:
       Symbol: cu1205c63000
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "102"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5002
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "108"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 3008
+      - Side: Buy
+      - Symbol: cu1205c63000
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "108"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 3008
+      - Side: Buy
+      - Symbol: cu1205c63000
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "504"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 3008
+      - Side: Buy
+      - Symbol: cu1205c63000
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "109"
+      - OrderQty: 3
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 3009
+      - Side: Buy
+      - Symbol: cu1205c63000
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "109"
+      - OrderQty: 3
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 3009
+      - Side: Buy
+      - Symbol: cu1205c63000
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 12
   - request:
@@ -411,24 +931,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "501"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5002
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5010
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5010
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 13
   - request:
@@ -443,25 +985,80 @@ steps:
       Symbol: rb1205
       OpenClose: Close
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "103"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5003
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5010
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "110"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5010
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "505"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5010
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - Account: "00010"
+      - ClOrdID: "111"
+      - OrderQty: 1
+      - OrdType: Limit
+      - Price: 5010
+      - Side: Buy
+      - Symbol: rb1205
+      - Text: CTP:Over Close Today Position
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 8
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdType, Price, Side, Symbol]
 
   # Step 14
   - request:
@@ -482,25 +1079,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "103"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5003
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5012
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5012
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 15
   - request:
@@ -515,25 +1133,100 @@ steps:
       Symbol: rb1205
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "104"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5012
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "112"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5012
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "506"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5012
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "113"
+      - OrderQty: 2
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5013
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "113"
+      - OrderQty: 2
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5013
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 16
   - request:
@@ -548,25 +1241,100 @@ steps:
       Symbol: rb1205
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "104"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "113"
+      - OrderQty: 2
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5013
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "113"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5013
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "507"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5013
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "114"
+      - OrderQty: 3
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5014
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "114"
+      - OrderQty: 3
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5014
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 17
   - request:
@@ -582,24 +1350,13 @@ steps:
       OpenClose: Open
       SecurityExchange: SHFE
     expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
+      MsgType: 9
       Account: "00010"
-      ClOrdID: "104"
-      OrderQty: 1
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 6
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      ClOrdID: "508"
+      OrdStatus: Rejected
+      OrigClOrdID: "112"
+      Text: CTP: The order is full-filled or canceled or unknow and can not be cancelled now
+      match: [MsgType, Account, ClOrdID, OrdStatus, OrigClOrdID, Text]
 
   # Step 18
   - request:
@@ -620,24 +1377,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "104"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "116"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5016
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "116"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5016
+      - Side: Buy
+      - Symbol: rb1205
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 19
   - request:
@@ -653,23 +1432,11 @@ steps:
       OpenClose: Open
       SecurityExchange: SHFE
     expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "502"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      MsgType: j
+      Tag_372: G
+      Tag_380: 0
+      Text: Other:The original order is being processed
+      match: [MsgType, Tag_372, Tag_380, Text]
 
   # Step 20
   - request:
@@ -685,24 +1452,11 @@ steps:
       OpenClose: Open
       SecurityExchange: SHFE
     expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "105"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Today
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      MsgType: j
+      Tag_372: G
+      Tag_380: 0
+      Text: Other:The original order is being processed
+      match: [MsgType, Tag_372, Tag_380, Text]
 
   # Step 21
   - request:
@@ -723,25 +1477,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "105"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Today
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "117"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5017
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "117"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5017
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 22
   - request:
@@ -755,25 +1530,140 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "105"
-      OrderQty: 1
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Today
-      ExecType: 6
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "117"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5017
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "117"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5017
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "511"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5017
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "118"
+      - OrderQty: 3
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: A
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "119"
+      - OrderQty: 2
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 118
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "118"
+      - OrderQty: 3
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 0
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 7
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "119"
+      - OrderQty: 2
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 118
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 23
   - request:
@@ -788,24 +1678,100 @@ steps:
       Symbol: rb1206
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "105"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Today
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "118"
+      - OrderQty: 3
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 6
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "118"
+      - OrderQty: 3
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "512"
+      - OrderQty: 3
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "120"
+      - OrderQty: 4
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5021
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "120"
+      - OrderQty: 4
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5021
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 24
   - request:
@@ -819,24 +1785,143 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "800"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5004
-      Side: Sell
-      Symbol: rb1206
-      TimeInForce: Day
-      OpenClose: Today
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "119"
+      - OrderQty: 2
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 118
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "119"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 118
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "513"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5020
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 118
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "121"
+      - OrderQty: 3
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: A
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "122"
+      - OrderQty: 6
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 6
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 121
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "121"
+      - OrderQty: 3
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 0
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 7
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "122"
+      - OrderQty: 6
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 6
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 121
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 25
   - request:
@@ -847,25 +1932,62 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "106"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5006
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "121"
+      - OrderQty: 3
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 6
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "121"
+      - OrderQty: 3
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "801"
+      - OrderQty: 3
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 26
   - request:
@@ -876,25 +1998,65 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "106"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5006
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "122"
+      - OrderQty: 6
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 6
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 121
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "122"
+      - OrderQty: 6
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 121
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "802"
+      - OrderQty: 6
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5022
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 121
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 27
   - request:
@@ -915,25 +2077,141 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "106"
-      OrderQty: 1
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 5006
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 6
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "123"
+      - OrderQty: 4
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5021
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "123"
+      - OrderQty: 4
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5021
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "120"
+      - OrderQty: 4
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5021
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "123"
+      - CumQty: 4
+      - OrderQty: 4
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Price: 5021
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61442
+      - Account: "00010"
+      - ClOrdID: "123"
+      - CumQty: 4
+      - LastPx: 5021
+      - LastQty: 4
+      - OrderQty: 4
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Side: Buy
+      - Symbol: rb1206
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, LastPx, LastQty, OrderQty, OrdStatus]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "120"
+      - CumQty: 4
+      - OrderQty: 4
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Price: 5021
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 7
+      - MsgType: 8
+      - OnBehalfOfSubID: 61442
+      - Account: "00010"
+      - ClOrdID: "120"
+      - CumQty: 4
+      - LastPx: 5021
+      - LastQty: 4
+      - OrderQty: 4
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Side: Sell
+      - Symbol: rb1206
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, LastPx, LastQty, OrderQty, OrdStatus]
 
   # Step 28
   - request:
@@ -954,24 +2232,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "106"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5006
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "124"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5024
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "124"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5024
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 29
   - request:
@@ -985,24 +2285,140 @@ steps:
       Side: Buy
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "503"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5006
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "124"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5024
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "124"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5024
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "514"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5024
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "125"
+      - OrderQty: 4
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: A
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "126"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 125
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "125"
+      - OrderQty: 4
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 0
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 7
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "126"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 125
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 30
   - request:
@@ -1013,25 +2429,62 @@ steps:
       Side: Buy
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "107"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5006
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "125"
+      - OrderQty: 4
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 6
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "125"
+      - OrderQty: 4
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "803"
+      - OrderQty: 4
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 31
   - request:
@@ -1042,25 +2495,65 @@ steps:
       Side: Buy
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "107"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5006
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "126"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 125
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "126"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 125
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "804"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5025
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 125
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 32
   - request:
@@ -1081,25 +2574,46 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "108"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 3008
-      Side: Buy
-      Symbol: cu1205c63000
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "124"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5026
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "124"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5026
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 33
   - request:
@@ -1113,25 +2627,180 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "108"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 3008
-      Side: Buy
-      Symbol: cu1205c63000
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "127"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5026
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "127"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5026
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "515"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5026
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "128"
+      - OrderQty: 3
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: A
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "128"
+      - OrderQty: 3
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 0
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "129"
+      - OrderQty: 4
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: A
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 128
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 7
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "130"
+      - OrderQty: 2
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 128
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 8
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "129"
+      - OrderQty: 4
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 0
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 128
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 9
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "130"
+      - OrderQty: 2
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 128
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 34
   - request:
@@ -1142,25 +2811,62 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "108"
-      OrderQty: 1
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 3008
-      Side: Buy
-      Symbol: cu1205c63000
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 6
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "128"
+      - OrderQty: 3
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 6
+      - LeavesQty: 3
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "128"
+      - OrderQty: 3
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "805"
+      - OrderQty: 3
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Today
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 35
   - request:
@@ -1171,24 +2877,65 @@ steps:
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "108"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 3008
-      Side: Buy
-      Symbol: cu1205c63000
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "129"
+      - OrderQty: 4
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 6
+      - LeavesQty: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 128
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "129"
+      - OrderQty: 4
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 128
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "806"
+      - OrderQty: 4
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Close
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 128
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 36
   - request:
@@ -1209,24 +2956,143 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "504"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 3008
-      Side: Buy
-      Symbol: cu1205c63000
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "131"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "131"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "130"
+      - OrderQty: 2
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 2
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "131"
+      - CumQty: 1
+      - OrderQty: 1
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61442
+      - Account: "00010"
+      - ClOrdID: "131"
+      - CumQty: 1
+      - LastPx: 5027
+      - LastQty: 1
+      - OrderQty: 1
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Side: Buy
+      - Symbol: rb1206
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, LastPx, LastQty, OrderQty, OrdStatus]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "130"
+      - CumQty: 1
+      - OrderQty: 2
+      - OrdStatus: PartialFill
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: F
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 7
+      - MsgType: 8
+      - OnBehalfOfSubID: 61442
+      - Account: "00010"
+      - ClOrdID: "130"
+      - CumQty: 1
+      - LastPx: 5027
+      - LastQty: 1
+      - OrderQty: 2
+      - OrdStatus: PartialFill
+      - OrdType: Limit
+      - Side: Sell
+      - Symbol: rb1206
+      - OpenClose: Open
+      - ExecType: F
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, LastPx, LastQty, OrderQty, OrdStatus]
 
   # Step 37
   - request:
@@ -1241,25 +3107,100 @@ steps:
       Symbol: rb1206
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "109"
-      OrderQty: 3
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 3009
-      Side: Buy
-      Symbol: cu1205c63000
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 3
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "130"
+      - OrderQty: 2
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "130"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "516"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5027
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "132"
+      - OrderQty: 5
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 5
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "132"
+      - OrderQty: 5
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 5
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 38
   - request:
@@ -1280,25 +3221,143 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "109"
-      OrderQty: 3
-      OrdStatus: New
-      OrdType: Limit
-      Price: 3009
-      Side: Buy
-      Symbol: cu1205c63000
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 3
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "133"
+      - OrderQty: 6
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 6
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "133"
+      - OrderQty: 6
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 6
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "132"
+      - OrderQty: 5
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 5
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "133"
+      - CumQty: 5
+      - OrderQty: 6
+      - OrdStatus: PartialFill
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: F
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61442
+      - Account: "00010"
+      - ClOrdID: "133"
+      - CumQty: 5
+      - LastPx: 5028
+      - LastQty: 5
+      - OrderQty: 6
+      - OrdStatus: PartialFill
+      - OrdType: Limit
+      - Side: Buy
+      - Symbol: rb1206
+      - OpenClose: Open
+      - ExecType: F
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, LastPx, LastQty, OrderQty, OrdStatus]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "132"
+      - CumQty: 5
+      - OrderQty: 5
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Sell
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 7
+      - MsgType: 8
+      - OnBehalfOfSubID: 61442
+      - Account: "00010"
+      - ClOrdID: "132"
+      - CumQty: 5
+      - LastPx: 5028
+      - LastQty: 5
+      - OrderQty: 5
+      - OrdStatus: Filled
+      - OrdType: Limit
+      - Side: Sell
+      - Symbol: rb1206
+      - OpenClose: Open
+      - ExecType: F
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, LastPx, LastQty, OrderQty, OrdStatus]
 
   # Step 39
   - request:
@@ -1313,25 +3372,103 @@ steps:
       Symbol: rb1206
       OpenClose: Open
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "110"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 5010
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "133"
+      - CumQty: 5
+      - OrderQty: 6
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "133"
+      - CumQty: 5
+      - OrderQty: 6
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "517"
+      - CumQty: 5
+      - OrderQty: 6
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 5028
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 4
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "134"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 5029
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00010"
+      - ClOrdID: "134"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 5029
+      - Side: Buy
+      - Symbol: rb1206
+      - TimeInForce: Day
+      - OpenClose: Open
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: SHFE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 40
   - request:
@@ -1342,25 +3479,7 @@ steps:
       Side: Buy
       Symbol: rb1206
       SecurityExchange: SHFE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "110"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 5010
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    # 无预期响应
 
   # Step 41
   - request:
@@ -1381,25 +3500,8 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "110"
-      OrderQty: 1
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 5010
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 6
-      LeavesQty: 1
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    # 无预期响应
 
   # Step 42
   - request:
@@ -1420,21 +3522,5 @@ steps:
       MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00010"
-      ClOrdID: "110"
-      OrderQty: 1
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 5010
-      Side: Buy
-      Symbol: rb1205
-      TimeInForce: Day
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    # 无预期响应

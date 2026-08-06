@@ -22,26 +22,132 @@ steps:
       MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "1"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Today
-      MinQty: 0
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "1"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "2"
+      - OrderQty: 4
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "3"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "1"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "2"
+      - OrderQty: 4
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "3"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 2
   - request:
@@ -62,27 +168,13 @@ steps:
       MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
+      CombDirection: N
     expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "2"
-      OrderQty: 4
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Close
-      MinQty: 0
-      ExecType: A
-      LeavesQty: 4
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      Tag_20012: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      MsgType: j
+      Tag_45: 9
+      Tag_372: D
+      Tag_380: 0
+      match: [MsgType, Tag_45, Tag_372, Tag_380]
 
   # Step 3
   - request:
@@ -95,27 +187,68 @@ steps:
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "3"
-      OrderQty: 1
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      Tag_20012: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "2"
+      - OrderQty: 4
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 6
+      - LeavesQty: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "2"
+      - OrderQty: 4
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "11"
+      - OrderQty: 4
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 4
   - request:
@@ -135,26 +268,48 @@ steps:
       MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "1"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Today
-      MinQty: 0
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "4"
+      - OrderQty: 2
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 65000
+      - Side: Sell
+      - Symbol: ss1205
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 2
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "4"
+      - OrderQty: 2
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 65000
+      - Side: Sell
+      - Symbol: ss1205
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 2
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 5
   - request:
@@ -167,27 +322,65 @@ steps:
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "2"
-      OrderQty: 4
-      OrdStatus: New
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Close
-      MinQty: 0
-      ExecType: 0
-      LeavesQty: 4
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      Tag_20012: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "1"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "1"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "22"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 6
   - request:
@@ -207,27 +400,132 @@ steps:
       MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "3"
-      OrderQty: 1
-      OrdStatus: New
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Open
-      MinQty: 0
-      ExecType: 0
-      LeavesQty: 1
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      Tag_20012: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      CombDirection: N
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "5"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "5"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "6"
+      - OrderQty: 2
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 2
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 4
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "6"
+      - OrderQty: 2
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 2
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 5
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "7"
+      - OrderQty: 1
+      - OrdStatus: PendingNew
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: A
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 6
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "7"
+      - OrderQty: 1
+      - OrdStatus: New
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 0
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 7
   - request:
@@ -240,12 +538,68 @@ steps:
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
-    expect:
-      MsgType: j
-      Tag_45: 9
-      Tag_372: D
-      Tag_380: 0
-      match: [MsgType, Tag_45, Tag_372, Tag_380]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "3"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "3"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "33"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 8
   - request:
@@ -258,27 +612,65 @@ steps:
       Side: Buy
       Symbol: ss1205
       SecurityExchange: INE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "2"
-      OrderQty: 4
-      OrdStatus: PendingCancel
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Close
-      MinQty: 0
-      ExecType: 6
-      LeavesQty: 4
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      Tag_20012: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "4"
+      - OrderQty: 2
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 65000
+      - Side: Sell
+      - Symbol: ss1205
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 6
+      - LeavesQty: 2
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "4"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 65000
+      - Side: Sell
+      - Symbol: ss1205
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "44"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 65000
+      - Side: Sell
+      - Symbol: ss1205
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 9
   - request:
@@ -291,26 +683,65 @@ steps:
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "2"
-      OrderQty: 4
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Close
-      MinQty: 0
-      ExecType: 4
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      Tag_20012: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "5"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "5"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "55"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Today
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 10
   - request:
@@ -323,26 +754,68 @@ steps:
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "11"
-      OrderQty: 4
-      OrdStatus: Canceled
-      OrdType: Limit
-      Price: 0
-      Side: Sell
-      Symbol: ss1205TAS
-      TimeInForce: Day
-      OpenClose: Close
-      MinQty: 0
-      ExecType: 4
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      Tag_20012: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "6"
+      - OrderQty: 2
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 6
+      - LeavesQty: 2
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "6"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "66"
+      - OrderQty: 2
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Close
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 11
   - request:
@@ -355,23 +828,65 @@ steps:
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
-    expect:
-      MsgType: 8
-      OnBehalfOfSubID: 61441
-      Account: "00001"
-      ClOrdID: "4"
-      OrderQty: 2
-      OrdStatus: PendingNew
-      OrdType: Limit
-      Price: 65000
-      Side: Sell
-      Symbol: ss1205
-      TimeInForce: Day
-      OpenClose: Close
-      MinQty: 0
-      ExecType: A
-      LeavesQty: 2
-      SecurityExchange: INE
-      Tag_442: 1
-      HedgeFlag: 1
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+    expects:
+      # 回报 1
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "7"
+      - OrderQty: 1
+      - OrdStatus: PendingCancel
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 6
+      - LeavesQty: 1
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 2
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "7"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+      # 回报 3
+      - MsgType: 8
+      - OnBehalfOfSubID: 61441
+      - Account: "00001"
+      - ClOrdID: "77"
+      - OrderQty: 1
+      - OrdStatus: Canceled
+      - OrdType: Limit
+      - Price: 0
+      - Side: Sell
+      - Symbol: ss1205TAS
+      - TimeInForce: Day
+      - OpenClose: Open
+      - MinQty: 0
+      - ExecType: 4
+      - SecurityExchange: INE
+      - Tag_442: 1
+      - HedgeFlag: 1
+      - Tag_20012: 5
+        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
