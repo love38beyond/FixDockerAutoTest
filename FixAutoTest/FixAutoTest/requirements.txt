@@ -1,5 +1,6 @@
 quickfix>=1.15.1
 xlrd>=1.2.0
+PyYAML>=5.1
 
 # Linux: 安装前需要编译环境
 #   CentOS/RHEL: yum install -y gcc-c++ python3-devel

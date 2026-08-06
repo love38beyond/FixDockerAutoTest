@@ -874,7 +874,11 @@ def main(config_file, case_file):
     _case_file = case_file if os.path.isabs(case_file) else os.path.join(script_dir, case_file)
 
     try:
-        reqlist_local, rsplist_local = get_confirm_result(_case_file)
+        if _case_file.endswith(('.yaml', '.yml')):
+            from yaml_loader import get_confirm_result as yaml_get_confirm
+            reqlist_local, rsplist_local = yaml_get_confirm(_case_file)
+        else:
+            reqlist_local, rsplist_local = get_confirm_result(_case_file)
         reqlist.extend(reqlist_local)
         with rsplist_lock:
             rsplist.extend(rsplist_local)

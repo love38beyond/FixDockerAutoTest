@@ -1,0 +1,99 @@
+# ============================================================
+# 用例: 铜期货报单测试
+# 合约: cu1202  投资者: 00001  交易所: SHFE
+# ============================================================
+
+name: "铜期货报单-00001-1"
+config: fix42-01.ini
+description: |
+  测试基本报单流程:
+  Step 1: 买入平仓 3手@64000 → 预期拒绝(OrdStatus=8)
+  Step 2: 买入开仓 1手@84100 → 预期待报(OrdStatus=A)
+  Step 3: 卖出平仓 1手@83900 → 预期待报(OrdStatus=A)
+  Step 4: 撤单
+
+steps:
+  # ---- Step 1: 买入平仓(被拒绝) ----
+  - request:
+      MsgType: D
+      Account: "00001"
+      ClOrdID: "1"
+      Symbol: cu1202
+      Side: Buy                    # 买
+      OrderQty: 3                  # 3 手
+      Price: 64000
+      TimeInForce: Day             # 当日有效
+      OrdType: Limit               # 限价
+      OpenClose: Close             # 平仓
+      SecurityExchange: SHFE
+      HedgeFlag: Speculation       # 投机
+      HandlInst: "3"
+    expect:
+      MsgType: "8"                 # ExecutionReport
+      OrdStatus: Rejected          # 被拒绝(8)
+      ClOrdID: "1"
+      Side: Buy
+      Price: 64000
+      OrderQty: 3
+      SecurityExchange: SHFE
+      match: [MsgType, OrdStatus, ClOrdID, Side, Price, OrderQty]
+
+  # ---- Step 2: 买入开仓 ----
+  - request:
+      MsgType: D
+      Account: "00001"
+      ClOrdID: "2"
+      Symbol: cu1202
+      Side: Buy
+      OrderQty: 1
+      Price: 84100
+      TimeInForce: Day
+      OrdType: Limit
+      OpenClose: Open              # 开仓
+      SecurityExchange: SHFE
+      HedgeFlag: Speculation
+    expect:
+      MsgType: "8"
+      OrdStatus: PendingNew        # 待报(A)
+      ClOrdID: "2"
+      Side: Buy
+      Price: 84100
+      OrderQty: 1
+      match: [MsgType, OrdStatus, ClOrdID, Side, Price, OrderQty]
+
+  # ---- Step 3: 卖出平仓 ----
+  - request:
+      MsgType: D
+      Account: "00001"
+      ClOrdID: "3"
+      Symbol: cu1202
+      Side: Sell                   # 卖
+      OrderQty: 1
+      Price: 83900
+      TimeInForce: Day
+      OrdType: Limit
+      OpenClose: Close             # 平仓
+      SecurityExchange: SHFE
+      HedgeFlag: Speculation
+    expect:
+      MsgType: "8"
+      OrdStatus: PendingNew
+      ClOrdID: "3"
+      Side: Sell
+      Price: 83900
+      OrderQty: 1
+      match: [MsgType, OrdStatus, ClOrdID, Side, Price, OrderQty]
+
+  # ---- Step 4: 撤单 ----
+  - request:
+      MsgType: F                   # OrderCancelRequest
+      Account: "00001"
+      ClOrdID: "4"
+      OrigClOrdID: "3"            # 撤 Step 3 的单
+      Symbol: cu1202
+      SecurityExchange: SHFE
+    expect:
+      MsgType: "8"
+      OrdStatus: Canceled          # 已撤销(4)
+      ClOrdID: "4"
+      match: [MsgType, OrdStatus, ClOrdID]

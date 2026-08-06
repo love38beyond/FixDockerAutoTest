@@ -1,0 +1,100 @@
+# FIX Tag 映射表 — YAML 用例中使用可读名称，加载时转为数字 Tag
+# 格式: 名称: Tag号
+# 支持的值枚举用 名称: {tag: 数字, values: {名称: 值}}
+
+# ---- 标准 FIX 字段 ----
+MsgType:        {tag: 35}
+SenderCompID:   {tag: 49}
+TargetCompID:   {tag: 56}
+MsgSeqNum:      {tag: 34}
+SendingTime:    {tag: 52}
+
+# ---- 订单字段 ----
+ClOrdID:        {tag: 11}
+OrderID:        {tag: 37}
+OrigClOrdID:    {tag: 41}
+Symbol:         {tag: 55}
+Side:           {tag: 54, values: {Buy: 1, Sell: 2, BuyMinus: 3, SellPlus: 4, SellShort: 5}}
+OrderQty:       {tag: 38}
+Price:          {tag: 44}
+StopPx:         {tag: 99}
+MinQty:         {tag: 110}
+OrdType:        {tag: 40, values: {Market: 1, Limit: 2, Stop: 3, StopLimit: 4, MarketOnClose: 5}}
+OrdStatus:      {tag: 39, values: {New: 0, PartialFill: 1, Filled: 2, DoneForDay: 3, Canceled: 4, Replaced: 5, PendingCancel: 6, Stopped: 7, Rejected: 8, PendingNew: A, Conditional: F}}
+TimeInForce:    {tag: 59, values: {Day: 0, GTC: 1, OPG: 2, IOC: 3, FOK: 4}}
+OpenClose:      {tag: 77, values: {Open: O, Close: C, Today: F}}
+HandlInst:      {tag: 21}
+SecurityExchange: {tag: 207}
+Account:        {tag: 1}
+ExpireDate:     {tag: 432}
+
+# ---- 消息类型值 ----
+# MsgType 特殊处理：值为单个字母/数字，直接使用
+
+# ---- CTP 扩展字段 ----
+OnBehalfOfSubID: {tag: 116}
+HedgeFlag:      {tag: 20001}
+CombDirection:  {tag: 20002}
+FrontID:        {tag: 20004}
+SessionID:      {tag: 20005}
+IsSwapOrder:    {tag: 20006}
+OptionSelfHedge: {tag: 20009}
+ExecDeclare:    {tag: 20011}
+
+# ---- 成交回报字段 ----
+ExecID:         {tag: 17}
+ExecTransType:  {tag: 20}
+LastPx:         {tag: 31}
+LastQty:        {tag: 32}
+AvgPx:          {tag: 6}
+CumQty:         {tag: 14}
+Text:           {tag: 58}
+
+# ---- 报价字段 ----
+QuoteID:        {tag: 117}
+QuoteMsgID:     {tag: 1166}
+QuoteCancelType: {tag: 298}
+QuoteEntryID:   {tag: 299}
+QuoteSetID:     {tag: 302}
+TotNoQuoteEntries: {tag: 304}
+BidPx:          {tag: 132}
+BidSize:        {tag: 134}
+OfferPx:        {tag: 133}
+OfferSize:      {tag: 135}
+NoQuoteEntries: {tag: 295}
+NoQuoteSets:    {tag: 296}
+
+# ---- 参与方 ----
+NoPartyIDs:     {tag: 453}
+PartyID:        {tag: 448}
+PartyRole:      {tag: 452}
+
+# ---- 持仓维护 ----
+PosTransType:   {tag: 709}
+PosReqID:       {tag: 710}
+PosMaintAction: {tag: 712}
+OrigPosReqRefID: {tag: 713}
+PosMaintRptRefID: {tag: 714}
+ClearingBusinessDate: {tag: 715}
+PosMaintRptID:  {tag: 721}
+NoPositions:    {tag: 702}
+PosType:        {tag: 703}
+LongQty:        {tag: 704}
+
+# ---- 行情订阅 ----
+MDReqID:        {tag: 262}
+SubscriptionRequestType: {tag: 263}
+MarketDepth:    {tag: 264}
+MDUpdateType:   {tag: 265}
+NoRelatedSym:   {tag: 146}
+
+# ---- 合约查询 ----
+SecurityRequestType: {tag: 321}
+SecurityGroup:  {tag: 1151}
+
+# ---- CTP 登录认证 ----
+EncryptMethod:  {tag: 98}
+HeartBtInt:     {tag: 108}
+ResetSeqNumFlag: {tag: 141}
+RawData:        {tag: 96}
+SenderSubID:    {tag: 50}
