@@ -87,9 +87,11 @@ if [ "$RUN" = true ]; then
     fi
     log_info "容器 $CONTAINER_NAME 已启动"
 
+    # 将容器执行日志写入单独文件（避免二进制内容污染主日志 UTF-8 编码）
+    RUNNER_LOG="${SCRIPT_DIR}/logs/runner_exec.log"
+
     # 在容器中执行测试
     log_info "开始在容器中执行测试..."
-
     docker exec "$CONTAINER_NAME" bash -c '
         echo "[runner] 查找 FixInitiator.py..."
         WORKDIR=$(find /opt -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
@@ -116,7 +118,9 @@ if [ "$RUN" = true ]; then
         echo "[runner] 复制报告到 /tmp/reports/"
         cp -v test_report.json test_report.html syslog.txt report.log /tmp/reports/ 2>&1 || echo "[runner] cp 失败"
         echo "[runner] /tmp/reports/ 内容: $(ls /tmp/reports/ 2>/dev/null || echo 空)"
-    ' 2>&1 | while IFS= read -r line; do log_info "$line"; done || true
+    ' > "$RUNNER_LOG" 2>&1 || true
+    # 只把关键行追加到主日志
+    grep '\[runner\]' "$RUNNER_LOG" 2>/dev/null | while IFS= read -r line; do log_info "$line"; done || true
 
     log_success "测试执行完成"
     log_info "报告目录: $REPORT_DIR"
