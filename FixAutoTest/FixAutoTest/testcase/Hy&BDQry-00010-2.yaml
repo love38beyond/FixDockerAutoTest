@@ -1,0 +1,110 @@
+# 用例: Hy&BDQry-00010-2
+# 自动转换自: Hy&BDQry-00010-2.xlsx
+
+name: "Hy&BDQry-00010-2"
+
+steps:
+  # Step 1
+  - request:
+      MsgType: H
+      Account: 00010
+      Symbol: fu1205p4800
+    expect:
+      MsgType: 8
+      Account: 00010
+      ClOrdID: 101
+      CumQty: 2
+      OrderQty: 2
+      OrdStatus: Filled
+      OrdType: Limit
+      Price: 150
+      Side: Sell
+      Symbol: fu1205p4800
+      Text: CTP:全部成交
+
+      TimeInForce: Day
+      OpenClose: Open
+      ExecType: I
+      SecurityExchange: SHFE
+      MultiLegReportingType: 1
+      HedgeFlag: 1
+      match: [MsgType,Account,ClOrdID,CumQty,OrderQty,OrdStatus,OrdType,Price]
+
+  # Step 2
+  - request:
+      MsgType: H
+      Account: 00010
+      Symbol: fu1205
+    expect:
+      MsgType: 8
+      Account: 00010
+      ClOrdID: 100
+      CumQty: 2
+      OrderQty: 2
+      OrdStatus: Filled
+      OrdType: Limit
+      Price: 150
+      Side: Buy
+      Symbol: fu1205p4800
+      Text: CTP:全部成交
+
+      TimeInForce: Day
+      OpenClose: Open
+      ExecType: I
+      SecurityExchange: SHFE
+      MultiLegReportingType: 1
+      HedgeFlag: 1
+      match: [MsgType,Account,ClOrdID,CumQty,OrderQty,OrdStatus,OrdType,Price]
+
+  # Step 3
+  - request:
+      MsgType: c
+      Account: 00010
+      OnBehalfOfSubID: 32814
+      Symbol: rb1204
+      SecurityRequestType: 1
+    expect:
+      MsgType: 8
+      Account: 00010
+      ClOrdID: 111
+      OrderQty: 1
+      OrdStatus: Canceled
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      StopPx: 5100
+      ExecType: I
+      SecurityExchange: SHFE
+      MultiLegReportingType: 1
+      HedgeFlag: 1
+      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+
+  # Step 4
+  - request:
+      MsgType: c
+      Account: 00010
+      OnBehalfOfSubID: 32814
+      Symbol: fu1205p4800
+      SecurityRequestType: 1
+    expect:
+      MsgType: 8
+      Account: 00010
+      ClOrdID: 110
+      OrderQty: 1
+      OrdStatus: n
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      StopPx: 5100
+      ExecType: I
+      LeavesQty: 1
+      SecurityExchange: SHFE
+      MultiLegReportingType: 1
+      HedgeFlag: 1
+      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]

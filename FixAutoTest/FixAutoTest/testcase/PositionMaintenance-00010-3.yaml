@@ -1,0 +1,498 @@
+# 用例: PositionMaintenance-00010-3
+# 自动转换自: PositionMaintenance-00010-3.xlsx
+
+name: "PositionMaintenance-00010-3"
+
+steps:
+  # Step 1
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205c4800
+      OpenClose: Today
+      PosTransType: 1
+      PosReqID: 100
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 1
+      HedgeFlag: 1
+      ExecDeclare: 0
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:报单已提交
+      OpenClose: Today
+      PosTransType: 1
+      PosReqID: 100
+      PosMaintAction: 1
+      Tag_722: 5
+      NoPositions: 1
+      PosType: EX
+      LongQty: 1
+      HedgeFlag: 1
+      Tag_20010: a
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 2
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205c4800
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 101
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      ExecDeclare: 1
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:未执行 
+      OpenClose: Today
+      PosTransType: 1
+      PosReqID: 100
+      PosMaintAction: 1
+      Tag_722: 0
+      NoPositions: 1
+      PosType: EX
+      LongQty: 1
+      HedgeFlag: 1
+      Tag_20010: n
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 3
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205p4800
+      OpenClose: Close
+      PosTransType: 1
+      PosReqID: 102
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      ExecDeclare: 0
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:报单已提交
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 101
+      PosMaintAction: 1
+      Tag_722: 5
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      Tag_20010: a
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 4
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205c4800
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 103
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 2
+      ExecDeclare: 1
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:未执行 
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 101
+      PosMaintAction: 1
+      Tag_722: 0
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      Tag_20010: n
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 5
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205c4800
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 104
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 3
+      ExecDeclare: 1
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205p4800
+      Text: CTP:报单已提交
+      OpenClose: Close
+      PosTransType: 1
+      PosReqID: 102
+      PosMaintAction: 1
+      Tag_722: 5
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      Tag_20010: a
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 6
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205c4800
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 105
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 5
+      ExecDeclare: 1
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205p4800
+      Text: CTP:未执行 
+      OpenClose: Close
+      PosTransType: 1
+      PosReqID: 102
+      PosMaintAction: 1
+      Tag_722: 0
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      Tag_20010: n
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 7
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205c4800
+      OpenClose: Close
+      PosTransType: 2
+      PosReqID: 106
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      ExecDeclare: 1
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 16423
+      Symbol: fu1205c4800
+      Text: [CTP:The exchange does not support arbitrage order]
+      PosTransType: 2
+      PosReqID: 103
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      Tag_722: 2
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 2
+      match: [MsgType,Symbol,Text,PosTransType,PosReqID,PosMaintAction,ClearingBusinessDate,Tag_722]
+
+  # Step 8
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16424
+      Account: 00010
+      Symbol: fu1205c4800
+      PosTransType: 1
+      PosReqID: 201
+      PosMaintAction: 3
+      OrigPosReqRefID: 100
+      ClearingBusinessDate: n
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 16423
+      Symbol: fu1205c4800
+      Text: [CTP:Lack of executive positions] 
+      PosTransType: 2
+      PosReqID: 104
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      Tag_722: 2
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 3
+      match: [MsgType,Symbol,Text,PosTransType,PosReqID,PosMaintAction,ClearingBusinessDate,Tag_722]
+
+  # Step 9
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16424
+      Account: 00010
+      Symbol: fu1205c4800
+      PosTransType: 1
+      PosReqID: 202
+      PosMaintAction: 3
+      OrigPosReqRefID: 100
+      PosMaintRptRefID: 1
+      ClearingBusinessDate: n
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 16423
+      Symbol: fu1205c4800
+      Text: [CTP:The exchange does not support arbitrage order]
+      PosTransType: 2
+      PosReqID: 105
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      Tag_722: 2
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 5
+      match: [MsgType,Symbol,Text,PosTransType,PosReqID,PosMaintAction,ClearingBusinessDate,Tag_722]
+
+  # Step 10
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16424
+      Account: 00010
+      Symbol: fu1205c4800
+      PosTransType: 2
+      PosReqID: 203
+      PosMaintAction: 3
+      OrigPosReqRefID: 1000
+      PosMaintRptRefID: 2
+      ClearingBusinessDate: n
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 16423
+      Symbol: fu1205c4800
+      Text: [CTP:Lack of executive positions] 
+      PosTransType: 2
+      PosReqID: 106
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      Tag_722: 2
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      match: [MsgType,Symbol,Text,PosTransType,PosReqID,PosMaintAction,ClearingBusinessDate,Tag_722]
+
+  # Step 11
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16424
+      Account: 00010
+      Symbol: fu1205c4800
+      PosTransType: 2
+      PosReqID: 204
+      PosMaintAction: 3
+      OrigPosReqRefID: 101
+      ClearingBusinessDate: n
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:未执行
+      OpenClose: Today
+      PosTransType: 1
+      PosReqID: 100
+      PosMaintAction: 3
+      Tag_722: 0
+      NoPositions: 1
+      PosType: EX
+      LongQty: 1
+      HedgeFlag: 1
+      Tag_20010: n
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 12
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205p4800
+      OpenClose: Close
+      PosTransType: 1
+      PosReqID: 107
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      ExecDeclare: 0
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:已取消
+      OpenClose: Today
+      PosTransType: 1
+      PosReqID: 100
+      PosMaintAction: 3
+      Tag_722: 0
+      NoPositions: 1
+      PosType: EX
+      LongQty: 1
+      HedgeFlag: 1
+      Tag_20010: c
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 13
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16424
+      Account: 00010
+      Symbol: fu1205p4800
+      PosTransType: 1
+      PosReqID: 205
+      PosMaintAction: 3
+      OrigPosReqRefID: 102
+      ClearingBusinessDate: n
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 16425
+      Symbol: fu1205c4800
+      Text: [CTP: The order is full-filled or canceled or unknow and can not be cancelled now] 
+      PosTransType: 2
+      PosReqID: 202
+      PosMaintAction: 3
+      OrigPosReqRefID: 100
+      ClearingBusinessDate: n
+      PosMaintRptID: 1
+      Tag_722: 2
+      NoPositions: 1
+      PosType: EX
+      LongQty: 0
+      match: [MsgType,Symbol,Text,PosTransType,PosReqID,PosMaintAction,OrigPosReqRefID,ClearingBusinessDate]
+
+  # Step 14
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16422
+      Account: 00010
+      Symbol: fu1205p4800
+      OpenClose: Close
+      PosTransType: 2
+      PosReqID: 108
+      PosMaintAction: 1
+      ClearingBusinessDate: n
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      ExecDeclare: 1
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 16425
+      Symbol: fu1205c4800
+      Text: [CTP:The Executive declared cancellation can not find the corresponding execution announcement] 
+      PosTransType: 2
+      PosReqID: 203
+      PosMaintAction: 3
+      OrigPosReqRefID: 1000
+      ClearingBusinessDate: n
+      PosMaintRptID: 2
+      Tag_722: 2
+      NoPositions: 1
+      PosType: EX
+      LongQty: 0
+      match: [MsgType,Symbol,Text,PosTransType,PosReqID,PosMaintAction,OrigPosReqRefID,ClearingBusinessDate]
+
+  # Step 15
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16424
+      Account: 00010
+      Symbol: fu1205p4800
+      SecurityExchange: SHFE
+      PosTransType: 2
+      PosReqID: 206
+      PosMaintAction: 3
+      OrigPosReqRefID: 0
+      ClearingBusinessDate: n
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:未执行
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 101
+      PosMaintAction: 3
+      Tag_722: 0
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      Tag_20010: n
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]
+
+  # Step 16
+  - request:
+      MsgType: AL
+      OnBehalfOfSubID: 16424
+      Account: 00010
+      Symbol: fu1205p4800
+      SecurityExchange: SHFE
+      PosTransType: 2
+      PosReqID: 207
+      PosMaintAction: 3
+      OrigPosReqRefID: 0
+      ClearingBusinessDate: n
+    expect:
+      MsgType: AM
+      OnBehalfOfSubID: 61457
+      Symbol: fu1205c4800
+      Text: CTP:已取消
+      OpenClose: Today
+      PosTransType: 2
+      PosReqID: 101
+      PosMaintAction: 3
+      Tag_722: 0
+      NoPositions: 1
+      PosType: EX
+      LongQty: 2
+      HedgeFlag: 1
+      Tag_20010: c
+      match: [MsgType,Symbol,Text,OpenClose,PosTransType,PosReqID,PosMaintAction,Tag_722]

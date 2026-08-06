@@ -1,0 +1,219 @@
+# 用例: Position-00010-1
+# 自动转换自: Position-00010-1.xlsx
+
+name: "Position-00010-1"
+
+steps:
+  # Step 1
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 100
+      HandlInst: 3
+      OrderQty: 2
+      OrdType: Limit
+      Price: 150
+      Side: Buy
+      Symbol: fu1205p4800
+      TimeInForce: Day
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 2
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 101
+      HandlInst: 3
+      OrderQty: 2
+      OrdType: Limit
+      Price: 150
+      Side: Sell
+      Symbol: fu1205p4800
+      TimeInForce: Day
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 3
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 102
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 4
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 103
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Buy
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 5
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 104
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 6
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 105
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 7
+  - request:
+      MsgType: F
+      Account: 00010
+      ClOrdID: 200
+      OrigClOrdID: 105
+      Side: Sell
+      Symbol: fu1205
+      SecurityExchange: SHFE
+
+  # Step 8
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 106
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 9
+  - request:
+      MsgType: G
+      Account: 00010
+      ClOrdID: 300
+      HandlInst: 3
+      OrderQty: 2
+      OrigClOrdID: 106
+      Price: 5100
+      Side: Sell
+      Symbol: fu1205
+      OpenClose: Open
+      SecurityExchange: SHFE
+
+  # Step 10
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 108
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: IOC
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 11
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 109
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: GTC
+      OpenClose: Open
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+
+  # Step 12
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 110
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      StopPx: 5100
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+      IsSwapOrder: 5
+
+  # Step 13
+  - request:
+      MsgType: D
+      Account: 00010
+      ClOrdID: 111
+      HandlInst: 3
+      OrderQty: 1
+      OrdType: Limit
+      Price: 5000
+      Side: Sell
+      Symbol: fu1205
+      TimeInForce: Day
+      OpenClose: Open
+      StopPx: 5100
+      SecurityExchange: SHFE
+      HedgeFlag: 1
+      IsSwapOrder: 5
+
+  # Step 14
+  - request:
+      MsgType: F
+      Account: 00010
+      ClOrdID: 201
+      OrigClOrdID: 111
+      Side: Sell
+      Symbol: fu1205
+      SecurityExchange: SHFE

@@ -1,7 +1,7 @@
-# 用例: orderinsert-00001-1
-# 自动转换自: orderinsert-00001-1.xlsx
+# 用例: TAS-00001-4
+# 自动转换自: TAS-00001-4.xlsx
 
-name: "orderinsert-00001-1"
+name: "TAS-00001-4"
 
 steps:
   # Step 1
@@ -12,12 +12,12 @@ steps:
       HandlInst: 3
       OrderQty: 3
       OrdType: Limit
-      Price: 64000
+      Price: 0
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Close
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
@@ -27,13 +27,13 @@ steps:
       OrderQty: 3
       OrdStatus: Rejected
       OrdType: Limit
-      Price: 64000
+      Price: 0
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Close
       ExecType: 8
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       MultiLegReportingType: 1
       HedgeFlag: 1
       match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
@@ -48,10 +48,10 @@ steps:
       OrdType: Limit
       Price: 84100
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
@@ -63,12 +63,12 @@ steps:
       OrdType: Limit
       Price: 84100
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
       ExecType: A
       LeavesQty: 1
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       MultiLegReportingType: 1
       HedgeFlag: 1
       match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
@@ -83,10 +83,10 @@ steps:
       OrdType: Limit
       Price: 64100
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: IOC
       OpenClose: Open
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
@@ -98,11 +98,11 @@ steps:
       OrdType: Limit
       Price: 84100
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
       ExecType: 8
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       MultiLegReportingType: 1
       HedgeFlag: 1
       match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
@@ -117,10 +117,10 @@ steps:
       OrdType: Limit
       Price: 64100
       Side: Sell
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: FOK
       OpenClose: Today
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
@@ -132,12 +132,12 @@ steps:
       OrdType: Limit
       Price: 64100
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: IOC
       OpenClose: Open
       ExecType: A
       LeavesQty: 1
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       MultiLegReportingType: 1
       HedgeFlag: 1
       match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
@@ -150,12 +150,12 @@ steps:
       HandlInst: 3
       OrderQty: 2
       OrdType: Limit
-      Price: 64000
+      Price: 0
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
@@ -163,15 +163,15 @@ steps:
       Account: 00001
       ClOrdID: 3
       OrderQty: 1
-      OrdStatus: New
+      OrdStatus: Rejected
       OrdType: Limit
       Price: 64100
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: IOC
       OpenClose: Open
-      LeavesQty: 1
-      SecurityExchange: SHFE
+      ExecType: 8
+      SecurityExchange: INE
       MultiLegReportingType: 1
       HedgeFlag: 1
       match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
@@ -186,25 +186,26 @@ steps:
       OrdType: Limit
       Price: 65000
       Side: Sell
-      Symbol: cu1202
+      Symbol: ss1205
       TimeInForce: Day
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
       Account: 00001
-      ClOrdID: 3
+      ClOrdID: 4
       OrderQty: 1
-      OrdStatus: Canceled
+      OrdStatus: PendingNew
       OrdType: Limit
       Price: 64100
-      Side: Buy
-      Symbol: cu1202
-      TimeInForce: IOC
-      OpenClose: Open
-      ExecType: 4
-      SecurityExchange: SHFE
+      Side: Sell
+      Symbol: ss1205TAS
+      TimeInForce: FOK
+      OpenClose: Today
+      ExecType: A
+      LeavesQty: 1
+      SecurityExchange: INE
       MultiLegReportingType: 1
       HedgeFlag: 1
       match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
@@ -217,12 +218,12 @@ steps:
       HandlInst: 3
       OrderQty: 2
       OrdType: Limit
-      Price: 63900
+      Price: 0
       Side: Buy
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
-      SecurityExchange: SHFE
+      SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
@@ -230,16 +231,15 @@ steps:
       Account: 00001
       ClOrdID: 4
       OrderQty: 1
-      OrdStatus: PendingNew
+      OrdStatus: Rejected
       OrdType: Limit
       Price: 64100
       Side: Sell
-      Symbol: cu1202
+      Symbol: ss1205TAS
       TimeInForce: FOK
       OpenClose: Today
-      ExecType: A
-      LeavesQty: 1
-      SecurityExchange: SHFE
+      ExecType: 8
+      SecurityExchange: INE
       MultiLegReportingType: 1
       HedgeFlag: 1
       match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
