@@ -102,27 +102,82 @@ main() {
     fi
 
     # 汇总信息（同时输出到终端和日志）
+    summary() { echo -e "$*"; echo -e "$*" | sed 's/\x1b\[[0-9;]*m//g' >> "$LOG_FILE"; }
+    HR="──────────────────────────────────────────────────────────"
+
     echo ""
-    echo "============================================"
-    echo "  搭建完成！"
-    echo "============================================"
+    echo "╔══════════════════════════════════════════════════════════╗"
+    echo "║        FIX Docker 测试环境 — 部署完成                   ║"
+    echo "╚══════════════════════════════════════════════════════════╝"
     echo ""
-    log_info "搭建完成！以下为环境汇总信息："
-    { echo "  运行中的容器："; docker ps --format '  - {{.Names}} ({{.Image}}) — 端口：{{.Ports}}' | grep -E 'exchangefix|ctptradefix|ctpfix' || true; } | tee -a "$LOG_FILE"
-    log_info "各容器 IP（Docker 网络 $DOCKER_NETWORK）："
-    log_info "  交易所：    $EXCHANGE_IP"
-    log_info "  CTP 柜台：  $CTPTRADE_IP"
-    log_info "  FIX 网关：  $FIXGATEWAY_IP"
-    log_info "FixAutoTest 连接地址："
-    log_info "  交易通道：  tcp://${HOST_IP}:61111"
-    log_info "  行情通道：  tcp://${HOST_IP}:50001"
-    log_info "运行测试：cd FixAutoTest/FixAutoTest && python3 FixInitiator.py"
-    log_info "初始化 CTP 柜台（请使用 ticlient 登录）："
-    log_info "  IP：       ${HOST_IP}"
-    log_info "  端口：     11155"
-    log_info "  用户名：   0000_admin"
-    log_info "  部门：     1"
-    log_info "  密码：     1"
+    { echo "╔══════════════════════════════════════════════════════════╗"
+      echo "║        FIX Docker 测试环境 — 部署完成                   ║"
+      echo "╚══════════════════════════════════════════════════════════╝"
+      echo ""; } | sed 's/\x1b\[[0-9;]*m//g' >> "$LOG_FILE"
+
+    # ── 容器状态 ──
+    summary "${GREEN}${HR}${NC}"
+    summary "${GREEN}  容器状态${NC}"
+    summary "${GREEN}${HR}${NC}"
+    docker ps -a --format '{{.Names}} {{.Status}} {{.Ports}}' 2>/dev/null | grep -E 'exchangefix|ctptradefix|ctpfix|fix-runner' | while read line; do
+        name=$(echo "$line" | awk '{print $1}')
+        status=$(echo "$line" | awk '{print $2, $3, $4, $5}')
+        summary "  ${name}    ${status}"
+    done
+
+    # ── 网络信息 ──
+    summary ""
+    summary "${GREEN}${HR}${NC}"
+    summary "${GREEN}  网络信息${NC}"
+    summary "${GREEN}${HR}${NC}"
+    summary "  宿主机 IP:     ${HOST_IP}"
+    summary "  Docker 网络:   ${DOCKER_NETWORK}"
+    summary ""
+    summary "  容器 IP:"
+    summary "    交易所:      ${EXCHANGE_IP:-N/A}"
+    summary "    CTP 柜台:    ${CTPTRADE_IP:-N/A}"
+    summary "    FIX 网关:    ${FIXGATEWAY_IP:-N/A}"
+    RUNNER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' fix-runner 2>/dev/null || echo "")
+    [ -n "$RUNNER_IP" ] && summary "    fix-runner:  ${RUNNER_IP}"
+
+    # ── 连接地址 ──
+    summary ""
+    summary "${GREEN}${HR}${NC}"
+    summary "${GREEN}  连接地址${NC}"
+    summary "${GREEN}${HR}${NC}"
+    summary "  FIX 交易:     tcp://${HOST_IP}:61111"
+    summary "  FIX 行情:     tcp://${HOST_IP}:50001"
+    summary "  ticlient:     ${HOST_IP}:11155"
+    summary "                (0000_admin / 1 / 1)"
+
+    # ── 测试报告 ──
+    if [ "${SKIP_RUNNER:-false}" != true ]; then
+        REPORT_DIR="${SCRIPT_DIR}/logs/reports"
+        summary ""
+        summary "${GREEN}${HR}${NC}"
+        summary "${GREEN}  测试报告${NC}"
+        summary "${GREEN}${HR}${NC}"
+        if [ -f "$REPORT_DIR/test_report.html" ]; then
+            summary "  HTML 报告:    $REPORT_DIR/test_report.html"
+        fi
+        if [ -f "$REPORT_DIR/test_report.json" ]; then
+            summary "  JSON 报告:    $REPORT_DIR/test_report.json"
+        fi
+        summary "  报告目录:     $REPORT_DIR"
+    fi
+
+    # ── 日志文件 ──
+    summary ""
+    summary "${GREEN}${HR}${NC}"
+    summary "${GREEN}  日志文件${NC}"
+    summary "${GREEN}${HR}${NC}"
+    summary "  部署日志:     $LOG_FILE"
+
+    summary ""
+    summary "╔══════════════════════════════════════════════════════════╗"
+    summary "║  初始化 CTP 柜台: ticlient ${HOST_IP}:11155            ║"
+    summary "║  用户: 0000_admin  部门: 1  密码: 1                    ║"
+    summary "╚══════════════════════════════════════════════════════════╝"
     echo ""
 }
 
