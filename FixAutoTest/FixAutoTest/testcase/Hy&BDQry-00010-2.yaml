@@ -7,12 +7,12 @@ steps:
   # Step 1
   - request:
       MsgType: H
-      Account: 00010
+      Account: "00010"
       Symbol: fu1205p4800
     expect:
       MsgType: 8
-      Account: 00010
-      ClOrdID: 101
+      Account: "00010"
+      ClOrdID: "101"
       CumQty: 2
       OrderQty: 2
       OrdStatus: Filled
@@ -26,19 +26,19 @@ steps:
       OpenClose: Open
       ExecType: I
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,CumQty,OrderQty,OrdStatus,OrdType,Price]
+      match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
 
   # Step 2
   - request:
       MsgType: H
-      Account: 00010
+      Account: "00010"
       Symbol: fu1205
     expect:
       MsgType: 8
-      Account: 00010
-      ClOrdID: 100
+      Account: "00010"
+      ClOrdID: "100"
       CumQty: 2
       OrderQty: 2
       OrdStatus: Filled
@@ -52,21 +52,21 @@ steps:
       OpenClose: Open
       ExecType: I
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,CumQty,OrderQty,OrdStatus,OrdType,Price]
+      match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
 
   # Step 3
   - request:
       MsgType: c
-      Account: 00010
+      Account: "00010"
       OnBehalfOfSubID: 32814
       Symbol: rb1204
       SecurityRequestType: 1
     expect:
       MsgType: 8
-      Account: 00010
-      ClOrdID: 111
+      Account: "00010"
+      ClOrdID: "111"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -78,21 +78,21 @@ steps:
       StopPx: 5100
       ExecType: I
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 4
   - request:
       MsgType: c
-      Account: 00010
+      Account: "00010"
       OnBehalfOfSubID: 32814
       Symbol: fu1205p4800
       SecurityRequestType: 1
     expect:
       MsgType: 8
-      Account: 00010
-      ClOrdID: 110
+      Account: "00010"
+      ClOrdID: "110"
       OrderQty: 1
       OrdStatus: n
       OrdType: Limit
@@ -105,6 +105,6 @@ steps:
       ExecType: I
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]

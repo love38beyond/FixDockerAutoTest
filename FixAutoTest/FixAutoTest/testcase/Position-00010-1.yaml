@@ -7,8 +7,10 @@ steps:
   # Step 1
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 100
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "100"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 2
       OrdType: Limit
@@ -17,14 +19,18 @@ steps:
       Symbol: fu1205p4800
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 2
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 101
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "101"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 2
       OrdType: Limit
@@ -33,14 +39,18 @@ steps:
       Symbol: fu1205p4800
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 3
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 102
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "102"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -49,14 +59,18 @@ steps:
       Symbol: fu1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 4
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 103
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "103"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -65,14 +79,18 @@ steps:
       Symbol: fu1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 5
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 104
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "104"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -81,14 +99,18 @@ steps:
       Symbol: fu1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 6
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 105
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "105"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -97,15 +119,17 @@ steps:
       Symbol: fu1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 7
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 200
-      OrigClOrdID: 105
+      Account: "00010"
+      ClOrdID: "200"
+      OrigClOrdID: "105"
       Side: Sell
       Symbol: fu1205
       SecurityExchange: SHFE
@@ -113,8 +137,10 @@ steps:
   # Step 8
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 106
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "106"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -123,17 +149,19 @@ steps:
       Symbol: fu1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 9
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 300
+      Account: "00010"
+      ClOrdID: "300"
       HandlInst: 3
       OrderQty: 2
-      OrigClOrdID: 106
+      OrigClOrdID: "106"
       Price: 5100
       Side: Sell
       Symbol: fu1205
@@ -143,8 +171,10 @@ steps:
   # Step 10
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 108
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "108"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -153,14 +183,18 @@ steps:
       Symbol: fu1205
       TimeInForce: IOC
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 11
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 109
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "109"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -169,14 +203,18 @@ steps:
       Symbol: fu1205
       TimeInForce: GTC
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
 
   # Step 12
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 110
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "110"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -186,6 +224,7 @@ steps:
       TimeInForce: Day
       OpenClose: Open
       StopPx: 5100
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
       IsSwapOrder: 5
@@ -193,8 +232,10 @@ steps:
   # Step 13
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 111
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "111"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -204,6 +245,7 @@ steps:
       TimeInForce: Day
       OpenClose: Open
       StopPx: 5100
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
       IsSwapOrder: 5
@@ -211,9 +253,9 @@ steps:
   # Step 14
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 201
-      OrigClOrdID: 111
+      Account: "00010"
+      ClOrdID: "201"
+      OrigClOrdID: "111"
       Side: Sell
       Symbol: fu1205
       SecurityExchange: SHFE

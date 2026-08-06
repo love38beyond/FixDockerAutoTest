@@ -7,8 +7,10 @@ steps:
   # Step 1
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 100
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "100"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -17,13 +19,15 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 100
+      Account: "00010"
+      ClOrdID: "100"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -35,18 +39,18 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 2
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 500
+      Account: "00010"
+      ClOrdID: "500"
       HandlInst: 3
       OrderQty: 2
-      OrigClOrdID: 100
+      OrigClOrdID: "100"
       Price: 5000
       Side: Buy
       Symbol: rb1205
@@ -55,8 +59,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 100
+      Account: "00010"
+      ClOrdID: "100"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -65,17 +69,20 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 3
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 102
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "102"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -84,13 +91,15 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 100
+      Account: "00010"
+      ClOrdID: "100"
       OrderQty: 1
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -102,18 +111,18 @@ steps:
       ExecType: 6
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 4
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 501
+      Account: "00010"
+      ClOrdID: "501"
       HandlInst: 3
       OrderQty: 1
-      OrigClOrdID: 102
+      OrigClOrdID: "102"
       Price: 5003
       Side: Buy
       Symbol: rb1205
@@ -122,8 +131,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 100
+      Account: "00010"
+      ClOrdID: "100"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -135,15 +144,17 @@ steps:
       ExecType: 4
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 5
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 104
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "104"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -152,13 +163,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 500
+      Account: "00010"
+      ClOrdID: "500"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -170,18 +183,18 @@ steps:
       ExecType: 4
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 6
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 502
+      Account: "00010"
+      ClOrdID: "502"
       HandlInst: 3
       OrderQty: 1
-      OrigClOrdID: 104
+      OrigClOrdID: "104"
       Price: 5004
       Side: Sell
       Symbol: rb1206
@@ -190,8 +203,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 101
+      Account: "00010"
+      ClOrdID: "101"
       OrderQty: 2
       OrdStatus: PendingNew
       OrdType: Limit
@@ -203,24 +216,24 @@ steps:
       ExecType: A
       LeavesQty: 2
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 7
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 800
-      OrigClOrdID: 105
+      Account: "00010"
+      ClOrdID: "800"
+      OrigClOrdID: "105"
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 101
+      Account: "00010"
+      ClOrdID: "101"
       OrderQty: 2
       OrdStatus: New
       OrdType: Limit
@@ -229,17 +242,20 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 2
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 8
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 106
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "106"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -248,13 +264,15 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 102
+      Account: "00010"
+      ClOrdID: "102"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -266,18 +284,18 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 9
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 503
+      Account: "00010"
+      ClOrdID: "503"
       HandlInst: 3
       OrderQty: 1
-      OrigClOrdID: 106
+      OrigClOrdID: "106"
       Price: 5006
       Side: Sell
       Symbol: rb1205
@@ -286,8 +304,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 102
+      Account: "00010"
+      ClOrdID: "102"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -296,17 +314,20 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 10
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 108
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "108"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -315,13 +336,15 @@ steps:
       Symbol: cu1205c63000
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 102
+      Account: "00010"
+      ClOrdID: "102"
       OrderQty: 1
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -333,18 +356,18 @@ steps:
       ExecType: 6
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 11
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 504
+      Account: "00010"
+      ClOrdID: "504"
       HandlInst: 3
       OrderQty: 3
-      OrigClOrdID: 108
+      OrigClOrdID: "108"
       Price: 3009
       Side: Buy
       Symbol: cu1205c63000
@@ -353,8 +376,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 102
+      Account: "00010"
+      ClOrdID: "102"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -365,15 +388,17 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 12
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 110
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "110"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -382,13 +407,15 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 501
+      Account: "00010"
+      ClOrdID: "501"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -399,18 +426,18 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 13
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 505
+      Account: "00010"
+      ClOrdID: "505"
       HandlInst: 3
       OrderQty: 1
-      OrigClOrdID: 110
+      OrigClOrdID: "110"
       Price: 5010
       Side: Buy
       Symbol: rb1205
@@ -419,8 +446,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 103
+      Account: "00010"
+      ClOrdID: "103"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -432,15 +459,17 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 14
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 112
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "112"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -449,13 +478,15 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 103
+      Account: "00010"
+      ClOrdID: "103"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -464,20 +495,21 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 15
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 506
+      Account: "00010"
+      ClOrdID: "506"
       HandlInst: 3
       OrderQty: 2
-      OrigClOrdID: 112
+      OrigClOrdID: "112"
       Price: 5013
       Side: Buy
       Symbol: rb1205
@@ -486,8 +518,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 104
+      Account: "00010"
+      ClOrdID: "104"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -499,18 +531,18 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 16
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 507
+      Account: "00010"
+      ClOrdID: "507"
       HandlInst: 3
       OrderQty: 3
-      OrigClOrdID: 113
+      OrigClOrdID: "113"
       Price: 5014
       Side: Buy
       Symbol: rb1205
@@ -519,8 +551,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 104
+      Account: "00010"
+      ClOrdID: "104"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -529,20 +561,21 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 17
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 508
+      Account: "00010"
+      ClOrdID: "508"
       HandlInst: 3
       OrderQty: 4
-      OrigClOrdID: 112
+      OrigClOrdID: "112"
       Price: 5015
       Side: Buy
       Symbol: rb1205
@@ -551,8 +584,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 104
+      Account: "00010"
+      ClOrdID: "104"
       OrderQty: 1
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -564,15 +597,17 @@ steps:
       ExecType: 6
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 18
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 116
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "116"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -581,13 +616,15 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 104
+      Account: "00010"
+      ClOrdID: "104"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -598,18 +635,18 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 19
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 509
+      Account: "00010"
+      ClOrdID: "509"
       HandlInst: 3
       OrderQty: 2
-      OrigClOrdID: 00000001
+      OrigClOrdID: "00000001"
       Price: 5018
       Side: Buy
       Symbol: rb1205
@@ -618,8 +655,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 502
+      Account: "00010"
+      ClOrdID: "502"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -630,18 +667,18 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 20
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 510
+      Account: "00010"
+      ClOrdID: "510"
       HandlInst: 3
       OrderQty: 3
-      OrigClOrdID: 116
+      OrigClOrdID: "116"
       Price: 5019
       Side: Buy
       Symbol: rb1207
@@ -650,8 +687,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 105
+      Account: "00010"
+      ClOrdID: "105"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -663,15 +700,17 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 21
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 117
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "117"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -680,13 +719,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 105
+      Account: "00010"
+      ClOrdID: "105"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -695,20 +736,21 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Today
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 22
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 511
+      Account: "00010"
+      ClOrdID: "511"
       HandlInst: 3
       OrderQty: 5
-      OrigClOrdID: 117
+      OrigClOrdID: "117"
       Price: 5020
       Side: Sell
       Symbol: rb1206
@@ -716,8 +758,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 105
+      Account: "00010"
+      ClOrdID: "105"
       OrderQty: 1
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -729,18 +771,18 @@ steps:
       ExecType: 6
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 23
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 512
+      Account: "00010"
+      ClOrdID: "512"
       HandlInst: 3
       OrderQty: 4
-      OrigClOrdID: 118
+      OrigClOrdID: "118"
       Price: 5021
       Side: Sell
       Symbol: rb1206
@@ -749,8 +791,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 105
+      Account: "00010"
+      ClOrdID: "105"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -761,18 +803,18 @@ steps:
       OpenClose: Today
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 24
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 513
+      Account: "00010"
+      ClOrdID: "513"
       HandlInst: 3
       OrderQty: 9
-      OrigClOrdID: 119
+      OrigClOrdID: "119"
       Price: 5022
       Side: Sell
       Symbol: rb1206
@@ -780,8 +822,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 800
+      Account: "00010"
+      ClOrdID: "800"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -792,24 +834,24 @@ steps:
       OpenClose: Today
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 25
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 801
-      OrigClOrdID: 121
+      Account: "00010"
+      ClOrdID: "801"
+      OrigClOrdID: "121"
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 106
+      Account: "00010"
+      ClOrdID: "106"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -821,24 +863,24 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 26
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 802
-      OrigClOrdID: 122
+      Account: "00010"
+      ClOrdID: "802"
+      OrigClOrdID: "122"
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 106
+      Account: "00010"
+      ClOrdID: "106"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -847,17 +889,20 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 27
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 123
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "123"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 4
       OrdType: Limit
@@ -866,13 +911,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 106
+      Account: "00010"
+      ClOrdID: "106"
       OrderQty: 1
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -884,15 +931,17 @@ steps:
       ExecType: 6
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 28
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 124
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "124"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -901,13 +950,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 106
+      Account: "00010"
+      ClOrdID: "106"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -918,18 +969,18 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 29
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 514
+      Account: "00010"
+      ClOrdID: "514"
       HandlInst: 3
       OrderQty: 5
-      OrigClOrdID: 124
+      OrigClOrdID: "124"
       Price: 5025
       Side: Buy
       Symbol: rb1206
@@ -937,8 +988,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 503
+      Account: "00010"
+      ClOrdID: "503"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -949,24 +1000,24 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 30
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 803
-      OrigClOrdID: 125
+      Account: "00010"
+      ClOrdID: "803"
+      OrigClOrdID: "125"
       Side: Buy
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 107
+      Account: "00010"
+      ClOrdID: "107"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -978,24 +1029,24 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 31
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 804
-      OrigClOrdID: 126
+      Account: "00010"
+      ClOrdID: "804"
+      OrigClOrdID: "126"
       Side: Buy
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 107
+      Account: "00010"
+      ClOrdID: "107"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -1004,17 +1055,20 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 32
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 127
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "127"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -1023,13 +1077,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 108
+      Account: "00010"
+      ClOrdID: "108"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -1041,18 +1097,18 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 33
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 515
+      Account: "00010"
+      ClOrdID: "515"
       HandlInst: 3
       OrderQty: 9
-      OrigClOrdID: 127
+      OrigClOrdID: "127"
       Price: 5027
       Side: Sell
       Symbol: rb1206
@@ -1060,8 +1116,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 108
+      Account: "00010"
+      ClOrdID: "108"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -1070,26 +1126,27 @@ steps:
       Symbol: cu1205c63000
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 34
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 805
-      OrigClOrdID: 128
+      Account: "00010"
+      ClOrdID: "805"
+      OrigClOrdID: "128"
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 108
+      Account: "00010"
+      ClOrdID: "108"
       OrderQty: 1
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -1101,24 +1158,24 @@ steps:
       ExecType: 6
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 35
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 806
-      OrigClOrdID: 129
+      Account: "00010"
+      ClOrdID: "806"
+      OrigClOrdID: "129"
       Side: Sell
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 108
+      Account: "00010"
+      ClOrdID: "108"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -1129,15 +1186,17 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 36
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 131
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "131"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -1146,13 +1205,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 504
+      Account: "00010"
+      ClOrdID: "504"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -1163,18 +1224,18 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 37
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 516
+      Account: "00010"
+      ClOrdID: "516"
       HandlInst: 3
       OrderQty: 5
-      OrigClOrdID: 130
+      OrigClOrdID: "130"
       Price: 5028
       Side: Sell
       Symbol: rb1206
@@ -1183,8 +1244,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 109
+      Account: "00010"
+      ClOrdID: "109"
       OrderQty: 3
       OrdStatus: PendingNew
       OrdType: Limit
@@ -1196,15 +1257,17 @@ steps:
       ExecType: A
       LeavesQty: 3
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 38
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 133
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "133"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 6
       OrdType: Limit
@@ -1213,13 +1276,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 109
+      Account: "00010"
+      ClOrdID: "109"
       OrderQty: 3
       OrdStatus: New
       OrdType: Limit
@@ -1228,20 +1293,21 @@ steps:
       Symbol: cu1205c63000
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 3
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 39
   - request:
       MsgType: G
-      Account: 00010
-      ClOrdID: 517
+      Account: "00010"
+      ClOrdID: "517"
       HandlInst: 3
       OrderQty: 1
-      OrigClOrdID: 133
+      OrigClOrdID: "133"
       Price: 5029
       Side: Buy
       Symbol: rb1206
@@ -1250,8 +1316,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 110
+      Account: "00010"
+      ClOrdID: "110"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -1263,24 +1329,24 @@ steps:
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 40
   - request:
       MsgType: F
-      Account: 00010
-      ClOrdID: 807
-      OrigClOrdID: 134
+      Account: "00010"
+      ClOrdID: "807"
+      OrigClOrdID: "134"
       Side: Buy
       Symbol: rb1206
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 110
+      Account: "00010"
+      ClOrdID: "110"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -1289,17 +1355,20 @@ steps:
       Symbol: rb1205
       TimeInForce: Day
       OpenClose: Open
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 41
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 135
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "135"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 10
       OrdType: Limit
@@ -1308,13 +1377,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Close
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 110
+      Account: "00010"
+      ClOrdID: "110"
       OrderQty: 1
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -1326,15 +1397,17 @@ steps:
       ExecType: 6
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 42
   - request:
       MsgType: D
-      Account: 00010
-      ClOrdID: 136
+      Account: "00010"
+      AvgPx: 0
+      ClOrdID: "136"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 10
       OrdType: Limit
@@ -1343,13 +1416,15 @@ steps:
       Symbol: rb1206
       TimeInForce: Day
       OpenClose: Close
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: SHFE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00010
-      ClOrdID: 110
+      Account: "00010"
+      ClOrdID: "110"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -1360,6 +1435,6 @@ steps:
       OpenClose: Open
       ExecType: 4
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]

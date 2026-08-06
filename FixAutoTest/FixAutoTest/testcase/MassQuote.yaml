@@ -7,8 +7,8 @@ steps:
   # Step 1
   - request:
       MsgType: i
-      Account: 00001
-      QuoteID: 1
+      Account: "00001"
+      QuoteID: "1"
       NoQuoteSets: 1
       QuoteSetID: 1
       TotNoQuoteEntries: 2
@@ -34,8 +34,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 5
+      Account: "00001"
+      ClOrdID: "5"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -44,19 +44,20 @@ steps:
       Symbol: cu1202c66000
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 2
   - request:
       MsgType: Z
-      Account: 00001
-      QuoteMsgID: 1
-      QuoteID: 1
+      Account: "00001"
+      QuoteMsgID: "1"
+      QuoteID: "1"
       QuoteCancelType: 5
       NoQuoteEntries: 1
       Symbol: cu1202c66000
@@ -64,8 +65,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 6
+      Account: "00001"
+      ClOrdID: "6"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -74,17 +75,18 @@ steps:
       Symbol: cu1202c66000
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
       ExecType: A
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 3
   - request:
       MsgType: i
-      Account: 00001
+      Account: "00001"
       NoQuoteSets: 1
       QuoteSetID: 1
       TotNoQuoteEntries: 2
@@ -110,8 +112,8 @@ steps:
     expect:
       MsgType: b
       OnBehalfOfSubID: 61461
-      Account: 00001
-      QuoteID: 1
+      Account: "00001"
+      QuoteID: "1"
       SecurityExchange: SHFE
       NoQuoteSets: 1
       QuoteSetID: 1
@@ -134,13 +136,13 @@ steps:
       OpenClose: Open
       HedgeFlag: 1
       Tag_297: 10
-      match: [MsgType,Account,QuoteID,NoQuoteSets,QuoteSetID,TotNoQuoteEntries,NoQuoteEntries,QuoteEntryID]
+      match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
 
   # Step 4
   - request:
       MsgType: i
-      Account: 00001
-      QuoteID: 3
+      Account: "00001"
+      QuoteID: "3"
       NoQuoteSets: 1
       QuoteSetID: 3
       TotNoQuoteEntries: 2
@@ -166,8 +168,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 6
+      Account: "00001"
+      ClOrdID: "6"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -176,17 +178,19 @@ steps:
       Symbol: cu1202c66000
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 5
   - request:
       MsgType: i
-      Account: 00001
-      QuoteID: 4
+      Account: "00001"
+      QuoteID: "4"
       NoQuoteSets: 1
       QuoteSetID: 4
       TotNoQuoteEntries: 2
@@ -212,8 +216,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 5
+      Account: "00001"
+      ClOrdID: "5"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -222,17 +226,19 @@ steps:
       Symbol: cu1202c66000
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 6
   - request:
       MsgType: i
-      Account: 00001
-      QuoteID: 5
+      Account: "00001"
+      QuoteID: "5"
       NoQuoteSets: 1
       QuoteSetID: 5
       TotNoQuoteEntries: 2
@@ -258,8 +264,8 @@ steps:
     expect:
       MsgType: b
       OnBehalfOfSubID: 61461
-      Account: 00001
-      QuoteID: 1
+      Account: "00001"
+      QuoteID: "1"
       SecurityExchange: SHFE
       NoQuoteSets: 1
       QuoteSetID: 1
@@ -282,14 +288,14 @@ steps:
       OpenClose: Open
       HedgeFlag: 1
       Tag_297: 0
-      match: [MsgType,Account,QuoteID,NoQuoteSets,QuoteSetID,TotNoQuoteEntries,NoQuoteEntries,QuoteEntryID]
+      match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
 
   # Step 7
   - request:
       MsgType: Z
-      Account: 00001
-      QuoteMsgID: 1
-      QuoteID: 1
+      Account: "00001"
+      QuoteMsgID: "1"
+      QuoteID: "1"
       QuoteCancelType: 5
       NoQuoteEntries: 1
       Symbol: cu1202c66000
@@ -297,8 +303,8 @@ steps:
     expect:
       MsgType: b
       OnBehalfOfSubID: 61461
-      Account: 00001
-      QuoteID: 1
+      Account: "00001"
+      QuoteID: "1"
       SecurityExchange: SHFE
       NoQuoteSets: 1
       QuoteSetID: 1
@@ -321,24 +327,24 @@ steps:
       OpenClose: Open
       HedgeFlag: 1
       Tag_297: 0
-      match: [MsgType,Account,QuoteID,NoQuoteSets,QuoteSetID,TotNoQuoteEntries,NoQuoteEntries,QuoteEntryID]
+      match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
 
   # Step 8
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 1
+      Account: "00001"
+      ClOrdID: "1"
       OrderID:           14
       OrderQty: 1
-      OrigClOrdID: 11
+      OrigClOrdID: "11"
       Side: Buy
       Symbol: cu1202c66000
       SecurityExchange: SHFE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 6
+      Account: "00001"
+      ClOrdID: "6"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -347,18 +353,19 @@ steps:
       Symbol: cu1202c66000
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
       ExecType: 4
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 9
   - request:
       MsgType: i
-      Account: 00001
-      QuoteID: 6
+      Account: "00001"
+      QuoteID: "6"
       NoQuoteSets: 1
       QuoteSetID: 6
       TotNoQuoteEntries: 2
@@ -384,8 +391,8 @@ steps:
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 5
+      Account: "00001"
+      ClOrdID: "5"
       OrderQty: 1
       OrdStatus: Canceled
       OrdType: Limit
@@ -394,9 +401,10 @@ steps:
       Symbol: cu1202c66000
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
       ExecType: 4
       LeavesQty: 1
       SecurityExchange: SHFE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]

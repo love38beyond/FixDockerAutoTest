@@ -7,8 +7,10 @@ steps:
   # Step 1
   - request:
       MsgType: D
-      Account: 00001
-      ClOrdID: 1
+      Account: "00001"
+      AvgPx: 0
+      ClOrdID: "1"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 6
       OrdType: Limit
@@ -16,13 +18,15 @@ steps:
       Side: Sell
       Symbol: ss1205TAS
       TimeInForce: Day
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 1
+      Account: "00001"
+      ClOrdID: "1"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -31,18 +35,21 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Today
+      MinQty: 0
       ExecType: A
       LeavesQty: 1
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 2
   - request:
       MsgType: D
-      Account: 00001
-      ClOrdID: 2
+      Account: "00001"
+      AvgPx: 0
+      ClOrdID: "2"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 1
       OrdType: Limit
@@ -51,13 +58,15 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 2
+      Account: "00001"
+      ClOrdID: "2"
       OrderQty: 4
       OrdStatus: PendingNew
       OrdType: Limit
@@ -66,30 +75,31 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Close
+      MinQty: 0
       ExecType: A
       LeavesQty: 4
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
       Tag_20012: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 3
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 11
+      Account: "00001"
+      ClOrdID: "11"
       OrderID:           14
       OrderQty: 1
-      OrigClOrdID: 2
+      OrigClOrdID: "2"
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 3
+      Account: "00001"
+      ClOrdID: "3"
       OrderQty: 1
       OrdStatus: PendingNew
       OrdType: Limit
@@ -98,19 +108,22 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
       ExecType: A
       LeavesQty: 1
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
       Tag_20012: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 4
   - request:
       MsgType: D
-      Account: 00001
-      ClOrdID: 4
+      Account: "00001"
+      AvgPx: 0
+      ClOrdID: "4"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 2
       OrdType: Limit
@@ -118,13 +131,15 @@ steps:
       Side: Sell
       Symbol: ss1205
       TimeInForce: Day
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 1
+      Account: "00001"
+      ClOrdID: "1"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -133,28 +148,30 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Today
+      MinQty: 0
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 5
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 22
+      Account: "00001"
+      ClOrdID: "22"
       OrderID:           15
       OrderQty: 1
-      OrigClOrdID: 1
+      OrigClOrdID: "1"
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 2
+      Account: "00001"
+      ClOrdID: "2"
       OrderQty: 4
       OrdStatus: New
       OrdType: Limit
@@ -163,18 +180,22 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Close
+      MinQty: 0
+      ExecType: 0
       LeavesQty: 4
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
       Tag_20012: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 6
   - request:
       MsgType: D
-      Account: 00001
-      ClOrdID: 5
+      Account: "00001"
+      AvgPx: 0
+      ClOrdID: "5"
+      ExecTransType: 0
       HandlInst: 3
       OrderQty: 4
       OrdType: Limit
@@ -182,13 +203,15 @@ steps:
       Side: Sell
       Symbol: ss1205TAS
       TimeInForce: Day
+      StopPx: 0
+      MinQty: 0
       SecurityExchange: INE
       HedgeFlag: 1
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 3
+      Account: "00001"
+      ClOrdID: "3"
       OrderQty: 1
       OrdStatus: New
       OrdType: Limit
@@ -197,21 +220,23 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Open
+      MinQty: 0
+      ExecType: 0
       LeavesQty: 1
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
       Tag_20012: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 7
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 33
+      Account: "00001"
+      ClOrdID: "33"
       OrderID:           15
       OrderQty: 1
-      OrigClOrdID: 3
+      OrigClOrdID: "3"
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
@@ -220,24 +245,24 @@ steps:
       Tag_45: 9
       Tag_372: D
       Tag_380: 0
-      match: [MsgType,Tag_45,Tag_372,Tag_380]
+      match: [MsgType, Tag_45, Tag_372, Tag_380]
 
   # Step 8
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 44
+      Account: "00001"
+      ClOrdID: "44"
       OrderID:           15
       OrderQty: 1
-      OrigClOrdID: 4
+      OrigClOrdID: "4"
       Side: Buy
       Symbol: ss1205
       SecurityExchange: INE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 2
+      Account: "00001"
+      ClOrdID: "2"
       OrderQty: 4
       OrdStatus: PendingCancel
       OrdType: Limit
@@ -246,30 +271,31 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Close
+      MinQty: 0
       ExecType: 6
       LeavesQty: 4
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
       Tag_20012: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 9
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 55
+      Account: "00001"
+      ClOrdID: "55"
       OrderID:           15
       OrderQty: 1
-      OrigClOrdID: 5
+      OrigClOrdID: "5"
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 2
+      Account: "00001"
+      ClOrdID: "2"
       OrderQty: 4
       OrdStatus: Canceled
       OrdType: Limit
@@ -278,29 +304,30 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Close
+      MinQty: 0
       ExecType: 4
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
       Tag_20012: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 10
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 66
+      Account: "00001"
+      ClOrdID: "66"
       OrderID:           15
       OrderQty: 1
-      OrigClOrdID: 6
+      OrigClOrdID: "6"
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 11
+      Account: "00001"
+      ClOrdID: "11"
       OrderQty: 4
       OrdStatus: Canceled
       OrdType: Limit
@@ -309,29 +336,30 @@ steps:
       Symbol: ss1205TAS
       TimeInForce: Day
       OpenClose: Close
+      MinQty: 0
       ExecType: 4
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
       Tag_20012: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
 
   # Step 11
   - request:
       MsgType: F
-      Account: 00001
-      ClOrdID: 77
+      Account: "00001"
+      ClOrdID: "77"
       OrderID:           15
       OrderQty: 1
-      OrigClOrdID: 7
+      OrigClOrdID: "7"
       Side: Buy
       Symbol: ss1205TAS
       SecurityExchange: INE
     expect:
       MsgType: 8
       OnBehalfOfSubID: 61441
-      Account: 00001
-      ClOrdID: 4
+      Account: "00001"
+      ClOrdID: "4"
       OrderQty: 2
       OrdStatus: PendingNew
       OrdType: Limit
@@ -340,9 +368,10 @@ steps:
       Symbol: ss1205
       TimeInForce: Day
       OpenClose: Close
+      MinQty: 0
       ExecType: A
       LeavesQty: 2
       SecurityExchange: INE
-      MultiLegReportingType: 1
+      Tag_442: 1
       HedgeFlag: 1
-      match: [MsgType,Account,ClOrdID,OrderQty,OrdStatus,OrdType,Price,Side]
+      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
