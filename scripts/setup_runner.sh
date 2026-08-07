@@ -70,7 +70,7 @@ if [ "$RUN" = true ]; then
     mkdir -p "$REPORT_DIR"
 
     # 挂载宿主机 FixAutoTest 目录到容器，更新代码无需重建镜像
-    WORKDIR="/opt/fix-test"
+    WORKDIR="/opt/fix-test/FixAutoTest/FixAutoTest"
 
     # 先启动容器保持后台运行
     docker run -d \
