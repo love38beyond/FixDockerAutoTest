@@ -98,8 +98,15 @@ class YamlLoader:
             elif expects is not None:
                 exp_list = expects
 
-            for exp in exp_list:
+            # 多回报分组匹配: 同一 expects 的条目用 _group_id 标记为一组
+            is_group = len(exp_list) > 1
+            group_id = f'{case_name}:{i+1}' if is_group else None
+
+            for exp_idx, exp in enumerate(exp_list):
                 exp_dict = {'CaseNo': f'{case_name}:{i+1}'}
+                if is_group:
+                    exp_dict['_group_id'] = group_id
+                    exp_dict['_group_idx'] = str(exp_idx)
                 match_keys = []
                 for k, v in exp.items():
                     if k == 'match':

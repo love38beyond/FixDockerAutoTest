@@ -607,24 +607,51 @@ def assertResult(message):
             logger.info('TestCase Result (NOCompare): ' + result)
             return
 
-        # Fix 10: correlation-based matching
+        # Fix 10: correlation-based matching + group-aware multi-response
         matched_idx = None
+        group_id = None
+
+        # First pass: try correlation matching (ClOrdID/QuoteID/PosReqID)
         for idx, expected in enumerate(rsplist):
-            # Try ClOrdID (tag 11)
             exp_clord = expected.get(TAG_CL_ORD_ID)
             if exp_clord and messagedict.get(TAG_CL_ORD_ID) == exp_clord:
                 matched_idx = idx
+                group_id = expected.get('_group_id', None)
                 break
-            # Try QuoteID (tag 117)
             exp_quote = expected.get(TAG_QUOTE_ID)
             if exp_quote and messagedict.get(TAG_QUOTE_ID) == exp_quote:
                 matched_idx = idx
+                group_id = expected.get('_group_id', None)
                 break
-            # Try PosReqID (tag 710)
             exp_posreq = expected.get(TAG_POS_REQ_ID)
             if exp_posreq and messagedict.get(TAG_POS_REQ_ID) == exp_posreq:
                 matched_idx = idx
+                group_id = expected.get('_group_id', None)
                 break
+
+        # Group matching: if matched entry belongs to a group, try ALL group
+        # members to find the one that best matches (handles out-of-order responses)
+        if group_id is not None:
+            best_idx = None
+            best_score = -1
+            # Find all remaining rsplist entries with same _group_id
+            for idx, expected in enumerate(rsplist):
+                if expected.get('_group_id') == group_id:
+                    # Simple scoring: count how many expected tag values match
+                    score = 0
+                    for tag, exp_val in expected.items():
+                        if tag.startswith('_') or tag == 'keylist' or tag == 'CaseNo':
+                            continue
+                        actual_val = messagedict.get(tag, '')
+                        exp_val_clean = exp_val.strip()
+                        actual_clean = actual_val.strip()
+                        if exp_val_clean == actual_clean:
+                            score += 1
+                    if score > best_score:
+                        best_score = score
+                        best_idx = idx
+            if best_idx is not None:
+                matched_idx = best_idx
 
         if matched_idx is not None:
             expected_item = rsplist.pop(matched_idx)
