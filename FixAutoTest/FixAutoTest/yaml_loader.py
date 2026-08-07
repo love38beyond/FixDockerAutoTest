@@ -58,6 +58,18 @@ class YamlLoader:
         rsplist = []
         case_name = data.get('name', os.path.basename(yaml_path))
 
+        # prepend login expected response (FIX session always sends logon first)
+        login_entry = {
+            'CaseNo': f'{case_name}:login',
+            self.tag_map.get('MsgType', '35'): 'A',
+            self.tag_map.get('OnBehalfOfSubID', '116'): '12289',
+            'keylist': str([
+                self.tag_map.get('MsgType', '35'),
+                self.tag_map.get('OnBehalfOfSubID', '116'),
+            ]),
+        }
+        rsplist.append(login_entry)
+
         for i, step in enumerate(steps):
             # ---- 请求 ----
             req = step.get('request', {})
