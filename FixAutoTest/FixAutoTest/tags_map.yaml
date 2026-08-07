@@ -88,6 +88,19 @@ MarketDepth:    {tag: 264}
 MDUpdateType:   {tag: 265}
 NoRelatedSym:   {tag: 146}
 
+# ---- 报价第二腿字段（MassQuote 多腿使用）----
+BidPx2:         {tag: 1321}
+BidSize2:        {tag: 1341}
+OfferPx2:        {tag: 1331}
+OfferSize2:      {tag: 1351}
+Symbol2:         {tag: 551}
+SecurityExchange2: {tag: 2071}
+OpenClose2:      {tag: 771}
+QuoteEntryID2:   {tag: 2991}
+HedgeFlag2:      {tag: 200011}
+PartyID2:        {tag: 4481}
+PartyRole2:      {tag: 4521}
+
 # ---- 合约查询 ----
 SecurityRequestType: {tag: 321}
 SecurityGroup:  {tag: 1151}

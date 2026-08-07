@@ -16,21 +16,21 @@ steps:
       QuoteEntryID: 5
       Symbol: cu1202c66000
       SecurityExchange: SHFE
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100
       OfferSize: 1
       OpenClose: Open
       HedgeFlag: 1
-      Tag_2991: 6
-      Tag_551: cu1202c66000
-      Tag_2071: SHFE
+      QuoteEntryID2: 6
+      Symbol2: cu1202c66000
+      SecurityExchange2: SHFE
       BidPx: 99
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
-      Tag_771: O
-      Tag_200011: 1
+      OfferPx2: 0
+      OfferSize2: 0
+      OpenClose2: O
+      HedgeFlag2: 1
     expects:
       -
         MsgType: 8
@@ -46,8 +46,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -66,8 +66,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -84,18 +84,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 5
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 6
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 6
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 10
@@ -114,8 +114,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 0
-        LeavesQty: 1
+        Tag_150: 0
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -134,8 +134,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 0
-        LeavesQty: 1
+        Tag_150: 0
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -152,18 +152,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 5
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 6
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 6
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
@@ -192,18 +192,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 5
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 6
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 6
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
@@ -222,8 +222,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 4
-        LeavesQty: 1
+        Tag_150: 4
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -242,8 +242,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 4
-        LeavesQty: 1
+        Tag_150: 4
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -260,18 +260,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 5
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 6
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 6
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 17
@@ -288,21 +288,21 @@ steps:
       QuoteEntryID: 7
       Symbol: cu1202c66000
       SecurityExchange: SHFE
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100
       OfferSize: 1
       OpenClose: Open
       HedgeFlag: 1
-      Tag_2991: 8
-      Tag_551: cu1202c66000
-      Tag_2071: SHFE
+      QuoteEntryID2: 8
+      Symbol2: cu1202c66000
+      SecurityExchange2: SHFE
       BidPx: 99
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
-      Tag_771: O
-      Tag_200011: 1
+      OfferPx2: 0
+      OfferSize2: 0
+      OpenClose2: O
+      HedgeFlag2: 1
     expect:
       MsgType: 3
       Tag_45: 61441
@@ -322,21 +322,21 @@ steps:
       QuoteEntryID: 7
       Symbol: cu1202c66000
       SecurityExchange: SHFE
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100
       OfferSize: 2
       OpenClose: Open
       HedgeFlag: 1
-      Tag_2991: 8
-      Tag_551: cu1202c66000
-      Tag_2071: SHFE
+      QuoteEntryID2: 8
+      Symbol2: cu1202c66000
+      SecurityExchange2: SHFE
       BidPx: 99
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
-      Tag_771: O
-      Tag_200011: 1
+      OfferPx2: 0
+      OfferSize2: 0
+      OpenClose2: O
+      HedgeFlag2: 1
     expect:
       MsgType: b
       OnBehalfOfSubID: 16429
@@ -349,18 +349,18 @@ steps:
       NoQuoteEntries: 2
       QuoteEntryID: 5
       Symbol: cu1202c66000
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100.000000
       OfferSize: 1
-      Tag_771: O
-      Tag_200011: 1
-      Tag_2991: 6
-      Tag_551: cu1202c66000
+      OpenClose2: O
+      HedgeFlag2: 1
+      QuoteEntryID2: 6
+      Symbol2: cu1202c66000
       BidPx: 99.000000
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
+      OfferPx2: 0
+      OfferSize2: 0
       OpenClose: Open
       HedgeFlag: 1
       Tag_297: 5
@@ -378,21 +378,21 @@ steps:
       QuoteEntryID: 9
       Symbol: cu1202c66000
       SecurityExchange: SHFE
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100
       OfferSize: 1
       OpenClose: Open
       HedgeFlag: 1
-      Tag_2991: 10
-      Tag_551: cu1202c66000
-      Tag_2071: SHFE
+      QuoteEntryID2: 10
+      Symbol2: cu1202c66000
+      SecurityExchange2: SHFE
       BidPx: 99
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
-      Tag_771: C
-      Tag_200011: 1
+      OfferPx2: 0
+      OfferSize2: 0
+      OpenClose2: C
+      HedgeFlag2: 1
     expects:
       -
         MsgType: 8
@@ -408,8 +408,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -428,8 +428,8 @@ steps:
         TimeInForce: Day
         OpenClose: Close
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -446,18 +446,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 9
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 10
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 10
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Close
         HedgeFlag: 1
         Tag_297: 10
@@ -476,7 +476,8 @@ steps:
         TimeInForce: Day
         OpenClose: Close
         MinQty: 0
-        ExecType: 8
+        Tag_150: 8
+        Tag_151: 0
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -495,7 +496,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 8
+        Tag_150: 8
+        Tag_151: 0
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -512,18 +514,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 9
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 10
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 10
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Close
         HedgeFlag: 1
         Tag_297: 17
@@ -541,21 +543,21 @@ steps:
       QuoteEntryID: 11
       Symbol: cu1202c66000
       SecurityExchange: SHFE
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100
       OfferSize: 1
       OpenClose: Open
       HedgeFlag: 1
-      Tag_2991: 12
-      Tag_551: cu1202c66000
-      Tag_2071: SHFE
+      QuoteEntryID2: 12
+      Symbol2: cu1202c66000
+      SecurityExchange2: SHFE
       BidPx: 99
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
-      Tag_771: O
-      Tag_200011: 1
+      OfferPx2: 0
+      OfferSize2: 0
+      OpenClose2: O
+      HedgeFlag2: 1
     expects:
       -
         MsgType: 8
@@ -571,8 +573,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -591,8 +593,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -609,18 +611,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 11
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 12
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 12
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 10
@@ -639,8 +641,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 0
-        LeavesQty: 1
+        Tag_150: 0
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -659,8 +661,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 0
-        LeavesQty: 1
+        Tag_150: 0
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -677,18 +679,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 11
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 12
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 12
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
@@ -716,18 +718,18 @@ steps:
       NoQuoteEntries: 2
       QuoteEntryID: 5
       Symbol: cu1202c66000
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100.000000
       OfferSize: 1
-      Tag_771: O
-      Tag_200011: 1
-      Tag_2991: 6
-      Tag_551: cu1202c66000
+      OpenClose2: O
+      HedgeFlag2: 1
+      QuoteEntryID2: 6
+      Symbol2: cu1202c66000
       BidPx: 99.000000
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
+      OfferPx2: 0
+      OfferSize2: 0
       OpenClose: Open
       HedgeFlag: 1
       Tag_297: 5
@@ -738,7 +740,7 @@ steps:
       MsgType: F
       Account: "00001"
       ClOrdID: "1"
-      OrderID:           14
+      OrderID: 14
       OrderQty: 1
       OrigClOrdID: "11"
       Side: Buy
@@ -759,8 +761,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 6
-        LeavesQty: 1
+        Tag_150: 6
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -779,8 +781,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 8
-        LeavesQty: 1
+        Tag_150: 8
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -798,21 +800,21 @@ steps:
       QuoteEntryID: 13
       Symbol: cu1202c66000
       SecurityExchange: SHFE
-      Tag_1321: 0
-      Tag_1341: 0
+      BidPx2: 0
+      BidSize2: 0
       OfferPx: 100
       OfferSize: 1
       OpenClose: Open
       HedgeFlag: 1
-      Tag_2991: 14
-      Tag_551: cu1202c66000
-      Tag_2071: SHFE
+      QuoteEntryID2: 14
+      Symbol2: cu1202c66000
+      SecurityExchange2: SHFE
       BidPx: 99
       BidSize: 1
-      Tag_1331: 0
-      Tag_1351: 0
-      Tag_771: O
-      Tag_200011: 1
+      OfferPx2: 0
+      OfferSize2: 0
+      OpenClose2: O
+      HedgeFlag2: 1
     expects:
       -
         MsgType: 8
@@ -828,8 +830,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -848,8 +850,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: A
-        LeavesQty: 1
+        Tag_150: A
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -866,18 +868,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 13
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 14
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 14
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 10
@@ -896,7 +898,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 4
+        Tag_150: 4
+        Tag_151: 0
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -915,7 +918,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 4
+        Tag_150: 4
+        Tag_151: 0
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -932,18 +936,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 11
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 12
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 12
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 17
@@ -962,8 +966,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 0
-        LeavesQty: 1
+        Tag_150: 0
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -982,8 +986,8 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        ExecType: 0
-        LeavesQty: 1
+        Tag_150: 0
+        Tag_151: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
@@ -1000,18 +1004,18 @@ steps:
         NoQuoteEntries: 2
         QuoteEntryID: 13
         Symbol: cu1202c66000
-        Tag_1321: 0
-        Tag_1341: 0
+        BidPx2: 0
+        BidSize2: 0
         OfferPx: 100.000000
         OfferSize: 1
-        Tag_771: O
-        Tag_200011: 1
-        Tag_2991: 14
-        Tag_551: cu1202c66000
+        OpenClose2: O
+        HedgeFlag2: 1
+        QuoteEntryID2: 14
+        Symbol2: cu1202c66000
         BidPx: 99.000000
         BidSize: 1
-        Tag_1331: 0
-        Tag_1351: 0
+        OfferPx2: 0
+        OfferSize2: 0
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
