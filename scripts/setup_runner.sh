@@ -94,6 +94,10 @@ if [ "$RUN" = true ]; then
     # 将容器执行日志写入单独文件（避免二进制内容污染主日志 UTF-8 编码）
     RUNNER_LOG="${SCRIPT_DIR}/logs/runner_exec.log"
 
+    # 等待 FIX 网关与 CTP 建立连接
+    log_info "等待 FIX 网关就绪 (15s)..."
+    sleep 15
+
     # 在容器中执行测试
     log_info "开始在容器中执行测试..."
     docker exec "$CONTAINER_NAME" bash -c '
