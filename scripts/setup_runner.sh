@@ -94,6 +94,11 @@ if [ "$RUN" = true ]; then
     # 将容器执行日志写入单独文件（避免二进制内容污染主日志 UTF-8 编码）
     RUNNER_LOG="${SCRIPT_DIR}/logs/runner_exec.log"
 
+    # 清理上一次运行的结果文件
+    log_step "清理旧报告..."
+    rm -f "$REPORT_DIR"/*.json "$REPORT_DIR"/*.html "$REPORT_DIR"/*.log "$REPORT_DIR"/*.txt 2>/dev/null || true
+    docker exec "$CONTAINER_NAME" bash -c "rm -f $WORKDIR/syslog.txt $WORKDIR/report.log $WORKDIR/test_report.*" 2>/dev/null || true
+
     # 等待 FIX 网关与 CTP 建立连接
     log_info "等待 FIX 网关就绪 (15s)..."
     sleep 15
