@@ -600,9 +600,7 @@ def assertResult(message):
     with rsplist_lock:
         if len(rsplist) == 0:
             count['NOCompare'] += 1
-            _step_counter[0] += 1
-            step_label = f'{_current_logical_step[0]}.{_step_counter[0]}'
-            _step_results.append({'step': step_label, 'result': 'NOCompare'})
+            _step_results.append({'step': str(_current_logical_step[0]), 'result': 'NOCompare'})
             result = 'Rsplist is null, no compare.'
             logger.info('TestCase Result (NOCompare): ' + result)
             return
@@ -669,9 +667,8 @@ def assertResult(message):
         result = 'FAIL'
         count['FAIL'] += 1
 
-    # 记录 step 级结果（格式: 步骤号.回报序号，如 2.1 表示第2步第1笔回报）
-    _step_counter[0] += 1
-    step_label = f'{_current_logical_step[0]}.{_step_counter[0]}'
+    # 记录 step 级结果（使用 rsplist 条目中预分配的 _step_label）
+    step_label = expected_item.get('_step_label', str(_current_logical_step[0]))
     _step_results.append({'step': step_label, 'result': result})
 
     logger.info('TestCase Result: ' + result)
@@ -990,7 +987,6 @@ def main(config_file, case_file):
         logging.info('--------------------------------------------------------------------------------')
         logger.info('CaseNo: ' + str(i + 1) + ' start...')
         _current_logical_step[0] = i + 1
-        _step_counter[0] = 0  # reset per logical step
         msg_type = reqlist[i].get(TAG_MSG_TYPE)
         builder = bsfuncdict.get(msg_type)
         if builder is None:

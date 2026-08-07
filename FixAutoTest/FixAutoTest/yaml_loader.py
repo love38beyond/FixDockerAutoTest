@@ -63,6 +63,7 @@ class YamlLoader:
             'CaseNo': f'{case_name}:login',
             self.tag_map.get('MsgType', '35'): 'A',
             self.tag_map.get('OnBehalfOfSubID', '116'): '12289',
+            '_step_label': 'login',
             'keylist': str([
                 self.tag_map.get('MsgType', '35'),
                 self.tag_map.get('OnBehalfOfSubID', '116'),
@@ -104,9 +105,13 @@ class YamlLoader:
 
             for exp_idx, exp in enumerate(exp_list):
                 exp_dict = {'CaseNo': f'{case_name}:{i+1}'}
+                # 预分配步骤标签，避免异步回报导致标签错乱
                 if is_group:
                     exp_dict['_group_id'] = group_id
                     exp_dict['_group_idx'] = str(exp_idx)
+                    exp_dict['_step_label'] = f'{i+1}.{exp_idx + 1}'
+                else:
+                    exp_dict['_step_label'] = str(i + 1)
                 match_keys = []
                 for k, v in exp.items():
                     if k == 'match':
