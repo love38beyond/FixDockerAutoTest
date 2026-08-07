@@ -35,15 +35,17 @@ class YamlLoader:
         return self.tag_map.get(s, s)
 
     def resolve_value(self, tag_name, value):
-        """值名 → 实际值，如 ('Side', 'Buy') → '1'；
-           如果是数字字符串原样返回；否则查 value_map"""
+        """值名 → 实际值，如 ('Side', 'Buy') → '1'"""
+        # 剥离 Name-Tag 格式（如 Side-54 → Side）
+        name = str(tag_name)
+        if '-' in name and name.rsplit('-', 1)[-1].isdigit():
+            name = name.rsplit('-', 1)[0]
         v = str(value)
-        # 已经在 value_map 中
-        key = (tag_name, value)
+        key = (name, v)
         if key in self.value_map:
             return self.value_map[key]
-        # 尝试数字值匹配（如 OrdStatus: PendingNew → A）
-        # 已经过 value_map 匹配不上的，原样返回
+        # 尝试反向：数字值 → 已存在？
+        key2 = (name, v)
         return v
 
     def load_case(self, yaml_path):
@@ -82,12 +84,13 @@ class YamlLoader:
                 tag = self.resolve_tag(k)
                 val = self.resolve_value(k, v)
                 req_dict[tag] = val
-                # 特殊处理: SenderCompID 直接写值
-                if k == 'SenderCompID' and str(v) not in ('', '0'):
-                    req_dict[tag] = str(v)
-            # 特殊处理: MsgType 值是简短字符串
-            if 'MsgType' in req:
-                req_dict[self.tag_map.get('MsgType', '35')] = str(req['MsgType'])
+            # MsgType 特殊处理: 确保 tag 35 有值（支持 Name-Tag 格式的 key）
+            msgtype_tag = self.tag_map.get('MsgType', '35')
+            if msgtype_tag not in req_dict:
+                for k, v in req.items():
+                    if self.resolve_tag(k) == msgtype_tag:
+                        req_dict[msgtype_tag] = str(v)
+                        break
 
             reqlist.append(req_dict)
 
