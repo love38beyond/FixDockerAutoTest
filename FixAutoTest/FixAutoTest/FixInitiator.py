@@ -41,6 +41,7 @@ _step_results = []  # step-level results for current test case
 _step_failures = []  # step-level failure details for current test case
 _step_counter = [0]  # mutable counter for step numbering
 _all_failures = []  # accumulated failure details across all cases
+_current_logical_step = [0]  # tracks which request step we are on
 
 
 # ---------------------------------------------------------------------------
@@ -600,7 +601,8 @@ def assertResult(message):
         if len(rsplist) == 0:
             count['NOCompare'] += 1
             _step_counter[0] += 1
-            _step_results.append({'step': _step_counter[0], 'result': 'NOCompare'})
+            step_label = f'{_current_logical_step[0]}.{_step_counter[0]}'
+            _step_results.append({'step': step_label, 'result': 'NOCompare'})
             result = 'Rsplist is null, no compare.'
             logger.info('TestCase Result (NOCompare): ' + result)
             return
@@ -640,9 +642,10 @@ def assertResult(message):
         result = 'FAIL'
         count['FAIL'] += 1
 
-    # 记录 step 级结果
+    # 记录 step 级结果（格式: 步骤号.回报序号，如 2.1 表示第2步第1笔回报）
     _step_counter[0] += 1
-    _step_results.append({'step': _step_counter[0], 'result': result})
+    step_label = f'{_current_logical_step[0]}.{_step_counter[0]}'
+    _step_results.append({'step': step_label, 'result': result})
 
     logger.info('TestCase Result: ' + result)
     response_event.set()
@@ -869,10 +872,11 @@ def main(config_file, case_file):
     reset_global_state()
 
     # 初始化本用例的 step 级结果追踪
-    global _step_results, _step_failures, _step_counter
+    global _step_results, _step_failures, _step_counter, _current_logical_step
     _step_results = []
     _step_failures = []
     _step_counter = [0]  # mutable counter for step numbering
+    _current_logical_step = [0]  # tracks which request step we are on
 
     # 切换到脚本所在目录，确保 QuickFIX 能正确解析 INI 中的相对路径
     #   （DataDictionary、FileStorePath、FileLogPath 等）
@@ -958,6 +962,7 @@ def main(config_file, case_file):
     for i in range(len(reqlist)):
         logging.info('--------------------------------------------------------------------------------')
         logger.info('CaseNo: ' + str(i + 1) + ' start...')
+        _current_logical_step[0] = i + 1
         msg_type = reqlist[i].get(TAG_MSG_TYPE)
         builder = bsfuncdict.get(msg_type)
         if builder is None:
