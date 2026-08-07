@@ -28,8 +28,11 @@ class YamlLoader:
                     self.value_map[(name, vname)] = str(vval)
 
     def resolve_tag(self, name):
-        """名称 → tag 号，如 'ClOrdID' → '11'"""
-        return self.tag_map.get(name, name)
+        """名称 → tag 号，如 'ClOrdID-11' → '11'、'ClOrdID' → '11'"""
+        s = str(name)
+        if '-' in s and s.rsplit('-', 1)[-1].isdigit():
+            return s.rsplit('-', 1)[-1]
+        return self.tag_map.get(s, s)
 
     def resolve_value(self, tag_name, value):
         """值名 → 实际值，如 ('Side', 'Buy') → '1'；
@@ -115,13 +118,7 @@ class YamlLoader:
                 match_keys = []
                 for k, v in exp.items():
                     if k == 'match':
-                        # match 格式: Name-Tag (如 Side-54)，取 Tag 部分
-                        for x in v:
-                            x_str = str(x)
-                            if '-' in x_str:
-                                match_keys.append(x_str.rsplit('-', 1)[-1])
-                            else:
-                                match_keys.append(self.resolve_tag(x_str))
+                        match_keys = [self.resolve_tag(str(x)) for x in v]
                     elif k == 'match_by':
                         # 用 ClOrdID/QuoteID 关联，fallback 到 FIFO
                         exp_dict['_match_by'] = str(v)
