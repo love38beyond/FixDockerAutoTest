@@ -10,6 +10,96 @@ import os
 import sys
 from datetime import datetime
 
+# Tag number → name mapping
+TAG_NAMES = {
+    '1': 'Account',
+    '6': 'AvgPx',
+    '11': 'ClOrdID',
+    '14': 'CumQty',
+    '17': 'ExecID',
+    '20': 'ExecTransType',
+    '21': 'HandlInst',
+    '31': 'LastPx',
+    '32': 'LastQty',
+    '34': 'MsgSeqNum',
+    '35': 'MsgType',
+    '37': 'OrderID',
+    '38': 'OrderQty',
+    '39': 'OrdStatus',
+    '40': 'OrdType',
+    '41': 'OrigClOrdID',
+    '44': 'Price',
+    '49': 'SenderCompID',
+    '50': 'SenderSubID',
+    '52': 'SendingTime',
+    '54': 'Side',
+    '55': 'Symbol',
+    '56': 'TargetCompID',
+    '58': 'Text',
+    '59': 'TimeInForce',
+    '77': 'OpenClose',
+    '96': 'RawData',
+    '98': 'EncryptMethod',
+    '99': 'StopPx',
+    '108': 'HeartBtInt',
+    '110': 'MinQty',
+    '116': 'OnBehalfOfSubID',
+    '117': 'QuoteID',
+    '132': 'BidPx',
+    '133': 'OfferPx',
+    '134': 'BidSize',
+    '135': 'OfferSize',
+    '141': 'ResetSeqNumFlag',
+    '146': 'NoRelatedSym',
+    '207': 'SecurityExchange',
+    '262': 'MDReqID',
+    '263': 'SubscriptionRequestType',
+    '264': 'MarketDepth',
+    '265': 'MDUpdateType',
+    '295': 'NoQuoteEntries',
+    '296': 'NoQuoteSets',
+    '298': 'QuoteCancelType',
+    '299': 'QuoteEntryID',
+    '302': 'QuoteSetID',
+    '304': 'TotNoQuoteEntries',
+    '321': 'SecurityRequestType',
+    '432': 'ExpireDate',
+    '448': 'PartyID',
+    '452': 'PartyRole',
+    '453': 'NoPartyIDs',
+    '551': 'Symbol2',
+    '702': 'NoPositions',
+    '703': 'PosType',
+    '704': 'LongQty',
+    '709': 'PosTransType',
+    '710': 'PosReqID',
+    '712': 'PosMaintAction',
+    '713': 'OrigPosReqRefID',
+    '714': 'PosMaintRptRefID',
+    '715': 'ClearingBusinessDate',
+    '721': 'PosMaintRptID',
+    '771': 'OpenClose2',
+    '1151': 'SecurityGroup',
+    '1166': 'QuoteMsgID',
+    '1321': 'BidPx2',
+    '1331': 'OfferPx2',
+    '1341': 'BidSize2',
+    '1351': 'OfferSize2',
+    '2071': 'SecurityExchange2',
+    '2991': 'QuoteEntryID2',
+    '4481': 'PartyID2',
+    '4521': 'PartyRole2',
+    '20001': 'HedgeFlag',
+    '20002': 'CombDirection',
+    '20004': 'FrontID',
+    '20005': 'SessionID',
+    '20006': 'IsSwapOrder',
+    '20009': 'OptionSelfHedge',
+    '20011': 'ExecDeclare',
+    '200011': 'HedgeFlag2',
+}
+
+
 def generate_report(json_path='test_report.json', output_path='test_report.html'):
     if not os.path.exists(json_path):
         print(f"错误: 找不到 {json_path}")
@@ -119,7 +209,7 @@ def generate_report(json_path='test_report.json', output_path='test_report.html'
             <tr>
                 <td>{f.get('case','')}</td>
                 <td>{f.get('step','')}</td>
-                <td>{f.get('tag','')}</td>
+                <td>{TAG_NAMES.get(str(f.get('tag','')), 'Tag')}-{f.get('tag','')}</td>
                 <td class="exp">{f.get('expected','')}</td>
                 <td class="act">{f.get('actual','')}</td>
             </tr>''')
