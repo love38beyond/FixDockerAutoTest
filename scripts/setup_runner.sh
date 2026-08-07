@@ -69,12 +69,16 @@ if [ "$RUN" = true ]; then
     REPORT_DIR="${SCRIPT_DIR}/logs/reports"
     mkdir -p "$REPORT_DIR"
 
+    # 挂载宿主机 FixAutoTest 目录到容器，更新代码无需重建镜像
+    WORKDIR="/opt/fix-test"
+
     # 先启动容器保持后台运行
     docker run -d \
         --name="$CONTAINER_NAME" \
         --network="$DOCKER_NETWORK" \
         -e FIX_HOST="$RUNNER_HOST" \
         -e FIX_PORT="${FIX_PORT:-61111}" \
+        -v "$FIXAUTO_DIR:$WORKDIR" \
         -v "$REPORT_DIR:/tmp/reports" \
         "$IMAGE_NAME" \
         tail -f /dev/null
@@ -85,7 +89,7 @@ if [ "$RUN" = true ]; then
         log_info "查看日志: docker logs $CONTAINER_NAME"
         exit 1
     fi
-    log_info "容器 $CONTAINER_NAME 已启动"
+    log_info "容器 $CONTAINER_NAME 已启动 (代码挂载: $FIXAUTO_DIR → $WORKDIR)"
 
     # 将容器执行日志写入单独文件（避免二进制内容污染主日志 UTF-8 编码）
     RUNNER_LOG="${SCRIPT_DIR}/logs/runner_exec.log"
@@ -93,30 +97,9 @@ if [ "$RUN" = true ]; then
     # 在容器中执行测试
     log_info "开始在容器中执行测试..."
     docker exec "$CONTAINER_NAME" bash -c '
-        echo "[runner] 查找 FixInitiator.py..."
-        # 优先 /opt/fix-test/FixAutoTest/FixAutoTest 再 /opt/fix-test/FixAutoTest
-        WORKDIR=""
-        for candidate in \
-            /opt/fix-test/FixAutoTest/FixAutoTest \
-            /opt/fix-test/FixAutoTest \
-            /opt/fix-test; do
-            if [ -f "$candidate/FixInitiator.py" ]; then
-                WORKDIR="$candidate"
-                break
-            fi
-        done
-        if [ -z "$WORKDIR" ]; then
-            WORKDIR=$(find /opt -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
-        fi
-        if [ -z "$WORKDIR" ]; then
-            WORKDIR=$(find / -name "FixInitiator.py" -type f 2>/dev/null | head -1 | xargs dirname 2>/dev/null || echo "")
-        fi
-        if [ -z "$WORKDIR" ]; then
-            echo "[runner] 错误: 找不到 FixInitiator.py"
-            exit 1
-        fi
+        WORKDIR="'"$WORKDIR"'"
         echo "[runner] 工作目录: $WORKDIR"
-        cd "$WORKDIR"
+        cd "$WORKDIR" || { echo "[runner] 错误: 无法进入 $WORKDIR"; exit 1; }
         echo "[runner] 当前目录: $(pwd)"
         echo "[runner] 文件列表: $(ls FixInitiator.py tags.py generate_report.py 2>/dev/null)"
         echo "[runner] Python: $(python3 --version 2>&1 || echo NOT_FOUND)"
