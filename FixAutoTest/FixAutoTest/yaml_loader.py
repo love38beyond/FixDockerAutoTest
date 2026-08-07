@@ -91,7 +91,7 @@ class YamlLoader:
                 match_keys = []
                 for k, v in exp.items():
                     if k == 'match':
-                        match_keys = [str(x) for x in v]
+                        match_keys = [self.resolve_tag(str(x)) for x in v]
                     elif k == 'match_by':
                         # 用 ClOrdID/QuoteID 关联，fallback 到 FIFO
                         exp_dict['_match_by'] = str(v)
