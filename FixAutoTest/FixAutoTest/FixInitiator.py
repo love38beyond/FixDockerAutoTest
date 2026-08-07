@@ -990,6 +990,7 @@ def main(config_file, case_file):
         logging.info('--------------------------------------------------------------------------------')
         logger.info('CaseNo: ' + str(i + 1) + ' start...')
         _current_logical_step[0] = i + 1
+        _step_counter[0] = 0  # reset per logical step
         msg_type = reqlist[i].get(TAG_MSG_TYPE)
         builder = bsfuncdict.get(msg_type)
         if builder is None:
