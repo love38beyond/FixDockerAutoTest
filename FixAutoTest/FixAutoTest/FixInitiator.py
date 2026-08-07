@@ -817,8 +817,18 @@ def write_test_report():
         'failures': list(_all_failures),
     }
     try:
+        # 清理非法代理字符（CTP 返回的 Text 字段可能含乱码）
+        def sanitize(obj):
+            if isinstance(obj, str):
+                return obj.encode('utf-8', errors='surrogateescape').decode('utf-8', errors='replace')
+            if isinstance(obj, dict):
+                return {k: sanitize(v) for k, v in obj.items()}
+            if isinstance(obj, list):
+                return [sanitize(i) for i in obj]
+            return obj
+        report_clean = sanitize(report)
         with open('test_report.json', 'w', encoding='utf-8') as f:
-            json.dump(report, f, ensure_ascii=False, indent=2)
+            json.dump(report_clean, f, ensure_ascii=False, indent=2)
         logger.info("Test report written to test_report.json")
         # 自动生成 HTML 报告
         try:
