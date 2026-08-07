@@ -22,14 +22,13 @@ steps:
         Side: Sell
         Symbol: fu1205p4800
         Text: CTP:全部成交
-
         TimeInForce: Day
         OpenClose: Open
         ExecType: I
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+        match: [MsgType-35, Account-1, ClOrdID-11, CumQty-14, OrderQty-38, OrdStatus-39, OrdType-40, Price-44]
       -
         MsgType: 8
         Account: "00010"
@@ -42,14 +41,13 @@ steps:
         Side: Buy
         Symbol: fu1205p4800
         Text: CTP:全部成交
-
         TimeInForce: Day
         OpenClose: Open
         ExecType: I
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+        match: [MsgType-35, Account-1, ClOrdID-11, CumQty-14, OrderQty-38, OrdStatus-39, OrdType-40, Price-44]
 
   - step: 2
     request:
@@ -74,7 +72,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -93,7 +91,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -111,7 +109,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -122,14 +120,14 @@ steps:
         Price: 5000
         Side: Sell
         Symbol: fu1205
-        Text: CTP:已撤单报单已提交 
+        Text: CTP:已撤单报单已提交
         TimeInForce: IOC
         OpenClose: Open
         ExecType: I
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -148,7 +146,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -166,7 +164,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -184,7 +182,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -203,7 +201,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         Account: "00010"
@@ -222,7 +220,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+        match: [MsgType-35, Account-1, ClOrdID-11, CumQty-14, OrderQty-38, OrdStatus-39, OrdType-40, Price-44]
       -
         MsgType: 8
         Account: "00010"
@@ -241,7 +239,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+        match: [MsgType-35, Account-1, ClOrdID-11, CumQty-14, OrderQty-38, OrdStatus-39, OrdType-40, Price-44]
       -
         MsgType: 8
         Account: "00010"
@@ -254,14 +252,13 @@ steps:
         Side: Sell
         Symbol: fu1205p4800
         Text: CTP:全部成交
-
         TimeInForce: Day
         OpenClose: Open
         ExecType: I
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+        match: [MsgType-35, Account-1, ClOrdID-11, CumQty-14, OrderQty-38, OrdStatus-39, OrdType-40, Price-44]
       -
         MsgType: 8
         Account: "00010"
@@ -274,14 +271,13 @@ steps:
         Side: Buy
         Symbol: fu1205p4800
         Text: CTP:全部成交
-
         TimeInForce: Day
         OpenClose: Open
         ExecType: I
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, CumQty, OrderQty, OrdStatus, OrdType, Price]
+        match: [MsgType-35, Account-1, ClOrdID-11, CumQty-14, OrderQty-38, OrdStatus-39, OrdType-40, Price-44]
 
   - step: 3
     request:
@@ -317,7 +313,7 @@ steps:
       Tag_562: 1
       Tag_11401: 500
       Tag_5621: 1
-      match: [MsgType, Symbol, Tag_107, SecurityGroup, Tag_167, Tag_200, Tag_231, Tag_969]
+      match: [MsgType-35, Symbol-55, Tag_107-Tag_107, SecurityGroup-1151, Tag_167-Tag_167, Tag_200-Tag_200, Tag_231-Tag_231, Tag_969-Tag_969]
 
   - step: 4
     request:
@@ -354,4 +350,4 @@ steps:
       Tag_562: 1
       Tag_11401: 500
       Tag_5621: 1
-      match: [MsgType, Symbol, Tag_107, SecurityGroup, Tag_167, Tag_200, Tag_231, Tag_969]
+      match: [MsgType-35, Symbol-55, Tag_107-Tag_107, SecurityGroup-1151, Tag_167-Tag_167, Tag_200-Tag_200, Tag_231-Tag_231, Tag_969-Tag_969]

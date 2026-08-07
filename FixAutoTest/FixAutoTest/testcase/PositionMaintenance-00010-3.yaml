@@ -36,12 +36,12 @@ steps:
         LongQty: 1
         HedgeFlag: 1
         OrderActionType: a
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
         Symbol: fu1205c4800
-        Text: CTP:未执行 
+        Text: CTP:未执行
         OpenClose: Today
         PosTransType: 1
         PosReqID: "100"
@@ -52,7 +52,7 @@ steps:
         LongQty: 1
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 2
     request:
@@ -86,12 +86,12 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: a
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
         Symbol: fu1205c4800
-        Text: CTP:未执行 
+        Text: CTP:未执行
         OpenClose: Today
         PosTransType: 2
         PosReqID: "101"
@@ -102,7 +102,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 3
     request:
@@ -136,12 +136,12 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: a
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
         Symbol: fu1205p4800
-        Text: CTP:未执行 
+        Text: CTP:未执行
         OpenClose: Close
         PosTransType: 1
         PosReqID: "102"
@@ -152,7 +152,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 4
     request:
@@ -184,7 +184,7 @@ steps:
       PosType: EX
       LongQty: 2
       HedgeFlag: 2
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, ClearingBusinessDate, Tag_722]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, ClearingBusinessDate-715, Tag_722-Tag_722]
 
   - step: 5
     request:
@@ -206,7 +206,7 @@ steps:
       MsgType: AM
       OnBehalfOfSubID: 16423
       Symbol: fu1205c4800
-      Text: [CTP:Lack of executive positions] 
+      Text: [CTP:Lack of executive positions]
       PosTransType: 2
       PosReqID: "104"
       PosMaintAction: 1
@@ -216,7 +216,7 @@ steps:
       PosType: EX
       LongQty: 2
       HedgeFlag: 3
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, ClearingBusinessDate, Tag_722]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, ClearingBusinessDate-715, Tag_722-Tag_722]
 
   - step: 6
     request:
@@ -248,7 +248,7 @@ steps:
       PosType: EX
       LongQty: 2
       HedgeFlag: 5
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, ClearingBusinessDate, Tag_722]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, ClearingBusinessDate-715, Tag_722-Tag_722]
 
   - step: 7
     request:
@@ -270,7 +270,7 @@ steps:
       MsgType: AM
       OnBehalfOfSubID: 16423
       Symbol: fu1205c4800
-      Text: [CTP:Lack of executive positions] 
+      Text: [CTP:Lack of executive positions]
       PosTransType: 2
       PosReqID: "106"
       PosMaintAction: 1
@@ -280,7 +280,7 @@ steps:
       PosType: EX
       LongQty: 2
       HedgeFlag: 1
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, ClearingBusinessDate, Tag_722]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, ClearingBusinessDate-715, Tag_722-Tag_722]
 
   - step: 8
     request:
@@ -309,7 +309,7 @@ steps:
         LongQty: 1
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
@@ -325,7 +325,7 @@ steps:
         LongQty: 1
         HedgeFlag: 1
         OrderActionType: c
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 9
     request:
@@ -343,7 +343,7 @@ steps:
       MsgType: AM
       OnBehalfOfSubID: 16425
       Symbol: fu1205c4800
-      Text: "[CTP: The order is full-filled or canceled or unknow and can not be cancelled now] "
+      Text: [CTP: The order is full-filled or canceled or unknow and can not be cancelled now]
       PosTransType: 2
       PosReqID: "202"
       PosMaintAction: 3
@@ -354,7 +354,7 @@ steps:
       NoPositions: 1
       PosType: EX
       LongQty: 0
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, OrigPosReqRefID, ClearingBusinessDate]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, OrigPosReqRefID-713, ClearingBusinessDate-715]
 
   - step: 10
     request:
@@ -372,7 +372,7 @@ steps:
       MsgType: AM
       OnBehalfOfSubID: 16425
       Symbol: fu1205c4800
-      Text: [CTP:The Executive declared cancellation can not find the corresponding execution announcement] 
+      Text: [CTP:The Executive declared cancellation can not find the corresponding execution announcement]
       PosTransType: 2
       PosReqID: "203"
       PosMaintAction: 3
@@ -383,7 +383,7 @@ steps:
       NoPositions: 1
       PosType: EX
       LongQty: 0
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, OrigPosReqRefID, ClearingBusinessDate]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, OrigPosReqRefID-713, ClearingBusinessDate-715]
 
   - step: 11
     request:
@@ -412,7 +412,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
@@ -428,7 +428,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: c
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 12
     request:
@@ -450,7 +450,7 @@ steps:
       MsgType: AM
       OnBehalfOfSubID: 16423
       Symbol: fu1205p4800
-      Text: [CTP:Lack of executive positions] 
+      Text: [CTP:Lack of executive positions]
       PosTransType: 1
       PosReqID: "107"
       PosMaintAction: 1
@@ -460,7 +460,7 @@ steps:
       PosType: EX
       LongQty: 2
       HedgeFlag: 1
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, ClearingBusinessDate, Tag_722]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, ClearingBusinessDate-715, Tag_722-Tag_722]
 
   - step: 13
     request:
@@ -489,7 +489,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
@@ -505,7 +505,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: c
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 14
     request:
@@ -539,12 +539,12 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: a
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
         Symbol: fu1205p4800
-        Text: CTP:未执行 
+        Text: CTP:未执行
         OpenClose: Close
         PosTransType: 2
         PosReqID: "108"
@@ -555,7 +555,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 15
     request:
@@ -585,7 +585,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: n
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
       -
         MsgType: AM
         OnBehalfOfSubID: 61457
@@ -601,7 +601,7 @@ steps:
         LongQty: 2
         HedgeFlag: 1
         OrderActionType: c
-        match: [MsgType, Symbol, Text, OpenClose, PosTransType, PosReqID, PosMaintAction, Tag_722]
+        match: [MsgType-35, Symbol-55, Text-58, OpenClose-77, PosTransType-709, PosReqID-710, PosMaintAction-712, Tag_722-Tag_722]
 
   - step: 16
     request:
@@ -619,7 +619,7 @@ steps:
       MsgType: AM
       OnBehalfOfSubID: 16425
       Symbol: fu1205p4800
-      Text: "[CTP: The order is full-filled or canceled or unknow and can not be cancelled now] "
+      Text: [CTP: The order is full-filled or canceled or unknow and can not be cancelled now]
       PosTransType: 2
       PosReqID: "207"
       PosMaintAction: 3
@@ -629,4 +629,4 @@ steps:
       NoPositions: 1
       PosType: EX
       LongQty: 0
-      match: [MsgType, Symbol, Text, PosTransType, PosReqID, PosMaintAction, OrigPosReqRefID, ClearingBusinessDate]
+      match: [MsgType-35, Symbol-55, Text-58, PosTransType-709, PosReqID-710, PosMaintAction-712, OrigPosReqRefID-713, ClearingBusinessDate-715]

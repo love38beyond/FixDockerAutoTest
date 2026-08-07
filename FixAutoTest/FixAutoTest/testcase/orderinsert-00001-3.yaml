@@ -43,7 +43,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -64,7 +64,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -85,7 +85,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -105,7 +105,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -126,7 +126,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -147,7 +147,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 2
     request:
@@ -174,14 +174,14 @@ steps:
       Tag_45: 9
       Tag_372: D
       Tag_380: 0
-      match: [MsgType, Tag_45, Tag_372, Tag_380]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_380-Tag_380]
 
   - step: 3
     request:
       MsgType: F
       Account: "00001"
       ClOrdID: "11"
-      OrderID:           14
+      OrderID: 14
       OrderQty: 1
       OrigClOrdID: "2"
       Side: Buy
@@ -208,7 +208,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -228,7 +228,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -248,7 +248,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 4
     request:
@@ -289,7 +289,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -309,14 +309,14 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 5
     request:
       MsgType: F
       Account: "00001"
       ClOrdID: "22"
-      OrderID:           15
+      OrderID: 15
       OrderQty: 1
       OrigClOrdID: "1"
       Side: Buy
@@ -342,7 +342,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -361,7 +361,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -380,7 +380,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 6
     request:
@@ -421,7 +421,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -442,7 +442,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -463,7 +463,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -483,7 +483,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -504,7 +504,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -525,7 +525,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 7
     request:
@@ -552,7 +552,7 @@ steps:
       Tag_45: 61441
       Tag_372: D
       Tag_373: 5
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 8
     request:
@@ -592,7 +592,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 1
         OrderActionType: a
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
       -
         MsgType: 8
         OnBehalfOfSubID: 61473
@@ -609,7 +609,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 1
         OrderActionType: c
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
 
   - step: 9
     request:
@@ -646,7 +646,7 @@ steps:
       Tag_442: 1
       HedgeFlag: 1
       OptionSelfHedge: 2
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+      match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
 
   - step: 10
     request:
@@ -686,7 +686,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 2
         OrderActionType: a
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
       -
         MsgType: 8
         OnBehalfOfSubID: 61473
@@ -704,7 +704,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 2
         OrderActionType: n
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
 
   - step: 11
     request:
@@ -744,7 +744,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 3
         OrderActionType: a
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
       -
         MsgType: 8
         OnBehalfOfSubID: 61473
@@ -762,7 +762,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 3
         OrderActionType: n
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
 
   - step: 12
     request:
@@ -793,7 +793,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 2
         OrderActionType: n
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
       -
         MsgType: 8
         OnBehalfOfSubID: 61473
@@ -811,7 +811,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 2
         OrderActionType: c
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
 
   - step: 13
     request:
@@ -830,7 +830,7 @@ steps:
       Account: "00001"
       ClOrdID: "33"
       OrdStatus: Rejected
-      match: [MsgType, Account, ClOrdID, OrdStatus]
+      match: [MsgType-35, Account-1, ClOrdID-11, OrdStatus-39]
 
   - step: 14
     request:
@@ -856,7 +856,7 @@ steps:
       Tag_45: 61441
       Tag_372: D
       Tag_373: 4
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 15
     request:
@@ -882,7 +882,7 @@ steps:
       Tag_45: 61441
       Tag_372: D
       Tag_373: 4
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 16
     request:
@@ -908,7 +908,7 @@ steps:
       Tag_45: 61441
       Tag_372: D
       Tag_373: 4
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 17
     request:
@@ -935,7 +935,7 @@ steps:
       Tag_45: 61441
       Tag_372: D
       Tag_373: 5
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 18
     request:
@@ -961,7 +961,7 @@ steps:
       Tag_45: 61441
       Tag_372: D
       Tag_373: 4
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 19
     request:
@@ -987,7 +987,7 @@ steps:
       Tag_45: 61441
       Tag_372: D
       Tag_373: 4
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 20
     request:
@@ -1024,7 +1024,7 @@ steps:
       Tag_442: 1
       HedgeFlag: 1
       OptionSelfHedge: 3
-      match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+      match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
 
   - step: 21
     request:
@@ -1064,7 +1064,7 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 2
         OrderActionType: a
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
       -
         MsgType: 8
         OnBehalfOfSubID: 61473
@@ -1082,14 +1082,14 @@ steps:
         HedgeFlag: 1
         OptionSelfHedge: 2
         OrderActionType: n
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, Side, Symbol, MinQty, Tag_442, OptionSelfHedge]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, Side-54, Symbol-55, MinQty-110]
 
   - step: 22
     request:
       MsgType: F
       Account: "00001"
       ClOrdID: "44"
-      OrderID:           14
+      OrderID: 14
       OrderQty: 1
       OrigClOrdID: "3"
       Side: Buy
@@ -1116,7 +1116,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1136,7 +1136,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1156,14 +1156,14 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 23
     request:
       MsgType: F
       Account: "00001"
       ClOrdID: "55"
-      OrderID:           14
+      OrderID: 14
       OrderQty: 1
       OrigClOrdID: "4"
       Side: Buy
@@ -1189,7 +1189,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1208,7 +1208,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1227,14 +1227,14 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 24
     request:
       MsgType: F
       Account: "00001"
       ClOrdID: "66"
-      OrderID:           14
+      OrderID: 14
       OrderQty: 1
       OrigClOrdID: "5"
       Side: Buy
@@ -1260,7 +1260,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1279,7 +1279,7 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1298,14 +1298,14 @@ steps:
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 25
     request:
       MsgType: F
       Account: "00001"
       ClOrdID: "77"
-      OrderID:           14
+      OrderID: 14
       OrderQty: 1
       OrigClOrdID: "6"
       Side: Buy
@@ -1332,7 +1332,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1352,7 +1352,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1372,14 +1372,14 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 26
     request:
       MsgType: F
       Account: "00001"
       ClOrdID: "88"
-      OrderID:           14
+      OrderID: 14
       OrderQty: 1
       OrigClOrdID: "7"
       Side: Buy
@@ -1406,7 +1406,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1426,7 +1426,7 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -1446,4 +1446,4 @@ steps:
         Tag_442: 1
         HedgeFlag: 1
         Tag_20012: 5
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]

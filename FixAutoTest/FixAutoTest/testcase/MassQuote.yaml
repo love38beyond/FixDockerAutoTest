@@ -46,12 +46,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -66,12 +66,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -99,7 +99,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 10
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -114,12 +114,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 0
-        Tag_151: 1
+        ExecType: 0
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -134,12 +134,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 0
-        Tag_151: 1
+        ExecType: 0
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -167,7 +167,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
 
   - step: 2
     request:
@@ -207,7 +207,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -222,12 +222,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 4
-        Tag_151: 1
+        ExecType: 4
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -242,12 +242,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 4
-        Tag_151: 1
+        ExecType: 4
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -275,7 +275,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 17
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
 
   - step: 3
     request:
@@ -308,7 +308,7 @@ steps:
       Tag_45: 61441
       Tag_372: i
       Tag_373: 4
-      match: [MsgType, Tag_45, Tag_372, Tag_373]
+      match: [MsgType-35, Tag_45-Tag_45, Tag_372-Tag_372, Tag_373-Tag_373]
 
   - step: 4
     request:
@@ -364,7 +364,7 @@ steps:
       OpenClose: Open
       HedgeFlag: 1
       Tag_297: 5
-      match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+      match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
 
   - step: 5
     request:
@@ -408,12 +408,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -428,12 +428,12 @@ steps:
         TimeInForce: Day
         OpenClose: Close
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -461,7 +461,7 @@ steps:
         OpenClose: Close
         HedgeFlag: 1
         Tag_297: 10
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -476,12 +476,11 @@ steps:
         TimeInForce: Day
         OpenClose: Close
         MinQty: 0
-        Tag_150: 8
-        Tag_151: 0
+        ExecType: 8
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -496,12 +495,11 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 8
-        Tag_151: 0
+        ExecType: 8
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -529,7 +527,7 @@ steps:
         OpenClose: Close
         HedgeFlag: 1
         Tag_297: 17
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
 
   - step: 6
     request:
@@ -573,12 +571,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -593,12 +591,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -626,7 +624,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 10
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -641,12 +639,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 0
-        Tag_151: 1
+        ExecType: 0
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -661,12 +659,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 0
-        Tag_151: 1
+        ExecType: 0
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -694,7 +692,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
 
   - step: 7
     request:
@@ -733,7 +731,7 @@ steps:
       OpenClose: Open
       HedgeFlag: 1
       Tag_297: 5
-      match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+      match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
 
   - step: 8
     request:
@@ -761,12 +759,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 6
-        Tag_151: 1
+        ExecType: 6
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 9
         OnBehalfOfSubID: 61441
@@ -781,12 +779,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 8
-        Tag_151: 1
+        ExecType: 8
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
 
   - step: 9
     request:
@@ -830,12 +828,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -850,12 +848,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: A
-        Tag_151: 1
+        ExecType: A
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -883,7 +881,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 10
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -898,12 +896,11 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 4
-        Tag_151: 0
+        ExecType: 4
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -918,12 +915,11 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 4
-        Tag_151: 0
+        ExecType: 4
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -951,7 +947,7 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 17
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -966,12 +962,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 0
-        Tag_151: 1
+        ExecType: 0
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: 8
         OnBehalfOfSubID: 61441
@@ -986,12 +982,12 @@ steps:
         TimeInForce: Day
         OpenClose: Open
         MinQty: 0
-        Tag_150: 0
-        Tag_151: 1
+        ExecType: 0
+        LeavesQty: 1
         SecurityExchange: SHFE
         Tag_442: 1
         HedgeFlag: 1
-        match: [MsgType, Account, ClOrdID, OrderQty, OrdStatus, OrdType, Price, Side]
+        match: [MsgType-35, Account-1, ClOrdID-11, OrderQty-38, OrdStatus-39, OrdType-40, Price-44, Side-54]
       -
         MsgType: b
         OnBehalfOfSubID: 61461
@@ -1019,4 +1015,4 @@ steps:
         OpenClose: Open
         HedgeFlag: 1
         Tag_297: 0
-        match: [MsgType, Account, QuoteID, NoQuoteSets, QuoteSetID, TotNoQuoteEntries, NoQuoteEntries, QuoteEntryID]
+        match: [MsgType-35, Account-1, QuoteID-117, NoQuoteSets-296, QuoteSetID-302, TotNoQuoteEntries-304, NoQuoteEntries-295, QuoteEntryID-299]

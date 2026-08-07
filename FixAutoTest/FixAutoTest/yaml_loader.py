@@ -115,7 +115,13 @@ class YamlLoader:
                 match_keys = []
                 for k, v in exp.items():
                     if k == 'match':
-                        match_keys = [self.resolve_tag(str(x)) for x in v]
+                        # match 格式: Name-Tag (如 Side-54)，取 Tag 部分
+                        for x in v:
+                            x_str = str(x)
+                            if '-' in x_str:
+                                match_keys.append(x_str.rsplit('-', 1)[-1])
+                            else:
+                                match_keys.append(self.resolve_tag(x_str))
                     elif k == 'match_by':
                         # 用 ClOrdID/QuoteID 关联，fallback 到 FIFO
                         exp_dict['_match_by'] = str(v)
