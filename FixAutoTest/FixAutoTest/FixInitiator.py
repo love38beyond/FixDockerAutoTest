@@ -659,6 +659,8 @@ def assertResult(message):
             expected_item = rsplist.pop(0)
             keylist_str = expected_item.get('keylist', '[]')
 
+    # 记录当前 _step_failures 的长度，用于关联本次比对产生的失败
+    _failures_before = len(_step_failures)
     try:
         key_list = ast.literal_eval(keylist_str)
         result = compare_two_dict(expected_item, messagedict, key_list)
@@ -670,6 +672,9 @@ def assertResult(message):
     # 记录 step 级结果（使用 rsplist 条目中预分配的 _step_label）
     step_label = expected_item.get('_step_label', str(_current_logical_step[0]))
     _step_results.append({'step': step_label, 'result': result})
+    # 立即为本轮比对产生的失败打上正确的步骤标签
+    for f in _step_failures[_failures_before:]:
+        f['step'] = step_label
 
     logger.info('TestCase Result: ' + result)
     response_event.set()
@@ -1024,13 +1029,9 @@ def main(config_file, case_file):
         'nocompare': case_n,
         'details': list(_step_results),
     })
-    # 给每条 failure 补上 case 名 + step 号
+    # 给每条 failure 补上 case 名（step 已在 assertResult 中标记）
     for f in _step_failures:
         f['case'] = case_name
-        for s in _step_results:
-            if s['result'] == 'FAIL':
-                f.setdefault('step', s['step'])
-                break
     _all_failures.extend(_step_failures)
 
     logger.info('----%s--Finished----', case_file)
